@@ -802,7 +802,7 @@ button,input,select{font:inherit;color:inherit}
        msrp  : 판매가격(원)
        fin   : MBFSK 금융 이용 시 최대 구매 혜택(%)
        cash  : 현금 구매 시 혜택(%)
-       lrate : 운용리스 금리(%) — 60개월 · 3P · 보증금 30% 기준
+       lrate : 운용리스 금리(%) — 60개월 · 보증금 30% 기준
        seg   : sedan / suv / amg
      기준 월이 지나면 표 위에 안내 배너가 자동으로 뜹니다.
      ───────────────────────────────────────────────────────── */
@@ -891,7 +891,7 @@ button,input,select{font:inherit;color:inherit}
 
   function renderPrices(){
     if (!body) return;
-    cap.textContent = PRICE_ASOF + " · MBFSK 모델별 상품 안내 · 운용리스 금리는 60개월 · 3P · 보증금 30% 기준";
+    cap.textContent = PRICE_ASOF + " · MBFSK 모델별 상품 안내 · 운용리스 금리는 60개월 · 보증금 30% 기준";
     body.innerHTML = "";
     PRICE_ROWS.forEach(function(row){
       if (segNow !== "all" && row.seg !== segNow) return;
