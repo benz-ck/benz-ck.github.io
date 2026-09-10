@@ -145,7 +145,7 @@ button,input,select{font:inherit;color:inherit}
 @media(min-width:900px){.hero__grid{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}}
 
 .portrait{position:relative;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--surface)}
-.portrait img{width:100%;height:auto;filter:saturate(.92) contrast(1.03)}
+.portrait img{width:100%;height:auto}  /* 보정은 파일에 구워 넣었다 — CSS 로 채도를 빼면 다시 어두워진다 */
 .portrait figcaption{
   position:absolute;left:0;right:0;bottom:0;
   padding:1.5rem 1.15rem .95rem;
