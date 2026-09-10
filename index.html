@@ -243,6 +243,59 @@ button,input,select{font:inherit;color:inherit}
   display:flex;align-items:center;gap:.4rem;
 }
 .model.is-out{display:none}
+/* ── Model detail dialog ─────────────────────────────── */
+.model{cursor:pointer}
+.model:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.mdlg{
+  width:min(680px,calc(100vw - 2rem));max-height:86vh;padding:0;
+  border:1px solid var(--line);border-radius:var(--r);
+  background:var(--surface);color:var(--ink);overflow:hidden;
+}
+.mdlg::backdrop{background:rgba(5,8,12,.78)}
+.mdlg__in{overflow-y:auto;max-height:86vh;-webkit-overflow-scrolling:touch}
+.mdlg__hd{
+  position:sticky;top:0;z-index:2;background:var(--surface-2);
+  border-bottom:1px solid var(--line);padding:1.35rem 1.4rem 1.15rem;
+}
+.mdlg__x{
+  position:absolute;top:.85rem;right:.9rem;width:34px;height:34px;
+  border:1px solid var(--line);border-radius:50%;background:transparent;
+  color:var(--ink-2);font-size:1.05rem;line-height:1;cursor:pointer;
+}
+.mdlg__x:hover{border-color:var(--accent);color:var(--accent)}
+.mdlg__seg{font-family:var(--f-mono);font-size:var(--s--1);letter-spacing:.1em;color:var(--muted)}
+.mdlg__n{font-family:var(--f-display);font-weight:600;font-size:var(--s-3);letter-spacing:-.02em;margin:.15rem 0 .4rem;padding-right:2.5rem}
+.mdlg__t{font-size:var(--s--1);color:var(--ink-2);line-height:1.65}
+.mdlg__bd{padding:1.3rem 1.4rem 1.5rem;display:flex;flex-direction:column;gap:1.5rem}
+.mdlg h4{
+  font-family:var(--f-mono);font-size:var(--s--1);letter-spacing:.08em;
+  color:var(--accent);margin:0 0 .7rem;font-weight:500;
+}
+.mspec{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surface-2)}
+.mspec table{width:100%;min-width:430px;border-collapse:collapse}
+.mspec th,.mspec td{padding:.6rem .8rem;text-align:left;border-bottom:1px solid var(--line-soft);font-size:var(--s--1);white-space:nowrap}
+.mspec thead th{color:var(--muted);font-family:var(--f-mono);font-weight:400;letter-spacing:.04em}
+.mspec tbody th{font-weight:500;color:var(--ink)}
+.mspec td{color:var(--ink-2);font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.mspec tr:last-child th,.mspec tr:last-child td{border-bottom:0}
+.mdim{display:flex;flex-wrap:wrap;gap:.5rem}
+.mdim span{
+  border:1px solid var(--line);border-radius:2px;padding:.4rem .7rem;
+  font-family:var(--f-mono);font-size:var(--s--1);color:var(--ink-2);background:var(--surface-2);
+}
+.mdim span b{color:var(--ink);font-weight:500}
+.mnote{
+  border-left:2px solid var(--accent);background:var(--accent-wash);
+  padding:.9rem 1rem;font-size:var(--s--1);line-height:1.75;color:var(--ink-2);
+}
+.mnote b{color:var(--accent-2);font-weight:500}
+.mdlg__cta{display:flex;flex-wrap:wrap;gap:.6rem;padding-top:.2rem}
+.mdlg__cta .btn{flex:1 1 auto;justify-content:center}
+.mdlg__src{font-size:.75rem;color:var(--muted);line-height:1.6}
+@media(max-width:520px){
+  .mdlg{width:100vw;max-width:100vw;max-height:92vh;border-radius:0;border-left:0;border-right:0}
+  .mdlg__in{max-height:92vh}
+}
 
 /* ── Price table ─────────────────────────────────────── */
 .sheet{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
@@ -497,59 +550,59 @@ button,input,select{font:inherit;color:inherit}
       </div>
 
       <ul class="models rise" id="models">
-        <li class="model" data-seg="sedan">
+        <li class="model" data-seg="sedan" data-key="E-Class" tabindex="0" role="button">
           <span class="model__seg">SEDAN</span>
           <h3 class="model__n">E-Class</h3>
           <p class="model__d">비즈니스 세단의 기준. 가장 문의가 많고 재고 회전도 가장 빠릅니다.</p>
-          <a class="model__cta" href="https://open.kakao.com/o/s35suoRh" target="_blank" rel="noopener">재고 및 견적 문의 →</a>
+          <span class="model__cta">모델 자세히 보기 →</span>
         </li>
-        <li class="model" data-seg="sedan">
+        <li class="model" data-seg="sedan" data-key="S-Class" tabindex="0" role="button">
           <span class="model__seg">SEDAN</span>
           <h3 class="model__n">S-Class</h3>
           <p class="model__d">최상위 럭셔리 세단. 금융 프로그램에 따라 조건 차이가 가장 크게 벌어집니다.</p>
-          <a class="model__cta" href="https://open.kakao.com/o/s35suoRh" target="_blank" rel="noopener">재고 및 견적 문의 →</a>
+          <span class="model__cta">모델 자세히 보기 →</span>
         </li>
-        <li class="model" data-seg="suv">
+        <li class="model" data-seg="suv" data-key="GLC" tabindex="0" role="button">
           <span class="model__seg">SUV</span>
           <h3 class="model__n">GLC</h3>
           <p class="model__d">도심과 일상을 위한 프리미엄 SUV. 첫 벤츠로 가장 많이 선택됩니다.</p>
-          <a class="model__cta" href="https://open.kakao.com/o/s35suoRh" target="_blank" rel="noopener">재고 및 견적 문의 →</a>
+          <span class="model__cta">모델 자세히 보기 →</span>
         </li>
-        <li class="model" data-seg="suv">
+        <li class="model" data-seg="suv" data-key="GLE" tabindex="0" role="button">
           <span class="model__seg">SUV</span>
           <h3 class="model__n">GLE</h3>
           <p class="model__d">여유로운 공간과 존재감. 패밀리 SUV로 넘어오시는 분들이 많습니다.</p>
-          <a class="model__cta" href="https://open.kakao.com/o/s35suoRh" target="_blank" rel="noopener">재고 및 견적 문의 →</a>
+          <span class="model__cta">모델 자세히 보기 →</span>
         </li>
-        <li class="model" data-seg="suv">
+        <li class="model" data-seg="suv" data-key="GLS" tabindex="0" role="button">
           <span class="model__seg">SUV</span>
           <h3 class="model__n">GLS</h3>
           <p class="model__d">럭셔리 대형 SUV. 7인승 구성과 옵션 조합을 함께 정리해 드립니다.</p>
-          <a class="model__cta" href="https://open.kakao.com/o/s35suoRh" target="_blank" rel="noopener">재고 및 견적 문의 →</a>
+          <span class="model__cta">모델 자세히 보기 →</span>
         </li>
-        <li class="model" data-seg="top">
+        <li class="model" data-seg="top" data-key="G-Class" tabindex="0" role="button">
           <span class="model__seg">ICON</span>
           <h3 class="model__n">G-Class</h3>
           <p class="model__d">아이코닉 오프로더. 가격만큼 대기 기간과 재고 흐름이 중요한 모델입니다.</p>
-          <a class="model__cta" href="https://open.kakao.com/o/s35suoRh" target="_blank" rel="noopener">재고 및 견적 문의 →</a>
+          <span class="model__cta">모델 자세히 보기 →</span>
         </li>
-        <li class="model" data-seg="amg">
+        <li class="model" data-seg="amg" data-key="Mercedes-AMG" tabindex="0" role="button">
           <span class="model__seg">PERFORMANCE</span>
           <h3 class="model__n">Mercedes-AMG</h3>
           <p class="model__d">고성능 퍼포먼스 라인업. 일상 주행과의 균형점을 기준으로 안내합니다.</p>
-          <a class="model__cta" href="https://open.kakao.com/o/s35suoRh" target="_blank" rel="noopener">재고 및 견적 문의 →</a>
+          <span class="model__cta">모델 자세히 보기 →</span>
         </li>
-        <li class="model" data-seg="top">
+        <li class="model" data-seg="top" data-key="Mercedes-Maybach" tabindex="0" role="button">
           <span class="model__seg">LUXURY</span>
           <h3 class="model__n">Mercedes-Maybach</h3>
           <p class="model__d">궁극의 럭셔리. 뒷좌석 기준으로 S클래스와 갈리는 지점을 짚어 드립니다.</p>
-          <a class="model__cta" href="https://open.kakao.com/o/s35suoRh" target="_blank" rel="noopener">재고 및 견적 문의 →</a>
+          <span class="model__cta">모델 자세히 보기 →</span>
         </li>
-        <li class="model" data-seg="ev">
+        <li class="model" data-seg="ev" data-key="Electric" tabindex="0" role="button">
           <span class="model__seg">ELECTRIC</span>
           <h3 class="model__n">Electric</h3>
           <p class="model__d">차세대 전동화 라인업. 지자체 보조금과 충전 환경까지 포함해 계산합니다.</p>
-          <a class="model__cta" href="https://open.kakao.com/o/s35suoRh" target="_blank" rel="noopener">재고 및 견적 문의 →</a>
+          <span class="model__cta">모델 자세히 보기 →</span>
         </li>
       </ul>
     </div>
@@ -750,6 +803,17 @@ button,input,select{font:inherit;color:inherit}
     </div>
   </section>
 </main>
+<dialog class="mdlg" id="mdlg" aria-labelledby="mdlgName">
+  <div class="mdlg__in">
+    <div class="mdlg__hd">
+      <button class="mdlg__x" type="button" id="mdlgX" aria-label="닫기">&#10005;</button>
+      <p class="mdlg__seg" id="mdlgSeg"></p>
+      <h3 class="mdlg__n" id="mdlgName"></h3>
+      <p class="mdlg__t" id="mdlgTag"></p>
+    </div>
+    <div class="mdlg__bd" id="mdlgBody"></div>
+  </div>
+</dialog>
 
 <footer class="foot">
   <div class="wrap">
@@ -921,6 +985,183 @@ button,input,select{font:inherit;color:inherit}
   });
 
   renderPrices();
+
+  /* ─────────────────────────────────────────────────────
+     모델 상세 — 제원은 벤츠코리아 공식 카탈로그 기준입니다.
+     열: [트림, 최고출력, 0→100km/h, 복합연비]
+     ───────────────────────────────────────────────────── */
+  var MODEL_INFO = {
+    "E-Class": {
+      tag: "비즈니스 세단의 기준입니다. 가솔린·디젤·플러그인 하이브리드가 모두 있어 주행 패턴에 맞춰 고르실 수 있습니다.",
+      cols: ["트림", "최고출력", "0→100km/h", "복합연비"],
+      rows: [
+        ["E 200", "204마력", "7.5초", "12.3km/ℓ · 3등급"],
+        ["E 220 d 4MATIC", "197마력", "7.8초", "16.0km/ℓ · 1등급"],
+        ["E 300 4MATIC", "258마력", "6.1초", "11.1km/ℓ · 4등급"],
+        ["E 450 4MATIC", "381마력", "4.5초", "10.5km/ℓ · 4등급"],
+        ["E 350 e 4MATIC", "204마력 + 95kW", "6.5초", "전기 77km 주행"]
+      ],
+      dim: ["4,955 × 1,880 × 1,475mm", "휠베이스 2,960mm", "트렁크 540ℓ"],
+      note: "가장 문의가 많은 모델이라 <b>재고 회전이 빠릅니다.</b> 원하시는 색상·옵션이 정해져 있으면 미리 말씀해 주시는 편이 낫습니다. 장거리가 많으시면 <b>E 220 d(16km/ℓ, 1등급)</b>, 도심 위주면 E 200이나 E 300을 권해 드립니다. E 350 e는 전기만으로 77km를 달려서 출퇴근 거리가 짧으면 기름을 거의 안 씁니다."
+    },
+    "S-Class": {
+      tag: "최상위 럭셔리 세단입니다. 휠베이스 두 종류가 있고, 뒷좌석을 주로 쓰실지에 따라 선택이 갈립니다.",
+      cols: ["트림", "최고출력", "0→100km/h", "복합연비"],
+      rows: [
+        ["S 350 d 4MATIC (숏)", "313마력", "5.5초", "13.0km/ℓ · 3등급"],
+        ["S 450 4MATIC (숏)", "381마력", "5.0초", "10.0km/ℓ · 4등급"],
+        ["S 450 4MATIC (롱)", "381마력", "5.0초", "9.9km/ℓ · 4등급"],
+        ["S 500 4MATIC (롱)", "449마력", "4.7초", "9.7km/ℓ · 4등급"],
+        ["S 580 4MATIC (롱)", "503마력", "4.4초", "8.6km/ℓ · 5등급"],
+        ["AMG S 63 E Performance", "612마력 + 140kW", "3.3초", "7.4km/ℓ"]
+      ],
+      dim: ["숏 5,180mm · 휠베이스 3,106mm", "롱 5,290mm · 휠베이스 3,216mm", "너비 1,920 · 높이 1,505mm"],
+      note: "<b>금융 프로그램에 따라 조건 차이가 가장 크게 벌어지는 모델입니다.</b> 같은 차라도 현금·할부·리스 중 어느 쪽으로 가시느냐에 따라 실구매가가 눈에 띄게 달라집니다. 뒷좌석에 자주 타신다면 휠베이스가 110mm 긴 롱을 보셔야 합니다. 숏과 롱은 뒷무릎 공간이 확실히 다릅니다."
+    },
+    "GLC": {
+      tag: "도심과 일상을 위한 프리미엄 SUV입니다. 첫 벤츠로 가장 많이 선택되는 모델입니다.",
+      cols: ["트림", "최고출력", "0→100km/h", "복합연비"],
+      rows: [
+        ["GLC 220 d 4MATIC", "197마력", "8.0초", "14.5km/ℓ · 2등급"],
+        ["GLC 300 4MATIC", "258마력", "6.2초", "10.6km/ℓ · 4등급"],
+        ["GLC 300 4MATIC 쿠페", "258마력", "6.3초", "10.6km/ℓ · 4등급"]
+      ],
+      dim: ["SUV 4,720 × 1,890 × 1,645mm · 트렁크 620ℓ", "쿠페 4,770 × 1,920 × 1,600mm · 트렁크 545ℓ", "휠베이스 2,890mm (동일)"],
+      note: "SUV와 쿠페는 <b>휠베이스가 같아 뒷좌석 무릎 공간은 차이가 없습니다.</b> 갈리는 곳은 머리 공간과 트렁크(620ℓ vs 545ℓ)입니다. 뒷좌석을 매일 쓰시면 SUV, 디자인을 먼저 보시면 쿠페입니다. 48V 마일드 하이브리드가 들어가 저속 재가속이 매끄럽습니다."
+    },
+    "GLE": {
+      tag: "여유로운 공간과 존재감. 패밀리 SUV로 넘어오시는 분들이 많습니다.",
+      cols: ["트림", "최고출력", "0→100km/h", "복합연비"],
+      rows: [
+        ["GLE 300 d 4MATIC", "269마력", "6.9초", "11.6km/ℓ · 3등급"],
+        ["GLE 350 4MATIC", "258마력", "7.5초", "8.6km/ℓ · 5등급"],
+        ["GLE 450 4MATIC", "381마력", "5.6초", "8.4km/ℓ · 5등급"],
+        ["GLE 450 d 4MATIC 쿠페", "367마력", "5.6초", "11.0km/ℓ · 4등급"],
+        ["GLE 450 4MATIC 쿠페", "381마력", "5.6초", "8.2km/ℓ · 5등급"]
+      ],
+      dim: ["SUV 4,925 × 2,010 × 1,780mm · 트렁크 630~2,055ℓ", "쿠페 4,940 × 2,020 × 1,715mm · 트렁크 655~1,790ℓ", "휠베이스 SUV 2,995 / 쿠페 2,935mm"],
+      note: "GLC에서 한 급 올라오시는 분이 많습니다. 트렁크가 <b>630ℓ에서 뒷좌석을 접으면 2,055ℓ</b>까지 늘어나 골프백 여러 개나 캠핑 짐이 그대로 들어갑니다. 연비를 보신다면 GLE 300 d(11.6km/ℓ, 3등급)가 가장 낫고, 힘을 보신다면 GLE 450입니다."
+    },
+    "GLS": {
+      tag: "럭셔리 대형 SUV입니다. 7인승 구성과 옵션 조합을 함께 정리해 드립니다.",
+      cols: ["트림", "최고출력", "0→100km/h", "복합연비"],
+      rows: [
+        ["GLS 450 d 4MATIC", "367마력", "6.1초", "10.0km/ℓ · 4등급"],
+        ["GLS 450 4MATIC", "381마력", "6.1초", "7.9km/ℓ · 5등급"],
+        ["GLS 580 4MATIC", "517마력", "4.9초", "6.6km/ℓ · 5등급"],
+        ["AMG GLS 63 4MATIC+", "612마력", "4.2초", "6.3km/ℓ · 5등급"]
+      ],
+      dim: ["5,210 × 2,030 × 1,840mm", "휠베이스 3,135mm", "트렁크 355~2,400ℓ"],
+      note: "<b>3열까지 성인이 앉을 수 있는 몇 안 되는 SUV</b>입니다. 3열을 세우면 트렁크가 355ℓ로 줄지만, 다 접으면 2,400ℓ가 됩니다. 대가족이거나 골프를 자주 다니시면 GLS 450 d가 무난하고, 연비 부담을 줄이시려면 디젤 쪽을 보셔야 합니다. 길이 5.2m라 주차 환경을 먼저 확인하시는 게 좋습니다."
+    },
+    "G-Class": {
+      tag: "아이코닉 오프로더. 가격만큼 대기 기간과 재고 흐름이 중요한 모델입니다.",
+      cols: ["트림", "최고출력", "0→100km/h", "복합연비"],
+      rows: [
+        ["G 450 d", "367마력", "5.8초", "10.0km/ℓ · 4등급"],
+        ["AMG G 63", "585마력", "4.4초", "—"],
+        ["AMG G 63 MANUFAKTUR", "585마력", "4.4초", "—"]
+      ],
+      dim: ["G 450 d 4,865 × 1,985 × 1,980mm", "AMG G 63 길이 4,875mm", "휠베이스 2,890mm · 트렁크 640~2,010ℓ"],
+      note: "<b>재고 확보가 곧 출고 시기입니다.</b> 주문해서 받으시려면 대기가 길고, 국내에 들어와 있는 차를 잡는 것이 가장 빠릅니다. 마누팍투어는 물량이 특히 적습니다. 원하시는 외장·실내 조합을 알려주시면 지금 국내 재고부터 확인해 드리겠습니다."
+    },
+    "Mercedes-AMG": {
+      tag: "고성능 퍼포먼스 라인업입니다. 일상 주행과의 균형점을 기준으로 안내해 드립니다.",
+      cols: ["트림", "최고출력", "0→100km/h", "비고"],
+      rows: [
+        ["AMG A 45 S 4MATIC+", "421마력", "3.9초", "가장 접근하기 쉬운 AMG"],
+        ["AMG GLB 35 4MATIC", "306마력", "5.2초", "컴팩트 SUV"],
+        ["AMG GLC 43 4MATIC", "421마력", "4.8초", "SUV · 쿠페"],
+        ["AMG G 63", "585마력", "4.4초", "V8 오프로더"],
+        ["AMG GLS 63 4MATIC+", "612마력", "4.2초", "대형 SUV"],
+        ["AMG S 63 E Performance", "612마력 + 140kW", "3.3초", "플러그인 하이브리드"]
+      ],
+      dim: ["AMG 라이드 컨트롤 서스펜션", "AMG 퍼포먼스 배기", "4MATIC+ 가변 사륜구동"],
+      note: "AMG는 <b>숫자보다 어디에 쓰실지가 중요합니다.</b> 매일 타시는 차라면 A 45 S나 GLC 43 쪽이 현실적이고, 세컨드 카로 두실 거면 G 63이나 GLS 63을 보셔도 됩니다. 시승 없이 결정하지 마시라고 늘 말씀드립니다 — 승차감 차이가 생각보다 큽니다."
+    },
+    "Mercedes-Maybach": {
+      tag: "궁극의 럭셔리. 뒷좌석을 기준으로 S클래스와 갈리는 지점을 짚어 드립니다.",
+      cols: ["트림", "최고출력", "0→100km/h", "트렁크"],
+      rows: [
+        ["Maybach S 580", "503마력", "4.8초", "505ℓ"],
+        ["Maybach S 680", "630마력", "4.5초", "495ℓ"],
+        ["Maybach GLS 600", "—", "—", "SUV"],
+        ["Maybach EQS SUV", "—", "—", "전동화"]
+      ],
+      dim: ["S클래스 마이바흐 길이 5,470mm", "휠베이스 3,396mm", "S 580 롱보다 휠베이스 180mm 김"],
+      note: "S클래스 롱과 마이바흐를 같이 보시는 분이 많습니다. 갈리는 지점은 <b>휠베이스 3,396mm — 롱보다 180mm 더 깁니다.</b> 뒷좌석 등받이 각도, 리어 도어 크기, 마감재가 다릅니다. 직접 뒷좌석에 앉아 보시면 차이가 바로 느껴집니다. 시승차 준비해 드리겠습니다."
+    },
+    "Electric": {
+      tag: "차세대 전동화 라인업입니다. 지자체 보조금과 충전 환경까지 포함해 계산해 드립니다.",
+      cols: ["트림", "모터 출력", "1회 충전 주행거리", "비고"],
+      rows: [
+        ["EQA 250", "140kW", "367km", "0→100 8.6초"],
+        ["EQE 350+", "235kW", "490km", "세단"],
+        ["EQS 450 4MATIC SUV", "265kW", "498km", "배터리 118kWh"],
+        ["EQS 580 4MATIC SUV", "400kW", "480km", "배터리 118kWh"],
+        ["전기 GLC (런치 에디션)", "—", "—", "제원 미공개"]
+      ],
+      dim: ["EQA 4,465mm · 트렁크 340~1,320ℓ", "EQE 4,965mm · 트렁크 430ℓ", "EQS SUV 5,125mm · 트렁크 645~2,100ℓ"],
+      note: "전기차는 <b>차값보다 보조금과 충전 환경이 실구매가를 좌우합니다.</b> 지자체마다 보조금이 달라서 거주지를 알려주시면 정확히 계산해 드립니다. 금융 조건도 내연기관과 다릅니다 — 무이자 할부가 60개월까지 늘어나고 운용리스 금리가 훨씬 낮습니다. ※ 전기 GLC는 국내 출시 사양의 배터리·주행거리가 아직 공개되지 않았습니다."
+    }
+  };
+
+  /* 모델 상세 다이얼로그 */
+  (function modelDialog(){
+    var dlg = document.getElementById("mdlg");
+    if (!dlg || !dlg.showModal) return;
+    var elSeg = document.getElementById("mdlgSeg"),
+        elName = document.getElementById("mdlgName"),
+        elTag = document.getElementById("mdlgTag"),
+        elBody = document.getElementById("mdlgBody"),
+        last = null;
+
+    function esc(v){ return String(v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+    function open(card){
+      var key = card.dataset.key, info = MODEL_INFO[key];
+      if (!info) return;
+      last = card;
+      elSeg.textContent = card.querySelector(".model__seg").textContent;
+      elName.textContent = key;
+      elTag.textContent = info.tag;
+
+      var html = '<div><h4>라인업</h4><div class="mspec"><table><thead><tr>' +
+        info.cols.map(function(c){ return "<th>" + esc(c) + "</th>"; }).join("") +
+        "</tr></thead><tbody>" +
+        info.rows.map(function(r){
+          return "<tr><th>" + esc(r[0]) + "</th>" +
+            r.slice(1).map(function(v){ return "<td>" + esc(v) + "</td>"; }).join("") + "</tr>";
+        }).join("") +
+        "</tbody></table></div></div>";
+
+      html += '<div><h4>크기</h4><div class="mdim">' +
+        info.dim.map(function(d){ return "<span>" + esc(d) + "</span>"; }).join("") + "</div></div>";
+
+      html += '<div><h4>홍창기 차장의 안내</h4><p class="mnote">' + info.note + "</p></div>";
+
+      html += '<div class="mdlg__cta">' +
+        '<a class="btn btn--kakao" href="https://open.kakao.com/o/s35suoRh" target="_blank" rel="noopener">' + esc(key) + ' 견적 문의</a>' +
+        '<a class="btn btn--line" href="tel:01031130328">010-3113-0328</a></div>';
+
+      html += '<p class="mdlg__src">제원은 메르세데스-벤츠 코리아 공식 카탈로그 기준이며, 사양과 가격은 본사 정책에 따라 예고 없이 변경될 수 있습니다. 국내 판매 트림은 시기에 따라 달라질 수 있으니 계약 시점 기준으로 다시 확인해 드립니다.</p>';
+
+      elBody.innerHTML = html;
+      elBody.parentNode.scrollTop = 0;
+      dlg.showModal();
+    }
+
+    document.querySelectorAll(".model[data-key]").forEach(function(card){
+      card.addEventListener("click", function(){ open(card); });
+      card.addEventListener("keydown", function(e){
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(card); }
+      });
+    });
+
+    document.getElementById("mdlgX").addEventListener("click", function(){ dlg.close(); });
+    dlg.addEventListener("click", function(e){ if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener("close", function(){ if (last) { last.focus(); last = null; } });
+  })();
 })();
 </script>
 
