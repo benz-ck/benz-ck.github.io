@@ -148,9 +148,16 @@ button,input,select{font:inherit;color:inherit}
 .portrait img{width:100%;height:auto}  /* 보정은 파일에 구워 넣었다 — CSS 로 채도를 빼면 다시 어두워진다 */
 .portrait figcaption{
   position:absolute;left:0;right:0;bottom:0;
-  padding:1.5rem 1.15rem .95rem;
-  background:linear-gradient(180deg,rgba(10,13,18,0) 0%,rgba(10,13,18,.92) 62%);
-  font-family:var(--f-mono);font-size:var(--s--1);color:var(--ink-2);letter-spacing:.06em;
+  padding:2.4rem 1.3rem 1.15rem;
+  background:linear-gradient(180deg,rgba(10,13,18,0) 0%,rgba(10,13,18,.94) 58%);
+  font-family:var(--f-mono);letter-spacing:.08em;
+}
+.portrait figcaption b{
+  display:block;font-weight:600;font-size:var(--s-1);color:#fff;letter-spacing:.11em;
+}
+.portrait figcaption em{
+  display:block;font-style:normal;margin-top:.3rem;
+  font-size:var(--s--1);color:var(--ink-2);letter-spacing:.16em;
 }
 
 .hero h1{
@@ -444,7 +451,7 @@ button,input,select{font:inherit;color:inherit}
     <div class="wrap hero__in hero__grid">
       <figure class="portrait rise">
         <img src="images/profile.jpg" alt="홍창기 차장 · 메르세데스-벤츠 세일즈 컨설턴트 프로필 사진" width="1024" height="1298">
-        <figcaption>HONG CHANG KI · SALES CONSULTANT</figcaption>
+        <figcaption><b>HONG CHANG KI</b><em>SALES CONSULTANT</em></figcaption>
       </figure>
 
       <div>
