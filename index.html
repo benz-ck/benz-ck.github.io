@@ -612,11 +612,11 @@ button,input,select{font:inherit;color:inherit}
   <section class="section" id="prices">
     <div class="wrap">
       <div class="section__head">
-        <p class="eyebrow">Price List</p>
-        <h2 class="section__title">차량 가격표</h2>
+        <p class="eyebrow">Price &amp; Benefits</p>
+        <h2 class="section__title" id="pricetitle">차량 가격 및 이번 달 혜택</h2>
         <p class="section__note">
-          판매가격과 이번 달 최대 구매 혜택입니다. 「혜택 적용가」는 MBFSK 금융
-          이용 시 최대 혜택을 적용한 금액입니다.
+          판매가격과 <span id="pricemonthnote">이번 달</span> 최대 구매 혜택입니다.
+          「혜택 적용가」는 MBFSK 금융 이용 시 최대 혜택을 적용한 금액입니다.
         </p>
       </div>
 
@@ -872,6 +872,17 @@ button,input,select{font:inherit;color:inherit}
      ───────────────────────────────────────────────────────── */
   var PRICE_YEAR = 2026, PRICE_MONTH = 9;
   var PRICE_ASOF = PRICE_YEAR + "년 " + PRICE_MONTH + "월 기준";
+
+  /* 제목과 안내 문구의 "○월"은 표에 실린 자료의 달을 따른다.
+     달력상 이번 달이 아니라 PRICE_MONTH 를 쓰는 이유 —
+     10월에 9월 숫자를 두고 "10월 혜택"이라고 쓰면 틀린 안내가 된다.
+     자료가 지난 달이면 아래 renderStale() 이 배너로 알린다. */
+  (function priceHeading(){
+    var t = document.getElementById("pricetitle");
+    var n = document.getElementById("pricemonthnote");
+    if (t) t.textContent = "차량 가격 및 " + PRICE_MONTH + "월 혜택";
+    if (n) n.textContent = PRICE_MONTH + "월";
+  })();
   var PRICE_ROWS = [
     { model:"C-Class", trim:"C 200 AV",            seg:"sedan", msrp: 65100000, fin:14, cash:10, lrate: 4.30 },
     { model:"C-Class", trim:"C 200 AMG Line",      seg:"sedan", msrp: 68300000, fin:14, cash:10, lrate: 4.30 },
