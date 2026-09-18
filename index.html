@@ -117,8 +117,24 @@ button,input,select{font:inherit;color:inherit}
   letter-spacing:.18em;text-transform:uppercase;
 }
 .brand span{font-family:var(--f-mono);font-size:.6875rem;color:var(--muted);letter-spacing:.06em}
-.nav{display:none;gap:1.6rem;font-size:var(--s--1);color:var(--ink-2)}
-.nav a:hover{color:var(--accent)}
+.nav{display:none;gap:.3rem;font-size:var(--s--1);color:var(--ink-2)}
+.nav a{
+  position:relative;padding:.5rem .8rem;border-radius:999px;
+  color:var(--ink-2);font-weight:500;letter-spacing:.01em;
+  transition:color .18s ease,background .18s ease;
+}
+/* 골드 밑줄 — 평소엔 접혀 있다가 hover·현재 섹션에서 펼쳐진다 */
+.nav a::after{
+  content:"";position:absolute;left:.8rem;right:.8rem;bottom:.26rem;height:1px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .22s ease;
+}
+.nav a:hover{color:var(--accent-2);background:var(--accent-wash)}
+.nav a:hover::after{transform:scaleX(1)}
+.nav a.is-active{color:var(--accent-2);background:var(--accent-wash)}
+.nav a.is-active::after{transform:scaleX(1)}
+@media(prefers-reduced-motion:reduce){.nav a::after{transition:none}}
 @media(min-width:900px){.nav{display:flex}}
 .top-actions{display:flex;gap:.5rem}
 
@@ -924,6 +940,27 @@ button,input,select{font:inherit;color:inherit}
         '</figure>';
     }).join("");
     if (note) note.textContent = SHOTS_NOTE;
+  })();
+
+  /* ── 상단 메뉴 — 지금 보고 있는 섹션을 골드로 켠다 ───── */
+  (function navSpy(){
+    var links = [].slice.call(document.querySelectorAll(".nav a[href^='#']"));
+    if (!links.length || !("IntersectionObserver" in window)) return;
+    var map = {};
+    links.forEach(function(a){
+      var el = document.getElementById(a.getAttribute("href").slice(1));
+      if (el) map[el.id] = a;
+    });
+    var ids = Object.keys(map);
+    if (!ids.length) return;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        links.forEach(function(a){ a.classList.remove("is-active"); });
+        map[e.target.id].classList.add("is-active");
+      });
+    }, { rootMargin:"-45% 0px -50% 0px", threshold:0 });
+    ids.forEach(function(id){ io.observe(document.getElementById(id)); });
   })();
 
   /* Scroll reveal */
