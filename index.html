@@ -858,14 +858,15 @@ button,input,select{font:inherit;color:inherit}
 <script>
 (function(){
   /* ─────────────────────────────────────────────────────────
-     쇼룸 사진 — 사진을 바꾸려면 images/ 폴더의 파일을
-     같은 이름으로 덮어쓰기만 하면 됩니다. 차가 바뀌었을 때만
-     아래 title / note 를 고치세요.
+     쇼룸 사진 — 사진을 바꿀 때는 images/ 폴더에 **새 이름**으로 넣고
+     아래 src 를 그 이름으로 고치세요. 같은 이름으로 덮어쓰면 한 번이라도
+     사이트를 열어 본 사람의 브라우저가 옛 사진을 계속 보여줍니다.
+     차가 바뀌었을 때는 title / note 도 함께 고치세요.
      ───────────────────────────────────────────────────────── */
   var SHOTS = [
-    { src:"images/shot-1.jpg", title:"GLC 300 4MATIC 쿠페 아방가르드", note:"인천전시장 · 출고 당일" },
-    { src:"images/shot-2.jpg", title:"S 450 4MATIC Long AMG Line", note:"인천전시장 · 정면" },
-    { src:"images/shot-3.jpg", title:"GLC 300 4MATIC 쿠페 아방가르드", note:"실내 · 앰비언트 라이트" }
+    { src:"images/shot-s450-1.jpg", title:"S 450 4MATIC Long AMG Line", note:"인천전시장 · 정면" },
+    { src:"images/shot-s450-2.jpg", title:"S 450 4MATIC Long AMG Line", note:"인천전시장 · 정면" },
+    { src:"images/shot-s450-3.jpg", title:"S 450 4MATIC Long AMG Line", note:"인천전시장 · 정면" }
   ];
   var SHOTS_NOTE = "모든 사진은 인천전시장에서 직접 촬영했습니다";
 
