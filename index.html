@@ -329,6 +329,13 @@ button,input,select{font:inherit;color:inherit}
 #pricetable{min-width:1080px}
 #pricetable .p-memo{display:block;white-space:normal;margin-left:0;margin-top:.2rem}
 #yearfilters{margin-top:-.4rem}
+/* 연식 구분 — 27년식은 파랑(프로모션표의 하늘색 행과 같은 뜻), 26년식은 회색 */
+.p-year{display:inline-block;padding:.2rem .55rem;border-radius:999px;font-family:var(--f-mono);font-size:.75rem;white-space:nowrap;border:1px solid var(--line);color:var(--muted)}
+#pricetable tr.y27{background:rgba(74,144,255,.075)}
+#pricetable tr.y27:hover{background:rgba(74,144,255,.14)}
+#pricetable tr.y27 th[scope="row"]{box-shadow:inset 3px 0 0 #4a90ff}
+#pricetable tr.y27 .p-year{background:#4a90ff;border-color:#4a90ff;color:#fff;font-weight:600}
+#yearfilters .chip[data-year="27"][aria-pressed="true"]{background:#4a90ff;border-color:#4a90ff;color:#fff}
 .sheet caption{text-align:left;padding:1rem 1.15rem;font-family:var(--f-mono);font-size:var(--s--1);color:var(--muted);letter-spacing:.06em;border-bottom:1px solid var(--line)}
 .sheet th,.sheet td{text-align:left;padding:.95rem 1.15rem;border-bottom:1px solid var(--line-soft);vertical-align:baseline}
 .sheet thead th{
@@ -1147,9 +1154,10 @@ button,input,select{font:inherit;color:inherit}
           '<span class="p-rate2">현금 ' + row.cash + '%' + (row.fin > row.cash ? ' + 할부 시 +' + (row.fin - row.cash) + '%' : '') + '</span>'
         : '<span class="p-rate2">기본 할인 없음</span>';
       var tr = document.createElement("tr");
+      tr.className = "y" + row.year;
       tr.innerHTML =
         '<th scope="row"><span class="p-model">' + row.model + '</span></th>' +
-        '<td><span class="p-mo">' + row.year + '년식</span></td>' +
+        '<td><span class="p-year">' + row.year + '년식</span></td>' +
         '<td class="p-trim">' + row.trim +
           (row.memo ? ' <span class="p-memo">' + row.memo + '</span>' : '') + '</td>' +
         '<td>' + (has ? '<span class="p-num">' + won.format(manwon(row.msrp)) + '<i>만원</i>' + from + '</span>' : '<span class="p-rate2">가격 문의</span>') + '</td>' +
