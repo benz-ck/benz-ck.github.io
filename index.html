@@ -897,7 +897,7 @@ button,input,select{font:inherit;color:inherit}
        seg   : sedan / suv / amg
      기준 월이 지나면 표 위에 안내 배너가 자동으로 뜹니다.
      ───────────────────────────────────────────────────────── */
-  var PRICE_YEAR = 2026, PRICE_MONTH = 9;
+  var PRICE_YEAR = 2026, PRICE_MONTH = 10;
   var PRICE_ASOF = PRICE_YEAR + "년 " + PRICE_MONTH + "월 기준";
 
   /* 제목과 안내 문구의 "○월"은 표에 실린 자료의 달을 따른다.
@@ -913,16 +913,16 @@ button,input,select{font:inherit;color:inherit}
   var PRICE_ROWS = [
     { model:"C-Class", trim:"C 200 AV",            seg:"sedan", msrp: 65100000, fin:14, cash:10, lrate: 4.30 },
     { model:"C-Class", trim:"C 200 AMG Line",      seg:"sedan", msrp: 68300000, fin:14, cash:10, lrate: 4.30 },
-    { model:"E-Class", trim:"E 200 Exclusive",     seg:"sedan", msrp: 77500000, fin:15, cash: 8, lrate: 4.30 },
-    { model:"E-Class", trim:"E 200 AMG Line",      seg:"sedan", msrp: 81000000, fin:16, cash:12, lrate: 4.30 },
+    { model:"E-Class", trim:"E 200 Exclusive",     seg:"sedan", msrp: 77500000, fin:20, cash:15, lrate: 4.30 },
+    { model:"E-Class", trim:"E 200 AMG Line",      seg:"sedan", msrp: 81000000, fin:19, cash:15, lrate: 4.30 },
     { model:"E-Class", trim:"E 300 4M Exclusive",  seg:"sedan", msrp: 94800000, fin:14, cash:10, lrate: 4.30 },
     { model:"S-Class", trim:"S 450 4M SWB (MY26)", seg:"sedan", msrp:162000000, fin:11, cash: 7, lrate: 4.30, memo:"운용리스 13%" },
     { model:"GLA",     trim:"GLA 250 4M",          seg:"suv",   msrp: 70000000, fin:13, cash: 9, lrate: 4.90 },
-    { model:"GLB",     trim:"GLB 250 4M",          seg:"suv",   msrp: 72000000, fin:13, cash: 9, lrate: 4.90 },
+    { model:"GLB",     trim:"GLB 250 4M",          seg:"suv",   msrp: 72000000, fin:17, cash:13, lrate: 4.90 },
     { model:"GLC",     trim:"GLC 300 4M AV SUV",   seg:"suv",   msrp: 82500000, fin:11, cash: 7, lrate: 4.30 },
     { model:"GLC",     trim:"GLC 300 4M AV Coupé", seg:"suv",   msrp: 86600000, fin:11, cash: 7, lrate: 4.30 },
-    { model:"GLE",     trim:"GLE 450 4M SUV",      seg:"suv",   msrp:139000000, fin:16, cash:12, lrate: 4.20 },
-    { model:"GLE",     trim:"GLE 450 4M Coupé",    seg:"suv",   msrp:142500000, fin:16, cash:12, lrate: 4.20 },
+    { model:"GLE",     trim:"GLE 450 4M AMG Line", seg:"suv",   msrp:139000000, fin:16, cash:12, lrate: 4.20 },
+    { model:"GLE",     trim:"GLE 450 4M Coupé",    seg:"suv",   msrp:142500000, fin:19, cash:15, lrate: 4.20 },
     { model:"Mercedes-AMG", trim:"AMG GLB 35 4M",  seg:"amg",   msrp: 79500000, fin:13, cash: 9, lrate: 4.90 },
     { model:"Mercedes-AMG", trim:"AMG A 45 S 4M+", seg:"amg",   msrp: 81400000, fin:11, cash: 7, lrate: 4.90 }
   ];
