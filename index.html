@@ -352,6 +352,13 @@ button,input,select{font:inherit;color:inherit}
 #pricetable .p-rate2{display:inline;margin:0 0 0 .45rem}
 #pricetable td:nth-child(5){white-space:nowrap}
 #pricetable .p-memo{font-size:.625rem;margin-top:.1rem}
+/* 최대 할인가 — 재구매·트레이드인까지 다 넣은 금액. 연식 색(파랑·골드)과 겹치지 않게 초록 */
+#pricetable th.p-maxh{color:#4ade80}
+#pricetable th.p-maxh small{font-size:.625rem;letter-spacing:0;text-transform:none;color:var(--muted)}
+#pricetable td.p-maxc{background:rgba(74,222,128,.08);white-space:nowrap}
+#pricetable .p-max{font-family:var(--f-display);font-weight:700;font-size:var(--s-0);color:#4ade80;font-variant-numeric:tabular-nums}
+#pricetable .p-max i{font-style:normal;font-size:var(--s--1);color:var(--muted);margin-left:.15rem;font-family:var(--f-body)}
+#pricetable td.p-maxc .p-rate2{display:inline;margin-left:.4rem}
 .sheet caption{text-align:left;padding:1rem 1.15rem;font-family:var(--f-mono);font-size:var(--s--1);color:var(--muted);letter-spacing:.06em;border-bottom:1px solid var(--line)}
 .sheet th,.sheet td{text-align:left;padding:.95rem 1.15rem;border-bottom:1px solid var(--line-soft);vertical-align:baseline}
 .sheet thead th{
@@ -669,7 +676,7 @@ button,input,select{font:inherit;color:inherit}
         <p class="section__note">
           <span id="pricemonthnote">이번 달</span> 프로모션 할인입니다. 현금 할인에 더해 MBM 할부를 이용하시면 특별 할인이 추가됩니다.
           「할인 적용가」는 현금 할인과 할부 특별 할인을 합산해 적용한 금액입니다.
-          재구매(벤츠 보유 고객)와 트레이드인(타던 차 매각) 할인은 해당되시면 여기에 추가로 더해집니다.
+          재구매(벤츠 보유 고객)와 트레이드인(타던 차 매각) 할인은 해당되시면 추가로 더해지고, 마지막 「최대 할인가」는 이 둘까지 모두 적용한 금액입니다.
         </p>
       </div>
 
@@ -704,6 +711,7 @@ button,input,select{font:inherit;color:inherit}
               <th scope="col">할인 적용가</th>
               <th scope="col">재구매</th>
               <th scope="col">트레이드인</th>
+              <th scope="col" class="p-maxh">최대 할인가<br><small>재구매·트레이드인 포함</small></th>
             </tr>
           </thead>
           <tbody id="pricebody"></tbody>
@@ -1178,7 +1186,8 @@ button,input,select{font:inherit;color:inherit}
         '<td>' + disc + '</td>' +
         '<td>' + (has ? '<span class="p-best">' + won.format(manwon(best)) + '<i>만원</i>' + from + '</span>' : '—') + '</td>' +
         '<td><span class="p-rate">' + (row.ret ? '+' + row.ret + '%' : '—') + '</span></td>' +
-        '<td><span class="p-rate">' + (row.trade ? '+' + row.trade + '%' : '—') + '</span></td>';
+        '<td><span class="p-rate">' + (row.trade ? '+' + row.trade + '%' : '—') + '</span></td>' +
+        '<td class="p-maxc">' + (has ? '<span class="p-max">' + won.format(manwon(Math.round(row.msrp * (1 - (row.fin + row.ret + row.trade) / 100)))) + '<i>만원</i>' + from + '</span>' : '—') + '</td>';
       body.appendChild(tr);
     });
   }
