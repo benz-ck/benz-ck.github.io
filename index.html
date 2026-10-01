@@ -365,6 +365,31 @@ button,input,select{font:inherit;color:inherit}
 }
 @media(max-width:1099px){#pricetable .p-cut{display:none}#pricetable td:nth-child(5){white-space:normal}#pricetable td:nth-child(5) .p-rate2{display:block;margin:0}#pricetable .p-year{padding:.15rem .4rem;font-size:.6875rem}}
 @media(max-width:899px){#pricetable{min-width:880px}}
+.p-year-m,.p-hint{display:none}
+#pricetable tr.y27{--rt:rgba(74,144,255,.075)}
+#pricetable tr.y26{--rt:rgba(198,160,99,.07)}
+/* 휴대폰 — 연식 칸 대신 트림 앞 배지, 트림 칸은 가로 스크롤해도 왼쪽에 고정 */
+@media(max-width:699px){
+  .p-hint{display:block;font-family:var(--f-mono);font-size:.75rem;color:var(--accent);margin:0 0 .5rem}
+  #pricetable{min-width:820px}
+  #pricetable th:nth-child(2),#pricetable tbody td:nth-child(2){display:none}
+  #pricetable .p-year-m{display:inline-block;margin:0 .35rem .15rem 0;padding:.05rem .4rem;font-size:.625rem;vertical-align:1px}
+  #pricetable tr.y27 .p-year-m{background:#4a90ff;border-color:#4a90ff;color:#fff;font-weight:600}
+  #pricetable tr.y26 .p-year-m{background:#C6A063;border-color:#C6A063;color:#14110a;font-weight:600}
+  #pricetable thead th:nth-child(3),#pricetable td.p-trim{position:sticky;left:0;z-index:2}
+  #pricetable td.p-trim{background:linear-gradient(var(--rt,transparent),var(--rt,transparent)),var(--surface);box-shadow:inset 3px 0 0 var(--yc,transparent),6px 0 8px -6px rgba(0,0,0,.6);min-width:8.5rem;max-width:9.5rem}
+  #pricetable thead th:nth-child(3){background:var(--surface)}
+}
+/* 휴대폰 상단 바 — 버튼 글자 줄바꿈 방지 */
+.top-actions .btn{white-space:nowrap}
+@media(max-width:480px){.brand span{font-size:.5625rem;letter-spacing:.02em}.top-actions .btn--sm{padding:.45rem .7rem}}
+/* 휴대폰 TOP 5 — 할인 금액은 다음 줄, % 는 조금 작게 */
+@media(max-width:600px){
+  .deals{padding:1.1rem 1rem 1rem}
+  .deals__pct{font-size:var(--s-2)}
+  .deals__price{white-space:normal}
+  .deals__price em{display:block;margin-left:0;margin-top:.1rem}
+}
 #pricetable .p-memo{display:block;white-space:normal;margin-left:0;margin-top:.2rem}
 #yearfilters{margin-top:-.4rem}
 /* 연식 구분 — 27년식은 파랑(프로모션표의 하늘색 행과 같은 뜻), 26년식은 회색 */
@@ -757,6 +782,7 @@ button,input,select{font:inherit;color:inherit}
         <span id="pricestaletext"></span>
       </p>
 
+      <p class="p-hint">표를 옆으로 밀면 할인·최대 할인가가 보입니다 &rarr;</p>
       <div class="sheet">
         <table id="pricetable">
           <caption id="pricecap"></caption>
@@ -1289,7 +1315,7 @@ button,input,select{font:inherit;color:inherit}
       tr.innerHTML =
         '<th scope="row"><span class="p-model">' + row.model.replace('Mercedes-', '') + '</span></th>' +
         '<td><span class="p-year">' + row.year + '년식</span></td>' +
-        '<td class="p-trim">' + row.trim +
+        '<td class="p-trim"><span class="p-year p-year-m">' + row.year + '</span>' + row.trim +
           (row.memo ? ' <span class="p-memo">' + row.memo + '</span>' : '') +
           (row.ew ? ' <span class="p-perk">' + (EW_LABEL[row.ew] || '') + '</span>' : '') + '</td>' +
         '<td>' + (has ? '<span class="p-num">' + won.format(manwon(row.msrp)) + '<i>만원</i>' + from + '</span>' : '<span class="p-rate2">가격 문의</span>') + '</td>' +
