@@ -351,7 +351,20 @@ button,input,select{font:inherit;color:inherit}
 .sheet{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
 .section--raise .sheet{background:var(--surface-2)}
 .sheet table{width:100%;min-width:820px;border-collapse:collapse}
-#pricetable{min-width:980px}
+#pricetable{min-width:0}
+/* 가격표 구역은 넓게 — 116행·10칸이라 기본 폭(1022px)으론 끝 칸이 잘린다 */
+#prices .wrap{max-width:1440px}
+/* 중간 폭: 모델 칸 숨김(트림에 차종이 들어 있다) / 더 좁으면 할인 금액 숨김(할인 적용가에 같은 정보) / 휴대폰은 가로 스크롤 */
+@media(max-width:1299px){#pricetable th:first-child,#pricetable tbody th[scope="row"]{display:none}#pricetable tbody td:nth-child(2){box-shadow:inset 3px 0 0 var(--yc,transparent)}}
+@media(max-width:1199px){
+  #pricetable th,#pricetable td{padding:.45rem .4rem}
+  #pricetable{font-size:.92em}
+  #pricetable .p-rate,#pricetable .p-max,#pricetable .p-num,#pricetable .p-best{font-size:var(--s-0)}
+  #pricetable .p-trim{min-width:7.5rem}
+  #pricetable .p-num i,#pricetable .p-best i,#pricetable .p-max i{font-size:.7rem}
+}
+@media(max-width:1099px){#pricetable .p-cut{display:none}#pricetable td:nth-child(5){white-space:normal}#pricetable td:nth-child(5) .p-rate2{display:block;margin:0}#pricetable .p-year{padding:.15rem .4rem;font-size:.6875rem}}
+@media(max-width:899px){#pricetable{min-width:880px}}
 #pricetable .p-memo{display:block;white-space:normal;margin-left:0;margin-top:.2rem}
 #yearfilters{margin-top:-.4rem}
 /* 연식 구분 — 27년식은 파랑(프로모션표의 하늘색 행과 같은 뜻), 26년식은 회색 */
@@ -359,12 +372,14 @@ button,input,select{font:inherit;color:inherit}
 #pricetable tr.y27{background:rgba(74,144,255,.075)}
 #pricetable tr.y27:hover{background:rgba(74,144,255,.14)}
 #pricetable tr.y27 th[scope="row"]{box-shadow:inset 3px 0 0 #4a90ff}
+#pricetable tr.y27{--yc:#4a90ff}
 #pricetable tr.y27 .p-year{background:#4a90ff;border-color:#4a90ff;color:#fff;font-weight:600}
 #yearfilters .chip[data-year="27"][aria-pressed="true"]{background:#4a90ff;border-color:#4a90ff;color:#fff}
 /* 26년식 — 사이트 골드 */
 #pricetable tr.y26{background:rgba(198,160,99,.07)}
 #pricetable tr.y26:hover{background:rgba(198,160,99,.14)}
 #pricetable tr.y26 th[scope="row"]{box-shadow:inset 3px 0 0 #C6A063}
+#pricetable tr.y26{--yc:#C6A063}
 #pricetable tr.y26 .p-year{background:#C6A063;border-color:#C6A063;color:#14110a;font-weight:600}
 #yearfilters .chip[data-year="26"][aria-pressed="true"]{background:#C6A063;border-color:#C6A063;color:#14110a}
 /* 116행이라 한 행을 한 줄로 — 할인 칸의 %·금액·내역을 붙이고 여백을 줄인다 */
