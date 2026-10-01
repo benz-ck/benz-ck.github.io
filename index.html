@@ -668,7 +668,7 @@ button,input,select{font:inherit;color:inherit}
         <span id="pricestaletext"></span>
       </p>
 
-      <div class="sheet rise">
+      <div class="sheet">
         <table id="pricetable">
           <caption id="pricecap"></caption>
           <thead>
@@ -1094,7 +1094,7 @@ button,input,select{font:inherit;color:inherit}
       entries.forEach(function(e){
         if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
       });
-    }, { threshold: 0.1, rootMargin: "0px 0px -6% 0px" });
+    }, { threshold: 0, rootMargin: "0px 0px -6% 0px" });
     risers.forEach(function(el){ io.observe(el); });
   }
 
