@@ -326,7 +326,7 @@ button,input,select{font:inherit;color:inherit}
 .sheet{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
 .section--raise .sheet{background:var(--surface-2)}
 .sheet table{width:100%;min-width:820px;border-collapse:collapse}
-#pricetable{min-width:1080px}
+#pricetable{min-width:980px}
 #pricetable .p-memo{display:block;white-space:normal;margin-left:0;margin-top:.2rem}
 #yearfilters{margin-top:-.4rem}
 /* 연식 구분 — 27년식은 파랑(프로모션표의 하늘색 행과 같은 뜻), 26년식은 회색 */
@@ -336,6 +336,22 @@ button,input,select{font:inherit;color:inherit}
 #pricetable tr.y27 th[scope="row"]{box-shadow:inset 3px 0 0 #4a90ff}
 #pricetable tr.y27 .p-year{background:#4a90ff;border-color:#4a90ff;color:#fff;font-weight:600}
 #yearfilters .chip[data-year="27"][aria-pressed="true"]{background:#4a90ff;border-color:#4a90ff;color:#fff}
+/* 26년식 — 사이트 골드 */
+#pricetable tr.y26{background:rgba(198,160,99,.07)}
+#pricetable tr.y26:hover{background:rgba(198,160,99,.14)}
+#pricetable tr.y26 th[scope="row"]{box-shadow:inset 3px 0 0 #C6A063}
+#pricetable tr.y26 .p-year{background:#C6A063;border-color:#C6A063;color:#14110a;font-weight:600}
+#yearfilters .chip[data-year="26"][aria-pressed="true"]{background:#C6A063;border-color:#C6A063;color:#14110a}
+/* 116행이라 한 행을 한 줄로 — 할인 칸의 %·금액·내역을 붙이고 여백을 줄인다 */
+#pricetable th,#pricetable td{padding:.5rem .6rem;vertical-align:middle}
+#pricetable thead th{padding-block:.6rem}
+#pricetable .p-trim{white-space:normal;min-width:9rem}
+#pricetable .p-model,#pricetable .p-num,#pricetable .p-best{font-size:var(--s-0)}
+#pricetable .p-rate{font-size:var(--s-1)}
+#pricetable .p-cut{display:inline;margin:0 0 0 .45rem;font-size:var(--s--1)}
+#pricetable .p-rate2{display:inline;margin:0 0 0 .45rem}
+#pricetable td:nth-child(5){white-space:nowrap}
+#pricetable .p-memo{font-size:.625rem;margin-top:.1rem}
 .sheet caption{text-align:left;padding:1rem 1.15rem;font-family:var(--f-mono);font-size:var(--s--1);color:var(--muted);letter-spacing:.06em;border-bottom:1px solid var(--line)}
 .sheet th,.sheet td{text-align:left;padding:.95rem 1.15rem;border-bottom:1px solid var(--line-soft);vertical-align:baseline}
 .sheet thead th{
@@ -684,11 +700,11 @@ button,input,select{font:inherit;color:inherit}
               <th scope="col">연식</th>
               <th scope="col">트림</th>
               <th scope="col">판매가격</th>
-              <th scope="col">할인 (현금 + 할부 시 추가)</th>
+              <th scope="col">할인 (현금 + 할부)</th>
               <th scope="col">재구매</th>
               <th scope="col">트레이드인</th>
               <th scope="col">할인 적용가</th>
-              <th scope="col">운용리스 금리</th>
+              <th scope="col">리스 금리</th>
             </tr>
           </thead>
           <tbody id="pricebody"></tbody>
@@ -1151,12 +1167,12 @@ button,input,select{font:inherit;color:inherit}
       var disc = row.fin > 0
         ? '<span class="p-rate">' + row.fin + '%</span>' +
           (has ? '<span class="p-cut">−' + won.format(manwon(row.msrp - best)) + '만원</span>' : '') +
-          '<span class="p-rate2">현금 ' + row.cash + '%' + (row.fin > row.cash ? ' + 할부 시 +' + (row.fin - row.cash) + '%' : '') + '</span>'
+          '<span class="p-rate2">현금 ' + row.cash + '%' + (row.fin > row.cash ? ' + 할부 ' + (row.fin - row.cash) + '%' : '') + '</span>'
         : '<span class="p-rate2">기본 할인 없음</span>';
       var tr = document.createElement("tr");
       tr.className = "y" + row.year;
       tr.innerHTML =
-        '<th scope="row"><span class="p-model">' + row.model + '</span></th>' +
+        '<th scope="row"><span class="p-model">' + row.model.replace('Mercedes-', '') + '</span></th>' +
         '<td><span class="p-year">' + row.year + '년식</span></td>' +
         '<td class="p-trim">' + row.trim +
           (row.memo ? ' <span class="p-memo">' + row.memo + '</span>' : '') + '</td>' +
