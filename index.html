@@ -429,6 +429,55 @@ button,input,select{font:inherit;color:inherit}
 #pricetable .p-memo{font-size:.625rem;margin-top:.1rem}
 /* 추가 혜택(보증연장) — 트림 아래 청록 배지 */
 #pricetable .p-perk{display:inline-block;margin-top:.2rem;padding:.12rem .5rem;border-radius:6px;background:rgba(45,212,191,.12);border:1px solid rgba(45,212,191,.45);color:#5eead4;font-size:.625rem;font-family:var(--f-mono);white-space:normal;line-height:1.4}
+/* 차종별 묶음 보기 */
+.viewtoggle{display:flex;gap:.5rem;margin:.2rem 0 1rem}
+.pgroups{display:grid;gap:.6rem}
+.pg{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden}
+.pg.is-open{border-color:rgba(198,160,99,.55)}
+.pg__head{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:grid;grid-template-columns:minmax(7rem,auto) auto 1fr auto 1.2rem;align-items:center;gap:.4rem 1rem;padding:1rem 1.15rem}
+.pg__head:hover{background:var(--accent-wash)}
+.pg__head:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.pg__name{font-family:var(--f-display);font-weight:700;font-size:var(--s-1);color:var(--ink)}
+.pg__years{display:flex;gap:.25rem}
+.pg__y{display:inline-block;font-style:normal;font-family:var(--f-mono);font-size:.6875rem;font-weight:600;padding:.08rem .42rem;border-radius:999px}
+.pg__y27{background:#4a90ff;color:#fff}
+.pg__y26{background:#C6A063;color:#14110a}
+.pg__best{font-size:var(--s--1);color:var(--ink-2);text-align:right}
+.pg__best b{font-family:var(--f-display);font-size:var(--s-1);color:var(--accent-2)}
+.pg__best em{font-style:normal;color:#4ade80;font-weight:600}
+.pg__n{font-family:var(--f-mono);font-size:.6875rem;color:var(--muted);white-space:nowrap}
+.pg__chev{width:.6rem;height:.6rem;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);transition:transform .2s;justify-self:center}
+.pg.is-open .pg__chev{transform:rotate(-135deg)}
+.pg__list{list-style:none;margin:0;padding:0 1.15rem .6rem;border-top:1px solid var(--line-soft)}
+.pg__row{display:grid;grid-template-columns:minmax(0,2.2fr) 1fr 1.3fr 1.4fr;gap:.2rem 1rem;align-items:center;padding:.7rem 0 .7rem .7rem;border-bottom:1px solid var(--line-soft);box-shadow:inset 3px 0 0 var(--yc2,transparent)}
+.pg__row:last-child{border-bottom:0}
+.pg__row.y27{--yc2:#4a90ff}
+.pg__row.y26{--yc2:#C6A063}
+.pg__trim{font-size:var(--s--1);color:var(--ink);display:flex;align-items:center;gap:.45rem}
+.pg__msrp{font-size:var(--s--1);color:var(--ink-2);font-variant-numeric:tabular-nums;white-space:nowrap}
+.pg__disc{font-size:var(--s--1);color:var(--ink-2);white-space:nowrap}
+.pg__disc b{color:var(--accent-2);font-family:var(--f-display)}
+.pg__max{text-align:right;white-space:nowrap}
+.pg__max small{font-family:var(--f-mono);font-size:.6875rem;color:var(--muted)}
+.pg__max b{color:#4ade80;font-family:var(--f-display);font-size:var(--s-0)}
+.pg__extra{grid-column:1/-1;font-family:var(--f-mono);font-size:.6875rem;color:var(--muted)}
+.pg__conq{color:#cdb5ff}
+.pg__ew{color:#5eead4}
+.pg__empty{color:var(--muted);padding:1rem}
+@media(max-width:699px){
+  .pg__head{grid-template-columns:1fr auto 1.2rem;padding:.9rem 1rem}
+  .pg__name{grid-row:1;grid-column:1/3}
+  .pg__chev{grid-row:1;grid-column:3}
+  .pg__years{grid-row:2;grid-column:1}
+  .pg__best{grid-row:2;grid-column:2/4;text-align:right}
+  .pg__n{display:none}
+  .pg__list{padding:0 .9rem .5rem}
+  .pg__row{grid-template-columns:1fr auto;gap:.15rem .6rem}
+  .pg__trim{grid-column:1/-1}
+  .pg__msrp{grid-column:1}
+  .pg__max{grid-column:2;grid-row:2/4}
+  .pg__disc{grid-column:1}
+}
 /* 컨퀘스트 — 타 프리미엄 브랜드 보유 고객 추가 할인. 해당 차만 보라 배지 */
 #pricetable th.p-conqh{color:#b794ff}
 #pricetable th.p-conqh small{font-size:.625rem;letter-spacing:0;text-transform:none;color:var(--muted)}
@@ -792,6 +841,12 @@ button,input,select{font:inherit;color:inherit}
         <span id="pricestaletext"></span>
       </p>
 
+      <div class="viewtoggle" role="group" aria-label="보기 방식">
+        <button class="chip" type="button" data-view="groups" aria-pressed="true">차종별로 보기</button>
+        <button class="chip" type="button" data-view="table" aria-pressed="false">전체 표로 보기</button>
+      </div>
+      <div class="pgroups" id="pricegroups"></div>
+      <div class="ptable-wrap" id="ptablewrap" hidden>
       <p class="p-hint">표를 옆으로 밀면 할인·최대 할인가가 보입니다 &rarr;</p>
       <div class="sheet">
         <table id="pricetable">
@@ -812,6 +867,7 @@ button,input,select{font:inherit;color:inherit}
           </thead>
           <tbody id="pricebody"></tbody>
         </table>
+      </div>
       </div>
       <p class="conq-note">
         <b>컨퀘스트(프리미엄 브랜드 특별 할인)</b> — 지금 타시는 차가 아래 브랜드면 해당 모델 신차 구매 시 추가 할인됩니다.<br>
@@ -1339,12 +1395,100 @@ button,input,select{font:inherit;color:inherit}
     });
   }
 
+  /* 차종별 묶음 보기 — 같은 PRICE_ROWS 를 차종(model)으로 묶어 카드로. 카드 제목엔 그 차종의 최고 조건만 */
+  /* 묶음 = 차종 계열. AMG 는 원래 차종으로(AMG E 53 → E-Class), GT·SL 만 따로 */
+  var FAM_ORDER = ["A-Class","CLA","C-Class","E-Class","S-Class","Maybach","CLE","AMG GT · SL","GLA","GLB","GLC","GLE","GLS","G-Class","EQA","EQB","EQE","EQS"];
+  function famOf(r){
+    var t = r.trim;
+    if (r.model === "Mercedes-Maybach") return "Maybach";
+    if (/^G 580/.test(t)) return "G-Class";
+    if (/^EQ[ABES]/.test(t)) return t.slice(0, 3);
+    if (r.model !== "Mercedes-AMG") return r.model;
+    var m = t.replace(/^AMG /, "");
+    if (/^(GT|SL)/.test(m)) return "AMG GT · SL";
+    if (/^A /.test(m)) return "A-Class";
+    if (/^CLA/.test(m)) return "CLA";
+    if (/^CLE/.test(m)) return "CLE";
+    if (/^GLB/.test(m)) return "GLB";
+    if (/^GLC/.test(m)) return "GLC";
+    if (/^GLE/.test(m)) return "GLE";
+    if (/^GLS/.test(m)) return "GLS";
+    if (/^G /.test(m)) return "G-Class";
+    if (/^E /.test(m)) return "E-Class";
+    if (/^S /.test(m)) return "S-Class";
+    return "AMG GT · SL";
+  }
+  var groupsEl = document.getElementById("pricegroups");
+  var openGroups = {};
+  function renderGroups(){
+    if (!groupsEl) return;
+    var tot = function(r){ return r.fin + r.ret + r.trade; };
+    var mw = function(v){ var m = Math.round(v / 10000), e = Math.floor(m / 10000), r = m % 10000;
+      return r ? (e ? e + "억 " : "") + won.format(r) + "만원" : e + "억원"; };
+    var order = [], by = {};
+    PRICE_ROWS.forEach(function(r){
+      if (segNow !== "all" && r.seg !== segNow) return;
+      if (yearNow !== "all" && String(r.year) !== yearNow) return;
+      var g = famOf(r);
+      if (!by[g]) { by[g] = []; order.push(g); }
+      by[g].push(r);
+    });
+    order.sort(function(a, b){ return FAM_ORDER.indexOf(a) - FAM_ORDER.indexOf(b); });
+    groupsEl.innerHTML = order.map(function(g){
+      var rows = by[g], priced = rows.filter(function(r){ return r.msrp !== null; });
+      var bestPct = Math.max.apply(null, rows.map(tot));
+      var minMax = priced.length ? Math.min.apply(null, priced.map(function(r){ return Math.round(r.msrp * (1 - tot(r) / 100)); })) : null;
+      var years = rows.map(function(r){ return r.year; }).filter(function(v, i, a){ return a.indexOf(v) === i; }).sort().reverse();
+      var head =
+        '<button class="pg__head" type="button" aria-expanded="' + (!!openGroups[g]) + '" data-g="' + g + '">' +
+          '<span class="pg__name">' + g + '</span>' +
+          '<span class="pg__years">' + years.map(function(y){ return '<i class="pg__y pg__y' + y + '">' + y + '</i>'; }).join("") + '</span>' +
+          '<span class="pg__best">' + (bestPct > 0 ? '최대 <b>' + bestPct + '%</b>' : '') +
+            (minMax ? ' · <em>' + mw(minMax) + '부터</em>' : '') + '</span>' +
+          '<span class="pg__n">' + rows.length + '개 트림</span><span class="pg__chev" aria-hidden="true"></span>' +
+        '</button>';
+      var body = '<ul class="pg__list"' + (openGroups[g] ? '' : ' hidden') + '>' + rows.map(function(r){
+        var has = r.msrp !== null, t = tot(r), from = r.from ? ' 부터' : '';
+        var best = has ? Math.round(r.msrp * (1 - r.fin / 100)) : null, max = has ? Math.round(r.msrp * (1 - t / 100)) : null;
+        var extras = [];
+        if (r.ret) extras.push('재구매 +' + r.ret + '%');
+        if (r.trade) extras.push('트레이드인 +' + r.trade + '%');
+        if (r.conq) extras.push('<span class="pg__conq">타 브랜드 +' + r.conq + '%</span>');
+        if (r.ew) extras.push('<span class="pg__ew">보증연장</span>');
+        return '<li class="pg__row y' + r.year + '">' +
+          '<span class="pg__trim"><i class="pg__y pg__y' + r.year + '">' + r.year + '</i>' + r.trim + '</span>' +
+          '<span class="pg__msrp">' + (has ? mw(r.msrp) + from : '가격 문의') + '</span>' +
+          '<span class="pg__disc">' + (r.fin > 0 ? '<b>' + r.fin + '%</b> ' + (has ? mw(best) : '') : '기본 할인 없음') + '</span>' +
+          '<span class="pg__max">' + (has ? '<small>최대 ' + t + '%</small> <b>' + mw(max) + '</b>' + from : '—') + '</span>' +
+          (extras.length ? '<span class="pg__extra">' + extras.join(' · ') + '</span>' : '') +
+        '</li>';
+      }).join("") + '</ul>';
+      return '<div class="pg' + (openGroups[g] ? ' is-open' : '') + '">' + head + body + '</div>';
+    }).join("") || '<p class="pg__empty">조건에 맞는 차량이 없습니다.</p>';
+  }
+  if (groupsEl) groupsEl.addEventListener("click", function(e){
+    var b = e.target.closest(".pg__head"); if (!b) return;
+    var g = b.dataset.g; openGroups[g] = !openGroups[g];
+    var box = b.parentNode; box.classList.toggle("is-open", !!openGroups[g]);
+    b.setAttribute("aria-expanded", String(!!openGroups[g]));
+    box.querySelector(".pg__list").hidden = !openGroups[g];
+  });
+  var viewChips = document.querySelectorAll(".viewtoggle .chip");
+  viewChips.forEach(function(chip){
+    chip.addEventListener("click", function(){
+      var v = chip.dataset.view;
+      viewChips.forEach(function(c){ c.setAttribute("aria-pressed", String(c === chip)); });
+      document.getElementById("pricegroups").hidden = v !== "groups";
+      document.getElementById("ptablewrap").hidden = v !== "table";
+    });
+  });
+
   var priceChips = document.querySelectorAll("#pricefilters .chip");
   priceChips.forEach(function(chip){
     chip.addEventListener("click", function(){
       segNow = chip.dataset.seg;
       priceChips.forEach(function(c){ c.setAttribute("aria-pressed", String(c === chip)); });
-      renderPrices();
+      renderPrices(); renderGroups();
     });
   });
 
@@ -1354,11 +1498,12 @@ button,input,select{font:inherit;color:inherit}
     chip.addEventListener("click", function(){
       yearNow = chip.dataset.year;
       yearChips.forEach(function(c){ c.setAttribute("aria-pressed", String(c === chip)); });
-      renderPrices();
+      renderPrices(); renderGroups();
     });
   });
 
   renderPrices();
+  renderGroups();
 
   /* ─────────────────────────────────────────────────────
      모델 상세 — 제원은 벤츠코리아 공식 카탈로그 기준입니다.
