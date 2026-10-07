@@ -485,6 +485,8 @@ button,input,select{font:inherit;color:inherit}
 .conq-note{margin-top:1rem;padding:1rem 1.15rem;border:1px solid rgba(183,148,255,.35);border-radius:var(--r);background:rgba(183,148,255,.06);font-size:var(--s--1);color:var(--ink-2);line-height:1.7}
 .conq-note b{color:#cdb5ff}
 .ew-note{border-color:rgba(45,212,191,.35);background:rgba(45,212,191,.05)}
+.extra-note{border-color:rgba(198,160,99,.4);background:rgba(198,160,99,.05)}
+.extra-note b{color:var(--accent-2)}
 .ew-note b{color:#5eead4}
 /* 최대 할인가 — 재구매·트레이드인까지 다 넣은 금액. 연식 색(파랑·골드)과 겹치지 않게 초록 */
 #pricetable th.p-maxh{color:#4ade80}
@@ -872,7 +874,15 @@ button,input,select{font:inherit;color:inherit}
       <p class="conq-note">
         <b>컨퀘스트(프리미엄 브랜드 특별 할인)</b> — 지금 타시는 차가 아래 브랜드면 해당 모델 신차 구매 시 추가 할인됩니다.<br>
         · <b>GLC·GLE (SUV·쿠페, 전 연식) +1%</b> : BMW(MINI 제외)·아우디·제네시스·볼보·포르쉐·랜드로버·렉서스<br>
-        · <b>마이바흐 S 680·GLS 600 (26년식) +7%</b> : 위 브랜드 + 롤스로이스·벤틀리
+        · <b>마이바흐 S 680·GLS 600 (26년식) +7%</b> : 위 브랜드 + 롤스로이스·벤틀리<br>
+        · 신차 계약 월 1일 기준으로 기존 차량을 보유하고 계셔야 합니다. <b>재구매와 컨퀘스트는 둘 중 하나만</b>, 컨퀘스트는 트레이드인과 함께 받을 수 없습니다.
+      </p>
+      <p class="conq-note extra-note">
+        <b>그 밖의 10월 추가 혜택</b> — 해당 차량이면 위 할인에 더해집니다.<br>
+        · 전시장 도착 후 1개월 넘은 <b>장기 전시차</b> +1% · <b>수리 이력 고지 차량</b> +1% · <b>입고 주행거리 100km 이상 차량</b> +1%<br>
+        · E 200 AMG 라인 RoF 에디션 나이트 패키지 +20만원<br>
+        · 계약 후 7일 안에 잔금까지 마치시면 사은품 1종(G 클래스 제외) · 온라인 구매 상담 후 출고 시 경품 추첨<br>
+        · 벤츠 금융 할부 이용 시 모델별로 6개월간 월 납입금 일부 지원 — 차종별 금액은 문의 주세요
       </p>
       <p class="conq-note ew-note">
         <b>보증연장(Extended Warranty) 추가 혜택</b> — 트림 아래 청록색 표시가 있는 차량에 제공됩니다.<br>
@@ -1134,7 +1144,7 @@ button,input,select{font:inherit;color:inherit}
     { model:"C-Class", year:26, trim:"C 200 Final Edition", seg:"sedan", msrp:66300000, fin:14, cash:10, ret:1, trade:1 },
     { model:"E-Class", year:26, trim:"E 200 Exclusive", seg:"sedan", msrp:77500000, fin:20, cash:15, ret:1, trade:1 },
     { model:"E-Class", year:26, trim:"E 200 AMG Line", seg:"sedan", msrp:81000000, fin:19, cash:15, ret:1, trade:1 },
-    { model:"E-Class", year:26, trim:"E 200 AMG Line (RoF Edition)", seg:"sedan", msrp:null, fin:19, cash:15, ret:1, trade:1 },
+    { model:"E-Class", year:26, trim:"E 200 AMG Line (RoF Edition)", seg:"sedan", msrp:null, fin:19, cash:15, ret:1, trade:1, memo:"나이트 패키지 옵션 +20만원 추가 할인" },
     { model:"E-Class", year:26, trim:"E 220 d 4M", seg:"sedan", msrp:87200000, fin:12, cash:12, ret:1, trade:1 },
     { model:"E-Class", year:26, trim:"E 300 4M Exclusive", seg:"sedan", msrp:94800000, fin:14, cash:10, ret:1, trade:1 },
     { model:"E-Class", year:26, trim:"E 300 4M AMG Line", seg:"sedan", msrp:99000000, fin:14, cash:10, ret:1, trade:1 },
@@ -1155,7 +1165,7 @@ button,input,select{font:inherit;color:inherit}
     { model:"S-Class", year:26, trim:"S 580 4M Long", seg:"sedan", msrp:260000000, fin:10, cash:10, ret:2, trade:1 },
     { model:"Mercedes-AMG", year:26, trim:"AMG S 63 E Performance", seg:"amg", msrp:299000000, fin:10, cash:10, ret:2, trade:1 },
     { model:"Mercedes-Maybach", year:26, trim:"Maybach S 580 4M (MANUFAKTUR 포함)", seg:"sedan", msrp:317000000, fin:9, cash:9, ret:2, trade:1, ew:"t1", memo:"운용리스 시 +2%" },
-    { model:"Mercedes-Maybach", year:26, trim:"Maybach S 680 4M", seg:"sedan", msrp:403000000, fin:9, cash:9, ret:9, trade:1, ew:"t1", conq:7, memo:"운용리스 시 +2% · 200만원 추가" },
+    { model:"Mercedes-Maybach", year:26, trim:"Maybach S 680 4M", seg:"sedan", msrp:403000000, fin:9, cash:9, ret:9, trade:1, ew:"t1", conq:7, memo:"운용리스 시 +2%" },
     { model:"S-Class", year:27, trim:"S 350 d 4M", seg:"sedan", msrp:154000000, fin:0, cash:0, ret:2, trade:1, ew:"s27" },
     { model:"S-Class", year:27, trim:"S 450 4M", seg:"sedan", msrp:162400000, fin:0, cash:0, ret:2, trade:1, ew:"s27" },
     { model:"S-Class", year:27, trim:"S 450 4M Long AMG Line", seg:"sedan", msrp:195400000, fin:0, cash:0, ret:2, trade:1, ew:"s27" },
