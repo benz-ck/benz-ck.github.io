@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://benz-ck.github.io/finance.html">
+<meta property="og:url"   content="https://benz-ck.github.io/finance.html">
+<meta property="og:image" content="https://benz-ck.github.io/images/og.jpg">
+<meta name="description" content="벤츠 할부 계산기 — 이번 달 할인가로 월 납입금, 총 이자, 유예금을 바로 계산. 24개월 무이자 · 60개월 할부 빠른 설정.">
+<meta name="author" content="홍창기">
+<meta name="theme-color" content="#0B1F2A">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="별주행 벤츠 · 홍창기 차장">
+<meta property="og:title" content="벤츠 할부 계산기 · 월 납입금 · 이자 | 별주행 벤츠 홍창기">
+<meta property="og:description" content="벤츠 할부 계산기 — 이번 달 할인가로 월 납입금, 총 이자, 유예금을 바로 계산. 24개월 무이자 · 60개월 할부 빠른 설정.">
+<meta property="og:image:width"  content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="메르세데스-벤츠 GLC 300 4MATIC 쿠페 출고 사진">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="images/icon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<title>벤츠 할부 계산기 · 월 납입금 · 이자 | 별주행 벤츠 홍창기</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="assets/site.css?v=261023">
+</head>
+<body data-page="finance">
+
+<nav class="nav" id="nav" aria-label="주 메뉴"></nav>
+
+<main>
+  <header class="phero">
+    <div class="wrap">
+      <nav class="crumb" aria-label="현재 위치"><a href="index.html">홈</a><span>상담 · 계산기</span></nav>
+      <p class="phero__k">Finance Calculator</p>
+      <h1>할부 계산기 — <em>월 납입금 · 이자</em></h1>
+      <p class="phero__lede">차를 고르면 <span class="js-month">이번 달</span> 할인가가 자동으로 들어갑니다. 기간 · 금리 · 선수금을 바꿔 보세요. 원리금 균등 상환 기준의 참고용 계산이며, 실제 금리와 조건은 금융 프로그램과 심사 결과에 따라 달라집니다.</p>
+    </div>
+  </header>
+
+  <section class="sec" id="calc" data-toc="할부 계산기">
+    <div class="wrap calc">
+      <form class="box form" id="calcForm" onsubmit="return false">
+        <div class="fld"><label for="cCar">차량</label><select class="sel" id="cCar"></select></div>
+        <div class="fld"><span class="lbl">가격 기준</span>
+          <div class="chips tabs" id="cBasis" role="group" aria-label="가격 기준">
+            <button class="tab" type="button" data-b="msrp">차량가</button>
+            <button class="tab" type="button" data-b="best">할인 적용가 (현금+할부)</button>
+            <button class="tab" type="button" data-b="max">최대 할인가 (재구매·트레이드인 포함)</button>
+          </div></div>
+        <div class="fld"><label for="cPrice">차량 금액</label>
+          <div class="unit"><input class="inp" id="cPrice" inputmode="numeric" autocomplete="off"><em>만원</em></div>
+          <p class="help">직접 입력하셔도 됩니다. 취득세 · 등록비 등 부대비용은 빠져 있습니다.</p></div>
+        <div class="fld"><span class="lbl">빠른 설정</span><div class="presets" id="cPresets"></div></div>
+        <div class="fld"><span class="lbl">할부 기간</span>
+          <div class="chips tabs" id="cMonths" role="group" aria-label="할부 기간">
+            <button class="tab" type="button" data-m="12">12개월</button><button class="tab" type="button" data-m="24">24개월</button>
+            <button class="tab" type="button" data-m="36">36개월</button><button class="tab" type="button" data-m="48">48개월</button>
+            <button class="tab" type="button" data-m="60">60개월</button>
+          </div></div>
+        <div class="row2">
+          <div class="fld"><label for="cDownPct">선수금</label>
+            <div class="unit"><input class="inp" id="cDownPct" inputmode="decimal" value="30"><em>%</em></div>
+            <p class="help" id="cDown"></p></div>
+          <div class="fld"><label for="cRate">연 금리</label>
+            <div class="unit"><input class="inp" id="cRate" inputmode="decimal" value="5.2"><em>%</em></div></div>
+        </div>
+        <div class="fld"><label for="cBalloonPct">유예금 <span class="opt">(선택 · 만기에 한 번에 갚는 금액)</span></label>
+          <div class="unit"><input class="inp" id="cBalloonPct" inputmode="decimal" value="0"><em>%</em></div>
+          <p class="help">유예를 두면 월 납입금이 줄고, 만기에 유예금 <b id="cBalloon"></b>을 갚습니다. 이용 가능 여부는 상품마다 다릅니다.</p></div>
+      </form>
+
+      <aside class="box result res" aria-live="polite">
+        <p class="res__k">월 납입금</p>
+        <p class="res__big num" id="rPay"></p>
+        <p class="lead-sm" id="rPayK"></p>
+        <div class="bar" id="rBar"></div>
+        <div class="legend"><span style="--c:var(--sky)">선수금</span><span style="--c:var(--gold)">할부 원금</span><span style="--c:var(--cash)">이자</span></div>
+        <dl>
+          <div><dt>차량 금액</dt><dd id="rPrice"></dd></div>
+          <div><dt>선수금</dt><dd id="rDown"></dd></div>
+          <div><dt>할부 원금</dt><dd id="rLoan"></dd></div>
+          <div><dt>만기 유예금</dt><dd id="rBalloon"></dd></div>
+          <div><dt>총 이자</dt><dd id="rInt"></dd></div>
+          <div><dt>총 납입액 (선수금 포함)</dt><dd id="rTotal"></dd></div>
+        </dl>
+        <div class="send"><a class="btn btn--white" id="rQuote" href="quote.html">이 조건으로 견적 받기 →</a></div>
+        <p class="fine">참고용 계산입니다. 실제 월 납입금은 금융 상품, 심사 결과, 부대비용에 따라 달라집니다. 빠른 설정의 조건은 <span class="js-month">이번 달</span> 프로모션 공문 기준입니다.</p>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<script src="assets/data.js?v=261023"></script>
+<script src="assets/app.js?v=261023"></script>
+</body>
+</html>

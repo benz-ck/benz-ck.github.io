@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://benz-ck.github.io/quote.html">
+<meta property="og:url"   content="https://benz-ck.github.io/quote.html">
+<meta property="og:image" content="https://benz-ck.github.io/images/og.jpg">
+<meta name="description" content="메르세데스-벤츠 견적 요청 — 차종, 구매 방법, 재구매·트레이드인 여부를 고르면 문의 내용이 만들어지고 문자나 카톡으로 바로 보낼 수 있습니다.">
+<meta name="author" content="홍창기">
+<meta name="theme-color" content="#0B1F2A">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="별주행 벤츠 · 홍창기 차장">
+<meta property="og:title" content="벤츠 견적 요청 · 문자 · 카톡 | 별주행 벤츠 홍창기">
+<meta property="og:description" content="메르세데스-벤츠 견적 요청 — 차종, 구매 방법, 재구매·트레이드인 여부를 고르면 문의 내용이 만들어지고 문자나 카톡으로 바로 보낼 수 있습니다.">
+<meta property="og:image:width"  content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="메르세데스-벤츠 GLC 300 4MATIC 쿠페 출고 사진">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="images/icon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<title>벤츠 견적 요청 · 문자 · 카톡 | 별주행 벤츠 홍창기</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="assets/site.css?v=261023">
+</head>
+<body data-page="quote">
+
+<nav class="nav" id="nav" aria-label="주 메뉴"></nav>
+
+<main>
+  <header class="phero">
+    <div class="wrap">
+      <nav class="crumb" aria-label="현재 위치"><a href="index.html">홈</a><span>상담 · 계산기</span></nav>
+      <p class="phero__k">Request a Quote</p>
+      <h1>견적 요청 — <em>문자 · 카톡으로 바로</em></h1>
+      <p class="phero__lede">차종과 해당 사항을 고르면 문의 내용이 자동으로 만들어집니다. 「문자로 보내기」를 누르면 홍창기 차장에게 바로 문자가 갑니다.</p>
+    </div>
+  </header>
+  <section class="sec" id="req" data-toc="견적 요청">
+    <div class="wrap calc">
+      <form class="box form" id="reqForm" data-kind="quote" onsubmit="return false">
+        <div class="fld"><label for="qModel">차종</label><select class="sel" id="qModel"></select></div>
+        <div class="fld" hidden><label for="qTrim">트림</label><select class="sel" id="qTrim"></select></div>
+        <div class="fld"><span class="lbl">구매 방법 <span class="opt">(선택)</span></span>
+          <div class="checks">
+            <label class="chk"><input type="checkbox" name="pay" value="현금">현금</label>
+            <label class="chk"><input type="checkbox" name="pay" value="할부">할부</label>
+            <label class="chk"><input type="checkbox" name="pay" value="리스">리스</label>
+            <label class="chk"><input type="checkbox" name="pay" value="상담 후 결정">상담 후 결정</label>
+          </div></div>
+        <div class="fld"><span class="lbl">해당 사항 <span class="opt">(선택 · 할인이 달라집니다)</span></span>
+          <div class="checks">
+            <label class="chk"><input type="checkbox" name="ben" value="벤츠 보유(재구매)">벤츠를 타고 있어요</label>
+            <label class="chk"><input type="checkbox" name="ben" value="타던 차 매각(트레이드인)">타던 차를 넘길 거예요</label>
+            <label class="chk"><input type="checkbox" name="ben" value="타 프리미엄 브랜드 보유(컨퀘스트)">BMW·아우디 등을 타요</label>
+            <label class="chk"><input type="checkbox" name="ben" value="법인·사업자">법인 · 사업자예요</label>
+          </div></div>
+        <div class="fld"><label for="qWhen">희망 출고 시기 <span class="opt">(선택)</span></label>
+          <select class="sel" id="qWhen"><option value="">선택 안 함</option><option>바로 (재고 차량)</option><option>1개월 안</option><option>2~3개월 안</option><option>천천히 알아보는 중</option></select></div>
+        <div class="row2">
+          <div class="fld"><label for="qName">성함</label><input class="inp" id="qName" autocomplete="name" placeholder="성함을 적어 주세요"></div>
+          <div class="fld"><label for="qPhone">연락처 <span class="opt">(선택)</span></label><input class="inp" id="qPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="문자로 보내시면 안 적으셔도 돼요"></div>
+        </div>
+        <div class="fld"><label for="qMemo">문의 내용 <span class="opt">(선택)</span></label>
+          <textarea class="txt" id="qMemo" placeholder="원하시는 색상 · 옵션, 상담 가능한 시간, 궁금한 점 등"></textarea></div>
+      </form>
+      <aside class="box result">
+        <p class="res__k">보낼 내용 미리보기</p>
+        <textarea class="msg" id="qMsg" readonly aria-label="보낼 내용"></textarea>
+        <div class="send">
+          <a class="btn btn--white" id="qSms" href="sms:01031130328">문자로 보내기</a>
+          <a class="btn btn--kakao" id="qKakao" href="https://open.kakao.com/o/s35suoRh" target="_blank" rel="noopener">카카오톡으로 보내기 (내용 복사됨)</a>
+          <a class="btn btn--line" href="tel:01031130328">전화로 바로 상담 010-3113-0328</a>
+        </div>
+        <p class="fine">입력하신 내용은 이 홈페이지에 저장되지 않고, 버튼을 누르실 때 문자나 카카오톡으로만 전달됩니다. 문자 보내기는 휴대폰에서 열립니다. 컴퓨터에서는 카카오톡이나 전화를 이용해 주세요.</p>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<script src="assets/data.js?v=261023"></script>
+<script src="assets/app.js?v=261023"></script>
+</body>
+</html>

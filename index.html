@@ -4,744 +4,226 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no">
-
-<!-- ★★★ 호스팅 주소가 정해지면 아래 SITE 주소 3곳을 실제 주소로 바꾸세요 ★★★
-     예)  https://hoohoopro.github.io/benz
-     카카오톡·문자 미리보기는 og:image 가 "http…" 로 시작하는 전체 주소여야 뜹니다. -->
 <link rel="canonical" href="https://benz-ck.github.io/">
 <meta property="og:url"   content="https://benz-ck.github.io/">
 <meta property="og:image" content="https://benz-ck.github.io/images/og.jpg">
-
 <meta name="description" content="메르세데스-벤츠 공식딜러 한성자동차 홍창기 차장. 이번 달 프로모션 조건과 차량 가격표, 재고 확인과 견적 상담. 전국 출고·탁송 가능. 010-3113-0328">
 <meta name="author" content="홍창기">
-<meta name="theme-color" content="#070a0e">
-
+<meta name="theme-color" content="#0B1F2A">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="별주행 벤츠 · 홍창기 차장">
 <meta property="og:title" content="별주행 벤츠 · 홍창기 차장 | 메르세데스-벤츠 공식딜러 한성자동차">
-<meta property="og:description" content="이번 달 프로모션 조건과 차량 가격표, 재고 확인과 견적 상담. 전국 출고·탁송 가능. 010-3113-0328">
+<meta property="og:description" content="메르세데스-벤츠 공식딜러 한성자동차 홍창기 차장. 이번 달 프로모션 조건과 차량 가격표, 재고 확인과 견적 상담. 전국 출고·탁송 가능. 010-3113-0328">
 <meta property="og:image:width"  content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="메르세데스-벤츠 GLC 300 4MATIC 쿠페 출고 사진">
-
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="별주행 벤츠 · 홍창기 차장">
-<meta name="twitter:description" content="메르세데스-벤츠 공식딜러 한성자동차 · 프로모션 · 가격표 · 재고 확인">
-
 <link rel="icon" type="image/png" href="images/icon.png">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <title>별주행 벤츠 홍창기</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
-
-<style>
-/* ──────────────────────────────────────────────────────────
-   Night showroom — a single committed visual world.
-   Blue-black ground (tinted glass), warm metallic accent kept
-   to hairlines, labels and figures. Every color painted
-   explicitly so the page holds on either host theme.
-   ────────────────────────────────────────────────────────── */
-:root{
-  color-scheme:dark;
-  --ground:#0A0D12;
-  --surface:#111720;
-  --surface-2:#161D27;
-  --ink:#EEF2F7;
-  --ink-2:#AEB9C6;
-  --muted:#76818E;
-  --line:#1E2732;
-  --line-soft:#182029;
-  --accent:#C6A063;
-  --accent-2:#E6CB94;
-  --accent-wash:#1A1710;
-  --kakao:#FEE500;
-  --kakao-ink:#191600;
-
-  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
-  --f-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
-  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-
-  --s--1:.8125rem;
-  --s-0:1rem;
-  --s-1:1.125rem;
-  --s-2:1.375rem;
-  --s-3:clamp(1.75rem,3.4vw,2.5rem);
-  --s-4:clamp(2.25rem,5vw,3.5rem);
-  --s-5:clamp(2.75rem,7.5vw,5.25rem);
-
-  --wrap:1120px;
-  --gut:clamp(1.25rem,5vw,3rem);
-  --r:2px;
-}
-
-*{box-sizing:border-box}
-body{
-  margin:0;
-  background:var(--ground);
-  color:var(--ink);
-  font-family:var(--f-body);
-  font-size:var(--s-0);
-  font-weight:300;
-  line-height:1.72;
-  -webkit-font-smoothing:antialiased;
-}
-h1,h2,h3,h4,p,ul,ol,figure,table,dl{margin:0}
-ul,ol{padding:0;list-style:none}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-button,input,select{font:inherit;color:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-
-.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gut)}
-
-.eyebrow{
-  font-family:var(--f-mono);font-size:var(--s--1);
-  letter-spacing:.16em;text-transform:uppercase;color:var(--accent);
-  display:flex;align-items:center;gap:.7rem;
-}
-.eyebrow::after{content:"";flex:1;height:1px;background:var(--line);max-width:120px}
-
-/* ── Top bar ─────────────────────────────────────────── */
-.topbar{
-  position:sticky;top:0;z-index:40;
-  background:rgba(10,13,18,.9);
-  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line);
-}
-.topbar__in{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:62px}
-.brand{display:flex;flex-direction:column;line-height:1.25}
-.brand b{
-  font-family:var(--f-display);font-weight:700;font-size:var(--s--1);
-  letter-spacing:.18em;text-transform:uppercase;
-}
-.brand span{font-family:var(--f-mono);font-size:.6875rem;color:var(--muted);letter-spacing:.06em}
-.nav{display:none;gap:.3rem;font-size:var(--s--1);color:var(--accent)}
-/* 평상시에도 골드 톤으로 — 회색이면 메뉴가 배경에 묻힌다.
-   hover·현재 섹션은 더 밝은 골드(--accent-2)라 단계가 구분된다. */
-.nav a{
-  position:relative;padding:.5rem .8rem;border-radius:999px;
-  color:#CBB289;font-weight:500;letter-spacing:.01em;
-  transition:color .18s ease,background .18s ease;
-}
-/* 골드 밑줄 — 평소엔 접혀 있다가 hover·현재 섹션에서 펼쳐진다 */
-.nav a::after{
-  content:"";position:absolute;left:.8rem;right:.8rem;bottom:.26rem;height:1px;
-  background:linear-gradient(90deg,var(--accent),var(--accent-2));
-  transform:scaleX(0);transform-origin:left;
-  transition:transform .22s ease;
-}
-.nav a:hover{color:var(--accent-2);background:var(--accent-wash)}
-.nav a:hover::after{transform:scaleX(1)}
-.nav a.is-active{color:var(--accent-2);background:var(--accent-wash)}
-.nav a.is-active::after{transform:scaleX(1)}
-@media(prefers-reduced-motion:reduce){.nav a::after{transition:none}}
-@media(min-width:900px){.nav{display:flex}}
-.top-actions{display:flex;gap:.5rem}
-
-/* ── Buttons ─────────────────────────────────────────── */
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
-  padding:.8rem 1.35rem;border-radius:var(--r);
-  font-family:var(--f-body);font-weight:500;font-size:var(--s-0);
-  border:1px solid transparent;cursor:pointer;
-  transition:transform .16s ease,background .2s ease,border-color .2s ease,color .2s ease;
-}
-.btn:hover{transform:translateY(-1px)}
-.btn--kakao{background:var(--kakao);color:var(--kakao-ink);font-weight:600}
-.btn--gold{background:var(--accent);color:#14100A;font-weight:600}
-.btn--line{border-color:var(--line);color:var(--ink);background:var(--surface)}
-.btn--line:hover{border-color:var(--accent);color:var(--accent)}
-.btn--sm{padding:.5rem .9rem;font-size:var(--s--1)}
-.btn small{font-family:var(--f-mono);font-size:var(--s--1);opacity:.7;font-weight:400}
-
-/* ── Hero ────────────────────────────────────────────── */
-.hero{border-bottom:1px solid var(--line);background:linear-gradient(180deg,#0C1016 0%,var(--ground) 100%)}
-.hero__in{padding-block:clamp(2.5rem,6vw,4.5rem) clamp(2.5rem,6vw,4rem)}
-.hero__grid{display:grid;gap:clamp(2rem,5vw,3.5rem);align-items:center}
-@media(min-width:900px){.hero__grid{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}}
-/* 이번 달 할인율 TOP — 넓은 화면에선 첫 화면 세 번째 칸, 좁으면 글 아래 */
-.deals{grid-column:1/-1;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,#141922 0%,#0F131A 100%);padding:1.4rem 1.4rem 1.2rem;box-shadow:inset 0 1px 0 rgba(198,160,99,.25)}
-@media(min-width:1200px){
-  .hero .hero__in{max-width:1440px}
-  .hero__grid{grid-template-columns:minmax(0,.72fr) minmax(0,1fr) minmax(0,.95fr)}
-  .deals{grid-column:auto}
-}
-.deals__eyebrow{font-family:var(--f-mono);font-size:var(--s--1);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
-.deals__title{font-family:var(--f-display);font-weight:700;font-size:var(--s-2);margin-top:.35rem;letter-spacing:-.01em}
-.deals__note{font-family:var(--f-mono);font-size:.6875rem;color:var(--muted);margin-top:.35rem}
-.deals__list{list-style:none;margin:1rem 0 0;padding:0;counter-reset:d}
-.deals__list li{counter-increment:d;display:grid;grid-template-columns:1.6rem minmax(0,1fr) auto;gap:.2rem .7rem;align-items:center;padding:.75rem 0;border-top:1px solid var(--line-soft)}
-.deals__list li::before{content:counter(d);font-family:var(--f-display);font-weight:700;font-size:var(--s-1);color:var(--muted);grid-row:1/3}
-.deals__list li:first-child::before{color:var(--accent)}
-.deals__name{font-weight:600;color:var(--ink);font-size:var(--s-0);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.deals__name .p-year{margin-left:.4rem;vertical-align:1px;font-size:.6875rem;padding:.1rem .45rem}
-.deals__y27{background:#4a90ff!important;border-color:#4a90ff!important;color:#fff!important}
-.deals__y26{background:#C6A063!important;border-color:#C6A063!important;color:#14110a!important}
-.deals__pct{grid-row:1/3;grid-column:3;text-align:right;font-family:var(--f-display);font-weight:800;font-size:var(--s-3);color:var(--accent-2);letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1}
-.deals__price{font-family:var(--f-mono);font-size:var(--s--1);color:var(--ink-2);white-space:nowrap}
-.deals__price s{color:var(--muted);margin-right:.35rem}
-.deals__price b{color:#4ade80;font-weight:600}
-.deals__price em{font-style:normal;color:#ff7a6b;font-weight:600;margin-left:.45rem}
-.deals__more{display:inline-block;margin-top:.9rem;font-family:var(--f-mono);font-size:var(--s--1);color:var(--accent);letter-spacing:.06em}
-.deals__more:hover{color:#fff}
-
-.portrait{position:relative;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--surface)}
-.portrait img{width:100%;height:auto}  /* 보정은 파일에 구워 넣었다 — CSS 로 채도를 빼면 다시 어두워진다 */
-.portrait figcaption{
-  position:absolute;left:0;right:0;bottom:0;
-  padding:2.4rem 1.3rem 1.15rem;
-  background:linear-gradient(180deg,rgba(10,13,18,0) 0%,rgba(10,13,18,.94) 58%);
-  font-family:var(--f-mono);letter-spacing:.08em;
-}
-.portrait figcaption b{
-  display:block;font-weight:600;font-size:var(--s-1);color:#fff;letter-spacing:.11em;
-}
-.portrait figcaption em{
-  display:block;font-style:normal;margin-top:.3rem;
-  font-size:var(--s--1);color:var(--ink-2);letter-spacing:.16em;
-}
-
-.hero h1{
-  font-family:var(--f-display);font-weight:700;
-  font-size:var(--s-5);line-height:.95;letter-spacing:-.035em;
-  text-wrap:balance;margin-top:1.1rem;
-}
-.hero h1 em{font-style:normal;display:block;color:var(--accent)}
-.hero__lede{font-size:var(--s-2);color:var(--ink);font-weight:300;margin-top:1.5rem;max-width:24ch;line-height:1.5}
-.hero__sub{color:var(--ink-2);margin-top:1rem;max-width:44ch;font-size:var(--s-0)}
-.hero .actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2rem}
-
-/* ── Credential strip — a spec sheet, not a stat card row ── */
-.creds{border-bottom:1px solid var(--line);background:var(--surface)}
-.creds__grid{display:grid;gap:1px;background:var(--line)}
-@media(min-width:640px){.creds__grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:960px){.creds__grid{grid-template-columns:repeat(4,1fr)}}
-.cred{background:var(--surface);padding:1.6rem clamp(1rem,3vw,1.75rem);display:flex;flex-direction:column;gap:.3rem}
-.cred__v{
-  font-family:var(--f-display);font-weight:700;font-size:var(--s-4);
-  letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums;
-}
-.cred__v i{font-style:normal;font-size:var(--s-1);color:var(--accent);margin-left:.2rem}
-.cred__k{font-family:var(--f-mono);font-size:var(--s--1);color:var(--muted);letter-spacing:.06em}
-
-
-/* ── Showroom strip — photographs shot in the 인천전시장 ── */
-.shots{display:grid;gap:1px;background:var(--line);border-block:1px solid var(--line)}
-@media(min-width:760px){.shots{grid-template-columns:repeat(3,1fr)}}
-.shot{position:relative;margin:0;background:var(--ground);overflow:hidden}
-.shot img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;filter:saturate(.94) contrast(1.04)}
-.shot figcaption{
-  position:absolute;left:0;right:0;bottom:0;padding:2rem .95rem .8rem;
-  background:linear-gradient(180deg,rgba(10,13,18,0),rgba(10,13,18,.9) 65%);
-  font-family:var(--f-mono);font-size:var(--s--1);letter-spacing:.04em;color:var(--ink);
-}
-.shot figcaption em{font-style:normal;display:block;color:var(--muted);font-size:.6875rem;margin-top:.15rem}
-.shots-note{
-  padding:1rem var(--gut);text-align:center;
-  font-family:var(--f-mono);font-size:var(--s--1);color:var(--muted);
-  border-bottom:1px solid var(--line);background:var(--surface);
-}
-
-/* ── Section frame ───────────────────────────────────── */
-.section{border-bottom:1px solid var(--line);padding-block:clamp(3rem,7vw,5.5rem)}
-.section--raise{background:var(--surface)}
-.section__head{margin-bottom:2.25rem}
-.section__title{
-  font-family:var(--f-body);font-weight:600;font-size:var(--s-3);
-  letter-spacing:-.02em;line-height:1.22;margin-top:.9rem;text-wrap:balance;
-}
-.section__note{color:var(--ink-2);margin-top:.75rem;max-width:56ch;font-size:var(--s-0)}
-
-/* ── Benefit / process lists (ordered = real sequence) ── */
-.grid4{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-@media(min-width:640px){.grid4{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1000px){.grid4{grid-template-columns:repeat(4,1fr)}}
-.cell{background:var(--surface);padding:1.6rem 1.35rem;display:flex;flex-direction:column;gap:.55rem}
-.section--raise .cell{background:var(--surface-2)}
-.cell__n{font-family:var(--f-mono);font-size:var(--s--1);letter-spacing:.12em;color:var(--accent)}
-.cell__t{font-weight:600;font-size:var(--s-1);letter-spacing:-.01em}
-.cell__d{font-size:var(--s--1);color:var(--ink-2);line-height:1.68}
-
-/* ── Line-up ─────────────────────────────────────────── */
-.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem}
-.chip{
-  font-family:var(--f-mono);font-size:var(--s--1);letter-spacing:.04em;
-  padding:.42rem .85rem;border-radius:100px;border:1px solid var(--line);
-  background:transparent;color:var(--muted);cursor:pointer;
-  transition:border-color .18s ease,color .18s ease,background .18s ease;
-}
-.chip:hover{color:var(--ink);border-color:var(--ink-2)}
-.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#14100A}
-
-.models{display:grid;gap:1rem}
-@media(min-width:600px){.models{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1000px){.models{grid-template-columns:repeat(3,1fr)}}
-.model{
-  border:1px solid var(--line);border-radius:var(--r);background:var(--surface);
-  padding:1.4rem 1.35rem 1.2rem;display:flex;flex-direction:column;gap:.45rem;
-  transition:border-color .2s ease,transform .2s ease,background .2s ease;
-}
-.model:hover{border-color:var(--accent);transform:translateY(-2px);background:var(--surface-2)}
-.model__seg{font-family:var(--f-mono);font-size:var(--s--1);letter-spacing:.1em;color:var(--muted)}
-.model__n{font-family:var(--f-display);font-weight:600;font-size:var(--s-2);letter-spacing:-.015em}
-.model__d{font-size:var(--s--1);color:var(--ink-2);line-height:1.6}
-.model__cta{
-  margin-top:.7rem;padding-top:.8rem;border-top:1px solid var(--line-soft);
-  font-family:var(--f-mono);font-size:var(--s--1);color:var(--accent);
-  display:flex;align-items:center;gap:.4rem;
-}
-.model.is-out{display:none}
-/* ── Model detail dialog ─────────────────────────────── */
-.model{cursor:pointer}
-.model:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.mdlg{
-  width:min(680px,calc(100vw - 2rem));max-height:86vh;padding:0;
-  border:1px solid var(--line);border-radius:var(--r);
-  background:var(--surface);color:var(--ink);overflow:hidden;
-}
-.mdlg::backdrop{background:rgba(5,8,12,.78)}
-.mdlg__in{overflow-y:auto;max-height:86vh;-webkit-overflow-scrolling:touch}
-.mdlg__hd{
-  position:sticky;top:0;z-index:2;background:var(--surface-2);
-  border-bottom:1px solid var(--line);padding:1.35rem 1.4rem 1.15rem;
-}
-.mdlg__x{
-  position:absolute;top:.85rem;right:.9rem;width:34px;height:34px;
-  border:1px solid var(--line);border-radius:50%;background:transparent;
-  color:var(--ink-2);font-size:1.05rem;line-height:1;cursor:pointer;
-}
-.mdlg__x:hover{border-color:var(--accent);color:var(--accent)}
-.mdlg__seg{font-family:var(--f-mono);font-size:var(--s--1);letter-spacing:.1em;color:var(--muted)}
-.mdlg__n{font-family:var(--f-display);font-weight:600;font-size:var(--s-3);letter-spacing:-.02em;margin:.15rem 0 .4rem;padding-right:2.5rem}
-.mdlg__t{font-size:var(--s--1);color:var(--ink-2);line-height:1.65}
-.mdlg__bd{padding:1.3rem 1.4rem 1.5rem;display:flex;flex-direction:column;gap:1.5rem}
-.mdlg h4{
-  font-family:var(--f-mono);font-size:var(--s--1);letter-spacing:.08em;
-  color:var(--accent);margin:0 0 .7rem;font-weight:500;
-}
-.mspec{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surface-2)}
-/* 모델 창 — 전체 트림 가격 */
-.mfull__n{font-family:var(--f-mono);font-size:.6875rem;color:var(--muted);font-weight:400;margin-left:.4rem;letter-spacing:.02em}
-.mfull table{min-width:0!important}
-.mfull td,.mfull th{padding:.55rem .8rem!important}
-.mfull__y{display:inline-block;padding:.08rem .45rem;border-radius:999px;font-family:var(--f-mono);font-size:.6875rem;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
-.mfull tr.my27 .mfull__y{background:#4a90ff;border-color:#4a90ff;color:#fff;font-weight:600}
-.mfull tr.my26 .mfull__y{background:#C6A063;border-color:#C6A063;color:#14110a;font-weight:600}
-.mfull tr.my27{background:rgba(74,144,255,.06)}
-.mfull tr.my26{background:rgba(198,160,99,.05)}
-.mfull td:last-child{white-space:nowrap;font-variant-numeric:tabular-nums}
-.mspec table{width:100%;min-width:560px;border-collapse:collapse}
-.mspec th,.mspec td{padding:.6rem .8rem;text-align:left;border-bottom:1px solid var(--line-soft);font-size:var(--s--1);white-space:nowrap}
-.mspec thead th{color:var(--muted);font-family:var(--f-mono);font-weight:400;letter-spacing:.04em}
-.mspec tbody th{font-weight:500;color:var(--ink)}
-.mspec td{color:var(--ink-2);font-family:var(--f-mono);font-variant-numeric:tabular-nums}
-.mspec tr:last-child th,.mspec tr:last-child td{border-bottom:0}
-.mdim{display:flex;flex-wrap:wrap;gap:.5rem}
-.mdim span{
-  border:1px solid var(--line);border-radius:2px;padding:.4rem .7rem;
-  font-family:var(--f-mono);font-size:var(--s--1);color:var(--ink-2);background:var(--surface-2);
-}
-.mdim span b{color:var(--ink);font-weight:500}
-.mnote{
-  border-left:2px solid var(--accent);background:var(--accent-wash);
-  padding:.9rem 1rem;font-size:var(--s--1);line-height:1.75;color:var(--ink-2);
-}
-.mnote b{color:var(--accent-2);font-weight:500}
-.mdlg__cta{display:flex;flex-wrap:wrap;gap:.6rem;padding-top:.2rem}
-.mdlg__cta .btn{flex:1 1 auto;justify-content:center}
-.mdlg__src{font-size:.75rem;color:var(--muted);line-height:1.6}
-@media(max-width:520px){
-  .mdlg{width:100vw;max-width:100vw;max-height:92vh;border-radius:0;border-left:0;border-right:0}
-  .mdlg__in{max-height:92vh}
-}
-
-/* ── Price table ─────────────────────────────────────── */
-.sheet{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
-.section--raise .sheet{background:var(--surface-2)}
-.sheet table{width:100%;min-width:820px;border-collapse:collapse}
-#pricetable{min-width:0}
-/* 가격표 구역은 넓게 — 116행·10칸이라 기본 폭(1022px)으론 끝 칸이 잘린다 */
-#prices .wrap{max-width:1440px}
-/* 중간 폭: 모델 칸 숨김(트림에 차종이 들어 있다) / 더 좁으면 할인 금액 숨김(할인 적용가에 같은 정보) / 휴대폰은 가로 스크롤 */
-@media(max-width:1299px){#pricetable th:first-child,#pricetable tbody th[scope="row"]{display:none}#pricetable tbody td:nth-child(2){box-shadow:inset 3px 0 0 var(--yc,transparent)}}
-@media(max-width:1199px){
-  #pricetable th,#pricetable td{padding:.45rem .4rem}
-  #pricetable{font-size:.92em}
-  #pricetable .p-rate,#pricetable .p-max,#pricetable .p-num,#pricetable .p-best{font-size:var(--s-0)}
-  #pricetable .p-trim{min-width:7.5rem}
-  #pricetable .p-num i,#pricetable .p-best i,#pricetable .p-max i{font-size:.7rem}
-}
-@media(max-width:1099px){#pricetable .p-cut{display:none}#pricetable td:nth-child(5){white-space:normal}#pricetable td:nth-child(5) .p-rate2{display:block;margin:0}#pricetable .p-year{padding:.15rem .4rem;font-size:.6875rem}}
-@media(max-width:899px){#pricetable{min-width:880px}}
-.p-year-m,.p-hint{display:none}
-#pricetable tr.y27{--rt:rgba(74,144,255,.075)}
-#pricetable tr.y26{--rt:rgba(198,160,99,.07)}
-/* 휴대폰 — 연식 칸 대신 트림 앞 배지, 트림 칸은 가로 스크롤해도 왼쪽에 고정 */
-@media(max-width:699px){
-  .p-hint{display:block;font-family:var(--f-mono);font-size:.75rem;color:var(--accent);margin:0 0 .5rem}
-  #pricetable{min-width:820px}
-  #pricetable th:nth-child(2),#pricetable tbody td:nth-child(2){display:none}
-  #pricetable .p-year-m{display:inline-block;margin:0 .35rem .15rem 0;padding:.05rem .4rem;font-size:.625rem;vertical-align:1px}
-  #pricetable tr.y27 .p-year-m{background:#4a90ff;border-color:#4a90ff;color:#fff;font-weight:600}
-  #pricetable tr.y26 .p-year-m{background:#C6A063;border-color:#C6A063;color:#14110a;font-weight:600}
-  #pricetable thead th:nth-child(3),#pricetable td.p-trim{position:sticky;left:0;z-index:2}
-  #pricetable td.p-trim{background:linear-gradient(var(--rt,transparent),var(--rt,transparent)),var(--surface);box-shadow:inset 3px 0 0 var(--yc,transparent),6px 0 8px -6px rgba(0,0,0,.6);min-width:8.5rem;max-width:9.5rem}
-  #pricetable thead th:nth-child(3){background:var(--surface)}
-}
-/* 휴대폰 상단 바 — 버튼 글자 줄바꿈 방지 */
-.top-actions .btn{white-space:nowrap}
-@media(max-width:480px){.brand span{font-size:.5625rem;letter-spacing:.02em}.top-actions .btn--sm{padding:.45rem .7rem}}
-/* 휴대폰 TOP 5 — 할인 금액은 다음 줄, % 는 조금 작게 */
-@media(max-width:600px){
-  .deals{padding:1.1rem 1rem 1rem}
-  .deals__pct{font-size:var(--s-2)}
-  .deals__price{white-space:normal}
-  .deals__price em{display:block;margin-left:0;margin-top:.1rem}
-}
-#pricetable .p-memo{display:block;white-space:normal;margin-left:0;margin-top:.2rem}
-#yearfilters{margin-top:-.4rem}
-/* 연식 구분 — 27년식은 파랑(프로모션표의 하늘색 행과 같은 뜻), 26년식은 회색 */
-.p-year{display:inline-block;padding:.2rem .55rem;border-radius:999px;font-family:var(--f-mono);font-size:.75rem;white-space:nowrap;border:1px solid var(--line);color:var(--muted)}
-#pricetable tr.y27{background:rgba(74,144,255,.075)}
-#pricetable tr.y27:hover{background:rgba(74,144,255,.14)}
-#pricetable tr.y27 th[scope="row"]{box-shadow:inset 3px 0 0 #4a90ff}
-#pricetable tr.y27{--yc:#4a90ff}
-#pricetable tr.y27 .p-year{background:#4a90ff;border-color:#4a90ff;color:#fff;font-weight:600}
-#yearfilters .chip[data-year="27"][aria-pressed="true"]{background:#4a90ff;border-color:#4a90ff;color:#fff}
-/* 26년식 — 사이트 골드 */
-#pricetable tr.y26{background:rgba(198,160,99,.07)}
-#pricetable tr.y26:hover{background:rgba(198,160,99,.14)}
-#pricetable tr.y26 th[scope="row"]{box-shadow:inset 3px 0 0 #C6A063}
-#pricetable tr.y26{--yc:#C6A063}
-#pricetable tr.y26 .p-year{background:#C6A063;border-color:#C6A063;color:#14110a;font-weight:600}
-#yearfilters .chip[data-year="26"][aria-pressed="true"]{background:#C6A063;border-color:#C6A063;color:#14110a}
-/* 116행이라 한 행을 한 줄로 — 할인 칸의 %·금액·내역을 붙이고 여백을 줄인다 */
-#pricetable th,#pricetable td{padding:.5rem .6rem;vertical-align:middle}
-#pricetable thead th{padding-block:.6rem}
-#pricetable .p-trim{white-space:normal;min-width:9rem}
-#pricetable .p-model,#pricetable .p-num,#pricetable .p-best{font-size:var(--s-0)}
-#pricetable .p-rate{font-size:var(--s-1)}
-#pricetable .p-cut{display:inline;margin:0 0 0 .45rem;font-size:var(--s--1)}
-#pricetable .p-rate2{display:inline;margin:0 0 0 .45rem}
-#pricetable td:nth-child(5){white-space:nowrap}
-#pricetable .p-memo{font-size:.625rem;margin-top:.1rem}
-/* 추가 혜택(보증연장) — 트림 아래 청록 배지 */
-#pricetable .p-perk{display:inline-block;margin-top:.2rem;padding:.12rem .5rem;border-radius:6px;background:rgba(45,212,191,.12);border:1px solid rgba(45,212,191,.45);color:#5eead4;font-size:.625rem;font-family:var(--f-mono);white-space:normal;line-height:1.4}
-/* 차종별 묶음 보기 */
-.viewtoggle{display:flex;gap:.5rem;margin:.2rem 0 1rem}
-.pgroups{display:grid;gap:.6rem}
-.pg{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden}
-.pg.is-open{border-color:rgba(198,160,99,.55)}
-.pg__head{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:grid;grid-template-columns:minmax(7rem,auto) auto 1fr auto 1.2rem;align-items:center;gap:.4rem 1rem;padding:1rem 1.15rem}
-.pg__head:hover{background:var(--accent-wash)}
-.pg__head:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
-.pg__name{font-family:var(--f-display);font-weight:700;font-size:var(--s-1);color:var(--ink)}
-.pg__years{display:flex;gap:.25rem}
-.pg__y{display:inline-block;font-style:normal;font-family:var(--f-mono);font-size:.6875rem;font-weight:600;padding:.08rem .42rem;border-radius:999px}
-.pg__y27{background:#4a90ff;color:#fff}
-.pg__y26{background:#C6A063;color:#14110a}
-.pg__best{font-size:var(--s--1);color:var(--ink-2);text-align:right}
-.pg__best b{font-family:var(--f-display);font-size:var(--s-1);color:var(--accent-2)}
-.pg__best em{font-style:normal;color:#4ade80;font-weight:600}
-.pg__n{font-family:var(--f-mono);font-size:.6875rem;color:var(--muted);white-space:nowrap}
-.pg__chev{width:.6rem;height:.6rem;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);transition:transform .2s;justify-self:center}
-.pg.is-open .pg__chev{transform:rotate(-135deg)}
-.pg__list{list-style:none;margin:0;padding:0 1.15rem .6rem;border-top:1px solid var(--line-soft)}
-.pg__row{display:grid;grid-template-columns:minmax(0,2.2fr) 1fr 1.3fr 1.4fr;gap:.2rem 1rem;align-items:center;padding:.7rem 0 .7rem .7rem;border-bottom:1px solid var(--line-soft);box-shadow:inset 3px 0 0 var(--yc2,transparent)}
-.pg__row:last-child{border-bottom:0}
-.pg__row.y27{--yc2:#4a90ff}
-.pg__row.y26{--yc2:#C6A063}
-.pg__trim{font-size:var(--s--1);color:var(--ink);display:flex;align-items:center;gap:.45rem}
-.pg__msrp{font-size:var(--s--1);color:var(--ink-2);font-variant-numeric:tabular-nums;white-space:nowrap}
-.pg__disc{font-size:var(--s--1);color:var(--ink-2);white-space:nowrap}
-.pg__disc b{color:var(--accent-2);font-family:var(--f-display)}
-.pg__max{text-align:right;white-space:nowrap}
-.pg__max small{font-family:var(--f-mono);font-size:.6875rem;color:var(--muted)}
-.pg__max b{color:#4ade80;font-family:var(--f-display);font-size:var(--s-0)}
-.pg__extra{grid-column:1/-1;font-family:var(--f-mono);font-size:.6875rem;color:var(--muted)}
-.pg__conq{color:#cdb5ff}
-.pg__ew{color:#5eead4}
-.pg__empty{color:var(--muted);padding:1rem}
-@media(max-width:699px){
-  .pg__head{grid-template-columns:1fr auto 1.2rem;padding:.9rem 1rem}
-  .pg__name{grid-row:1;grid-column:1/3}
-  .pg__chev{grid-row:1;grid-column:3}
-  .pg__years{grid-row:2;grid-column:1}
-  .pg__best{grid-row:2;grid-column:2/4;text-align:right}
-  .pg__n{display:none}
-  .pg__list{padding:0 .9rem .5rem}
-  .pg__row{grid-template-columns:1fr auto;gap:.15rem .6rem}
-  .pg__trim{grid-column:1/-1}
-  .pg__msrp{grid-column:1}
-  .pg__max{grid-column:2;grid-row:2/4}
-  .pg__disc{grid-column:1}
-}
-/* 컨퀘스트 — 타 프리미엄 브랜드 보유 고객 추가 할인. 해당 차만 보라 배지 */
-#pricetable th.p-conqh{color:#b794ff}
-#pricetable th.p-conqh small{font-size:.625rem;letter-spacing:0;text-transform:none;color:var(--muted)}
-#pricetable .p-conq{display:inline-block;padding:.15rem .5rem;border-radius:999px;background:rgba(183,148,255,.16);border:1px solid rgba(183,148,255,.55);color:#cdb5ff;font-family:var(--f-display);font-weight:700;font-size:var(--s-0);font-variant-numeric:tabular-nums}
-.conq-note{margin-top:1rem;padding:1rem 1.15rem;border:1px solid rgba(183,148,255,.35);border-radius:var(--r);background:rgba(183,148,255,.06);font-size:var(--s--1);color:var(--ink-2);line-height:1.7}
-.conq-note b{color:#cdb5ff}
-.ew-note{border-color:rgba(45,212,191,.35);background:rgba(45,212,191,.05)}
-.extra-note{border-color:rgba(198,160,99,.4);background:rgba(198,160,99,.05)}
-.extra-note b{color:var(--accent-2)}
-.ew-note b{color:#5eead4}
-/* 최대 할인가 — 재구매·트레이드인까지 다 넣은 금액. 연식 색(파랑·골드)과 겹치지 않게 초록 */
-#pricetable th.p-maxh{color:#4ade80}
-#pricetable th.p-maxh small{font-size:.625rem;letter-spacing:0;text-transform:none;color:var(--muted)}
-#pricetable td.p-maxc{background:rgba(74,222,128,.08);white-space:nowrap}
-#pricetable .p-max{font-family:var(--f-display);font-weight:700;font-size:var(--s-0);color:#4ade80;font-variant-numeric:tabular-nums}
-#pricetable .p-max i{font-style:normal;font-size:var(--s--1);color:var(--muted);margin-left:.15rem;font-family:var(--f-body)}
-#pricetable td.p-maxc .p-rate2{display:inline;margin-left:.4rem}
-.sheet caption{text-align:left;padding:1rem 1.15rem;font-family:var(--f-mono);font-size:var(--s--1);color:var(--muted);letter-spacing:.06em;border-bottom:1px solid var(--line)}
-.sheet th,.sheet td{text-align:left;padding:.95rem 1.15rem;border-bottom:1px solid var(--line-soft);vertical-align:baseline}
-.sheet thead th{
-  font-family:var(--f-mono);font-weight:500;font-size:var(--s--1);
-  letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
-  border-bottom-color:var(--line);padding-block:.7rem;
-}
-.sheet th[scope="row"]{font-weight:400}
-.sheet tbody tr:last-child td,.sheet tbody tr:last-child th{border-bottom:0}
-.sheet tbody tr{transition:background .16s ease}
-.sheet tbody tr:hover{background:var(--accent-wash)}
-
-.p-model{font-family:var(--f-display);font-weight:600;font-size:var(--s-1);letter-spacing:-.01em;white-space:nowrap}
-.p-trim{color:var(--ink-2);font-size:var(--s--1)}
-.p-num{
-  font-family:var(--f-display);font-weight:600;font-size:var(--s-1);
-  font-variant-numeric:tabular-nums;letter-spacing:-.01em;
-  white-space:nowrap;transition:color .16s ease;
-}
-.p-num i{font-style:normal;font-size:var(--s--1);color:var(--muted);margin-left:.15rem;font-family:var(--f-body)}
-.p-ask{font-family:var(--f-mono);font-size:var(--s--1);color:var(--muted)}
-.p-mo{font-family:var(--f-mono);font-size:var(--s-0);color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
-.p-memo{font-family:var(--f-mono);font-size:.6875rem;color:var(--accent);margin-left:.35rem;white-space:nowrap}
-/* Discount: the headline number in this table, so it carries the accent */
-.p-rate{
-  font-family:var(--f-display);font-weight:700;font-size:var(--s-2);
-  color:var(--accent-2);font-variant-numeric:tabular-nums;letter-spacing:-.02em;
-}
-/* The won figure is what a buyer actually compares — give it real weight */
-.p-cut{
-  display:block;font-family:var(--f-display);font-weight:600;font-size:var(--s-0);
-  color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.01em;
-  white-space:nowrap;margin-top:.1rem;
-}
-.p-rate2{display:block;font-family:var(--f-mono);font-size:.6875rem;color:var(--muted);white-space:nowrap;margin-top:.15rem}
-.p-best{
-  font-family:var(--f-display);font-weight:600;font-size:var(--s-1);
-  font-variant-numeric:tabular-nums;letter-spacing:-.01em;white-space:nowrap;color:var(--ink);
-}
-.p-best i{font-style:normal;font-size:var(--s--1);color:var(--muted);margin-left:.15rem;font-family:var(--f-body)}
-/* MSRP is the reference figure, not the point — quiet it down */
-.sheet td .p-num{font-size:var(--s-0);font-weight:500;color:var(--ink-2)}
-.p-foot{
-  display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;justify-content:space-between;
-  margin-top:1.1rem;font-size:var(--s--1);color:var(--muted);
-}
-.p-foot span{max-width:62ch}
-.p-hint{font-family:var(--f-mono);color:var(--accent)}
-
-/* Shown only once the quoted month has passed */
-.p-stale{
-  display:none;gap:.75rem;align-items:baseline;
-  border:1px solid var(--accent);border-left-width:3px;border-radius:var(--r);
-  background:var(--accent-wash);padding:.95rem 1.15rem;margin-bottom:1rem;
-}
-.p-stale.on{display:flex}
-.p-stale b{font-family:var(--f-mono);font-size:var(--s--1);color:var(--accent);letter-spacing:.08em;white-space:nowrap}
-.p-stale span{font-size:var(--s--1);color:var(--ink-2)}
-
-/* ── Channels / reviews ──────────────────────────────── */
-.duo{display:grid;gap:1rem}
-@media(min-width:760px){.duo{grid-template-columns:repeat(2,1fr)}}
-.panel{
-  border:1px solid var(--line);border-radius:var(--r);background:var(--surface);
-  padding:1.75rem 1.5rem;display:flex;flex-direction:column;gap:.6rem;
-  transition:border-color .2s ease;
-}
-.panel:hover{border-color:var(--accent)}
-.panel__k{font-family:var(--f-mono);font-size:var(--s--1);letter-spacing:.12em;color:var(--muted)}
-.panel__t{font-family:var(--f-display);font-weight:600;font-size:var(--s-2);letter-spacing:-.015em}
-.panel__d{font-size:var(--s--1);color:var(--ink-2);line-height:1.68}
-.panel__go{margin-top:auto;padding-top:.9rem;font-family:var(--f-mono);font-size:var(--s--1);color:var(--accent)}
-
-.stars{color:var(--accent);letter-spacing:.15em;font-size:var(--s--1)}
-.quotes{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:1.25rem}
-@media(min-width:760px){.quotes{grid-template-columns:repeat(3,1fr)}}
-.quote{background:var(--surface);padding:1.35rem;display:flex;flex-direction:column;gap:.5rem}
-.section--raise .quote{background:var(--surface-2)}
-.quote p{font-size:var(--s-0);color:var(--ink)}
-
-/* ── Location ────────────────────────────────────────── */
-.dl{border-top:1px solid var(--line);margin-top:1.5rem}
-.dl__row{display:grid;grid-template-columns:6rem 1fr;gap:1rem;padding:.95rem 0;border-bottom:1px solid var(--line-soft)}
-.dl__k{font-family:var(--f-mono);font-size:var(--s--1);color:var(--muted);letter-spacing:.06em}
-.dl__v a{border-bottom:1px solid var(--line);padding-bottom:1px}
-.dl__v a:hover{border-bottom-color:var(--accent);color:var(--accent)}
-.tel{font-family:var(--f-display);font-weight:600;font-size:var(--s-2);letter-spacing:.01em;font-variant-numeric:tabular-nums}
-
-/* ── Footer ──────────────────────────────────────────── */
-.foot{padding-block:2.75rem 6.5rem;color:var(--muted);font-size:var(--s--1)}
-.foot__top{display:flex;flex-wrap:wrap;gap:1.5rem 2.5rem;justify-content:space-between;padding-bottom:1.5rem;border-bottom:1px solid var(--line)}
-.foot__links{display:flex;flex-wrap:wrap;gap:1.25rem}
-.foot__links a:hover{color:var(--accent)}
-.foot p{max-width:74ch;margin-top:1.25rem;line-height:1.7}
-
-/* ── Sticky mobile call bar ──────────────────────────── */
-.callbar{
-  position:fixed;left:0;right:0;bottom:0;z-index:50;
-  display:flex;gap:.5rem;padding:.6rem var(--gut) calc(.6rem + env(safe-area-inset-bottom));
-  background:rgba(10,13,18,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  border-top:1px solid var(--line);
-}
-.callbar .btn{flex:1}
-@media(min-width:900px){.callbar{display:none}.foot{padding-bottom:3rem}}
-
-/* ── Reveal ──────────────────────────────────────────── */
-.rise{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
-.rise.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
-  .rise{opacity:1;transform:none}
-}
-</style>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="assets/site.css?v=261023">
 </head>
+<body data-page="home">
 
-<body>
+<nav class="nav" id="nav" aria-label="주 메뉴"></nav>
 
-<header class="topbar">
-  <div class="wrap topbar__in">
-    <a class="brand" href="#top">
-      <b>Hong Chang Ki</b>
-      <span>한성자동차 인천전시장 · Mercedes-Benz</span>
-    </a>
-    <nav class="nav">
-      <a href="#benefits">구매 혜택</a>
-      <a href="#lineup">차량 라인업</a>
-      <a href="#prices">가격표</a>
-      <a href="#process">상담 절차</a>
-      <a href="#location">전시장</a>
-    </nav>
-    <div class="top-actions">
-      <a class="btn btn--kakao btn--sm" href="https://open.kakao.com/o/s35suoRh" target="_blank" rel="noopener">카카오톡</a>
-      <a class="btn btn--line btn--sm" href="tel:01031130328">전화</a>
-    </div>
-  </div>
-</header>
+<main>
+  <!-- 첫 화면 — 이번 달 총할인 TOP 5 가 돌아가며 나온다(PRICE_ROWS 에서 자동 계산, 아래 renderHeroDeals) -->
+  <header class="hero" id="top">
+    <div class="kb" id="kb" aria-hidden="true"></div>
+    <div class="hero__shade"></div>
+    <div class="wrap hero__grid">
+      <div class="hero__main">
+        <p class="hero__eyebrow">Mercedes-Benz · Hansung Motor Incheon</p>
 
-<main id="top">
-  <!-- Hero: the consultant's thesis -->
-  <section class="hero">
-    <div class="wrap hero__in hero__grid">
-      <figure class="portrait rise">
-        <img src="images/profile.jpg" alt="홍창기 차장 · 메르세데스-벤츠 세일즈 컨설턴트 프로필 사진" width="960" height="1217">
-        <figcaption><b>HONG CHANG KI</b><em>SALES CONSULTANT</em></figcaption>
-      </figure>
-
-      <div>
-        <p class="eyebrow">Mercedes-Benz Official Dealer</p>
-        <h1>출고보다<em>출고 후.</em></h1>
-        <p class="hero__lede">
-          벤츠 구매에서 진짜 차이가 나는 건 계약서에 서명한 다음입니다.
-        </p>
-        <p class="hero__sub">
-          한성자동차 인천전시장 홍창기 차장입니다. 16년간 수입차만 팔면서
-          900대 넘게 출고했고, 그중 상당수가 다시 찾아주신 분들입니다.
-          차량 선택부터 정기점검까지 한 사람이 계속 맡습니다.
-        </p>
-        <div class="actions">
-          <a class="btn btn--kakao" href="https://open.kakao.com/o/s35suoRh" target="_blank" rel="noopener">카카오톡 상담 <small>1:1</small></a>
-          <a class="btn btn--line" href="tel:01031130328">010-3113-0328</a>
+        <div class="deal" id="deal" aria-roledescription="이번 달 할인 TOP 5">
+          <div class="deal__body" id="dealBody" aria-live="polite">
+            <p class="deal__badge"><b id="dealBadge"></b><span id="dealBadgeSub"></span></p>
+            <p class="deal__kicker" id="dealKicker"></p>
+            <h1 class="deal__title"><span id="dealAmt"></span> <em>할인</em></h1>
+            <dl class="strip">
+              <div><dt>차량가</dt><dd><s id="dealMsrp"></s></dd></div>
+              <div class="is-hi"><dt id="dealBestK">최대 할인가</dt><dd id="dealBest"></dd></div>
+              <div><dt>할인 구성</dt><dd class="mix" id="dealMix"></dd></div>
+            </dl>
+          </div>
+          <div class="dealtabs" id="dealTabs" role="tablist" aria-label="할인 TOP 5 고르기"></div>
+          <div class="deal__cta">
+            <a class="btn btn--white" id="dealCta" href="quote.html">이 조건으로 견적 받기 <span aria-hidden="true">→</span></a>
+            <a class="deal__all" href="#prices"><span class="js-month">이번 달</span> 가격표 전체 보기 →</a>
+          </div>
+          <p class="deal__note"><i></i><span><span class="js-month">이번 달</span> 프로모션 기준 · 재고와 계약 시점에 따라 달라질 수 있습니다</span></p>
         </div>
       </div>
 
-      <!-- 이번 달 할인율 TOP — PRICE_ROWS 에서 자동으로 뽑는다(아래 renderHeroDeals) -->
-      <aside class="deals" aria-labelledby="dealstitle">
-        <p class="deals__eyebrow">This Month&rsquo;s Best</p>
-        <h2 class="deals__title" id="dealstitle">이번 달 총할인 TOP 5</h2>
-        <p class="deals__note">현금 + 할부 + 재구매 + 트레이드인 모두 적용 기준</p>
-        <ol class="deals__list" id="deallist"></ol>
-        <a class="deals__more" href="#prices">전체 가격표 보기 &rarr;</a>
+      <aside class="hero__side">
+        <figure class="pcard">
+          <img src="images/profile.jpg" alt="홍창기 차장 · 메르세데스-벤츠 세일즈 컨설턴트 프로필 사진" width="960" height="1217">
+          <figcaption>
+            <p class="pcard__k">SALES CONSULTANT</p>
+            <p class="pcard__n">홍창기<small>차장</small></p>
+            <p class="pcard__d">한성자동차 인천전시장 · 수입차 16년 · 900대+ 출고</p>
+          </figcaption>
+        </figure>
+        <a class="ncard" href="#shots">
+          <img src="images/shot-s450-front.jpg" alt="" loading="lazy">
+          <span><span class="ncard__k">SHOWROOM</span><span class="ncard__t" style="display:block">인천전시장 실차 사진<br>S 450 4MATIC Long</span></span>
+          <span class="ncard__go" aria-hidden="true">→</span>
+        </a>
+        <a class="ncard" href="https://www.youtube.com/@별주행벤츠" target="_blank" rel="noopener">
+          <span class="ncard__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></span>
+          <span><span class="ncard__k">YOUTUBE</span><span class="ncard__t" style="display:block">별주행 벤츠<br>신차 리뷰 · 출고 영상</span></span>
+          <span class="ncard__go" aria-hidden="true">→</span>
+        </a>
       </aside>
     </div>
-  </section>
+  </header>
 
-  <!-- Credentials as a spec sheet -->
-  <section class="creds">
-    <div class="wrap">
-      <div class="creds__grid">
-        <div class="cred">
-          <span class="cred__v">16<i>년</i></span>
-          <span class="cred__k">수입차 세일즈 경력</span>
-        </div>
-        <div class="cred">
-          <span class="cred__v">900<i>대+</i></span>
-          <span class="cred__k">누적 판매</span>
-        </div>
-        <div class="cred">
-          <span class="cred__v">1:1</span>
-          <span class="cred__k">맞춤 전문 컨설팅</span>
-        </div>
-        <div class="cred">
-          <span class="cred__v">After<i>Care</i></span>
-          <span class="cred__k">출고 이후 관리</span>
-        </div>
+  <!-- 소개 띠 -->
+  <section class="about" aria-label="홍창기 차장 소개">
+    <div class="wrap about__in">
+      <div>
+        <h2>출고보다 <em>출고 후.</em></h2>
+        <p>벤츠 구매에서 진짜 차이가 나는 건 계약서에 서명한 다음입니다. 16년간 수입차만 팔면서 900대 넘게 출고했고, 그중 상당수가 다시 찾아주신 분들입니다. 차량 선택부터 정기점검까지 한 사람이 계속 맡습니다.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><p class="stat__v">16<i>년</i></p><p class="stat__k">수입차 세일즈 경력</p></div>
+        <div class="stat"><p class="stat__v">900<i>대+</i></p><p class="stat__k">누적 판매</p></div>
+        <div class="stat"><p class="stat__v">1:1</p><p class="stat__k">맞춤 전문 컨설팅</p></div>
+        <div class="stat"><p class="stat__v">After<i>Care</i></p><p class="stat__k">출고 이후 관리</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Showroom: rendered from SHOTS at the top of the script -->
-  <section class="shots" id="shots" aria-label="인천전시장 실차 사진"></section>
-  <p class="shots-note" id="shotsnote"></p>
-
-  <!-- Monthly benefits -->
-  <section class="section" id="benefits">
+  <!-- 꼭 체크할 4가지 — 숫자는 PRICE_ROWS 에서 자동 계산(renderCheck) -->
+  <section class="sec" id="check" data-toc="꼭 체크할 4가지">
     <div class="wrap">
-      <div class="section__head">
-        <p class="eyebrow">Monthly Benefits</p>
-        <h2 class="section__title" id="benefitstitle">이번 달 프로모션 혜택</h2>
-        <p class="section__note">
-          모델과 계약 조건에 따라 적용 혜택이 달라집니다. 아래 네 가지를 모두 확인한 뒤
-          가장 유리한 조합으로 견적서를 만들어 드립니다.
+      <div class="sec__head">
+        <h2 class="sec__title"><span class="js-month">이번 달</span> 벤츠 구입 전 <em>꼭 체크할 4가지</em></h2>
+        <p class="sec__note">이번 달 프로모션표에서 바로 계산한 숫자입니다. 아래 버튼을 누르면 해당 차량이 가격표에서 바로 열립니다.</p>
+      </div>
+      <div class="check" id="check4"></div>
+
+      <div class="mou" id="benefits">
+        <div>
+          <p class="mou__k">법인 · 임직원 · 재구매</p>
+          <h3>법인 사업자, 제휴사 임직원, 벤츠 재구매 고객이신가요?<br><em>해당되는 추가 혜택부터 확인해 드립니다</em></h3>
+          <p>모델과 계약 조건에 따라 적용 혜택이 달라집니다. 아래 네 가지를 모두 확인한 뒤 가장 유리한 조합으로 견적서를 만들어 드립니다.</p>
+          <div class="mou__chips">
+            <span>모델별 금융 프로그램</span><span>법인 및 임직원 혜택</span><span>재구매 고객 혜택</span><span>즉시 출고 가능 차량</span>
+          </div>
+          <a class="btn btn--gold" href="https://open.kakao.com/o/s35suoRh" target="_blank" rel="noopener">카카오톡으로 지금 확인하기 →</a>
+        </div>
+        <div class="mou__plus" id="mouPlus"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 판매조건 한눈에 — 세 칸(renderConditions) -->
+  <section class="sec" id="conditions" data-toc="판매조건 한눈에">
+    <div class="wrap">
+      <div class="sec__head">
+        <p class="sec__eyebrow">This Month&rsquo;s Conditions</p>
+        <h2 class="sec__title sec__title--light"><span class="js-month">이번 달</span> 판매조건 한눈에</h2>
+        <p class="sec__note">기본 현금 할인, 벤츠파이낸셜(MBM) 할부 특별 할인, 재구매·트레이드인 추가 할인까지. 차량을 누르면 가격표에서 그 트림이 열립니다.</p>
+      </div>
+      <div class="cond" id="cond3"></div>
+      <p class="cond__foot"><b>할부 조건</b> — 24개월 선수금 61~63% 무이자 또는 60개월 선수금 30% 연 5.20%~. 실제 금액은 트림 · 옵션 · 재고 · 계약 시점에 따라 달라집니다.</p>
+    </div>
+  </section>
+
+  <!-- 실차 사진 — SHOTS 에서 그린다 -->
+  <section class="sec" id="showroom" data-toc="인천전시장 실차" aria-label="인천전시장 실차 사진">
+    <div class="wrap">
+      <div class="sec__head">
+        <p class="sec__eyebrow">Showroom</p>
+        <h2 class="sec__title">인천전시장 실차</h2>
+      </div>
+      <div class="shots" id="shots"></div>
+      <p class="shots-note" id="shotsnote"></p>
+    </div>
+  </section>
+
+  <!-- 내 차 찾아보기 — data lives in PRICE_ROWS at the top of the script -->
+  <section class="sec" id="prices" data-toc="내 차 찾아보기 · 가격표">
+    <div class="wrap">
+      <div class="sec__head">
+        <p class="sec__eyebrow">Price &amp; Benefits</p>
+        <h2 class="sec__title">내 차 찾아보기 — <em>차량가 · 할인 · 최종가</em></h2>
+        <p class="sec__note">
+          <span class="js-month">이번 달</span> 프로모션 할인입니다. <b>현금</b> 할인은 금융 이용과 상관없이 적용되고, <b>할부</b>는 벤츠 금융(MBM) 이용 시 더해지는 특별 할인입니다.
+          「할인 적용가」는 현금 + 할부 할인을 적용한 금액이고, 「최대 할인가」는 재구매(벤츠 보유 고객)와 트레이드인(타던 차 매각) 할인까지 모두 적용한 금액입니다.
         </p>
       </div>
-      <ul class="grid4 rise">
-        <li class="cell">
-          <span class="cell__n">01</span>
-          <h3 class="cell__t">모델별 금융 프로그램</h3>
-          <p class="cell__d">할부 · 리스 · 현금 구매 조건을 같은 기준으로 비교해 드립니다.</p>
-        </li>
-        <li class="cell">
-          <span class="cell__n">02</span>
-          <h3 class="cell__t">법인 및 임직원 혜택</h3>
-          <p class="cell__d">해당되는 경우 적용 가능한 추가 혜택을 먼저 확인합니다.</p>
-        </li>
-        <li class="cell">
-          <span class="cell__n">03</span>
-          <h3 class="cell__t">재구매 고객 혜택</h3>
-          <p class="cell__d">벤츠 보유 이력이 있으면 재구매 프로그램 적용 여부를 확인합니다.</p>
-        </li>
-        <li class="cell">
-          <span class="cell__n">04</span>
-          <h3 class="cell__t">즉시 출고 가능 차량</h3>
-          <p class="cell__d">현재 상담 가능한 재고와 실제 출고 일정을 안내합니다.</p>
-        </li>
-      </ul>
+
+      <p class="p-stale" id="pricestale" role="status"><b>안내</b><span id="pricestaletext"></span></p>
+
+      <div class="finder__bar">
+        <label class="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input type="search" id="fq" placeholder="모델명 검색 — 예) E 200, GLC, 마이바흐" autocomplete="off" aria-label="모델명 검색">
+          <button class="search__x" type="button" id="fqx" aria-label="검색어 지우기" hidden>&#10005;</button>
+        </label>
+        <div class="tabs" id="ftabs" role="group" aria-label="조건으로 거르기"></div>
+        <div class="tabs tabs--fam" id="ffam" role="group" aria-label="차종으로 거르기"></div>
+      </div>
+      <div class="finder__tools">
+        <p class="finder__count" id="fcount"></p>
+        <div class="right">
+          <div class="seg" id="fsort" role="group" aria-label="정렬">
+            <button type="button" data-sort="base" aria-pressed="true">차종순</button>
+            <button type="button" data-sort="pct" aria-pressed="false">할인율 높은 순</button>
+            <button type="button" data-sort="price" aria-pressed="false">가격 낮은 순</button>
+          </div>
+          <div class="seg" id="fview" role="group" aria-label="보기 방식">
+            <button type="button" data-view="groups" aria-pressed="true">차종별 보기</button>
+            <button type="button" data-view="list" aria-pressed="false">전체 목록</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="flist" id="flist" hidden></div>
+      <div class="pgroups" id="pricegroups"></div>
+
+      <div class="notes">
+        <p class="note note--conq">
+          <b>컨퀘스트 (프리미엄 브랜드 특별 할인)</b>
+          지금 타시는 차가 아래 브랜드면 해당 모델 신차 구매 시 추가 할인됩니다.<br>
+          · <b>GLC·GLE (SUV·쿠페, 전 연식) +1%</b> : BMW(MINI 제외)·아우디·제네시스·볼보·포르쉐·랜드로버·렉서스<br>
+          · <b>마이바흐 S 680·GLS 600 (26년식) +7%</b> : 위 브랜드 + 롤스로이스·벤틀리<br>
+          · 신차 계약 월 1일 기준으로 기존 차량을 보유하고 계셔야 합니다. <b>재구매와 컨퀘스트는 둘 중 하나만</b>, 컨퀘스트는 트레이드인과 함께 받을 수 없습니다.
+        </p>
+        <p class="note note--extra">
+          <b>그 밖의 <span class="js-month">이번 달</span> 추가 혜택</b>
+          해당 차량이면 위 할인에 더해집니다.<br>
+          · E 200 AMG 라인 RoF 에디션 나이트 패키지 +20만원<br>
+          · 벤츠 금융 할부 이용 시 모델별로 6개월간 월 납입금 일부 지원 — 차종별 금액은 문의 주세요
+        </p>
+        <p class="note note--ew">
+          <b>보증연장 (Extended Warranty) 추가 혜택</b>
+          청록색 「보증연장」 표시가 있는 차량에 제공됩니다.<br>
+          · <b>EQ 전 모델 (전 연식) · 마이바흐 S 클래스 (26년식)</b> : 보증 +2년 / +7만km (최대 5년 / 17만km 중 먼저 도래 기준)<br>
+          · <b>* S 클래스 · 마이바흐 S 클래스 (27년식, 사전계약 재구매 고객만)</b> : 할부(MBF·MBMK) +2년 / +7만km, 현금 +1년 / +3만km (최대 4년 / 13만km)
+        </p>
+      </div>
+      <p class="p-foot">
+        「최대 할인가」는 벤츠 금융(MBM) 할부와 재구매·트레이드인을 모두 적용한 기준입니다.
+        할부는 24개월 선수금 61~63% 무이자 또는 60개월 선수금 30% 연 5.20%~ 조건이 적용됩니다.
+        실제 금액은 트림 · 옵션 · 재고 · 계약 시점에 따라 달라지며, 문의 주시면 트림별 정밀 견적을 보내 드립니다.
+      </p>
     </div>
   </section>
 
   <!-- Line-up -->
-  <section class="section section--raise" id="lineup">
+  <section class="sec" id="lineup" data-toc="차량 라인업">
     <div class="wrap">
-      <div class="section__head">
-        <p class="eyebrow">Model Line-up</p>
-        <h2 class="section__title">주요 차량 라인업</h2>
-        <p class="section__note">
-          원하시는 모델의 가격, 재고, 금융 조건과 예상 출고 일정을 빠르게 확인해 드립니다.
-        </p>
+      <div class="sec__head">
+        <p class="sec__eyebrow">Model Line-up</p>
+        <h2 class="sec__title">주요 차량 라인업</h2>
+        <p class="sec__note">차종을 누르면 대표 트림 제원과 26·27년식 전체 트림 가격이 열립니다.</p>
       </div>
 
       <div class="filters" role="group" aria-label="차종 분류">
@@ -753,262 +235,46 @@ button,input,select{font:inherit;color:inherit}
         <button class="chip" type="button" data-seg="ev" aria-pressed="false">전기차</button>
       </div>
 
-      <ul class="models rise" id="models">
-        <li class="model" data-seg="sedan" data-key="A-Class" tabindex="0" role="button">
-          <span class="model__seg">COMPACT</span>
-          <h3 class="model__n">A-Class</h3>
-          <p class="model__d">벤츠의 시작. 해치백과 세단 두 가지에 421마력 AMG A 45 S까지 있습니다.</p>
-          <span class="model__cta">모델 자세히 보기 →</span>
-        </li>
-        <li class="model" data-seg="sedan" data-key="CLA" tabindex="0" role="button">
-          <span class="model__seg">COMPACT SEDAN</span>
-          <h3 class="model__n">CLA</h3>
-          <p class="model__d">27년식 완전 신형. 가솔린 CLA 220과 800V 전기 CLA 두 가지로 나옵니다.</p>
-          <span class="model__cta">모델 자세히 보기 →</span>
-        </li>
-        <li class="model" data-seg="sedan" data-key="C-Class" tabindex="0" role="button">
-          <span class="model__seg">SEDAN</span>
-          <h3 class="model__n">C-Class</h3>
-          <p class="model__d">E클래스보다 한 급 작은 세단. C 200 한 가지 엔진에 라인 세 가지입니다.</p>
-          <span class="model__cta">모델 자세히 보기 →</span>
-        </li>
-        <li class="model" data-seg="sedan" data-key="E-Class" tabindex="0" role="button">
-          <span class="model__seg">SEDAN</span>
-          <h3 class="model__n">E-Class</h3>
-          <p class="model__d">비즈니스 세단의 기준. 가장 문의가 많고 재고 회전도 가장 빠릅니다.</p>
-          <span class="model__cta">모델 자세히 보기 →</span>
-        </li>
-        <li class="model" data-seg="sedan" data-key="S-Class" tabindex="0" role="button">
-          <span class="model__seg">SEDAN</span>
-          <h3 class="model__n">S-Class</h3>
-          <p class="model__d">최상위 럭셔리 세단. 금융 프로그램에 따라 조건 차이가 가장 크게 벌어집니다.</p>
-          <span class="model__cta">모델 자세히 보기 →</span>
-        </li>
-        <li class="model" data-seg="sedan" data-key="CLE" tabindex="0" role="button">
-          <span class="model__seg">COUPÉ · CABRIOLET</span>
-          <h3 class="model__n">CLE</h3>
-          <p class="model__d">2도어 쿠페와 오픈톱 카브리올레. 381마력 CLE 450과 AMG CLE 53까지 있습니다.</p>
-          <span class="model__cta">모델 자세히 보기 →</span>
-        </li>
-        <li class="model" data-seg="suv" data-key="GLA" tabindex="0" role="button">
-          <span class="model__seg">COMPACT SUV</span>
-          <h3 class="model__n">GLA</h3>
-          <p class="model__d">가장 작은 벤츠 SUV. 도심 주차가 편하고 사륜구동이 기본입니다.</p>
-          <span class="model__cta">모델 자세히 보기 →</span>
-        </li>
-        <li class="model" data-seg="suv" data-key="GLB" tabindex="0" role="button">
-          <span class="model__seg">COMPACT SUV</span>
-          <h3 class="model__n">GLB</h3>
-          <p class="model__d">실내가 넉넉한 박스형 SUV. GLB 250은 3열 시트를 선택사양으로 더할 수 있습니다.</p>
-          <span class="model__cta">모델 자세히 보기 →</span>
-        </li>
-        <li class="model" data-seg="suv" data-key="GLC" tabindex="0" role="button">
-          <span class="model__seg">SUV</span>
-          <h3 class="model__n">GLC</h3>
-          <p class="model__d">도심과 일상을 위한 프리미엄 SUV. 첫 벤츠로 가장 많이 선택됩니다.</p>
-          <span class="model__cta">모델 자세히 보기 →</span>
-        </li>
-        <li class="model" data-seg="suv" data-key="GLE" tabindex="0" role="button">
-          <span class="model__seg">SUV</span>
-          <h3 class="model__n">GLE</h3>
-          <p class="model__d">여유로운 공간과 존재감. 패밀리 SUV로 넘어오시는 분들이 많습니다.</p>
-          <span class="model__cta">모델 자세히 보기 →</span>
-        </li>
-        <li class="model" data-seg="suv" data-key="GLS" tabindex="0" role="button">
-          <span class="model__seg">SUV</span>
-          <h3 class="model__n">GLS</h3>
-          <p class="model__d">럭셔리 대형 SUV. 7인승 구성과 옵션 조합을 함께 정리해 드립니다.</p>
-          <span class="model__cta">모델 자세히 보기 →</span>
-        </li>
-        <li class="model" data-seg="top" data-key="G-Class" tabindex="0" role="button">
-          <span class="model__seg">ICON</span>
-          <h3 class="model__n">G-Class</h3>
-          <p class="model__d">아이코닉 오프로더. 가격만큼 대기 기간과 재고 흐름이 중요한 모델입니다.</p>
-          <span class="model__cta">모델 자세히 보기 →</span>
-        </li>
-        <li class="model" data-seg="suv" data-key="V-Class" tabindex="0" role="button">
-          <span class="model__seg">MPV</span>
-          <h3 class="model__n">V-Class</h3>
-          <p class="model__d">27년식 새로 들어온 프리미엄 MPV. 마사지 되는 뒷좌석 럭셔리 시트에 좌우 전동 슬라이딩 도어.</p>
-          <span class="model__cta">모델 자세히 보기 →</span>
-        </li>
-        <li class="model" data-seg="amg" data-key="Mercedes-AMG" tabindex="0" role="button">
-          <span class="model__seg">PERFORMANCE</span>
-          <h3 class="model__n">Mercedes-AMG</h3>
-          <p class="model__d">고성능 퍼포먼스 라인업. 일상 주행과의 균형점을 기준으로 안내합니다.</p>
-          <span class="model__cta">모델 자세히 보기 →</span>
-        </li>
-        <li class="model" data-seg="top" data-key="Mercedes-Maybach" tabindex="0" role="button">
-          <span class="model__seg">LUXURY</span>
-          <h3 class="model__n">Mercedes-Maybach</h3>
-          <p class="model__d">궁극의 럭셔리. 뒷좌석 기준으로 S클래스와 갈리는 지점을 짚어 드립니다.</p>
-          <span class="model__cta">모델 자세히 보기 →</span>
-        </li>
-        <li class="model" data-seg="ev" data-key="Electric" tabindex="0" role="button">
-          <span class="model__seg">ELECTRIC</span>
-          <h3 class="model__n">Electric</h3>
-          <p class="model__d">차세대 전동화 라인업. 지자체 보조금과 충전 환경까지 포함해 계산합니다.</p>
-          <span class="model__cta">모델 자세히 보기 →</span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Price table — data lives in PRICE_ROWS at the top of the script -->
-  <section class="section" id="prices">
-    <div class="wrap">
-      <div class="section__head">
-        <p class="eyebrow">Price &amp; Benefits</p>
-        <h2 class="section__title" id="pricetitle">이번 달 프로모션</h2>
-        <p class="section__note">
-          <span id="pricemonthnote">이번 달</span> 프로모션 할인입니다. 현금 할인에 더해 MBM 할부를 이용하시면 특별 할인이 추가됩니다.
-          「할인 적용가」는 현금 할인과 할부 특별 할인을 합산해 적용한 금액입니다.
-          재구매(벤츠 보유 고객)와 트레이드인(타던 차 매각) 할인은 해당되시면 추가로 더해지고, 마지막 「최대 할인가」는 이 둘까지 모두 적용한 금액입니다.
-        </p>
-      </div>
-
-      <div class="filters" id="pricefilters" role="group" aria-label="가격표 차종 분류">
-        <button class="chip" type="button" data-seg="all" aria-pressed="true">전체</button>
-        <button class="chip" type="button" data-seg="sedan" aria-pressed="false">세단</button>
-        <button class="chip" type="button" data-seg="suv" aria-pressed="false">SUV</button>
-        <button class="chip" type="button" data-seg="amg" aria-pressed="false">AMG</button>
-        <button class="chip" type="button" data-seg="ev" aria-pressed="false">전기차</button>
-      </div>
-      <div class="filters" id="yearfilters" role="group" aria-label="가격표 연식 분류">
-        <button class="chip" type="button" data-year="all" aria-pressed="true">전체 연식</button>
-        <button class="chip" type="button" data-year="27" aria-pressed="false">27년식</button>
-        <button class="chip" type="button" data-year="26" aria-pressed="false">26년식</button>
-      </div>
-
-      <p class="p-stale" id="pricestale" role="status">
-        <b>안내</b>
-        <span id="pricestaletext"></span>
-      </p>
-
-      <div class="viewtoggle" role="group" aria-label="보기 방식">
-        <button class="chip" type="button" data-view="groups" aria-pressed="true">차종별로 보기</button>
-        <button class="chip" type="button" data-view="table" aria-pressed="false">전체 표로 보기</button>
-      </div>
-      <div class="pgroups" id="pricegroups"></div>
-      <div class="ptable-wrap" id="ptablewrap" hidden>
-      <p class="p-hint">표를 옆으로 밀면 할인·최대 할인가가 보입니다 &rarr;</p>
-      <div class="sheet">
-        <table id="pricetable">
-          <caption id="pricecap"></caption>
-          <thead>
-            <tr>
-              <th scope="col">모델</th>
-              <th scope="col">연식</th>
-              <th scope="col">트림</th>
-              <th scope="col">판매가격</th>
-              <th scope="col">할인 (현금 + 할부)</th>
-              <th scope="col">할인 적용가</th>
-              <th scope="col">재구매</th>
-              <th scope="col">트레이드인</th>
-              <th scope="col" class="p-conqh">컨퀘스트<br><small>타 브랜드 보유</small></th>
-              <th scope="col" class="p-maxh">최대 할인가<br><small>재구매·트레이드인 포함</small></th>
-            </tr>
-          </thead>
-          <tbody id="pricebody"></tbody>
-        </table>
-      </div>
-      </div>
-      <p class="conq-note">
-        <b>컨퀘스트(프리미엄 브랜드 특별 할인)</b> — 지금 타시는 차가 아래 브랜드면 해당 모델 신차 구매 시 추가 할인됩니다.<br>
-        · <b>GLC·GLE (SUV·쿠페, 전 연식) +1%</b> : BMW(MINI 제외)·아우디·제네시스·볼보·포르쉐·랜드로버·렉서스<br>
-        · <b>마이바흐 S 680·GLS 600 (26년식) +7%</b> : 위 브랜드 + 롤스로이스·벤틀리<br>
-        · 신차 계약 월 1일 기준으로 기존 차량을 보유하고 계셔야 합니다. <b>재구매와 컨퀘스트는 둘 중 하나만</b>, 컨퀘스트는 트레이드인과 함께 받을 수 없습니다.
-      </p>
-      <p class="conq-note extra-note">
-        <b>그 밖의 10월 추가 혜택</b> — 해당 차량이면 위 할인에 더해집니다.<br>
-        · E 200 AMG 라인 RoF 에디션 나이트 패키지 +20만원<br>
-        · 벤츠 금융 할부 이용 시 모델별로 6개월간 월 납입금 일부 지원 — 차종별 금액은 문의 주세요
-      </p>
-      <p class="conq-note ew-note">
-        <b>보증연장(Extended Warranty) 추가 혜택</b> — 트림 아래 청록색 표시가 있는 차량에 제공됩니다.<br>
-        · <b>EQ 전 모델 (전 연식) · 마이바흐 S 클래스 (26년식)</b> : 보증 +2년 / +7만km (최대 5년 / 17만km 중 먼저 도래 기준)<br>
-        · <b>* S 클래스 · 마이바흐 S 클래스 (27년식, 사전계약 재구매 고객만)</b> : 할부(MBF·MBMK) +2년 / +7만km, 현금 +1년 / +3만km (최대 4년 / 13만km)
-      </p>
-
-      <div class="p-foot">
-        <span>
-          「최대 혜택」은 MBFSK 금융 이용 시 기준이며, 옆의 작은 수치는 현금 구매 시 혜택입니다.
-          할부는 24개월 선수금 61~63% 무이자 또는 60개월 선수금 30% 연 5.20%~ 조건이 적용됩니다.
-          실제 금액은 트림 · 옵션 · 재고 · 계약 시점에 따라 달라집니다.
-        </span>
-        <span class="p-hint">문의 시 트림별 정밀 견적 안내</span>
-      </div>
+      <ul class="models" id="models"></ul>
     </div>
   </section>
 
   <!-- Process — ordered because the purchase genuinely runs in this order -->
-  <section class="section" id="process">
+  <section class="sec" id="process" data-toc="상담 절차">
     <div class="wrap">
-      <div class="section__head">
-        <p class="eyebrow">Consulting Process</p>
-        <h2 class="section__title">상담부터 출고 이후까지</h2>
-        <p class="section__note">
-          단순 판매가 아니라, 차량을 선택하는 순간부터 오래 타는 과정까지 함께합니다.
-        </p>
+      <div class="sec__head">
+        <p class="sec__eyebrow">Consulting Process</p>
+        <h2 class="sec__title">상담부터 <em>출고 이후까지</em></h2>
+        <p class="sec__note">단순 판매가 아니라, 차량을 선택하는 순간부터 오래 타는 과정까지 함께합니다.</p>
       </div>
-      <ol class="grid4 rise">
-        <li class="cell">
-          <span class="cell__n">01</span>
-          <h3 class="cell__t">차량 선택 상담</h3>
-          <p class="cell__d">라이프스타일과 예산을 기준으로 가장 적합한 모델을 비교합니다.</p>
-        </li>
-        <li class="cell">
-          <span class="cell__n">02</span>
-          <h3 class="cell__t">견적 및 금융 안내</h3>
-          <p class="cell__d">할부 · 리스 · 현금 구매 조건을 명확하게 비교해 안내합니다.</p>
-        </li>
-        <li class="cell">
-          <span class="cell__n">03</span>
-          <h3 class="cell__t">계약 및 출고 관리</h3>
-          <p class="cell__d">계약부터 차량 준비, 등록, 인도까지 전 과정을 직접 관리합니다.</p>
-        </li>
-        <li class="cell">
-          <span class="cell__n">04</span>
-          <h3 class="cell__t">출고 이후 고객 관리</h3>
-          <p class="cell__d">차량 사용법, 서비스센터, 정기점검까지 지속적으로 안내합니다.</p>
-        </li>
+      <ol class="steps rise">
+        <li class="step"><p class="step__n">STEP 01</p><h3 class="step__t">차량 선택 상담</h3><p class="step__d">라이프스타일과 예산을 기준으로 가장 적합한 모델을 비교합니다.</p></li>
+        <li class="step"><p class="step__n">STEP 02</p><h3 class="step__t">견적 및 금융 안내</h3><p class="step__d">할부 · 리스 · 현금 구매 조건을 명확하게 비교해 안내합니다.</p></li>
+        <li class="step"><p class="step__n">STEP 03</p><h3 class="step__t">계약 및 출고 관리</h3><p class="step__d">계약부터 차량 준비, 등록, 인도까지 전 과정을 직접 관리합니다.</p></li>
+        <li class="step"><p class="step__n">STEP 04</p><h3 class="step__t">출고 이후 고객 관리</h3><p class="step__d">차량 사용법, 서비스센터, 정기점검까지 지속적으로 안내합니다.</p></li>
       </ol>
     </div>
   </section>
 
-
   <!-- Reviews + channels -->
-  <section class="section" id="reviews">
+  <section class="sec" id="reviews" data-toc="고객 후기 · 채널">
     <div class="wrap">
-      <div class="section__head">
-        <p class="eyebrow">Customer Reviews</p>
-        <h2 class="section__title">실제 고객 후기</h2>
-        <p class="section__note">
-          한성자동차 인천전시장에서 출고하신 고객님들이 네이버에 직접 남기신 공개 리뷰입니다.
-        </p>
+      <div class="sec__head">
+        <p class="sec__eyebrow">Customer Reviews</p>
+        <h2 class="sec__title">실제 고객 후기</h2>
+        <p class="sec__note">한성자동차 인천전시장에서 출고하신 고객님들이 네이버에 직접 남기신 공개 리뷰입니다.</p>
       </div>
-
-      <div class="quotes rise">
-        <div class="quote">
-          <span class="stars">★★★★★</span>
-          <p>친절하고 빠른 상담</p>
-        </div>
-        <div class="quote">
-          <span class="stars">★★★★★</span>
-          <p>꼼꼼한 차량 설명</p>
-        </div>
-        <div class="quote">
-          <span class="stars">★★★★★</span>
-          <p>출고 이후까지 지속 관리</p>
-        </div>
+      <div class="quotes">
+        <div class="quote"><span class="stars">★★★★★</span><p>친절하고 빠른 상담</p></div>
+        <div class="quote"><span class="stars">★★★★★</span><p>꼼꼼한 차량 설명</p></div>
+        <div class="quote"><span class="stars">★★★★★</span><p>출고 이후까지 지속 관리</p></div>
       </div>
-
-      <div class="actions" style="margin-top:1.5rem">
+      <div class="reviews__more">
         <a class="btn btn--line" href="https://new.smartplace.naver.com/bizes/booking/1083906/reviews?menu=visitor" target="_blank" rel="noopener">네이버 리뷰 전체 보기 →</a>
       </div>
 
-      <div class="duo rise" style="margin-top:2.5rem">
-        <a class="panel" href="https://www.youtube.com/@별주행벤츠" target="_blank" rel="noopener">
+      <div class="channels rise">
+        <a class="panel panel--yt" href="https://www.youtube.com/@별주행벤츠" target="_blank" rel="noopener">
           <span class="panel__k">YOUTUBE</span>
           <h3 class="panel__t">별주행 벤츠</h3>
           <p class="panel__d">신차 리뷰, 모델 비교, 구매 정보와 출고 영상을 올립니다. 매장에서 못 하는 이야기는 대체로 여기 있습니다.</p>
@@ -1020,9 +286,6 @@ button,input,select{font:inherit;color:inherit}
           <p class="panel__d">실시간 출고 소식과 차량 사진, 릴스, 프로모션 정보를 가장 빠르게 올립니다.</p>
           <span class="panel__go">인스타그램 보러가기 →</span>
         </a>
-      </div>
-
-      <div class="duo rise" style="margin-top:1.25rem">
         <a class="panel" href="https://blog.naver.com/benz-ck" target="_blank" rel="noopener">
           <span class="panel__k">NAVER BLOG</span>
           <h3 class="panel__t">홍창기 차장 블로그</h3>
@@ -1040,46 +303,37 @@ button,input,select{font:inherit;color:inherit}
   </section>
 
   <!-- Location -->
-  <section class="section section--raise" id="location">
+  <section class="sec" id="location" data-toc="오시는 길">
     <div class="wrap">
-      <div class="section__head">
-        <p class="eyebrow">Location</p>
-        <h2 class="section__title">한성자동차 인천전시장</h2>
-        <p class="section__note">
-          방문 상담 전에 전화나 카카오톡으로 예약해 주시면 차량 준비와 시승까지 미리 맞춰 둡니다.
-        </p>
+      <div class="sec__head">
+        <p class="sec__eyebrow">Location</p>
+        <h2 class="sec__title">한성자동차 <em>인천전시장</em></h2>
+        <p class="sec__note">방문 상담 전에 전화나 카카오톡으로 예약해 주시면 차량 준비와 시승까지 미리 맞춰 둡니다.</p>
       </div>
-
-      <div class="dl">
-        <div class="dl__row">
-          <span class="dl__k">담당</span>
-          <span class="dl__v">홍창기 차장 · 메르세데스-벤츠 공식딜러</span>
+      <div class="loc">
+        <div class="loc__card">
+          <p class="loc__nm">MERCEDES-BENZ HANSUNG MOTOR INCHEON</p>
+          <p class="loc__addr">인천광역시 남동구 인주대로 651<small>한성자동차 인천전시장 · 메르세데스-벤츠 공식딜러</small></p>
+          <div class="loc__feats">
+            <p class="loc__feat"><i>1</i><span><b>방문 상담 예약제</b> · 미리 연락 주시면 보고 싶은 차량과 시승차를 준비해 둡니다.</span></p>
+            <p class="loc__feat"><i>2</i><span><b>전국 출고 · 탁송 가능</b> · 인천이 아니어도 계약부터 인도까지 진행됩니다.</span></p>
+            <p class="loc__feat"><i>3</i><span><b>출고 이후까지 한 사람이</b> · 사용법, 서비스센터, 정기점검까지 계속 안내합니다.</span></p>
+          </div>
+          <div class="loc__btns">
+            <a class="btn btn--white" href="https://map.naver.com/p/search/인천광역시 남동구 인주대로 651" target="_blank" rel="noopener">네이버 지도</a>
+            <a class="btn btn--line" href="https://map.kakao.com/?q=인천광역시 남동구 인주대로 651" target="_blank" rel="noopener">카카오맵</a>
+            <a class="btn btn--line" href="tel:01031130328">전화 상담</a>
+            <a class="btn btn--kakao" href="https://open.kakao.com/o/s35suoRh" target="_blank" rel="noopener">카카오톡 상담</a>
+          </div>
         </div>
-        <div class="dl__row">
-          <span class="dl__k">전화</span>
-          <span class="dl__v tel"><a href="tel:01031130328">010-3113-0328</a></span>
+        <div class="dl">
+          <div class="dl__row"><span class="dl__k">담당</span><span class="dl__v">홍창기 차장 · 메르세데스-벤츠 공식딜러</span></div>
+          <div class="dl__row"><span class="dl__k">전화</span><span class="dl__v tel"><a href="tel:01031130328">010-3113-0328</a></span></div>
+          <div class="dl__row"><span class="dl__k">카카오톡</span><span class="dl__v"><a href="https://open.kakao.com/o/s35suoRh" target="_blank" rel="noopener">오픈카카오톡 1:1 상담</a></span></div>
+          <div class="dl__row"><span class="dl__k">카카오톡 ID</span><span class="dl__v">hck0328</span></div>
+          <div class="dl__row"><span class="dl__k">주소</span><span class="dl__v"><a href="https://map.naver.com/p/search/인천광역시 남동구 인주대로 651" target="_blank" rel="noopener">인천광역시 남동구 인주대로 651</a></span></div>
+          <div class="dl__row"><span class="dl__k">상담</span><span class="dl__v">전국 출고 · 탁송 가능 · 방문 상담 예약제</span></div>
         </div>
-        <div class="dl__row">
-          <span class="dl__k">카카오톡</span>
-          <span class="dl__v"><a href="https://open.kakao.com/o/s35suoRh" target="_blank" rel="noopener">오픈카카오톡 1:1 상담</a></span>
-        </div>
-        <div class="dl__row">
-          <span class="dl__k">카카오톡 ID</span>
-          <span class="dl__v">hck0328</span>
-        </div>
-        <div class="dl__row">
-          <span class="dl__k">주소</span>
-          <span class="dl__v"><a href="https://map.naver.com/p/search/인천광역시 남동구 인주대로 651" target="_blank" rel="noopener">인천광역시 남동구 인주대로 651</a></span>
-        </div>
-        <div class="dl__row">
-          <span class="dl__k">상담</span>
-          <span class="dl__v">전국 출고 · 탁송 가능 · 방문 상담 예약제</span>
-        </div>
-      </div>
-
-      <div class="actions" style="margin-top:1.75rem;display:flex;flex-wrap:wrap;gap:.7rem">
-        <a class="btn btn--kakao" href="https://open.kakao.com/o/s35suoRh" target="_blank" rel="noopener">방문 상담 예약</a>
-        <a class="btn btn--line" href="https://map.naver.com/p/search/인천광역시 남동구 인주대로 651" target="_blank" rel="noopener">네이버 지도 보기</a>
       </div>
     </div>
   </section>
@@ -1096,770 +350,7 @@ button,input,select{font:inherit;color:inherit}
   </div>
 </dialog>
 
-<footer class="foot">
-  <div class="wrap">
-    <div class="foot__top">
-      <div>
-        <div class="brand">
-          <b>Hong Chang Ki</b>
-          <span>한성자동차 인천전시장 · Mercedes-Benz Official Dealer</span>
-        </div>
-      </div>
-      <div class="foot__links">
-        <a href="tel:01031130328">010-3113-0328</a>
-        <a href="https://open.kakao.com/o/s35suoRh" target="_blank" rel="noopener">카카오톡</a>
-        <a href="https://www.youtube.com/@별주행벤츠" target="_blank" rel="noopener">YouTube</a>
-        <a href="https://www.instagram.com/getbenzck/" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://blog.naver.com/benz-ck" target="_blank" rel="noopener">네이버 블로그</a>
-        <a href="https://hoohoopro.blogspot.com" target="_blank" rel="noopener">구글 블로그</a>
-        <a href="https://new.smartplace.naver.com/bizes/booking/1083906/reviews?menu=visitor" target="_blank" rel="noopener">네이버 리뷰</a>
-      </div>
-    </div>
-    <p>
-      본 페이지는 메르세데스-벤츠 공식딜러 한성자동차 인천전시장 소속 세일즈 컨설턴트 홍창기의
-      개인 상담 안내 페이지입니다. 표기된 혜택과 금융 조건은 모델 · 재고 · 계약 시점에 따라 변동되며,
-      계산기 결과는 참고용입니다. 최종 조건은 상담 시 안내드립니다.
-    </p>
-  </div>
-</footer>
-
-<div class="callbar">
-  <a class="btn btn--line" href="tel:01031130328">전화 상담</a>
-  <a class="btn btn--kakao" href="https://open.kakao.com/o/s35suoRh" target="_blank" rel="noopener">카카오톡 상담</a>
-</div>
-
-<script>
-(function(){
-  /* ─────────────────────────────────────────────────────────
-     쇼룸 사진 — 사진을 바꿀 때는 images/ 폴더에 **새 이름**으로 넣고
-     아래 src 를 그 이름으로 고치세요. 같은 이름으로 덮어쓰면 한 번이라도
-     사이트를 열어 본 사람의 브라우저가 옛 사진을 계속 보여줍니다.
-     차가 바뀌었을 때는 title / note 도 함께 고치세요.
-     ───────────────────────────────────────────────────────── */
-  var SHOTS = [
-    { src:"images/shot-s450-front.jpg",    title:"S 450 4MATIC Long AMG Line", note:"인천전시장 · 정면" },
-    { src:"images/shot-s450-rear.jpg",     title:"S 450 4MATIC Long AMG Line", note:"인천전시장 · 후면" },
-    { src:"images/shot-s450-interior.jpg", title:"S 450 4MATIC Long AMG Line", note:"실내 · 앰비언트 라이트" }
-  ];
-  var SHOTS_NOTE = "모든 사진은 인천전시장에서 직접 촬영했습니다";
-
-  /* ─────────────────────────────────────────────────────────
-     가격표 데이터 — 여기만 고치면 표가 바뀝니다.
-       year  : 연식(26/27)
-       msrp  : 판매가격(원) — 가격표에 없는 특별판은 null(가격 문의). from:true 면 최저가에 "부터"
-       fin   : 현금 할인 + MBM 할부 특별 할인 합계(%) — 프로모션표 [1] + [2-1]
-       cash  : 현금 할인(%) — 프로모션표 [1]
-       ret   : 재구매 추가 할인(%) — 프로모션표 [4] Cash Retention
-       trade : 트레이드인 추가 할인(%) — 프로모션표 [4-1] +Trade-in
-       seg   : sedan / suv / amg / ev
-     기준 월이 지나면 표 위에 안내 배너가 자동으로 뜹니다.
-     ───────────────────────────────────────────────────────── */
-  var PRICE_YEAR = 2026, PRICE_MONTH = 10;
-  var PRICE_ASOF = PRICE_YEAR + "년 " + PRICE_MONTH + "월 기준";
-
-  /* 제목과 안내 문구의 "○월"은 표에 실린 자료의 달을 따른다.
-     달력상 이번 달이 아니라 PRICE_MONTH 를 쓰는 이유 —
-     10월에 9월 숫자를 두고 "10월 혜택"이라고 쓰면 틀린 안내가 된다.
-     자료가 지난 달이면 아래 renderStale() 이 배너로 알린다. */
-  (function priceHeading(){
-    var t = document.getElementById("pricetitle");
-    var n = document.getElementById("pricemonthnote");
-    if (t) t.textContent = PRICE_MONTH + "월 프로모션";
-    var bt = document.getElementById("benefitstitle");
-    if (bt) bt.textContent = PRICE_MONTH + "월 프로모션 혜택";
-    if (n) n.textContent = PRICE_MONTH + "월";
-  })();
-  var PRICE_ROWS = [
-    { model:"A-Class", year:26, trim:"A 220 Hatch", seg:"sedan", msrp:48700000, fin:10, cash:10, ret:1, trade:1 },
-    { model:"A-Class", year:26, trim:"A 220 Sedan", seg:"sedan", msrp:50500000, fin:5, cash:5, ret:1, trade:1 },
-    { model:"CLA", year:26, trim:"CLA 250 4M AMG Line", seg:"sedan", msrp:64500000, fin:7, cash:7, ret:1, trade:1 },
-    { model:"GLA", year:26, trim:"GLA 250 4M", seg:"suv", msrp:70000000, fin:13, cash:9, ret:1, trade:1 },
-    { model:"GLB", year:26, trim:"GLB 250 4M", seg:"suv", msrp:72000000, fin:17, cash:13, ret:1, trade:1 },
-    { model:"Mercedes-AMG", year:26, trim:"AMG GLB 35 4M", seg:"amg", msrp:79500000, fin:13, cash:9, ret:2, trade:1 },
-    { model:"Mercedes-AMG", year:26, trim:"AMG A 45 S 4M+", seg:"amg", msrp:81400000, fin:11, cash:7, ret:2, trade:1 },
-    { model:"Mercedes-AMG", year:26, trim:"AMG CLA 45 S 4M+", seg:"amg", msrp:91800000, fin:5, cash:5, ret:2, trade:1 },
-    { model:"GLA", year:27, trim:"GLA 250 4M", seg:"suv", msrp:70800000, fin:13, cash:9, ret:1, trade:1 },
-    { model:"C-Class", year:26, trim:"C 200 AV", seg:"sedan", msrp:65100000, fin:14, cash:10, ret:1, trade:1 },
-    { model:"C-Class", year:26, trim:"C 200 AMG Line", seg:"sedan", msrp:68300000, fin:14, cash:10, ret:1, trade:1 },
-    { model:"C-Class", year:26, trim:"C 200 Final Edition", seg:"sedan", msrp:66300000, fin:14, cash:10, ret:1, trade:1 },
-    { model:"E-Class", year:26, trim:"E 200 Exclusive", seg:"sedan", msrp:77500000, fin:20, cash:15, ret:1, trade:1 },
-    { model:"E-Class", year:26, trim:"E 200 AMG Line", seg:"sedan", msrp:81000000, fin:19, cash:15, ret:1, trade:1 },
-    { model:"E-Class", year:26, trim:"E 200 AMG Line (RoF Edition)", seg:"sedan", msrp:null, fin:19, cash:15, ret:1, trade:1, memo:"나이트 패키지 옵션 +20만원 추가 할인" },
-    { model:"E-Class", year:26, trim:"E 220 d 4M", seg:"sedan", msrp:87200000, fin:12, cash:12, ret:1, trade:1 },
-    { model:"E-Class", year:26, trim:"E 300 4M Exclusive", seg:"sedan", msrp:94800000, fin:14, cash:10, ret:1, trade:1 },
-    { model:"E-Class", year:26, trim:"E 300 4M AMG Line", seg:"sedan", msrp:99000000, fin:14, cash:10, ret:1, trade:1 },
-    { model:"E-Class", year:26, trim:"E 300 AMG Line (140주년)", seg:"sedan", msrp:null, fin:14, cash:10, ret:1, trade:1 },
-    { model:"E-Class", year:26, trim:"E 350 e 4M Exclusive", seg:"sedan", msrp:100000000, fin:14, cash:14, ret:1, trade:1 },
-    { model:"E-Class", year:26, trim:"E 450 4M AMG Line", seg:"sedan", msrp:116000000, fin:11, cash:11, ret:1, trade:1 },
-    { model:"E-Class", year:26, trim:"E 450 4M Exclusive", seg:"sedan", msrp:129600000, fin:11, cash:11, ret:1, trade:1 },
-    { model:"Mercedes-AMG", year:26, trim:"AMG E 53 4M+", seg:"amg", msrp:143000000, from:true, fin:10, cash:10, ret:2, trade:1 },
-    { model:"E-Class", year:27, trim:"E 300 4M Exclusive", seg:"sedan", msrp:94800000, fin:12, cash:8, ret:0, trade:0 },
-    { model:"E-Class", year:27, trim:"E 300 4M AMG Line", seg:"sedan", msrp:100100000, fin:12, cash:8, ret:0, trade:0 },
-    { model:"E-Class", year:27, trim:"E 450 4M Exclusive", seg:"sedan", msrp:129500000, fin:10, cash:10, ret:0, trade:0 },
-    { model:"E-Class", year:27, trim:"E 450 4M AMG Line", seg:"sedan", msrp:117200000, fin:10, cash:10, ret:0, trade:0 },
-    { model:"E-Class", year:27, trim:"E 450 4M AMG Line", seg:"sedan", msrp:112200000, fin:10, cash:10, ret:0, trade:0, memo:"10/6 가격표 신규 트림" },
-    { model:"S-Class", year:26, trim:"S 350 d 4M", seg:"sedan", msrp:154000000, fin:10, cash:10, ret:2, trade:1 },
-    { model:"S-Class", year:26, trim:"S 450 4M (SWB)", seg:"sedan", msrp:161000000, from:true, fin:11, cash:7, ret:2, trade:1, memo:"운용리스 시 할부 대신 +6%" },
-    { model:"S-Class", year:26, trim:"S 450 4M Long", seg:"sedan", msrp:193000000, from:true, fin:10, cash:10, ret:2, trade:1 },
-    { model:"S-Class", year:26, trim:"S 500 4M Long", seg:"sedan", msrp:215000000, from:true, fin:10, cash:10, ret:2, trade:1 },
-    { model:"S-Class", year:26, trim:"S 580 4M Long", seg:"sedan", msrp:260000000, fin:10, cash:10, ret:2, trade:1 },
-    { model:"Mercedes-AMG", year:26, trim:"AMG S 63 E Performance", seg:"amg", msrp:299000000, fin:10, cash:10, ret:2, trade:1 },
-    { model:"Mercedes-Maybach", year:26, trim:"Maybach S 580 4M (MANUFAKTUR 포함)", seg:"sedan", msrp:317000000, fin:9, cash:9, ret:2, trade:1, ew:"t1", memo:"운용리스 시 +2%" },
-    { model:"Mercedes-Maybach", year:26, trim:"Maybach S 680 4M", seg:"sedan", msrp:403000000, fin:9, cash:9, ret:9, trade:1, ew:"t1", conq:7, memo:"운용리스 시 +2%" },
-    { model:"S-Class", year:27, trim:"S 350 d 4M", seg:"sedan", msrp:154000000, fin:0, cash:0, ret:2, trade:1, ew:"s27" },
-    { model:"S-Class", year:27, trim:"S 450 4M", seg:"sedan", msrp:162400000, fin:0, cash:0, ret:2, trade:1, ew:"s27" },
-    { model:"S-Class", year:27, trim:"S 450 4M Long AMG Line", seg:"sedan", msrp:195400000, fin:0, cash:0, ret:2, trade:1, ew:"s27" },
-    { model:"S-Class", year:27, trim:"S 450 4M Long Exclusive", seg:"sedan", msrp:175400000, fin:0, cash:0, ret:2, trade:1, ew:"s27" },
-    { model:"S-Class", year:27, trim:"S 500 4M Long", seg:"sedan", msrp:220000000, fin:0, cash:0, ret:2, trade:1, ew:"s27" },
-    { model:"S-Class", year:27, trim:"S 580 4M Long", seg:"sedan", msrp:270000000, fin:0, cash:0, ret:2, trade:1, ew:"s27" },
-    { model:"Mercedes-Maybach", year:27, trim:"Maybach S 580", seg:"sedan", msrp:317000000, fin:0, cash:0, ret:2, trade:1, ew:"s27" },
-    { model:"Mercedes-Maybach", year:27, trim:"Maybach S 580 MANUFAKTUR", seg:"sedan", msrp:336000000, fin:0, cash:0, ret:2, trade:1, ew:"s27" },
-    { model:"Mercedes-Maybach", year:27, trim:"Maybach S 680", seg:"sedan", msrp:407000000, fin:0, cash:0, ret:2, trade:1, ew:"s27" },
-    { model:"CLE", year:26, trim:"CLE 200 Coupé", seg:"sedan", msrp:76700000, fin:5, cash:5, ret:1, trade:1 },
-    { model:"CLE", year:26, trim:"CLE 200 Coupé (140주년 Edition)", seg:"sedan", msrp:null, fin:5, cash:5, ret:1, trade:1 },
-    { model:"CLE", year:26, trim:"CLE 200 Cabriolet", seg:"sedan", msrp:83100000, fin:4, cash:4, ret:1, trade:1 },
-    { model:"CLE", year:26, trim:"CLE 200 Cabriolet (140주년 Edition)", seg:"sedan", msrp:null, fin:4, cash:4, ret:1, trade:1 },
-    { model:"CLE", year:26, trim:"CLE 450 4M Coupé", seg:"sedan", msrp:99700000, fin:9, cash:9, ret:1, trade:1 },
-    { model:"CLE", year:26, trim:"CLE 450 4M Cabriolet", seg:"sedan", msrp:104000000, fin:6, cash:6, ret:1, trade:1 },
-    { model:"Mercedes-AMG", year:26, trim:"AMG CLE 53 4M+ Coupé", seg:"amg", msrp:109100000, fin:3, cash:3, ret:2, trade:1 },
-    { model:"Mercedes-AMG", year:26, trim:"AMG CLE 53 4M+ Cabriolet", seg:"amg", msrp:115000000, fin:3, cash:3, ret:2, trade:1 },
-    { model:"Mercedes-AMG", year:26, trim:"AMG SL 43", seg:"amg", msrp:160000000, fin:9, cash:9, ret:2, trade:1 },
-    { model:"Mercedes-AMG", year:26, trim:"AMG GT 43 (C192)", seg:"amg", msrp:149500000, fin:9, cash:9, ret:2, trade:1 },
-    { model:"Mercedes-AMG", year:26, trim:"AMG GT 43 4M+ (X290)", seg:"amg", msrp:164000000, fin:9, cash:9, ret:2, trade:1 },
-    { model:"Mercedes-AMG", year:26, trim:"AMG GT 55 4M+", seg:"amg", msrp:210000000, fin:3, cash:3, ret:2, trade:1 },
-    { model:"Mercedes-AMG", year:26, trim:"AMG GT 63 S E Performance", seg:"amg", msrp:280000000, fin:4, cash:4, ret:2, trade:1 },
-    { model:"Mercedes-Maybach", year:26, trim:"Maybach SL 680", seg:"amg", msrp:344000000, fin:2, cash:2, ret:2, trade:1 },
-    { model:"CLE", year:27, trim:"CLE 200 Coupé", seg:"sedan", msrp:77600000, fin:2, cash:2, ret:1, trade:1 },
-    { model:"CLE", year:27, trim:"CLE 450 Coupé", seg:"sedan", msrp:100800000, fin:2, cash:2, ret:1, trade:1 },
-    { model:"CLE", year:27, trim:"CLE 200 Cabriolet", seg:"sedan", msrp:84100000, fin:2, cash:2, ret:1, trade:1 },
-    { model:"CLE", year:27, trim:"CLE 450 4M Cabriolet", seg:"sedan", msrp:105200000, fin:2, cash:2, ret:1, trade:1 },
-    { model:"Mercedes-AMG", year:27, trim:"AMG CLE 53 4M+ Cabriolet", seg:"amg", msrp:116600000, fin:2, cash:2, ret:2, trade:1 },
-    { model:"Mercedes-AMG", year:27, trim:"AMG CLE 53 4M+ Coupé", seg:"amg", msrp:110600000, fin:2, cash:2, ret:0, trade:0 },
-    { model:"Mercedes-AMG", year:27, trim:"AMG GT 43", seg:"amg", msrp:149500000, fin:8, cash:8, ret:0, trade:0 },
-    { model:"Mercedes-AMG", year:27, trim:"AMG GT 55 4M+", seg:"amg", msrp:212600000, fin:2, cash:2, ret:0, trade:0 },
-    { model:"Mercedes-AMG", year:27, trim:"AMG SL 43", seg:"amg", msrp:161800000, fin:8, cash:8, ret:0, trade:0 },
-    { model:"GLC", year:26, trim:"GLC 220 d 4M", seg:"suv", msrp:82200000, fin:10, cash:10, ret:1, trade:1, conq:1 },
-    { model:"GLC", year:26, trim:"GLC 300 4M AV", seg:"suv", msrp:82500000, fin:11, cash:7, ret:1, trade:1, conq:1 },
-    { model:"GLC", year:26, trim:"GLC 300 4M AMG Line", seg:"suv", msrp:92500000, fin:16, cash:12, ret:1, trade:1, conq:1 },
-    { model:"GLC", year:26, trim:"GLC 300 4M AMG Line (RoF Edition)", seg:"suv", msrp:null, fin:16, cash:12, ret:1, trade:1, conq:1 },
-    { model:"GLC", year:26, trim:"GLC 300 4M AMG Line (140주년)", seg:"suv", msrp:null, fin:16, cash:12, ret:1, trade:1, conq:1 },
-    { model:"GLC", year:26, trim:"GLC 300 4M Coupé AV", seg:"suv", msrp:86600000, fin:11, cash:7, ret:1, trade:1, conq:1 },
-    { model:"GLC", year:26, trim:"GLC 300 4M Coupé AMG Line", seg:"suv", msrp:96900000, fin:13, cash:9, ret:1, trade:1, conq:1 },
-    { model:"GLC", year:26, trim:"GLC 300 4M Coupé AMG Line (RoF Edition)", seg:"suv", msrp:null, fin:13, cash:9, ret:1, trade:1, conq:1 },
-    { model:"GLC", year:26, trim:"GLC 300 4M Coupé AMG Line (140주년)", seg:"suv", msrp:null, fin:13, cash:9, ret:1, trade:1, conq:1 },
-    { model:"Mercedes-AMG", year:26, trim:"AMG GLC 43 4M", seg:"amg", msrp:103600000, fin:7, cash:7, ret:2, trade:1, conq:1 },
-    { model:"Mercedes-AMG", year:26, trim:"AMG GLC 43 4M Coupé", seg:"amg", msrp:108300000, fin:3, cash:3, ret:2, trade:1, conq:1 },
-    { model:"GLE", year:26, trim:"GLE 350 4M", seg:"suv", msrp:118000000, fin:10, cash:10, ret:1, trade:1, conq:1 },
-    { model:"GLE", year:26, trim:"GLE 300 d 4M", seg:"suv", msrp:119200000, fin:8, cash:8, ret:1, trade:1, conq:1 },
-    { model:"GLE", year:26, trim:"GLE 450 4M", seg:"suv", msrp:129000000, fin:16, cash:12, ret:1, trade:1, conq:1 },
-    { model:"GLE", year:26, trim:"GLE 450 4M AMG Line", seg:"suv", msrp:139000000, fin:16, cash:12, ret:1, trade:1, conq:1 },
-    { model:"GLE", year:26, trim:"GLE 450 d 4M Coupé", seg:"suv", msrp:134000000, fin:12, cash:12, ret:1, trade:1, conq:1 },
-    { model:"GLE", year:26, trim:"GLE 450 4M Coupé", seg:"suv", msrp:142500000, fin:19, cash:15, ret:1, trade:1, conq:1 },
-    { model:"GLE", year:26, trim:"GLE 450 4M AMG Line Coupé", seg:"suv", msrp:142500000, fin:16, cash:12, ret:1, trade:1, conq:1 },
-    { model:"Mercedes-AMG", year:26, trim:"AMG GLE 53 4M+", seg:"amg", msrp:166000000, fin:8, cash:8, ret:2, trade:1, conq:1 },
-    { model:"Mercedes-AMG", year:26, trim:"AMG GLE 53 4M+ Coupé", seg:"amg", msrp:170000000, fin:5, cash:5, ret:2, trade:1, conq:1 },
-    { model:"GLS", year:26, trim:"GLS 450 4M AMG Line", seg:"suv", msrp:154000000, fin:8, cash:8, ret:2, trade:1 },
-    { model:"GLS", year:26, trim:"GLS 450 d 4M", seg:"suv", msrp:154000000, fin:2, cash:2, ret:2, trade:1 },
-    { model:"GLS", year:26, trim:"GLS 580 4M", seg:"suv", msrp:193400000, fin:9, cash:9, ret:2, trade:1 },
-    { model:"Mercedes-AMG", year:26, trim:"AMG GLS 63 4M+", seg:"amg", msrp:210000000, fin:1, cash:1, ret:2, trade:1 },
-    { model:"Mercedes-Maybach", year:26, trim:"Maybach GLS 600", seg:"suv", msrp:295000000, fin:5, cash:5, ret:9, trade:1, conq:7 },
-    { model:"Mercedes-Maybach", year:26, trim:"Maybach GLS 600 MANUFAKTUR", seg:"suv", msrp:337000000, fin:5, cash:5, ret:9, trade:1, conq:7 },
-    { model:"G-Class", year:26, trim:"G 450 d", seg:"suv", msrp:194900000, fin:0, cash:0, ret:2, trade:1 },
-    { model:"G-Class", year:26, trim:"G 450 d MANUFAKTUR", seg:"suv", msrp:219100000, fin:0, cash:0, ret:2, trade:1 },
-    { model:"Mercedes-AMG", year:26, trim:"AMG G 63", seg:"amg", msrp:262600000, fin:0, cash:0, ret:2, trade:1 },
-    { model:"Mercedes-AMG", year:26, trim:"AMG G 63 MANUFAKTUR", seg:"amg", msrp:289800000, fin:0, cash:0, ret:2, trade:1 },
-    { model:"GLC", year:27, trim:"GLC 300 4M AV", seg:"suv", msrp:82500000, fin:7, cash:7, ret:1, trade:1, conq:1 },
-    { model:"GLC", year:27, trim:"GLC 300 4M AMG Line", seg:"suv", msrp:95500000, fin:7, cash:7, ret:1, trade:1, conq:1 },
-    { model:"GLC", year:27, trim:"GLC 300 4M Coupé AV", seg:"suv", msrp:86600000, fin:5, cash:5, ret:1, trade:1, conq:1 },
-    { model:"GLC", year:27, trim:"GLC 300 4M Coupé AMG Line", seg:"suv", msrp:96900000, fin:5, cash:5, ret:1, trade:1, conq:1 },
-    { model:"EQA", year:26, trim:"EQA 250 Progressive", seg:"ev", msrp:70000000, fin:14, cash:10, ret:1, trade:1, ew:"t1" },
-    { model:"EQA", year:26, trim:"EQA 250 AMG Line", seg:"ev", msrp:75800000, fin:14, cash:10, ret:1, trade:1, ew:"t1" },
-    { model:"EQB", year:26, trim:"EQB 300 4M Progressive", seg:"ev", msrp:78800000, fin:14, cash:10, ret:1, trade:1, ew:"t1" },
-    { model:"EQB", year:26, trim:"EQB 300 4M AMG Line", seg:"ev", msrp:84300000, fin:14, cash:10, ret:1, trade:1, ew:"t1" },
-    { model:"EQE", year:26, trim:"EQE 350+ SUV", seg:"ev", msrp:106000000, fin:10, cash:10, ret:1, trade:1, ew:"t1" },
-    { model:"EQE", year:26, trim:"EQE 350+", seg:"ev", msrp:110000000, fin:10, cash:10, ret:1, trade:1, ew:"t1" },
-    { model:"EQE", year:26, trim:"EQE 500 4M SUV", seg:"ev", msrp:141000000, fin:10, cash:10, ret:1, trade:1, ew:"t1" },
-    { model:"EQS", year:26, trim:"EQS 450 4M SUV", seg:"ev", msrp:166000000, fin:10, cash:10, ret:2, trade:1, ew:"t1" },
-    { model:"EQS", year:26, trim:"EQS 580 4M SUV", seg:"ev", msrp:192000000, fin:10, cash:10, ret:2, trade:1, ew:"t1" },
-    { model:"G-Class", year:26, trim:"G 580 with EQ Technology", seg:"ev", msrp:216100000, fin:0, cash:0, ret:2, trade:1, ew:"t1" },
-    { model:"G-Class", year:26, trim:"G 580 with EQ Technology MANUFAKTUR", seg:"ev", msrp:null, fin:0, cash:0, ret:2, trade:1, ew:"t1" },
-    { model:"Mercedes-Maybach", year:26, trim:"Maybach EQS 680 SUV", seg:"ev", msrp:235000000, fin:0, cash:0, ret:2, trade:1, ew:"t1" },
-    { model:"EQA", year:27, trim:"EQA 250 Progressive", seg:"ev", msrp:70800000, fin:14, cash:10, ret:1, trade:1, ew:"t1" },
-    { model:"EQA", year:27, trim:"EQA 250 AMG Line", seg:"ev", msrp:76700000, fin:14, cash:10, ret:1, trade:1, ew:"t1" },
-    { model:"Mercedes-AMG", year:27, trim:"AMG A 45 S 4M+", seg:"amg", msrp:82300000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-    { model:"CLA", year:27, trim:"CLA 220", seg:"sedan", msrp:59900000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-    { model:"CLA", year:27, trim:"CLA 220 AMG Line", seg:"sedan", msrp:62900000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-    { model:"CLA", year:27, trim:"CLA 200 electric Essential", seg:"ev", msrp:52900000, fin:0, cash:0, ret:0, trade:0, ew:"t1", memo:"10월 프로모션 대상 아님" },
-    { model:"CLA", year:27, trim:"CLA 200 electric Advanced", seg:"ev", msrp:55800000, fin:0, cash:0, ret:0, trade:0, ew:"t1", memo:"10월 프로모션 대상 아님" },
-    { model:"CLA", year:27, trim:"CLA 200 electric AMG Line", seg:"ev", msrp:58900000, fin:0, cash:0, ret:0, trade:0, ew:"t1", memo:"10월 프로모션 대상 아님" },
-    { model:"CLA", year:27, trim:"CLA 250+ electric", seg:"ev", msrp:63700000, fin:0, cash:0, ret:0, trade:0, ew:"t1", memo:"10월 프로모션 대상 아님" },
-    { model:"CLA", year:27, trim:"CLA 250+ electric AMG Line", seg:"ev", msrp:67700000, fin:0, cash:0, ret:0, trade:0, ew:"t1", memo:"10월 프로모션 대상 아님" },
-    { model:"E-Class", year:27, trim:"E 220 d 4M AV", seg:"sedan", msrp:87500000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-    { model:"E-Class", year:27, trim:"E 350 e 4M Exclusive", seg:"sedan", msrp:101100000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-    { model:"Mercedes-AMG", year:27, trim:"AMG E 53 HYBRID 4M+", seg:"amg", msrp:149900000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-    { model:"GLC", year:27, trim:"GLC 220 d 4M", seg:"suv", msrp:82200000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-    { model:"GLC", year:27, trim:"GLC 300 4M", seg:"suv", msrp:77000000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-    { model:"GLC", year:27, trim:"GLC 300 4M Coupé", seg:"suv", msrp:80000000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-    { model:"Mercedes-AMG", year:27, trim:"AMG GLC 53 4M+", seg:"amg", msrp:105100000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-    { model:"Mercedes-AMG", year:27, trim:"AMG GLC 53 4M+ Coupé", seg:"amg", msrp:109800000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-    { model:"GLC", year:27, trim:"GLC 300 4M electric AMG Line (Launch Edition)", seg:"ev", msrp:90000000, fin:0, cash:0, ret:0, trade:0, ew:"t1", memo:"10월 프로모션 대상 아님" },
-    { model:"GLC", year:27, trim:"GLC 300 4M electric AMG Line+ (Launch Edition)", seg:"ev", msrp:94800000, fin:0, cash:0, ret:0, trade:0, ew:"t1", memo:"10월 프로모션 대상 아님" },
-    { model:"Mercedes-AMG", year:27, trim:"AMG SL 63 4M+", seg:"amg", msrp:252800000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-    { model:"Mercedes-Maybach", year:27, trim:"Maybach SL 680", seg:"amg", msrp:348000000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-    { model:"Mercedes-AMG", year:27, trim:"AMG GT 63 S E Performance", seg:"amg", msrp:283100000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-    { model:"G-Class", year:27, trim:"G 450 d", seg:"suv", msrp:199700000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-    { model:"G-Class", year:27, trim:"G 450 d MANUFAKTUR", seg:"suv", msrp:228200000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-    { model:"Mercedes-AMG", year:27, trim:"AMG G 63", seg:"amg", msrp:275000000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-    { model:"Mercedes-AMG", year:27, trim:"AMG G 63 MANUFAKTUR", seg:"amg", msrp:301000000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-    { model:"G-Class", year:27, trim:"G 580 with EQ Technology", seg:"ev", msrp:219000000, fin:0, cash:0, ret:0, trade:0, ew:"t1", memo:"10월 프로모션 대상 아님" },
-    { model:"G-Class", year:27, trim:"G 580 with EQ Technology MANUFAKTUR", seg:"ev", msrp:238500000, fin:0, cash:0, ret:0, trade:0, ew:"t1", memo:"10월 프로모션 대상 아님" },
-    { model:"V-Class", year:27, trim:"V 300 d 4M Exclusive", seg:"suv", msrp:124000000, fin:0, cash:0, ret:0, trade:0, memo:"10/20 가격표 신규 차종 · 10월 프로모션 대상 아님" }
-  ];
-
-  var won = new Intl.NumberFormat("ko-KR");
-
-  /* 첫 화면 「이번 달 총할인 TOP 5」 — 총 할인율(현금+할부+재구매+트레이드인) 순, 같으면 할인 금액 순. 가격 문의 행은 제외 */
-  /* 첫 화면 TOP 5 손보기 — DEALS_SKIP 은 자동 순위에서 뺄 트림, DEALS_PIN 은 순위와 상관없이 넣을 트림(연식|트림) */
-  var DEALS_SKIP = ["26|GLB 250 4M"];
-  var DEALS_PIN  = ["26|GLE 450 4M AMG Line"];
-  (function renderHeroDeals(){
-    var list = document.getElementById("deallist");
-    var title = document.getElementById("dealstitle");
-    if (!list) return;
-    if (title) title.textContent = PRICE_MONTH + "월 총할인 TOP 5";
-    var mw = function(v){ return Math.round(v / 10000); };
-    var tot = function(r){ return r.fin + r.ret + r.trade; };
-    var key = function(r){ return r.year + "|" + r.trim; };
-    var pinned = PRICE_ROWS.filter(function(r){ return DEALS_PIN.indexOf(key(r)) >= 0; });
-    var auto = PRICE_ROWS.filter(function(r){
-        return r.msrp !== null && tot(r) > 0 && DEALS_SKIP.indexOf(key(r)) < 0 && DEALS_PIN.indexOf(key(r)) < 0; })
-      .sort(function(a, b){ return (tot(b) - tot(a)) || (b.msrp * tot(b) - a.msrp * tot(a)); })
-      .slice(0, Math.max(0, 5 - pinned.length));
-    auto.concat(pinned).forEach(function(r){
-        var li = document.createElement("li");
-        var price;
-        if (r.msrp !== null) {
-          var best = Math.round(r.msrp * (1 - tot(r) / 100));
-          price = '<s>' + won.format(mw(r.msrp)) + '</s><b>' + won.format(mw(best)) + '만원</b>' + (r.from ? ' 부터' : '') +
-                  '<em>−' + won.format(mw(r.msrp) - mw(best)) + '만원 할인</em>';
-        } else {
-          price = '<b>가격 문의</b><em>총 ' + tot(r) + '% 할인</em>';
-        }
-        li.innerHTML =
-          '<span class="deals__name">' + r.trim + '<span class="p-year deals__y' + r.year + '">' + r.year + '년식</span></span>' +
-          '<span class="deals__pct">' + tot(r) + '%</span>' +
-          '<span class="deals__price">' + price + '</span>';
-        list.appendChild(li);
-      });
-  })();
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  /* ── Showroom shots ─────────────────────────────────── */
-  (function renderShots(){
-    var wrap = document.getElementById("shots");
-    var note = document.getElementById("shotsnote");
-    if (!wrap) return;
-    wrap.innerHTML = SHOTS.map(function(s){
-      return '<figure class="shot">' +
-        '<img src="' + s.src + '" alt="' + s.title + ' — ' + s.note + '" loading="lazy">' +
-        '<figcaption>' + s.title + '<em>' + s.note + '</em></figcaption>' +
-        '</figure>';
-    }).join("");
-    if (note) note.textContent = SHOTS_NOTE;
-  })();
-
-  /* ── 상단 메뉴 — 지금 보고 있는 섹션을 골드로 켠다 ───── */
-  (function navSpy(){
-    var links = [].slice.call(document.querySelectorAll(".nav a[href^='#']"));
-    if (!links.length || !("IntersectionObserver" in window)) return;
-    var map = {};
-    links.forEach(function(a){
-      var el = document.getElementById(a.getAttribute("href").slice(1));
-      if (el) map[el.id] = a;
-    });
-    var ids = Object.keys(map);
-    if (!ids.length) return;
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if (!e.isIntersecting) return;
-        links.forEach(function(a){ a.classList.remove("is-active"); });
-        map[e.target.id].classList.add("is-active");
-      });
-    }, { rootMargin:"-45% 0px -50% 0px", threshold:0 });
-    ids.forEach(function(id){ io.observe(document.getElementById(id)); });
-  })();
-
-  /* Scroll reveal */
-  var risers = document.querySelectorAll(".rise");
-  if (reduce || !("IntersectionObserver" in window)) {
-    risers.forEach(function(el){ el.classList.add("in"); });
-  } else {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
-      });
-    }, { threshold: 0, rootMargin: "0px 0px -6% 0px" });
-    risers.forEach(function(el){ io.observe(el); });
-  }
-
-  /* Line-up filter */
-  var segChips = document.querySelectorAll("#lineup .chip");
-  var models = document.querySelectorAll("#models .model");
-  segChips.forEach(function(chip){
-    chip.addEventListener("click", function(){
-      var seg = chip.dataset.seg;
-      segChips.forEach(function(c){ c.setAttribute("aria-pressed", String(c === chip)); });
-      models.forEach(function(m){
-        m.classList.toggle("is-out", seg !== "all" && m.dataset.seg !== seg);
-      });
-    });
-  });
-
-  /* ── Price table ────────────────────────────────────── */
-  var body = document.getElementById("pricebody");
-  var cap  = document.getElementById("pricecap");
-  var segNow = "all";
-
-  function manwon(v){ return Math.round(v / 10000); }
-
-  /* The quoted month expires. Say so rather than showing stale figures silently. */
-  (function flagIfStale(){
-    var band = document.getElementById("pricestale");
-    var text = document.getElementById("pricestaletext");
-    if (!band || !text) return;
-    var now = new Date();
-    var elapsed = (now.getFullYear() - PRICE_YEAR) * 12 + (now.getMonth() + 1 - PRICE_MONTH);
-    if (elapsed <= 0) return;
-    text.textContent =
-      "아래 조건은 " + PRICE_ASOF + "입니다. 구매 혜택은 매월 바뀌므로 " +
-      (now.getMonth() + 1) + "월 조건은 카카오톡이나 전화로 문의해 주세요.";
-    band.classList.add("on");
-  })();
-
-  /* 보증연장(EW) 추가 혜택 — 프로모션 공문 [1-2] */
-  var EW_LABEL = {
-    t1:  "+ 보증연장 2년/7만km",
-    s27: "+ 보증연장 최대 2년 *"
-  };
-  function renderPrices(){
-    if (!body) return;
-    cap.textContent = PRICE_ASOF + " · 26년식·27년식 전 모델 · 부가세 포함 권장 소비자가 기준";
-    body.innerHTML = "";
-    PRICE_ROWS.forEach(function(row){
-      if (segNow !== "all" && row.seg !== segNow) return;
-      if (yearNow !== "all" && String(row.year) !== yearNow) return;
-      var has = row.msrp !== null, from = row.from ? '<i>부터</i>' : '';
-      var best = has ? Math.round(row.msrp * (1 - row.fin / 100)) : null;
-      var disc = row.fin > 0
-        ? '<span class="p-rate">' + row.fin + '%</span>' +
-          (has ? '<span class="p-cut">−' + won.format(manwon(row.msrp - best)) + '만원</span>' : '') +
-          '<span class="p-rate2">현금 ' + row.cash + '%' + (row.fin > row.cash ? ' + 할부 ' + (row.fin - row.cash) + '%' : '') + '</span>'
-        : '<span class="p-rate2">기본 할인 없음</span>';
-      var tr = document.createElement("tr");
-      tr.className = "y" + row.year;
-      tr.innerHTML =
-        '<th scope="row"><span class="p-model">' + row.model.replace('Mercedes-', '') + '</span></th>' +
-        '<td><span class="p-year">' + row.year + '년식</span></td>' +
-        '<td class="p-trim"><span class="p-year p-year-m">' + row.year + '</span>' + row.trim +
-          (row.memo ? ' <span class="p-memo">' + row.memo + '</span>' : '') +
-          (row.ew ? ' <span class="p-perk">' + (EW_LABEL[row.ew] || '') + '</span>' : '') + '</td>' +
-        '<td>' + (has ? '<span class="p-num">' + won.format(manwon(row.msrp)) + '<i>만원</i>' + from + '</span>' : '<span class="p-rate2">가격 문의</span>') + '</td>' +
-        '<td>' + disc + '</td>' +
-        '<td>' + (has ? '<span class="p-best">' + won.format(manwon(best)) + '<i>만원</i>' + from + '</span>' : '—') + '</td>' +
-        '<td><span class="p-rate">' + (row.ret ? '+' + row.ret + '%' : '—') + '</span></td>' +
-        '<td><span class="p-rate">' + (row.trade ? '+' + row.trade + '%' : '—') + '</span></td>' +
-        '<td>' + (row.conq ? '<span class="p-conq">+' + row.conq + '%</span>' : '<span class="p-rate2">—</span>') + '</td>' +
-        '<td class="p-maxc">' + (has ? '<span class="p-max">' + won.format(manwon(Math.round(row.msrp * (1 - (row.fin + row.ret + row.trade) / 100)))) + '<i>만원</i>' + from + '</span>' : '—') + '</td>';
-      body.appendChild(tr);
-    });
-  }
-
-  /* 차종별 묶음 보기 — 같은 PRICE_ROWS 를 차종(model)으로 묶어 카드로. 카드 제목엔 그 차종의 최고 조건만 */
-  /* 묶음 = 차종 계열. AMG 는 원래 차종으로(AMG E 53 → E-Class), GT·SL 만 따로 */
-  var FAM_ORDER = ["A-Class","CLA","C-Class","E-Class","S-Class","Maybach","CLE","AMG GT · SL","GLA","GLB","GLC","GLE","GLS","G-Class","V-Class","EQA","EQB","EQE","EQS"];
-  function famOf(r){
-    var t = r.trim;
-    if (r.model === "Mercedes-Maybach") return "Maybach";
-    if (/^G 580/.test(t)) return "G-Class";
-    if (/^EQ[ABES]/.test(t)) return t.slice(0, 3);
-    if (r.model !== "Mercedes-AMG") return r.model;
-    var m = t.replace(/^AMG /, "");
-    if (/^(GT|SL)/.test(m)) return "AMG GT · SL";
-    if (/^A /.test(m)) return "A-Class";
-    if (/^CLA/.test(m)) return "CLA";
-    if (/^CLE/.test(m)) return "CLE";
-    if (/^GLB/.test(m)) return "GLB";
-    if (/^GLC/.test(m)) return "GLC";
-    if (/^GLE/.test(m)) return "GLE";
-    if (/^GLS/.test(m)) return "GLS";
-    if (/^G /.test(m)) return "G-Class";
-    if (/^E /.test(m)) return "E-Class";
-    if (/^S /.test(m)) return "S-Class";
-    return "AMG GT · SL";
-  }
-  var groupsEl = document.getElementById("pricegroups");
-  var openGroups = {};
-  function renderGroups(){
-    if (!groupsEl) return;
-    var tot = function(r){ return r.fin + r.ret + r.trade; };
-    var mw = function(v){ var m = Math.round(v / 10000), e = Math.floor(m / 10000), r = m % 10000;
-      return r ? (e ? e + "억 " : "") + won.format(r) + "만원" : e + "억원"; };
-    var order = [], by = {};
-    PRICE_ROWS.forEach(function(r){
-      if (segNow !== "all" && r.seg !== segNow) return;
-      if (yearNow !== "all" && String(r.year) !== yearNow) return;
-      var g = famOf(r);
-      if (!by[g]) { by[g] = []; order.push(g); }
-      by[g].push(r);
-    });
-    order.sort(function(a, b){ return FAM_ORDER.indexOf(a) - FAM_ORDER.indexOf(b); });
-    groupsEl.innerHTML = order.map(function(g){
-      var rows = by[g], priced = rows.filter(function(r){ return r.msrp !== null; });
-      var bestPct = Math.max.apply(null, rows.map(tot));
-      var minMax = priced.length ? Math.min.apply(null, priced.map(function(r){ return Math.round(r.msrp * (1 - tot(r) / 100)); })) : null;
-      var years = rows.map(function(r){ return r.year; }).filter(function(v, i, a){ return a.indexOf(v) === i; }).sort().reverse();
-      var head =
-        '<button class="pg__head" type="button" aria-expanded="' + (!!openGroups[g]) + '" data-g="' + g + '">' +
-          '<span class="pg__name">' + g + '</span>' +
-          '<span class="pg__years">' + years.map(function(y){ return '<i class="pg__y pg__y' + y + '">' + y + '</i>'; }).join("") + '</span>' +
-          '<span class="pg__best">' + (bestPct > 0 ? '최대 <b>' + bestPct + '%</b>' : '') +
-            (minMax ? ' · <em>' + mw(minMax) + '부터</em>' : '') + '</span>' +
-          '<span class="pg__n">' + rows.length + '개 트림</span><span class="pg__chev" aria-hidden="true"></span>' +
-        '</button>';
-      var body = '<ul class="pg__list"' + (openGroups[g] ? '' : ' hidden') + '>' + rows.map(function(r){
-        var has = r.msrp !== null, t = tot(r), from = r.from ? ' 부터' : '';
-        var best = has ? Math.round(r.msrp * (1 - r.fin / 100)) : null, max = has ? Math.round(r.msrp * (1 - t / 100)) : null;
-        var extras = [];
-        if (r.ret) extras.push('재구매 +' + r.ret + '%');
-        if (r.trade) extras.push('트레이드인 +' + r.trade + '%');
-        if (r.conq) extras.push('<span class="pg__conq">타 브랜드 +' + r.conq + '%</span>');
-        if (r.ew) extras.push('<span class="pg__ew">보증연장</span>');
-        return '<li class="pg__row y' + r.year + '">' +
-          '<span class="pg__trim"><i class="pg__y pg__y' + r.year + '">' + r.year + '</i>' + r.trim + '</span>' +
-          '<span class="pg__msrp">' + (has ? mw(r.msrp) + from : '가격 문의') + '</span>' +
-          '<span class="pg__disc">' + (r.fin > 0 ? '<b>' + r.fin + '%</b> ' + (has ? mw(best) : '') : '기본 할인 없음') + '</span>' +
-          '<span class="pg__max">' + (has ? '<small>최대 ' + t + '%</small> <b>' + mw(max) + '</b>' + from : '—') + '</span>' +
-          (extras.length ? '<span class="pg__extra">' + extras.join(' · ') + '</span>' : '') +
-        '</li>';
-      }).join("") + '</ul>';
-      return '<div class="pg' + (openGroups[g] ? ' is-open' : '') + '">' + head + body + '</div>';
-    }).join("") || '<p class="pg__empty">조건에 맞는 차량이 없습니다.</p>';
-  }
-  if (groupsEl) groupsEl.addEventListener("click", function(e){
-    var b = e.target.closest(".pg__head"); if (!b) return;
-    var g = b.dataset.g; openGroups[g] = !openGroups[g];
-    var box = b.parentNode; box.classList.toggle("is-open", !!openGroups[g]);
-    b.setAttribute("aria-expanded", String(!!openGroups[g]));
-    box.querySelector(".pg__list").hidden = !openGroups[g];
-  });
-  var viewChips = document.querySelectorAll(".viewtoggle .chip");
-  viewChips.forEach(function(chip){
-    chip.addEventListener("click", function(){
-      var v = chip.dataset.view;
-      viewChips.forEach(function(c){ c.setAttribute("aria-pressed", String(c === chip)); });
-      document.getElementById("pricegroups").hidden = v !== "groups";
-      document.getElementById("ptablewrap").hidden = v !== "table";
-    });
-  });
-
-  var priceChips = document.querySelectorAll("#pricefilters .chip");
-  priceChips.forEach(function(chip){
-    chip.addEventListener("click", function(){
-      segNow = chip.dataset.seg;
-      priceChips.forEach(function(c){ c.setAttribute("aria-pressed", String(c === chip)); });
-      renderPrices(); renderGroups();
-    });
-  });
-
-  var yearNow = "all";
-  var yearChips = document.querySelectorAll("#yearfilters .chip");
-  yearChips.forEach(function(chip){
-    chip.addEventListener("click", function(){
-      yearNow = chip.dataset.year;
-      yearChips.forEach(function(c){ c.setAttribute("aria-pressed", String(c === chip)); });
-      renderPrices(); renderGroups();
-    });
-  });
-
-  renderPrices();
-  renderGroups();
-
-  /* ─────────────────────────────────────────────────────
-     모델 상세 — 제원은 벤츠코리아 공식 카탈로그 기준입니다.
-     열: [트림, 가격, 최고출력, 0→100km/h, 복합연비]
-     가격은 2026-10-20 자 공식 가격표의 권장 소비자가(부가세 포함·개별소비세 5%).
-     27년식이 있으면 27년식, 없으면 26년식. 한 트림에 라인이 여럿이면 최저가에 '부터'.
-     ───────────────────────────────────────────────────── */
-  /*PRICE_LIST_START*/
-  var PRICE_LIST_DATE = "2026-10-20";
-  var PRICE_LIST = {"A-Class":[[27,"AMG A 45 S 4MATIC+",82300000,82300000],[26,"A 220",48700000,48700000],[26,"A 220 Sedan",50500000,50500000],[26,"AMG A 35 4MATIC",68600000,68600000],[26,"AMG A 45 S 4MATIC+",81400000,81400000]],"Mercedes-AMG":[[27,"AMG A 45 S 4MATIC+",82300000,82300000],[27,"AMG GLC 53 4MATIC+",105100000,105100000],[27,"AMG GLC 53 4MATIC+ Coupé",109800000,109800000],[27,"AMG CLE 53 4MATIC+ Coupé",110600000,110600000],[27,"AMG CLE 53 4MATIC+ Cabriolet",116600000,116600000],[27,"AMG GT 43",149500000,149500000],[27,"AMG E 53 HYBRID 4MATIC+",149900000,149900000],[27,"AMG SL 43",161800000,161800000],[27,"AMG GT 55 4MATIC+",212600000,212600000],[27,"AMG SL 63 4MATIC+",252800000,252800000],[27,"AMG G 63",275000000,275000000],[27,"AMG GT 63 S E Performance",283100000,283100000],[27,"AMG G 63 MANUFAKTUR",301000000,301000000],[26,"AMG A 35 4MATIC",68600000,68600000],[26,"AMG GLB 35 4MATIC",79500000,79500000],[26,"AMG A 45 S 4MATIC+",81400000,81400000],[26,"AMG CLA 45 S 4MATIC+",91800000,91800000],[26,"AMG CLA 45 S 4MATIC+ Final Edition",97000000,97000000],[26,"AMG GLC 43 4MATIC",103600000,103600000],[26,"AMG GLC 43 4MATIC Coupé",108300000,108300000],[26,"AMG CLE 53 4MATIC+ Coupe",109100000,109100000],[26,"AMG CLE 53 4MATIC+ Cabriolet",115000000,115000000],[26,"AMG CLE 53 4MATIC+ Coupe Limited Edition",132700000,132700000],[26,"AMG CLE 53 4MATIC+ Cabriolet Limited Edition",138700000,138700000],[26,"AMG E 53 HYBRID 4MATIC+",143000000,148400000],[26,"AMG GT 43",149500000,149500000],[26,"AMG SL 43",160000000,160000000],[26,"AMG GT 43 4MATIC+",164000000,164000000],[26,"AMG GLE 53 4MATIC+",166000000,166000000],[26,"AMG GLE 53 4MATIC+ Coupé",170000000,170000000],[26,"AMG GT 55 4MATIC+",210000000,210000000],[26,"AMG GLS 63 4MATIC+",210000000,210000000],[26,"AMG SL 63 4MATIC+",250000000,250000000],[26,"AMG G 63",262600000,262600000],[26,"AMG GT 63 S E Performance",280000000,280000000],[26,"AMG G 63 MANUFAKTUR",289800000,289800000],[26,"AMG S 63 E Performance",299000000,299000000]],"CLA":[[27,"CLA 200 electric Essential",52900000,52900000],[27,"CLA 200 electric Advanced",55800000,55800000],[27,"CLA 200 electric AMG Line",58900000,58900000],[27,"CLA 220",59900000,59900000],[27,"CLA 220 AMG Line",62900000,62900000],[27,"CLA 250+ electric",63700000,63700000],[27,"CLA 250+ electric AMG Line",67700000,67700000],[26,"CLA 250 4MATIC AMG Line",64500000,64500000],[26,"AMG CLA 45 S 4MATIC+",91800000,91800000],[26,"AMG CLA 45 S 4MATIC+ Final Edition",97000000,97000000]],"Electric":[[27,"CLA 200 electric Essential",52900000,52900000],[27,"CLA 200 electric Advanced",55800000,55800000],[27,"CLA 200 electric AMG Line",58900000,58900000],[27,"CLA 250+ electric",63700000,63700000],[27,"CLA 250+ electric AMG Line",67700000,67700000],[27,"EQA 250 Progressive",70800000,70800000],[27,"EQA 250 AMG Line",76700000,76700000],[27,"GLC 300 4MATIC electric AMG Line (Launch Edition)",90000000,90000000],[27,"GLC 300 4MATIC electric AMG Line+ (Launch Edition)",94800000,94800000],[27,"G 580 with EQ Technology",219000000,219000000],[27,"G 580 with EQ Technology MANUFAKTUR",238500000,238500000],[26,"EQA 250 Progressive",70000000,70000000],[26,"EQA 250 AMG Line",75800000,75800000],[26,"EQB 300 4MATIC Progressive",78800000,78800000],[26,"EQB 300 4MATIC AMG Line",84300000,84300000],[26,"EQE 350+ SUV",106000000,106000000],[26,"EQE 350+",110000000,110000000],[26,"EQE 500 4MATIC SUV",141000000,141000000],[26,"EQS 450 4MATIC SUV",166000000,166000000],[26,"EQS 580 4MATIC SUV",192000000,192000000],[26,"G 580 with EQ Technology",216100000,216100000],[26,"Maybach EQS 680 SUV",235000000,235000000]],"GLA":[[27,"GLA 250 4MATIC AMG Line",70800000,70800000],[26,"GLA 250 4MATIC AMG Line",70000000,70000000]],"CLE":[[27,"CLE 200 Coupé",77600000,77600000],[27,"CLE 200 Cabriolet",84100000,84100000],[27,"CLE 450 4MATIC Coupé",100800000,100800000],[27,"CLE 450 4MATIC Cabriolet",105200000,105200000],[27,"AMG CLE 53 4MATIC+ Coupé",110600000,110600000],[27,"AMG CLE 53 4MATIC+ Cabriolet",116600000,116600000],[26,"CLE 200 Coupe AMG Line",76700000,76700000],[26,"CLE 200 Cabriolet AMG Line",83100000,83100000],[26,"CLE 450 4MATIC Coupe AMG Line",99700000,99700000],[26,"CLE 450 4MATIC Cabriolet AMG Line",104000000,104000000],[26,"AMG CLE 53 4MATIC+ Coupe",109100000,109100000],[26,"AMG CLE 53 4MATIC+ Cabriolet",115000000,115000000],[26,"AMG CLE 53 4MATIC+ Coupe Limited Edition",132700000,132700000],[26,"AMG CLE 53 4MATIC+ Cabriolet Limited Edition",138700000,138700000]],"E-Class":[[27,"E 220 d 4MATIC Avantgarde",87500000,87500000],[27,"E 300 4MATIC Exclusive",94800000,94800000],[27,"E 300 4MATIC AMG Line",100100000,100100000],[27,"E 350 e 4MATIC Exclusive",101100000,101100000],[27,"E 450 4MATIC AMG Line",112200000,117200000],[27,"E 450 4MATIC Exclusive",129500000,129500000],[27,"AMG E 53 HYBRID 4MATIC+",149900000,149900000],[26,"E 200 Avantgarde",77500000,77500000],[26,"E 200 Exclusive",77500000,77500000],[26,"E 200 AMG Line",81000000,81000000],[26,"E 220 d 4MATIC Exclusive",87200000,87200000],[26,"E 300 4MATIC Exclusive",94800000,94800000],[26,"E 300 4MATIC AMG Line",99000000,99000000],[26,"E 350 e 4MATIC Exclusive",100000000,100000000],[26,"E 450 4MATIC AMG Line",116000000,116000000],[26,"E 450 4MATIC Exclusive",129600000,129600000],[26,"AMG E 53 HYBRID 4MATIC+",143000000,148400000]],"GLC":[[27,"GLC 300 4MATIC",77000000,77000000],[27,"GLC 300 4MATIC Coupé",80000000,80000000],[27,"GLC 220 d 4MATIC",82200000,82200000],[27,"GLC 300 4MATIC Avantgarde",82500000,82500000],[27,"GLC 300 4MATIC Coupé Avantgarde",86600000,86600000],[27,"GLC 300 4MATIC electric AMG Line (Launch Edition)",90000000,90000000],[27,"GLC 300 4MATIC electric AMG Line+ (Launch Edition)",94800000,94800000],[27,"GLC 300 4MATIC AMG Line",95500000,95500000],[27,"GLC 300 4MATIC Coupé AMG Line",96900000,97900000],[27,"AMG GLC 53 4MATIC+",105100000,105100000],[27,"AMG GLC 53 4MATIC+ Coupé",109800000,109800000],[26,"GLC 220 d 4MATIC",82200000,82200000],[26,"GLC 300 4MATIC Avantgarde",82500000,82500000],[26,"GLC 300 4MATIC Coupé Avantgarde",86600000,86600000],[26,"GLC 300 4MATIC AMG Line",92500000,92500000],[26,"GLC 300 4MATIC Coupé AMG Line",96900000,96900000],[26,"AMG GLC 43 4MATIC",103600000,103600000],[26,"AMG GLC 43 4MATIC Coupé",108300000,108300000]],"S-Class":[[27,"S 350 d 4MATIC",154000000,154000000],[27,"S 450 4MATIC",162400000,162400000],[27,"S 450 4MATIC Long Exclusive",175400000,175400000],[27,"S 450 4MATIC Long AMG Line",195400000,195400000],[27,"S 500 4MATIC Long",220000000,220000000],[27,"S 580 4MATIC Long",270000000,270000000],[26,"S 350 d 4MATIC",154000000,155000000],[26,"S 450 4MATIC",161000000,195000000],[26,"S 500 4MATIC",215000000,217000000],[26,"S 580 4MATIC",260000000,260000000],[26,"AMG S 63 E Performance",299000000,299000000]],"Mercedes-Maybach":[[27,"Maybach S 580",317000000,317000000],[27,"Maybach S 580 MANUFAKTUR",336000000,336000000],[27,"Maybach SL 680",348000000,348000000],[27,"Maybach S 680",407000000,407000000],[26,"Maybach EQS 680 SUV",235000000,235000000],[26,"Maybach GLS 600",295000000,295000000],[26,"Maybach S 580",317000000,317000000],[26,"Maybach GLS 600 MANUFAKTUR",337000000,337000000],[26,"Maybach SL 680",344000000,344000000],[26,"Maybach S 680",403000000,403000000],[26,"Maybach S 680 \"V12 Edition\"",479400000,479400000]],"G-Class":[[27,"G 450 d",199700000,199700000],[27,"G 580 with EQ Technology",219000000,219000000],[27,"G 450 d MANUFAKTUR",228200000,228200000],[27,"G 580 with EQ Technology MANUFAKTUR",238500000,238500000],[27,"AMG G 63",275000000,275000000],[27,"AMG G 63 MANUFAKTUR",301000000,301000000],[26,"G 450 d",194900000,194900000],[26,"G 580 with EQ Technology",216100000,216100000],[26,"G 450 d MANUFAKTUR",219100000,219100000],[26,"AMG G 63",262600000,262600000],[26,"AMG G 63 MANUFAKTUR",289800000,289800000]],"V-Class":[[27,"V 300 d 4MATIC Exclusive",124000000,124000000]],"GLB":[[26,"GLB 200 d",64300000,64300000],[26,"GLB 250 4MATIC",72000000,72000000],[26,"AMG GLB 35 4MATIC",79500000,79500000]],"C-Class":[[26,"C 200 Avantgarde",65100000,65100000],[26,"C 200 Special Edition",66300000,66300000],[26,"C 200 AMG Line",68300000,68300000]],"GLE":[[26,"GLE 350 4MATIC",118000000,118000000],[26,"GLE 300 d 4MATIC",119200000,119200000],[26,"GLE 450 4MATIC",129000000,129000000],[26,"GLE 450 d 4MATIC Coupé AMG Line",134000000,134000000],[26,"GLE 450 4MATIC AMG Line",139000000,139000000],[26,"GLE 450 4MATIC Coupé AMG Line",142500000,142500000],[26,"AMG GLE 53 4MATIC+",166000000,166000000],[26,"AMG GLE 53 4MATIC+ Coupé",170000000,170000000]],"GLS":[[26,"GLS 450 d 4MATIC AMG Line",154000000,154000000],[26,"GLS 450 4MATIC AMG Line",154000000,154000000],[26,"GLS 450 d 4MATIC AMG Line Premium",158500000,158500000],[26,"GLS 450 4MATIC AMG Line Premium",158500000,158500000],[26,"GLS 580 4MATIC AMG Line",193400000,193400000],[26,"AMG GLS 63 4MATIC+",210000000,210000000]]};
-  /*PRICE_LIST_END*/
-  var MODEL_INFO = {
-    "A-Class": {
-      tag: "벤츠에서 가장 작은 차입니다. 해치백과 세단 두 가지 차체에 고성능 AMG까지 고르실 수 있습니다.",
-      cols: ["트림", "가격", "최고출력", "0→100km/h", "복합연비"],
-      rows: [
-        ["A 220 해치백", "4,870만원", "190마력", "6.9초", "12.2km/ℓ · 3등급"],
-        ["A 220 세단", "5,050만원", "190마력", "7.0초", "12.5km/ℓ · 3등급"],
-        ["AMG A 45 S 4MATIC+", "8,230만원", "421마력", "3.9초", "9.1km/ℓ · 5등급"]
-      ],
-      dim: ["해치백 4,430 × 1,795 × 1,445mm · 트렁크 350~1,190ℓ", "세단 4,560 × 1,795 × 1,445mm · 트렁크 355~1,195ℓ"],
-      note: "<b>벤츠를 가장 부담 없이 시작하실 수 있는 모델</b>입니다. 해치백과 세단은 엔진(190마력)이 같고, 세단이 130mm 더 길어 뒤에 트렁크가 따로 나옵니다. 트렁크 용량은 350ℓ와 355ℓ로 거의 같고 가격 차이는 180만원입니다. 운전 재미를 원하시면 421마력에 0→100km/h 3.9초인 AMG A 45 S가 있습니다."
-    },
-    "CLA": {
-      tag: "27년식으로 완전히 새로 나온 CLA입니다. 가솔린과 전기 두 가지가 있고, 전기 CLA는 800V 급속 충전을 지원합니다.",
-      cols: ["트림", "가격", "파워트레인", "연비 · 배터리"],
-      rows: [
-        ["CLA 220 (신형)", "5,990만원부터", "1.5 가솔린 · 전륜", "16.2km/ℓ · 1등급"],
-        ["CLA 200 electric", "5,290만원부터", "전기 · 800V", "배터리 58kWh"],
-        ["CLA 250+ electric", "6,370만원부터", "전기 · 800V", "배터리 85kWh"],
-        ["CLA 250 4MATIC (26년식)", "6,450만원", "2.0 가솔린 · 224마력", "12.0km/ℓ · 3등급"],
-        ["AMG CLA 45 S 4MATIC+", "9,180만원부터", "AMG · 사륜", "—"]
-      ],
-      dim: ["신형 CLA 220 4,720 × 1,835 × 1,470mm", "이전 세대 CLA 250 4,688 × 1,830 × 1,427mm · 트렁크 460ℓ", "전기 CLA는 앞쪽에도 트렁크"],
-      note: "CLA는 <b>27년식부터 완전 신형</b>입니다. 가솔린 CLA 220은 복합연비 16.2km/ℓ(1등급)로 연비가 좋고, 전기 CLA는 5,290만원부터 시작해 <b>전기차 보조금 대상이면 실구매가가 더 내려갑니다.</b> 전기 CLA 250+는 배터리가 85kWh로 크고 급속 충전으로 10%→80%를 약 22분에 채웁니다. 거주지와 충전 환경을 알려주시면 가솔린과 전기의 실구매가를 나란히 계산해 드립니다."
-    },
-    "C-Class": {
-      tag: "E클래스보다 한 급 작은 세단입니다. 26년식 C 200 한 가지 엔진에 라인 세 가지가 있습니다.",
-      cols: ["트림", "가격", "최고출력", "0→100km/h", "복합연비"],
-      rows: [
-        ["C 200 아방가르드", "6,510만원", "204마력", "7.3초", "12.0km/ℓ · 3등급"],
-        ["C 200 스페셜 에디션", "6,630만원", "204마력", "7.3초", "12.0km/ℓ · 3등급"],
-        ["C 200 AMG 라인", "6,830만원", "204마력", "7.3초", "12.0km/ℓ · 3등급"]
-      ],
-      dim: ["4,755 × 1,820 × 1,440mm", "E클래스보다 길이 200mm 짧음"],
-      note: "벤츠 세단을 원하시는데 E클래스가 부담되실 때 먼저 보시는 모델입니다. 세 트림 모두 <b>엔진(204마력)과 연비는 같고 외관 라인과 휠, 실내 마감에서 갈립니다.</b> 아방가르드와 AMG 라인의 가격 차이는 320만원입니다. 실물 차이는 사진과 전시장 차량으로 비교해 보여 드리겠습니다."
-    },
-    "E-Class": {
-      tag: "비즈니스 세단의 기준입니다. 가솔린·디젤·플러그인 하이브리드가 모두 있어 주행 패턴에 맞춰 고르실 수 있습니다.",
-      cols: ["트림", "가격", "최고출력", "0→100km/h", "복합연비"],
-      rows: [
-        ["E 200", "7,750만원부터", "204마력", "7.5초", "12.3km/ℓ · 3등급"],
-        ["E 220 d 4MATIC", "8,750만원", "197마력", "7.8초", "16.0km/ℓ · 1등급"],
-        ["E 300 4MATIC", "9,480만원부터", "258마력", "6.1초", "11.1km/ℓ · 4등급"],
-        ["E 450 4MATIC", "1억 1,220만원부터", "381마력", "4.5초", "10.5km/ℓ · 4등급"],
-        ["E 350 e 4MATIC", "1억 110만원", "204마력 + 95kW", "6.5초", "전기 77km 주행"]
-      ],
-      dim: ["4,955 × 1,880 × 1,475mm", "휠베이스 2,960mm", "트렁크 540ℓ"],
-      note: "가장 문의가 많은 모델이라 <b>재고 회전이 빠릅니다.</b> 원하시는 색상·옵션이 정해져 있으면 미리 말씀해 주시는 편이 낫습니다. 장거리가 많으시면 <b>E 220 d(16km/ℓ, 1등급)</b>, 도심 위주면 E 200이나 E 300을 권해 드립니다. E 350 e는 전기만으로 77km를 달려서 출퇴근 거리가 짧으면 기름을 거의 안 씁니다."
-    },
-    "S-Class": {
-      tag: "최상위 럭셔리 세단입니다. 27년식 페이스리프트 기준으로 숏 두 가지, 롱 네 가지가 있고 뒷좌석을 주로 쓰실지에 따라 선택이 갈립니다.",
-      cols: ["트림", "가격", "엔진", "최고출력", "리어 액슬 스티어링"],
-      rows: [
-        ["S 350 d 4MATIC (숏)", "1억 5,400만원", "6기통 디젤", "313마력", "4.5°"],
-        ["S 450 4MATIC (숏)", "1억 6,240만원", "6기통 가솔린", "381마력", "4.5°"],
-        ["S 450 4MATIC 롱 익스클루시브", "1억 7,540만원", "6기통 가솔린", "381마력", "4.5°"],
-        ["S 450 4MATIC 롱 AMG 라인", "1억 9,540만원", "6기통 가솔린", "381마력", "4.5°"],
-        ["S 500 4MATIC 롱", "2억 2,000만원", "6기통 가솔린", "449마력", "10°"],
-        ["S 580 4MATIC 롱", "2억 7,000만원", "8기통 가솔린", "503마력", "10°"]
-      ],
-      dim: ["숏 5,180mm · 휠베이스 3,106mm", "롱 5,290mm · 휠베이스 3,216mm", "너비 1,920 · 높이 1,505mm"],
-      note: "27년식은 <b>페이스리프트가 적용돼 전 모델에 강화 에어매틱과 디지털 라이트, 파노라믹 선루프, 버메스터 3D 사운드가 기본</b>입니다. 뒷좌석에 자주 타신다면 휠베이스가 110mm 긴 롱을 보셔야 합니다 — 숏과 롱은 뒷무릎 공간이 확실히 다릅니다. 롱의 S 450은 <b>익스클루시브와 AMG 라인 두 가지</b>로 나뉘고, 외관 패키지·휠·가죽에서 갈립니다. S 500 롱부터는 리어 액슬 스티어링이 10°로 커져 좁은 길과 주차가 한결 수월하고, S 580 롱에는 E-액티브 바디 컨트롤이 들어갑니다. <b>금융 프로그램에 따라 조건 차이가 가장 크게 벌어지는 모델</b>이라 현금·할부·리스를 같이 비교해 드립니다."
-    },
-    "CLE": {
-      tag: "2도어 쿠페와 오픈톱 카브리올레입니다. 27년식은 360° 카메라가 포함된 주차 패키지가 전 트림 기본입니다.",
-      cols: ["트림", "가격", "최고출력", "0→100km/h", "복합연비"],
-      rows: [
-        ["CLE 200 쿠페", "7,760만원", "204마력", "7.4초", "11.7km/ℓ · 3등급"],
-        ["CLE 450 4M 쿠페", "1억 80만원", "381마력", "4.4초", "10.9km/ℓ · 4등급"],
-        ["CLE 200 카브리올레", "8,410만원", "204마력", "7.4초", "11.7km/ℓ · 3등급"],
-        ["CLE 450 4M 카브리올레", "1억 520만원", "381마력", "4.4초", "10.9km/ℓ · 4등급"],
-        ["AMG CLE 53 4MATIC+", "1억 1,060만원부터", "—", "—", "9.6km/ℓ · 4등급"]
-      ],
-      dim: ["쿠페 4,850 × 1,860 × 1,420mm · 트렁크 420ℓ", "카브리올레 높이 1,430mm · 트렁크 295~385ℓ", "AMG CLE 53 쿠페 4,855 × 1,935 × 1,435mm"],
-      note: "쿠페와 카브리올레는 길이·너비가 같고 <b>지붕만 다릅니다.</b> 카브리올레는 지붕을 접어 넣는 자리 때문에 트렁크가 295~385ℓ로 쿠페(420ℓ)보다 작습니다. CLE 450은 381마력에 0→100km/h 4.4초라 AMG가 아니어도 충분히 빠르고, 연비도 10.9km/ℓ입니다. 27년식은 360° 카메라 주차 패키지가 전 트림 기본이라 문이 긴 2도어로 주차할 때 한결 편합니다."
-    },
-    "GLA": {
-      tag: "가장 작은 벤츠 SUV입니다. 27년식은 GLA 250 4MATIC AMG 라인 한 가지로 나옵니다.",
-      cols: ["트림", "가격", "최고출력", "0→100km/h", "복합연비"],
-      rows: [
-        ["GLA 250 4MATIC AMG 라인", "7,080만원", "224마력", "6.8초", "10.9km/ℓ · 4등급"]
-      ],
-      dim: ["4,412 × 1,834 × 1,616mm", "트렁크 435~1,430ℓ"],
-      note: "<b>도심 주차가 편한 크기에 사륜구동(4MATIC)이 기본</b>입니다. GLC보다 길이가 300mm 남짓 짧아 좁은 골목과 지하 주차장에서 부담이 적고, 뒷좌석을 접으면 트렁크가 1,430ℓ까지 늘어납니다. 26년식(7,000만원)과 27년식(7,080만원)이 함께 있어 <b>연식별 프로모션을 같이 비교</b>해 드립니다. 비슷한 크기의 전기 SUV를 원하시면 EQA를 보시면 됩니다."
-    },
-    "GLB": {
-      tag: "실내가 넉넉한 박스형 SUV입니다. 디젤과 가솔린 사륜, AMG까지 있습니다.",
-      cols: ["트림", "가격", "최고출력", "0→100km/h", "복합연비"],
-      rows: [
-        ["GLB 200 d", "6,430만원", "150마력", "9.2초", "13.7km/ℓ · 3등급"],
-        ["GLB 250 4MATIC", "7,200만원", "224마력", "7.0초", "10.5km/ℓ · 4등급"],
-        ["AMG GLB 35 4MATIC", "7,950만원", "306마력", "5.2초", "—"]
-      ],
-      dim: ["GLB 200 d 4,640 × 1,835 × 1,700mm", "GLB 250 4,650 × 1,845 × 1,690mm", "트렁크 565~1,805ℓ"],
-      note: "GLA보다 길이가 약 230mm 길고 높이가 약 80mm 높아 <b>뒷좌석과 트렁크가 넉넉합니다.</b> 연비를 보시면 디젤 GLB 200 d(13.7km/ℓ), 힘과 사륜구동을 보시면 GLB 250 4MATIC입니다. GLB 250은 <b>3열 시트를 유료 선택사양</b>으로 더할 수 있어 가끔 일곱 명이 타야 하는 집에 맞습니다."
-    },
-    "GLC": {
-      tag: "도심과 일상을 위한 프리미엄 SUV입니다. 첫 벤츠로 가장 많이 선택되는 모델입니다.",
-      cols: ["트림", "가격", "최고출력", "0→100km/h", "복합연비"],
-      rows: [
-        ["GLC 220 d 4MATIC", "8,220만원", "197마력", "8.0초", "14.5km/ℓ · 2등급"],
-        ["GLC 300 4MATIC", "7,700만원부터", "258마력", "6.2초", "10.6km/ℓ · 4등급"],
-        ["GLC 300 4MATIC 쿠페", "8,000만원부터", "258마력", "6.3초", "10.6km/ℓ · 4등급"]
-      ],
-      dim: ["SUV 4,720 × 1,890 × 1,645mm · 트렁크 620ℓ", "쿠페 4,770 × 1,920 × 1,600mm · 트렁크 545ℓ", "휠베이스 2,890mm (동일)"],
-      note: "SUV와 쿠페는 <b>휠베이스가 같아 뒷좌석 무릎 공간은 차이가 없습니다.</b> 갈리는 곳은 머리 공간과 트렁크(620ℓ vs 545ℓ)입니다. 뒷좌석을 매일 쓰시면 SUV, 디자인을 먼저 보시면 쿠페입니다. 48V 마일드 하이브리드가 들어가 저속 재가속이 매끄럽습니다."
-    },
-    "GLE": {
-      tag: "여유로운 공간과 존재감. 패밀리 SUV로 넘어오시는 분들이 많습니다.",
-      cols: ["트림", "가격", "최고출력", "0→100km/h", "복합연비"],
-      rows: [
-        ["GLE 300 d 4MATIC", "1억 1,920만원", "269마력", "6.9초", "11.6km/ℓ · 3등급"],
-        ["GLE 350 4MATIC", "1억 1,800만원", "258마력", "7.5초", "8.6km/ℓ · 5등급"],
-        ["GLE 450 4MATIC", "1억 2,900만원부터", "381마력", "5.6초", "8.4km/ℓ · 5등급"],
-        ["GLE 450 d 4MATIC 쿠페", "1억 3,400만원", "367마력", "5.6초", "11.0km/ℓ · 4등급"],
-        ["GLE 450 4MATIC 쿠페", "1억 4,250만원", "381마력", "5.6초", "8.2km/ℓ · 5등급"]
-      ],
-      dim: ["SUV 4,925 × 2,010 × 1,780mm · 트렁크 630~2,055ℓ", "쿠페 4,940 × 2,020 × 1,715mm · 트렁크 655~1,790ℓ", "휠베이스 SUV 2,995 / 쿠페 2,935mm"],
-      note: "GLC에서 한 급 올라오시는 분이 많습니다. 트렁크가 <b>630ℓ에서 뒷좌석을 접으면 2,055ℓ</b>까지 늘어나 골프백 여러 개나 캠핑 짐이 그대로 들어갑니다. 연비를 보신다면 GLE 300 d(11.6km/ℓ, 3등급)가 가장 낫고, 힘을 보신다면 GLE 450입니다."
-    },
-    "GLS": {
-      tag: "럭셔리 대형 SUV입니다. 7인승 구성과 옵션 조합을 함께 정리해 드립니다.",
-      cols: ["트림", "가격", "최고출력", "0→100km/h", "복합연비"],
-      rows: [
-        ["GLS 450 d 4MATIC", "1억 5,400만원부터", "367마력", "6.1초", "10.0km/ℓ · 4등급"],
-        ["GLS 450 4MATIC", "1억 5,400만원부터", "381마력", "6.1초", "7.9km/ℓ · 5등급"],
-        ["GLS 580 4MATIC", "1억 9,340만원", "517마력", "4.9초", "6.6km/ℓ · 5등급"],
-        ["AMG GLS 63 4MATIC+", "2억 1,000만원", "612마력", "4.2초", "6.3km/ℓ · 5등급"]
-      ],
-      dim: ["5,210 × 2,030 × 1,840mm", "휠베이스 3,135mm", "트렁크 355~2,400ℓ"],
-      note: "<b>3열까지 성인이 앉을 수 있는 몇 안 되는 SUV</b>입니다. 3열을 세우면 트렁크가 355ℓ로 줄지만, 다 접으면 2,400ℓ가 됩니다. 대가족이거나 골프를 자주 다니시면 GLS 450 d가 무난하고, 연비 부담을 줄이시려면 디젤 쪽을 보셔야 합니다. 길이 5.2m라 주차 환경을 먼저 확인하시는 게 좋습니다."
-    },
-    "G-Class": {
-      tag: "아이코닉 오프로더. 가격만큼 대기 기간과 재고 흐름이 중요한 모델입니다.",
-      cols: ["트림", "가격", "최고출력", "0→100km/h", "복합연비"],
-      rows: [
-        ["G 450 d", "1억 9,970만원", "367마력", "5.8초", "10.0km/ℓ · 4등급"],
-        ["AMG G 63", "2억 7,500만원", "585마력", "4.4초", "—"],
-        ["AMG G 63 MANUFAKTUR", "3억 100만원", "585마력", "4.4초", "—"]
-      ],
-      dim: ["G 450 d 4,865 × 1,985 × 1,980mm", "AMG G 63 길이 4,875mm", "휠베이스 2,890mm · 트렁크 640~2,010ℓ"],
-      note: "<b>재고 확보가 곧 출고 시기입니다.</b> 주문해서 받으시려면 대기가 길고, 국내에 들어와 있는 차를 잡는 것이 가장 빠릅니다. 마누팍투어는 물량이 특히 적습니다. 원하시는 외장·실내 조합을 알려주시면 지금 국내 재고부터 확인해 드리겠습니다."
-    },
-    "V-Class": {
-      tag: "27년식으로 새로 들어온 프리미엄 MPV입니다. V 300 d 4MATIC 익스클루시브 한 가지 트림입니다.",
-      cols: ["트림", "가격", "엔진", "변속기", "구동"],
-      rows: [
-        ["V 300 d 4MATIC 익스클루시브", "1억 2,400만원", "4기통 디젤", "9단 자동", "상시 사륜"]
-      ],
-      dimTitle: "좌석 · 편의",
-      dim: ["뒷좌석 1열 럭셔리 시트 · 마사지 · 전동 종아리 받침대", "뒷좌석 2열 3인승 이지 엔트리 컴포트 벤치", "좌우 전동 슬라이딩 도어 · 전동 테일게이트"],
-      note: "<b>의전 차량이나 대가족 차로 알맞은 모델</b>입니다. 뒷좌석 1열은 열선·통풍·마사지가 되는 럭셔리 시트에 전동 종아리 받침대까지 들어가고, 에어매틱 서스펜션·360° 카메라 주차 어시스트·부메스터 서라운드 사운드가 기본입니다. 트림은 하나이고 휠·실내 트림·나파 가죽 색상(블랙/실크 베이지)과 파노라믹 슬라이딩 루프(유료)를 고르실 수 있습니다. ※ 좌석을 떼어 내는 구조변경은 튜닝 승인 대상이라 출고 전에 미리 말씀해 주세요."
-    },
-    "Mercedes-AMG": {
-      tag: "고성능 퍼포먼스 라인업입니다. 일상 주행과의 균형점을 기준으로 안내해 드립니다.",
-      cols: ["트림", "가격", "최고출력", "0→100km/h", "비고"],
-      rows: [
-        ["AMG A 45 S 4MATIC+", "8,230만원", "421마력", "3.9초", "가장 접근하기 쉬운 AMG"],
-        ["AMG GLB 35 4MATIC", "7,950만원", "306마력", "5.2초", "컴팩트 SUV"],
-        ["AMG GLC 43 4MATIC", "1억 360만원부터", "421마력", "4.8초", "SUV · 쿠페"],
-        ["AMG G 63", "2억 7,500만원", "585마력", "4.4초", "V8 오프로더"],
-        ["AMG GLS 63 4MATIC+", "2억 1,000만원", "612마력", "4.2초", "대형 SUV"],
-        ["AMG S 63 E Performance", "2억 9,900만원", "612마력 + 140kW", "3.3초", "플러그인 하이브리드 · 26년식"]
-      ],
-      dim: ["AMG 라이드 컨트롤 서스펜션", "AMG 퍼포먼스 배기", "4MATIC+ 가변 사륜구동"],
-      note: "AMG는 <b>숫자보다 어디에 쓰실지가 중요합니다.</b> 매일 타시는 차라면 A 45 S나 GLC 43 쪽이 현실적이고, 세컨드 카로 두실 거면 G 63이나 GLS 63을 보셔도 됩니다. 시승 없이 결정하지 마시라고 늘 말씀드립니다 — 승차감 차이가 생각보다 큽니다."
-    },
-    "Mercedes-Maybach": {
-      tag: "궁극의 럭셔리. 뒷좌석을 기준으로 S클래스와 갈리는 지점을 짚어 드립니다.",
-      cols: ["트림", "가격", "최고출력", "0→100km/h", "트렁크"],
-      rows: [
-        ["Maybach S 580", "3억 1,700만원부터", "503마력", "4.8초", "505ℓ"],
-        ["Maybach S 680", "4억 700만원", "630마력", "4.5초", "495ℓ"],
-        ["Maybach GLS 600", "2억 9,500만원부터", "—", "—", "SUV"],
-        ["Maybach EQS SUV", "2억 3,500만원", "—", "—", "전동화"]
-      ],
-      dim: ["S클래스 마이바흐 길이 5,470mm", "휠베이스 3,396mm", "S 580 롱보다 휠베이스 180mm 김"],
-      note: "S클래스 롱과 마이바흐를 같이 보시는 분이 많습니다. 갈리는 지점은 <b>휠베이스 3,396mm — 롱보다 180mm 더 깁니다.</b> 뒷좌석 등받이 각도, 리어 도어 크기, 마감재가 다릅니다. 직접 뒷좌석에 앉아 보시면 차이가 바로 느껴집니다. 시승차 준비해 드리겠습니다."
-    },
-    "Electric": {
-      tag: "차세대 전동화 라인업입니다. 지자체 보조금과 충전 환경까지 포함해 계산해 드립니다.",
-      cols: ["트림", "가격", "모터 출력", "1회 충전 주행거리", "비고"],
-      rows: [
-        ["EQA 250", "7,080만원부터", "140kW", "367km", "0→100 8.6초"],
-        ["EQE 350+", "1억 1,000만원", "235kW", "490km", "세단"],
-        ["EQS 450 4MATIC SUV", "1억 6,600만원", "265kW", "498km", "배터리 118kWh"],
-        ["EQS 580 4MATIC SUV", "1억 9,200만원", "400kW", "480km", "배터리 118kWh"],
-        ["전기 CLA", "5,290만원부터", "—", "—", "800V 급속 충전"],
-        ["전기 GLC (런치 에디션)", "9,000만원부터", "—", "—", "제원 미공개"]
-      ],
-      dim: ["EQA 4,465mm · 트렁크 340~1,320ℓ", "EQE 4,965mm · 트렁크 430ℓ", "EQS SUV 5,125mm · 트렁크 645~2,100ℓ"],
-      note: "전기차는 <b>차값보다 보조금과 충전 환경이 실구매가를 좌우합니다.</b> 지자체마다 보조금이 달라서 거주지를 알려주시면 정확히 계산해 드립니다. 금융 조건도 내연기관과 다릅니다 — 무이자 할부가 60개월까지 늘어나고 운용리스 금리가 훨씬 낮습니다. ※ 전기 GLC는 국내 출시 사양의 배터리·주행거리가 아직 공개되지 않았습니다."
-    }
-  };
-
-  /* 모델 상세 다이얼로그 */
-  (function modelDialog(){
-    var dlg = document.getElementById("mdlg");
-    if (!dlg || !dlg.showModal) return;
-    var elSeg = document.getElementById("mdlgSeg"),
-        elName = document.getElementById("mdlgName"),
-        elTag = document.getElementById("mdlgTag"),
-        elBody = document.getElementById("mdlgBody"),
-        last = null;
-
-    function esc(v){ return String(v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
-
-    function open(card){
-      var key = card.dataset.key, info = MODEL_INFO[key];
-      if (!info) return;
-      last = card;
-      elSeg.textContent = card.querySelector(".model__seg").textContent;
-      elName.textContent = key;
-      elTag.textContent = info.tag;
-
-      var html = '<div><h4>라인업</h4><div class="mspec"><table><thead><tr>' +
-        info.cols.map(function(c){ return "<th>" + esc(c) + "</th>"; }).join("") +
-        "</tr></thead><tbody>" +
-        info.rows.map(function(r){
-          return "<tr><th>" + esc(r[0]) + "</th>" +
-            r.slice(1).map(function(v){ return "<td>" + esc(v) + "</td>"; }).join("") + "</tr>";
-        }).join("") +
-        "</tbody></table></div></div>";
-
-      /* 가격표의 이 차종 전체 트림 — PRICE_LIST 는 _제작키트/kit/site_pricelist.py 가 만든다 */
-      var plist = (typeof PRICE_LIST !== "undefined" && PRICE_LIST[key]) || [];
-      if (plist.length) {
-        var mw = function(v){ var m = Math.round(v / 10000), e = Math.floor(m / 10000), r = m % 10000;
-          return r ? (e ? e + "억 " : "") + r.toLocaleString("ko-KR") + "만원" : e + "억원"; };
-        html += '<div><h4>전체 트림 가격 <small class="mfull__n">' + plist.length + '개 · 부가세 포함</small></h4><div class="mspec mfull"><table><thead><tr>' +
-          '<th>연식</th><th>트림</th><th>가격</th></tr></thead><tbody>' +
-          plist.map(function(r){
-            return '<tr class="my' + r[0] + '"><td><span class="mfull__y">' + r[0] + '년식</span></td><th>' + esc(r[1]) + '</th><td>' +
-              mw(r[2]) + (r[3] > r[2] ? ' ~ ' + mw(r[3]) : '') + '</td></tr>';
-          }).join("") + '</tbody></table></div></div>';
-      }
-
-      html += '<div><h4>' + esc(info.dimTitle || "크기") + '</h4><div class="mdim">' +
-        info.dim.map(function(d){ return "<span>" + esc(d) + "</span>"; }).join("") + "</div></div>";
-
-      html += '<div><h4>홍창기 차장의 안내</h4><p class="mnote">' + info.note + "</p></div>";
-
-      html += '<div class="mdlg__cta">' +
-        '<a class="btn btn--kakao" href="https://open.kakao.com/o/s35suoRh" target="_blank" rel="noopener">' + esc(key) + ' 견적 문의</a>' +
-        '<a class="btn btn--line" href="tel:01031130328">010-3113-0328</a></div>';
-
-      html += '<p class="mdlg__src">제원은 메르세데스-벤츠 코리아 공식 카탈로그, 가격은 2026년 10월 20일 자 공식 가격표의 권장 소비자가(부가세 포함) 기준입니다. 라인업 표는 대표 트림만 골라 같은 트림에 여러 라인이 있으면 가장 낮은 가격에 “부터”를 붙였고, 「전체 트림 가격」에는 가격표의 26·27년식 전 트림을 실었습니다. 같은 이름에 가격이 둘이면 범위로 적었고, 취득세·등록비 등 부대비용은 빠져 있습니다. 사양과 가격은 본사 정책에 따라 예고 없이 변경될 수 있으니 계약 시점 기준으로 실제 견적을 다시 내 드립니다.</p>';
-
-      elBody.innerHTML = html;
-      elBody.parentNode.scrollTop = 0;
-      dlg.showModal();
-    }
-
-    document.querySelectorAll(".model[data-key]").forEach(function(card){
-      card.addEventListener("click", function(){ open(card); });
-      card.addEventListener("keydown", function(e){
-        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(card); }
-      });
-    });
-
-    document.getElementById("mdlgX").addEventListener("click", function(){ dlg.close(); });
-    dlg.addEventListener("click", function(e){ if (e.target === dlg) dlg.close(); });
-    dlg.addEventListener("close", function(){ if (last) { last.focus(); last = null; } });
-  })();
-})();
-</script>
-
+<script src="assets/data.js?v=261023"></script>
+<script src="assets/app.js?v=261023"></script>
 </body>
 </html>
