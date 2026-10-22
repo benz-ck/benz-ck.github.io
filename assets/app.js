@@ -21,6 +21,7 @@
       ["model.html?m=E-Class", "E-Class"],
       ["model.html?m=S-Class", "S-Class"],
       ["model.html?m=S-Class&t=mb580", "Maybach S-Class", "마이바흐 3트림"],
+      ["model.html?m=GLS", "GLS", "마이바흐 GLS 포함"],
       ["model.html?m=GLC", "GLC"],
       ["model.html?m=GLE", "GLE"],
       ["lineup.html", "전 차종 모델정보", MODEL_CARDS.length + "개 차종"]
@@ -782,7 +783,7 @@
   })();
 
   /* 트림 · 색상까지 고를 수 있는 차종 — 자료는 assets/cars/<이름>.js (카탈로그 · 제품정보에서 옮김) */
-  var CAR_FILES = { "S-Class": "s-class", "E-Class": "e-class", "GLC": "glc", "GLE": "gle", "CLE": "cle", "V-Class": "v-class" };
+  var CAR_FILES = { "S-Class": "s-class", "E-Class": "e-class", "GLC": "glc", "GLE": "gle", "CLE": "cle", "V-Class": "v-class", "GLS": "gls" };
 
   /* ═════════════ 전 차종 모델정보 (lineup.html) ═════════════ */
   /* 차종 카드 사진 — 카탈로그 사진(images/cars/…). 없는 차종은 이름만 크게 */
@@ -790,7 +791,7 @@
     "A-Class": "images/cars/lineup/a-class.jpg", "CLA": "images/cars/lineup/cla.jpg", "C-Class": "images/cars/lineup/c-class.jpg",
     "E-Class": "images/cars/e-class/line-exclusive.jpg", "S-Class": "images/cars/s-class/line-amg.jpg", "CLE": "images/cars/cle/line-coupe.jpg",
     "GLA": "images/cars/lineup/gla.jpg", "GLB": "images/cars/lineup/glb.jpg", "GLC": "images/cars/glc/line-amg.jpg", "GLE": "images/cars/gle/line-amg.jpg",
-    "GLS": "images/cars/lineup/gls.jpg", "G-Class": "images/cars/lineup/g-class.jpg", "V-Class": "images/cars/v-class/line.jpg", "Mercedes-AMG": "images/cars/e-class/line-e53.jpg",
+    "GLS": "images/cars/gls/line-gls.jpg", "G-Class": "images/cars/lineup/g-class.jpg", "V-Class": "images/cars/v-class/line.jpg", "Mercedes-AMG": "images/cars/e-class/line-e53.jpg",
     "Mercedes-Maybach": "images/cars/s-class/line-maybach.jpg", "Electric": "images/cars/lineup/eqe-suv.jpg"
   };
   /* 대표 카드(MODEL_CARDS) 사이에 끼워 넣는 세부 차종 — 모델 창 자료가 없어 가격표(promotion.html)로 이어진다.
@@ -806,7 +807,7 @@
       desc:"2도어 AMG GT 43 · 55 와 4도어 AMG GT 63 S E Performance 까지." },
     { key:"AMG SL", after:"AMG GT", seg:"amg", label:"ROADSTER", img:"amg-sl", match:/^(Mercedes-)?AMG SL/, link:"q=AMG SL",
       desc:"소프트톱 2+2 로드스터. AMG SL 43 과 SL 63 4MATIC+ 입니다." },
-    { key:"Maybach GLS", after:"Mercedes-Maybach", seg:"top suv", label:"MAYBACH SUV", img:"mb-gls", match:/Maybach GLS/, link:"q=Maybach GLS",
+    { key:"Maybach GLS", after:"Mercedes-Maybach", seg:"top suv", label:"MAYBACH SUV", img:"mb-gls", match:/Maybach GLS/, link:"q=Maybach GLS", href:"model.html?m=GLS&t=mb600",
       desc:"마이바흐 SUV. Maybach GLS 600 과 MANUFAKTUR 두 가지입니다." },
     { key:"Maybach SL", after:"Maybach GLS", seg:"top", label:"MAYBACH ROADSTER", img:"mb-sl", match:/Maybach SL/, link:"q=Maybach SL",
       desc:"마이바흐 로드스터 Maybach SL 680." },
@@ -843,8 +844,8 @@
     ul.innerHTML = cards.map(function(o){
       var c = o.c, f = o.f, x = o.x;
       var th = x ? "images/cars/lineup/" + x.img + ".jpg" : CAR_THUMBS[c.key];
-      var cfg = !x && (!!CAR_FILES[c.key] || c.key === "Mercedes-Maybach");
-      var href = x ? "promotion.html?" + x.link.replace(/ /g, "%20") + "#prices"
+      var cfg = x ? !!x.href : (!!CAR_FILES[c.key] || c.key === "Mercedes-Maybach");
+      var href = x ? (x.href || "promotion.html?" + x.link.replace(/ /g, "%20") + "#prices")
         : c.key === "Mercedes-Maybach" ? "model.html?m=S-Class&t=mb580" : "model.html?m=" + encodeURIComponent(c.key);
       return '<li class="lncard" data-seg="' + c.seg + '"><a href="' + href + '">' +
         '<div class="lncard__img' + (th ? '' : ' is-empty') + '">' + (th ? '<img src="' + th + '" alt="' + esc(c.key) + ' 카탈로그 이미지" loading="lazy">' : '<span>' + esc(c.key) + '</span>') +
@@ -953,6 +954,8 @@
     T.forEach(function(t, i){ if (t.id === tq) ti = i; });
     var sel = { ext: null, upc: 0 };
     var info = MODEL_INFO[k] || {}, rowsAll = sortBase(rowsOfModel(k));
+    /* car.extraRows — 다른 묶음에 있는 같은 계열 트림(마이바흐 등)도 이 페이지 가격표 뒤쪽에 */
+    if (car.extraRows) rowsAll = rowsAll.concat(sortBase(PRICE_ROWS.filter(function(r){ return car.extraRows.test(r.trim) && rowsAll.indexOf(r) < 0; })));
     document.title = car.name + " 트림 · 사양 · 색상 · " + MON + " 조건 | 별주행 벤츠 홍창기";
     function pickImg(map, t){
       if (!map) return null;

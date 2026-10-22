@@ -18,6 +18,7 @@ CARS["S-Class"] = (function(){
     source: "MY27 S-Class 제품 정보(2026년 10월) · S-Class 카탈로그(2026년 5월, 27년식) · 마이바흐 S-Class 카탈로그(2026년 8월) · 공식 가격표(2026년 10월 20일)",
     hero: [P + "hero-1.jpg", P + "line-amg.jpg", P + "hero-mb-1.jpg", P + "hero-3.jpg", P + "hero-mb-2.jpg", P + "hero-4.jpg"],
     bodies: { SWB: "스탠다드 휠베이스", LWB: "롱 휠베이스", MB: "마이바흐 휠베이스" },
+    extraRows: /^Maybach S /,
     lines: { "Standard": P + "line-standard.jpg", "AMG Line": P + "line-amg.jpg", "Maybach": P + "line-maybach.jpg" },
 
     /* 가격 오름차순 — row 는 PRICE_ROWS 의 "연식|트림"(이번 달 조건) */
