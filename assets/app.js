@@ -23,7 +23,7 @@
       ["model.html?m=S-Class&t=mb580", "Maybach S-Class", "마이바흐 3트림"],
       ["model.html?m=GLC", "GLC"],
       ["model.html?m=GLE", "GLE"],
-      ["models.html#all", "전 차종 모델 정보", MODEL_CARDS.length + "개 차종"]
+      ["lineup.html", "전 차종 모델정보", MODEL_CARDS.length + "개 차종"]
     ]},
     { t:"상담 · 계산기", items:[
       ["quote.html", "견적 요청", "문자 · 카톡으로 바로"],
@@ -35,9 +35,10 @@
       ["index.html#location", "인천전시장 오시는 길"]
     ]}
   ];
+  /* 상단 메뉴 — 세 번째 값은 메뉴 색(site.css .nl--*) */
   var TOPLINKS = [
-    ["promotion.html", MON + " 프로모션"], ["benefit.html", "추가 혜택"], ["models.html", "모델 비교"],
-    ["finance.html", "할부 계산기"], ["quote.html", "견적 요청"]
+    ["promotion.html", MON + " 프로모션", "red"], ["benefit.html", "추가 혜택", "gold"], ["lineup.html", "전 차종 모델정보", "teal"],
+    ["models.html", "모델 비교", "sky"], ["finance.html", "할부 계산기", "green"], ["quote.html", "견적 요청", "violet"]
   ];
   function isHere(href){
     var file = href.split("#")[0].split("?")[0];
@@ -47,6 +48,7 @@
   }
   var YT_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>';
   var YT = "https://www.youtube.com/@별주행벤츠";
+  var TEL_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>';
 
   (function chrome(){
     var nav = $("nav");
@@ -56,10 +58,11 @@
           '<span class="brand__mark">별주행<i>벤츠</i></span>' +
           '<span class="brand__sub">메르세데스-벤츠 공식딜러 한성자동차<br><b>인천전시장 홍창기 차장</b></span></a>' +
         '<div class="nav__links">' + TOPLINKS.map(function(l){
-          return '<a href="' + l[0] + '"' + (isHere(l[0]) ? ' class="is-active" aria-current="page"' : '') + '>' + l[1] + '</a>';
+          return '<a class="nl--' + l[2] + (isHere(l[0]) ? ' is-active" aria-current="page"' : '"') + ' href="' + l[0] + '">' + l[1] + '</a>';
         }).join("") + '</div>' +
         '<div class="nav__right">' +
           '<a class="yt" href="' + YT + '" target="_blank" rel="noopener" aria-label="유튜브 별주행 벤츠 구독">' + YT_SVG + '구독</a>' +
+          '<a class="tel-btn" href="tel:' + TEL + '" aria-label="전화 상담 ' + TEL_TXT + '">' + TEL_SVG + '<span class="tel-btn__s">전화상담</span></a>' +
           '<a class="btn btn--kakao btn--sm" href="' + KAKAO + '" target="_blank" rel="noopener">카카오톡 상담</a>' +
           '<button class="burger" type="button" id="burger" aria-label="전체 메뉴 열기" aria-controls="drawer" aria-expanded="false"><span></span><span></span><span></span></button>' +
         '</div></div>';
@@ -729,7 +732,7 @@
     var plist = PRICE_LIST[k] || [], rows = rowsOfModel(k);
     var lo = plist.length ? Math.min.apply(null, plist.map(function(r){ return r[2]; })) : null;
     var hi = plist.length ? Math.max.apply(null, plist.map(function(r){ return r[3]; })) : null;
-    var priced = rows.filter(function(r){ return r.msrp !== null; });
+    var priced = rows.filter(function(r){ return r.msrp !== null && tot(r) > 0; });   /* 할인 없는 트림은 「최대 할인가」에서 뺀다 */
     return { lo: lo, hi: hi, n: plist.length, best: bestOfModel(k),
       minMax: priced.length ? Math.min.apply(null, priced.map(maxOf)) : null };
   }
@@ -778,16 +781,100 @@
     }).join("");
   })();
 
-  /* ═════════════ 차종 상세 (model.html?m=…) ═════════════ */
   /* 트림 · 색상까지 고를 수 있는 차종 — 자료는 assets/cars/<이름>.js (카탈로그 · 제품정보에서 옮김) */
-  var CAR_FILES = { "S-Class": "s-class" };
+  var CAR_FILES = { "S-Class": "s-class", "E-Class": "e-class", "GLC": "glc", "GLE": "gle" };
+
+  /* ═════════════ 전 차종 모델정보 (lineup.html) ═════════════ */
+  /* 차종 카드 사진 — 카탈로그 사진(images/cars/…). 없는 차종은 이름만 크게 */
+  var CAR_THUMBS = {
+    "A-Class": "images/cars/lineup/a-class.jpg", "CLA": "images/cars/lineup/cla.jpg", "C-Class": "images/cars/lineup/c-class.jpg",
+    "E-Class": "images/cars/e-class/line-exclusive.jpg", "S-Class": "images/cars/s-class/line-amg.jpg", "CLE": "images/cars/lineup/cle.jpg",
+    "GLA": "images/cars/lineup/gla.jpg", "GLB": "images/cars/lineup/glb.jpg", "GLC": "images/cars/glc/line-amg.jpg", "GLE": "images/cars/gle/line-amg.jpg",
+    "GLS": "images/cars/lineup/gls.jpg", "G-Class": "images/cars/lineup/g-class.jpg", "Mercedes-AMG": "images/cars/e-class/line-e53.jpg",
+    "Mercedes-Maybach": "images/cars/s-class/line-maybach.jpg", "Electric": "images/cars/lineup/eqe-suv.jpg"
+  };
+  /* 대표 카드(MODEL_CARDS) 사이에 끼워 넣는 세부 차종 — 모델 창 자료가 없어 가격표(promotion.html)로 이어진다.
+     match: 가격표 트림 이름 정규식(PRICE_LIST · PRICE_ROWS 공통) · after: 이 카드 뒤에 · seg: 분류(공백으로 여럿) */
+  var LINEUP_EXTRA = [
+    { key:"전기 CLA", after:"CLA", seg:"ev sedan", label:"ELECTRIC SEDAN", img:"cla-ev", match:/^CLA .*electric/, link:"fam=CLA&q=electric",
+      desc:"27년식 새로 나온 전기 CLA. 800V 충전 시스템에 CLA 200 · 250+ 다섯 가지 트림입니다." },
+    { key:"전기 GLC", after:"GLC", seg:"ev suv", label:"ELECTRIC SUV", img:"glc-ev", match:/^GLC .*electric/, link:"fam=GLC&q=electric",
+      desc:"27년식 전기 GLC 런치 에디션. GLC 300 4MATIC electric AMG Line · AMG Line+ 두 가지입니다." },
+    { key:"G 580 with EQ Technology", after:"G-Class", seg:"ev top", label:"ELECTRIC ICON", img:"g580", match:/^G 580/, link:"q=G 580",
+      desc:"전기로 달리는 G클래스. 기본형과 MANUFAKTUR 두 가지입니다." },
+    { key:"AMG GT", after:"Mercedes-AMG", seg:"amg", label:"AMG GT", img:"amg-gt", match:/^(Mercedes-)?AMG GT/, link:"q=AMG GT",
+      desc:"2도어 AMG GT 43 · 55 와 4도어 AMG GT 63 S E Performance 까지." },
+    { key:"AMG SL", after:"AMG GT", seg:"amg", label:"ROADSTER", img:"amg-sl", match:/^(Mercedes-)?AMG SL/, link:"q=AMG SL",
+      desc:"소프트톱 2+2 로드스터. AMG SL 43 과 SL 63 4MATIC+ 입니다." },
+    { key:"Maybach GLS", after:"Mercedes-Maybach", seg:"top suv", label:"MAYBACH SUV", img:"mb-gls", match:/Maybach GLS/, link:"q=Maybach GLS",
+      desc:"마이바흐 SUV. Maybach GLS 600 과 MANUFAKTUR 두 가지입니다." },
+    { key:"Maybach SL", after:"Maybach GLS", seg:"top", label:"MAYBACH ROADSTER", img:"mb-sl", match:/Maybach SL/, link:"q=Maybach SL",
+      desc:"마이바흐 로드스터 Maybach SL 680." },
+    { key:"Maybach EQS SUV", after:"Maybach SL", seg:"top ev", label:"MAYBACH ELECTRIC", img:"mb-eqs", match:/Maybach EQS/, link:"q=Maybach EQS",
+      desc:"마이바흐 전기 SUV. Maybach EQS 680 SUV." },
+    { key:"EQA", after:"Electric", seg:"ev suv", label:"ELECTRIC COMPACT SUV", img:"eqa", match:/^EQA/, link:"fam=EQA",
+      desc:"가장 작은 벤츠 전기 SUV. EQA 250 프로그레시브 · AMG Line 입니다." },
+    { key:"EQB", after:"EQA", seg:"ev suv", label:"ELECTRIC SUV", img:"eqb", match:/^EQB/, link:"fam=EQB",
+      desc:"실내가 넉넉한 박스형 전기 SUV. EQB 300 4MATIC 프로그레시브 · AMG Line 입니다." },
+    { key:"EQE · EQE SUV", after:"EQB", seg:"ev", label:"ELECTRIC BUSINESS", img:"eqe", match:/^EQE/, link:"fam=EQE",
+      desc:"E클래스급 전기차. 세단 EQE 350+ 와 SUV EQE 350+ · 500 4MATIC 입니다." },
+    { key:"EQS SUV", after:"EQE · EQE SUV", seg:"ev suv", label:"ELECTRIC FLAGSHIP SUV", img:"eqs-suv", match:/^EQS/, link:"fam=EQS",
+      desc:"벤츠 전기 SUV 의 기함. EQS 450 · 580 4MATIC SUV 입니다." }
+  ];
+  function extraFacts(x){
+    var seen = {}, list = [];
+    Object.keys(PRICE_LIST).forEach(function(k){ PRICE_LIST[k].forEach(function(r){
+      var id = r[0] + "|" + r[1]; if (seen[id] || !x.match.test(r[1])) return; seen[id] = 1; list.push(r);
+    }); });
+    var rows = PRICE_ROWS.filter(function(r){ return x.match.test(r.trim); });
+    var disc = rows.filter(function(r){ return r.msrp !== null && tot(r) > 0; });
+    return { lo: list.length ? Math.min.apply(null, list.map(function(r){ return r[2]; })) : null, n: list.length,
+      best: Math.max.apply(null, rows.map(tot).concat([0])), minMax: disc.length ? Math.min.apply(null, disc.map(maxOf)) : null };
+  }
+  (function lineupPage(){
+    var ul = $("lnCards");
+    if (!ul) return;
+    var cards = MODEL_CARDS.map(function(c){ return { c:c, f:modelFacts(c.key) }; });
+    LINEUP_EXTRA.forEach(function(x){
+      var at = -1; cards.forEach(function(o, i){ if ((o.c.key || o.x.key) === x.after) at = i; });
+      cards.splice(at < 0 ? cards.length : at + 1, 0, { c:{ key:x.key, seg:x.seg, label:x.label, desc:x.desc }, x:x, f:extraFacts(x) });
+    });
+    if ($("lnCount")) $("lnCount").textContent = cards.length;
+    ul.innerHTML = cards.map(function(o){
+      var c = o.c, f = o.f, x = o.x;
+      var th = x ? "images/cars/lineup/" + x.img + ".jpg" : CAR_THUMBS[c.key];
+      var cfg = !x && (!!CAR_FILES[c.key] || c.key === "Mercedes-Maybach");
+      var href = x ? "promotion.html?" + x.link.replace(/ /g, "%20") + "#prices"
+        : c.key === "Mercedes-Maybach" ? "model.html?m=S-Class&t=mb580" : "model.html?m=" + encodeURIComponent(c.key);
+      return '<li class="lncard" data-seg="' + c.seg + '"><a href="' + href + '">' +
+        '<div class="lncard__img' + (th ? '' : ' is-empty') + '">' + (th ? '<img src="' + th + '" alt="' + esc(c.key) + ' 카탈로그 이미지" loading="lazy">' : '<span>' + esc(c.key) + '</span>') +
+          (f.best > 0 ? '<b class="lncard__deal">' + MON + ' 최대 ' + f.best + '%</b>' : '') +
+          (cfg ? '<i class="lncard__cfg">트림 구성</i>' : '') + '</div>' +
+        '<div class="lncard__b"><p class="model__seg">' + esc(c.label) + '</p><h3 class="lncard__n">' + esc(c.key) + '</h3>' +
+          '<p class="lncard__d">' + esc(c.desc) + '</p>' +
+          '<dl class="lncard__f"><div><dt>가격</dt><dd>' + (f.lo ? manStr(f.lo) + '부터' : '문의') + '</dd></div>' +
+          '<div><dt>트림</dt><dd>' + (f.n ? f.n + '개' : '—') + '</dd></div>' +
+          '<div><dt>할인 차량 최저가</dt><dd>' + (f.minMax && f.best > 0 ? manStr(f.minMax) + '부터' : '—') + '</dd></div></dl>' +
+          '<span class="model__cta">' + (cfg ? '트림 · 사양 · 색상 보기 →' : x ? '가격 · 할인 보기 →' : '모델 정보 보기 →') + '</span></div></a></li>';
+    }).join("");
+    var chips = document.querySelectorAll("#lnFilters .chip");
+    chips.forEach(function(chip){
+      chip.addEventListener("click", function(){
+        var seg = chip.dataset.seg;
+        chips.forEach(function(b){ b.setAttribute("aria-pressed", String(b === chip)); });
+        ul.querySelectorAll(".lncard").forEach(function(li){ li.hidden = seg !== "all" && li.dataset.seg.split(" ").indexOf(seg) < 0; });
+      });
+    });
+  })();
+
+  /* ═════════════ 차종 상세 (model.html?m=…) ═════════════ */
   var ASSET_V = (function(){ var m = (document.currentScript && document.currentScript.src || "").match(/[?&]v=([^&]+)/); return m ? m[1] : "1"; })();
 
   (function modelPage(){
     var root = $("mpage");
     if (!root) return;
     var k = qs.get("m");
-    if (!k || !MODEL_INFO[k]) { location.replace("models.html#all"); return; }
+    if (!k || !MODEL_INFO[k]) { location.replace("lineup.html"); return; }
     if (CAR_FILES[k]) {
       var sc = document.createElement("script");
       sc.src = "assets/cars/" + CAR_FILES[k] + ".js?v=" + ASSET_V;
@@ -867,6 +954,10 @@
     var sel = { ext: null, upc: 0 };
     var info = MODEL_INFO[k] || {}, rowsAll = sortBase(rowsOfModel(k));
     document.title = car.name + " 트림 · 사양 · 색상 · " + MON + " 조건 | 별주행 벤츠 홍창기";
+    function pickImg(map, t){
+      if (!map) return null;
+      return map[t.id] || map[t.line + "|" + t.body] || map[t.line] || map[t.body] || null;
+    }
     function rowOf(t){ var r = null; PRICE_ROWS.some(function(x){ return key(x) === t.row && (r = x); }); return r; }
     function val(v){ return v === "S" ? "기본" : v === "-" ? "—" : v; }
     function same(arr){ return arr.every(function(v){ return v === arr[0]; }); }
@@ -887,10 +978,10 @@
         '<div class="wrap"><article class="tcard" id="tcard"></article></div>' +
         '<section class="cx-sec" id="diff" data-toc="트림별 달라지는 사양"><div class="wrap">' +
           '<h2 class="sec__title">트림을 올리면 <em>무엇이 달라지나요</em></h2>' +
-          '<p class="sec__note">' + esc(car.name) + ' 전 트림에 공통으로 들어가는 사양과, 고른 트림에서 바로 아래 트림 대비 달라지는 사양입니다. 제품정보(' + esc(car.asof) + ') 기준.</p>' +
+          '<p class="sec__note">' + esc(car.name) + ' 전 트림에 공통으로 들어가는 사양과, 고른 트림에서 바로 아래 트림 대비 달라지는 사양입니다. (' + esc(car.asof) + ' 기준)</p>' +
           '<div class="diffs" id="diffs"></div>' +
           '<div class="vmx" id="vmx"></div>' +
-          '<div class="fmx" id="fmx"></div><p class="fmx__note">기본 = 기본 적용 · — = 해당 없음 · 표의 트림 이름을 누르면 그 트림으로 바뀝니다.</p>' +
+          '<div class="fmx" id="fmx"></div><p class="fmx__note">기본 = 기본 적용 · — = 해당 없음 · 표의 트림 이름을 누르면 그 트림으로 바뀝니다.' + (car.featureNote ? ' ' + esc(car.featureNote) : '') + '</p>' +
         '</div></section>' +
         '<section class="cx-sec" id="specs" data-toc="엔진 · 트림별 제원"><div class="wrap">' +
           '<p class="sec__eyebrow">Powertrain</p><h2 class="sec__title">엔진과 <em>트림별 제원</em></h2>' +
@@ -932,25 +1023,34 @@
     function drawTrim(){
       var t = T[ti], r = rowOf(t), e = engineOf(t), w = car.wheels[t.wheel] || {}, up = car.upholstery[t.upholstery] || {};
       [].forEach.call($("tsel").children, function(b, i){ b.classList.toggle("on", i === ti); b.setAttribute("aria-selected", String(i === ti)); });
+      var tsel = $("tsel"), chip = tsel.children[ti];   /* 휴대폰(가로 스크롤)에서 고른 트림이 보이게 */
+      if (chip && tsel.scrollWidth > tsel.clientWidth) tsel.scrollLeft = chip.offsetLeft - tsel.offsetLeft - 12;
+      var yr = r ? r.year + '년식 ' : '';
       var deal = r && r.msrp !== null && tot(r) > 0
-        ? MON + ' 조건 — ' + mixOf(r) + ' 적용 시 최대 할인가 <b>' + manStr(maxOf(r)) + '</b>' + (r.ew ? ' · ' + esc((EW_LABEL[r.ew] || '').replace(/^\+ /, '')) : '')
-        : MON + ' 프로모션 대상이 아닌 트림입니다. 금융 · 재고 조건은 문의 주세요.';
+        ? yr + MON + ' 조건 — ' + mixOf(r) + ' 적용 시 최대 할인가 <b>' + manStr(maxOf(r)) + '</b>' + (r.ew ? ' · ' + esc((EW_LABEL[r.ew] || '').replace(/^\+ /, '')) : '')
+        : (t.dealNote || MON + ' 프로모션 대상이 아닌 트림입니다. 금융 · 재고 조건은 문의 주세요.');
+      (t.alt || []).forEach(function(kk){
+        var a = null; PRICE_ROWS.some(function(x){ return key(x) === kk && (a = x); });
+        if (a && a.msrp !== null && tot(a) > 0) deal += '<br>' + a.year + '년식 ' + (r && r.year === a.year ? '' : '재고 ') + '(' + esc(a.trim) + ') — 총 ' + tot(a) + '% · 최대 할인가 <b>' + manStr(maxOf(a)) + '</b>';
+      });
       $("tcard").innerHTML =
-        '<div class="tcard__img"><img src="' + (t.img || car.lines[t.line] || car.hero[0]) + '" alt="' + esc(car.name + ' ' + t.line) + '"><em>' + esc(t.line) + ' 디자인 · 카탈로그 이미지</em></div>' +
+        '<div class="tcard__img"><img src="' + (t.img || pickImg(car.lines, t) || car.hero[0]) + '" alt="' + esc(car.name + ' ' + t.line) + '"><em>' + esc(t.imgNote || t.line + ' 디자인 · 카탈로그 이미지') + '</em></div>' +
         '<div><p class="tcard__k">' + esc(car.bodies[t.body]) + ' · ' + esc(t.line) + '</p>' +
           '<h2 class="tcard__n">' + esc(t.name) + '</h2>' +
           '<p class="tcard__m">' + esc([e.kind, w.name, up.name].filter(Boolean).join(' · ')) + '</p>' +
-          '<p class="tcard__p num">' + manStr(t.price) + '</p>' +
+          '<p class="tcard__p num">' + manStr(t.price) + (t.priceNote ? '<small class="tcard__pn">' + esc(t.priceNote) + '</small>' : '') + '</p>' +
           (t.highlights ? '<p class="tcard__hl">' + t.highlights.map(function(h){ return '<span>' + esc(h) + '</span>'; }).join("") + '</p>' : '') +
           '<p class="tcard__deal">' + deal + '</p>' +
-          '<div class="tcard__acts"><a class="btn btn--kakao" href="quote.html?k=' + encodeURIComponent(t.row) + '">이 트림 견적 요청</a>' +
+          '<div class="tcard__acts"><a class="btn btn--kakao" href="quote.html?' + (r ? 'k=' + encodeURIComponent(t.row) : 'm=' + encodeURIComponent(k)) + '">이 트림 견적 요청</a>' +
           '<a class="btn btn--line" href="test-drive.html?m=' + encodeURIComponent(k) + '">시승 예약</a>' +
-          '<a class="btn btn--line" href="finance.html?k=' + encodeURIComponent(t.row) + '">할부 계산</a></div></div>';
+          '<a class="btn btn--line" href="finance.html' + (r ? '?k=' + encodeURIComponent(t.row) : '') + '">할부 계산</a></div></div>';
 
       /* 공통 · 달라지는 점 */
-      var prev = ti > 0 ? T[ti - 1] : null, changes = [];
+      var pi = ti - 1;
+      if (car.diffByBody) while (pi >= 0 && T[pi].body !== t.body) pi--;
+      var prev = pi >= 0 ? T[pi] : null, changes = [];
       diffRows.forEach(function(d){
-        var v = d.vals[ti], pv = prev ? d.vals[ti - 1] : null;
+        var v = d.vals[ti], pv = prev ? d.vals[pi] : null;
         if (!prev) { if (v !== "-") changes.push('<li><span><b>' + esc(d.n) + '</b> ' + esc(val(v)) + '</span></li>'); return; }
         if (v === pv) return;
         var tag = pv === "-" ? '<span class="nb">추가</span> ' : v === "-" ? '<span class="nb up" style="background:#556">없음</span> ' : '<span class="nb up">변경</span> ';
@@ -1016,7 +1116,7 @@
       }).join("");
       drawSum();
     }
-    function colorOk(c){ return !c.only || c.only === T[ti].line; }
+    function colorOk(c){ var ln = T[ti].line, bd = T[ti].body; return (!c.only || c.only === ln || c.only === bd) && (!c.not || (c.not !== ln && c.not !== bd)); }
     function drawExt(){
       var t = T[ti], mb = t.line === "Maybach";
       if (sel.ext !== null && !colorOk(car.colors[sel.ext])) sel.ext = null;
@@ -1024,7 +1124,7 @@
       $("cxExtN").textContent = shown.length + '가지 · ' + (mb ? '마이바흐 카탈로그 기준 · 투톤 포함' : '카탈로그 기준');
       $("cxExt").innerHTML = car.colors.map(function(c, i){
         if (!colorOk(c)) return "";
-        var src = (mb && c.imgMb) || c.img;
+        var src = pickImg(c.lineImg, t) || (mb && c.imgMb) || c.img;
         return '<button class="cc2' + (sel.ext === i ? ' is-sel' : '') + '" type="button" data-ext="' + i + '">' + (src ? '<img src="' + src + '" alt="' + esc(c.name) + '" loading="lazy">' : '') +
           '<span class="b"><span><b>' + esc(c.name.replace(/^MANUFAKTUR\s*/, '')) + (c.mfk ? '<span class="mfk">MANUFAKTUR</span>' : '') + '</b></span></span></button>';
       }).join("");
@@ -1044,7 +1144,7 @@
       var memo = car.name + ' 구성: ' + t.name + ' / 외장 ' + (ext ? ext.name : '미정') + ' / 시트 ' + (up.name || '') + (uc.name ? ' ' + uc.name : '');
       $("cxSum").innerHTML = '<div class="sum__hd"><p class="sum__k">SELECTED</p><p class="sum__n">' + esc(t.name) + '</p></div>' +
         '<dl>' + lines.map(function(l){ return '<div><dt>' + esc(l[0]) + '</dt><dd>' + esc(l[1]) + '</dd></div>'; }).join("") + '</dl>' +
-        '<div class="sum__acts"><a class="btn btn--white" href="quote.html?k=' + encodeURIComponent(t.row) + '&memo=' + encodeURIComponent(memo) + '">이 구성으로 견적 요청 →</a>' +
+        '<div class="sum__acts"><a class="btn btn--white" href="quote.html?' + (r ? 'k=' + encodeURIComponent(t.row) : 'm=' + encodeURIComponent(k)) + '&memo=' + encodeURIComponent(memo) + '">이 구성으로 견적 요청 →</a>' +
         '<a class="btn btn--line" href="test-drive.html?m=' + encodeURIComponent(k) + '&memo=' + encodeURIComponent(memo) + '">시승 예약</a>' +
         '<a class="btn btn--kakao" href="' + KAKAO + '" target="_blank" rel="noopener">카카오톡 상담</a></div>';
     }

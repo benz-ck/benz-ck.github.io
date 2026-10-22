@@ -107,10 +107,12 @@ section[id],header[id]{scroll-margin-top:calc(var(--navh) + 12px)}
 }
 .brand__sub b{color:var(--ink);font-weight:700}
 .nav__links{display:none;gap:4px;margin-left:auto;font-size:14.5px}
-.nav__links a{position:relative;padding:8px 12px;border-radius:999px;color:var(--ink-soft);font-weight:500;transition:color .2s,background .2s}
-.nav__links a:hover{color:#fff;background:rgba(255,255,255,.05)}
-.nav__links a.is-active{color:#fff}
-.nav__links a.is-active::after{content:"";position:absolute;left:12px;right:12px;bottom:3px;height:2px;border-radius:2px;background:var(--sky)}
+.nav__links a{--c:var(--sky);position:relative;display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border-radius:999px;
+  color:color-mix(in srgb,var(--c) 82%,#fff);font-weight:600;transition:color .2s,background .2s,box-shadow .2s}
+.nav__links a::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--c);box-shadow:0 0 10px color-mix(in srgb,var(--c) 70%,transparent)}
+.nav__links a:hover{color:#fff;background:color-mix(in srgb,var(--c) 16%,transparent)}
+.nav__links a.is-active{color:#fff;background:color-mix(in srgb,var(--c) 20%,transparent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--c) 55%,transparent)}
+.nav__links .nl--red{--c:#FF7B72}.nav__links .nl--gold{--c:var(--gold)}.nav__links .nl--sky{--c:#8EC5FF}.nav__links .nl--green{--c:var(--green)}.nav__links .nl--violet{--c:var(--violet)}.nav__links .nl--teal{--c:var(--teal)}
 .nav__right{display:flex;align-items:center;gap:8px;margin-left:auto}
 .nav__links + .nav__right{margin-left:12px}
 .yt{
@@ -119,6 +121,14 @@ section[id],header[id]{scroll-margin-top:calc(var(--navh) + 12px)}
 }
 .yt:hover{background:#C70010;transform:translateY(-1px)}
 .yt svg{width:15px;height:15px}
+/* 전화 연결 — 「전화상담」, 휴대폰은 아이콘만 */
+.tel-btn{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 14px;border-radius:999px;background:#12A150;color:#fff;font-size:13px;font-weight:700;white-space:nowrap;transition:background .2s,transform .2s}
+.tel-btn:hover{background:#0E8A44;transform:translateY(-1px)}
+.tel-btn svg{width:15px;height:15px}
+.nav__links a{white-space:nowrap}
+/* 메뉴가 보이는 중간 폭(1120~1359px)은 로고 옆 소개 줄을 접어 한 줄로 */
+@media(min-width:1120px) and (max-width:1519px){.brand__sub{display:none}.nav__links{gap:0}.nav__links a{padding:8px 10px}}
+@media(max-width:639px){.tel-btn{width:34px;padding:0;justify-content:center}.tel-btn__s{display:none}}
 .nav .btn--kakao{display:none}
 .burger{
   width:42px;height:42px;border-radius:10px;border:1px solid var(--line-strong);background:rgba(255,255,255,.05);
@@ -238,6 +248,8 @@ section[id],header[id]{scroll-margin-top:calc(var(--navh) + 12px)}
 .ncard img{width:64px;height:48px;object-fit:cover;border-radius:8px}
 .ncard__ic{width:64px;height:48px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:rgba(230,0,18,.14);color:#ff5a5f}
 .ncard__ic svg{width:26px;height:26px}
+.ncard__ic--naver{background:#03C75A;color:#fff}
+.ncard__ic--naver svg{width:22px;height:22px}
 .ncard__k{font-size:10.5px;font-weight:700;letter-spacing:.16em;color:var(--sky)}
 .ncard__t{font-size:14.5px;font-weight:700;line-height:1.35;margin-top:2px}
 .ncard__go{color:var(--sky);font-size:18px}
@@ -851,6 +863,7 @@ input[type=range]{width:100%;accent-color:var(--gold)}
 .tcard__n{margin-top:8px;font-size:clamp(28px,3.6vw,42px);font-weight:800;letter-spacing:-.035em;line-height:1.1}
 .tcard__m{margin-top:8px;font-size:14px;color:var(--ink-soft);line-height:1.6}
 .tcard__p{margin-top:18px;font-size:clamp(30px,4vw,44px);font-weight:800;letter-spacing:-.03em;color:var(--sky)}
+.tcard__pn{display:block;margin-top:4px;font-size:12.5px;font-weight:600;color:var(--ink-soft);letter-spacing:0}
 .tcard__hl{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
 .tcard__hl span{font-size:12px;font-weight:700;color:var(--ink-2);padding:5px 10px;border-radius:999px;border:1px solid var(--line-strong);background:rgba(255,255,255,.04)}
 .tcard__deal{margin-top:12px;padding-top:12px;border-top:1px solid var(--line-soft);font-size:13.5px;color:var(--ink-2);line-height:1.7}
@@ -948,3 +961,28 @@ input[type=range]{width:100%;accent-color:var(--gold)}
 .sum__acts{display:flex;flex-wrap:wrap;gap:8px;padding:16px 20px 20px}
 .sum__acts .btn{flex:1 1 200px}
 .cx-src{margin-top:16px;font-size:12px;color:var(--muted);line-height:1.7}
+
+
+/* 전 차종 모델정보 */
+.lncards{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:640px){.lncards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1000px){.lncards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:1280px){.lncards{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.lncard > a{display:flex;flex-direction:column;height:100%;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--panel);transition:border-color .2s,transform .2s}
+.lncard > a:hover{border-color:rgba(94,234,212,.55);transform:translateY(-3px)}
+.lncard__img{position:relative;aspect-ratio:16/9;background:#E9ECEE;overflow:hidden}
+.lncard__img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.lncard > a:hover .lncard__img img{transform:scale(1.04)}
+@media(max-width:639px){.lncard__img.is-empty{aspect-ratio:3/1}}
+.lncard__img.is-empty{display:flex;align-items:center;justify-content:center;background:radial-gradient(120% 120% at 20% 0%,rgba(127,178,217,.22),transparent 60%),linear-gradient(135deg,#132a37,#0b1f2a)}
+.lncard__img.is-empty span{font-family:"Times New Roman",Georgia,serif;font-style:italic;font-size:clamp(26px,3vw,34px);color:#E9ECEE;letter-spacing:-.01em;text-align:center;padding:0 12px}
+.lncard__deal{position:absolute;top:10px;left:10px;font-size:12px;font-weight:800;color:#1B1505;background:var(--gold);padding:4px 9px;border-radius:7px}
+.lncard__cfg{position:absolute;top:10px;right:10px;font-style:normal;font-size:11px;font-weight:800;color:#06221d;background:var(--teal);padding:4px 9px;border-radius:7px}
+.lncard__b{display:flex;flex-direction:column;gap:6px;flex:1;padding:16px 16px 14px}
+.lncard__n{font-size:22px;font-weight:800;letter-spacing:-.03em}
+.lncard__d{font-size:13px;color:var(--ink-soft);line-height:1.6}
+.lncard__f{margin:8px 0 2px;padding:6px 0;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.lncard__f > div{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:4px 0}
+.lncard__f dt{font-size:12px;color:var(--muted);font-weight:600}
+.lncard__f dd{font-size:13.5px;font-weight:700;white-space:nowrap}
+.lncard .model__cta{border-top:0;padding-top:6px;color:var(--teal)}

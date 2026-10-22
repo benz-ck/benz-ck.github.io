@@ -59,7 +59,7 @@ var PRICE_ROWS = [
   { model:"E-Class", year:27, trim:"E 300 4M AMG Line", seg:"sedan", msrp:100100000, fin:12, cash:8, ret:0, trade:0 },
   { model:"E-Class", year:27, trim:"E 450 4M Exclusive", seg:"sedan", msrp:129500000, fin:10, cash:10, ret:0, trade:0 },
   { model:"E-Class", year:27, trim:"E 450 4M AMG Line", seg:"sedan", msrp:117200000, fin:10, cash:10, ret:0, trade:0 },
-  { model:"E-Class", year:27, trim:"E 450 4M AMG Line", seg:"sedan", msrp:112200000, fin:10, cash:10, ret:0, trade:0, memo:"10/6 가격표 신규 트림" },
+  { model:"E-Class", year:27, trim:"E 450 4M AMG Line (컴포트 서스펜션)", seg:"sedan", msrp:112200000, fin:10, cash:10, ret:0, trade:0, memo:"10/6 가격표 신규 트림 · 컴포트 서스펜션(에어매틱 · 후륜조향 없음)" },
   { model:"S-Class", year:26, trim:"S 350 d 4M", seg:"sedan", msrp:154000000, fin:10, cash:10, ret:2, trade:1 },
   { model:"S-Class", year:26, trim:"S 450 4M (SWB)", seg:"sedan", msrp:161000000, from:true, fin:11, cash:7, ret:2, trade:1, memo:"운용리스 시 할부 대신 +6%" },
   { model:"S-Class", year:26, trim:"S 450 4M Long", seg:"sedan", msrp:193000000, from:true, fin:10, cash:10, ret:2, trade:1 },
