@@ -782,15 +782,15 @@
   })();
 
   /* 트림 · 색상까지 고를 수 있는 차종 — 자료는 assets/cars/<이름>.js (카탈로그 · 제품정보에서 옮김) */
-  var CAR_FILES = { "S-Class": "s-class", "E-Class": "e-class", "GLC": "glc", "GLE": "gle" };
+  var CAR_FILES = { "S-Class": "s-class", "E-Class": "e-class", "GLC": "glc", "GLE": "gle", "CLE": "cle", "V-Class": "v-class" };
 
   /* ═════════════ 전 차종 모델정보 (lineup.html) ═════════════ */
   /* 차종 카드 사진 — 카탈로그 사진(images/cars/…). 없는 차종은 이름만 크게 */
   var CAR_THUMBS = {
     "A-Class": "images/cars/lineup/a-class.jpg", "CLA": "images/cars/lineup/cla.jpg", "C-Class": "images/cars/lineup/c-class.jpg",
-    "E-Class": "images/cars/e-class/line-exclusive.jpg", "S-Class": "images/cars/s-class/line-amg.jpg", "CLE": "images/cars/lineup/cle.jpg",
+    "E-Class": "images/cars/e-class/line-exclusive.jpg", "S-Class": "images/cars/s-class/line-amg.jpg", "CLE": "images/cars/cle/line-coupe.jpg",
     "GLA": "images/cars/lineup/gla.jpg", "GLB": "images/cars/lineup/glb.jpg", "GLC": "images/cars/glc/line-amg.jpg", "GLE": "images/cars/gle/line-amg.jpg",
-    "GLS": "images/cars/lineup/gls.jpg", "G-Class": "images/cars/lineup/g-class.jpg", "Mercedes-AMG": "images/cars/e-class/line-e53.jpg",
+    "GLS": "images/cars/lineup/gls.jpg", "G-Class": "images/cars/lineup/g-class.jpg", "V-Class": "images/cars/v-class/line.jpg", "Mercedes-AMG": "images/cars/e-class/line-e53.jpg",
     "Mercedes-Maybach": "images/cars/s-class/line-maybach.jpg", "Electric": "images/cars/lineup/eqe-suv.jpg"
   };
   /* 대표 카드(MODEL_CARDS) 사이에 끼워 넣는 세부 차종 — 모델 창 자료가 없어 가격표(promotion.html)로 이어진다.
@@ -977,8 +977,11 @@
       '<div class="cx">' +
         '<div class="wrap"><article class="tcard" id="tcard"></article></div>' +
         '<section class="cx-sec" id="diff" data-toc="트림별 달라지는 사양"><div class="wrap">' +
-          '<h2 class="sec__title">트림을 올리면 <em>무엇이 달라지나요</em></h2>' +
-          '<p class="sec__note">' + esc(car.name) + ' 전 트림에 공통으로 들어가는 사양과, 고른 트림에서 바로 아래 트림 대비 달라지는 사양입니다. (' + esc(car.asof) + ' 기준)</p>' +
+          (T.length === 1
+            ? '<h2 class="sec__title">' + esc(T[0].name) + ' <em>기본 사양</em></h2>' +
+              '<p class="sec__note">단일 트림이라 아래 사양이 모두 기본으로 들어갑니다. 휠 · 실내 트림 · 시트 색상과 선택 사양은 아래 「색상과 내장」에서 보실 수 있습니다. (' + esc(car.asof) + ' 기준)</p>'
+            : '<h2 class="sec__title">트림을 올리면 <em>무엇이 달라지나요</em></h2>' +
+              '<p class="sec__note">' + esc(car.name) + ' 전 트림에 공통으로 들어가는 사양과, 고른 트림에서 바로 아래 트림 대비 달라지는 사양입니다. (' + esc(car.asof) + ' 기준)</p>') +
           '<div class="diffs" id="diffs"></div>' +
           '<div class="vmx" id="vmx"></div>' +
           '<div class="fmx" id="fmx"></div><p class="fmx__note">기본 = 기본 적용 · — = 해당 없음 · 표의 트림 이름을 누르면 그 트림으로 바뀝니다.' + (car.featureNote ? ' ' + esc(car.featureNote) : '') + '</p>' +
@@ -996,6 +999,14 @@
           '<div class="cfg"><h3>외장 색상 <small id="cxExtN"></small></h3><div class="cgrid c4" id="cxExt"></div></div>' +
           '<div class="cfg"><h3>시트 <small id="cxUpN"></small></h3><div class="cgrid" id="cxUp"></div></div>' +
           '<div class="cfg"><h3>우드 트림 <small id="cxWdN"></small></h3><div class="cgrid c4" id="cxWd"></div></div>' +
+          /* 차종별 추가 선택 칸(휠 · 루프 라이너 등) — car.extraCfg */
+          (car.extraCfg || []).map(function(g){
+            return '<div class="cfg"><h3>' + esc(g.title) + (g.sub ? ' <small>' + esc(g.sub) + '</small>' : '') + '</h3><div class="cgrid c4">' +
+              g.items.map(function(it){
+                return '<div class="cc2' + (it.base ? ' is-sel' : '') + '">' + (it.img ? '<img src="' + it.img + '" alt="' + esc(it.name) + '" loading="lazy">' : '') +
+                  '<span class="b"><span><b>' + esc(it.name) + '</b><small>' + esc(it.note || (it.base ? '기본' : '선택 사양')) + '</small></span></span></div>';
+              }).join("") + '</div></div>';
+          }).join("") +
         '</div></section>' +
         '<section class="cx-sec" id="ask" data-toc="고른 사양으로 문의"><div class="wrap">' +
           '<h2 class="sec__title">고른 사양으로 <em>견적 문의</em></h2>' +
@@ -1056,6 +1067,15 @@
         var tag = pv === "-" ? '<span class="nb">추가</span> ' : v === "-" ? '<span class="nb up" style="background:#556">없음</span> ' : '<span class="nb up">변경</span> ';
         changes.push('<li><span>' + tag + '<b>' + esc(d.n) + '</b> ' + esc(val(v)) + (pv !== null ? '<span class="was">' + esc(val(pv)) + '</span>' : '') + '</span></li>');
       });
+      if (T.length === 1) {
+        var gs = {}, go = [];
+        car.features.forEach(function(g){ if (!gs[g.g]) { gs[g.g] = []; go.push(g.g); } g.rows.forEach(function(r){ if (r[1] !== "-") gs[g.g].push(r); }); });
+        $("diffs").innerHTML = go.map(function(g){
+          return '<div class="dbox' + (g === go[0] ? ' cur' : '') + '"><h3>' + esc(g) + '</h3><ul class="dlist three">' +
+            gs[g].map(function(r){ return '<li><span><b>' + esc(r[0]) + '</b>' + (r[1] !== "S" ? ' ' + esc(r[1]) : '') + '</span></li>'; }).join("") + '</ul></div>';
+        }).join("");
+        $("fmx").hidden = true; $("fmx").nextElementSibling.hidden = true; $("vmx").hidden = true;
+      } else
       $("diffs").innerHTML =
         '<div class="dbox cur"><h3>' + esc(t.short) + ' <small>' + (prev ? esc(prev.short) + ' 대비 달라지는 사양' : '기본 트림의 주요 사양') + '</small></h3>' +
           '<ul class="dlist two">' + (changes.join("") || '<li><span>바로 아래 트림과 사양 구성이 같습니다.</span></li>') + '</ul></div>' +
@@ -1112,7 +1132,7 @@
         var wd = car.woods[id], on = id === t.wood;
         var who = T.filter(function(x){ return x.wood === id; }).map(function(x){ return x.short; }).join(' · ');
         return '<div class="cc2' + (on ? ' is-sel' : ' off') + '">' + (wd.img ? '<img src="' + wd.img + '" alt="' + esc(wd.name) + '" loading="lazy">' : '') +
-          '<span class="b"><span><b>' + esc(wd.name) + '</b><small>' + (who ? esc(who) + ' 기본' : '선택 사양') + '</small></span></span></div>';
+          '<span class="b"><span><b>' + esc(wd.name) + '</b><small>' + (who ? (T.length === 1 ? '기본' : esc(who) + ' 기본') : (wd.note || '선택 사양')) + '</small></span></span></div>';
       }).join("");
       drawSum();
     }
