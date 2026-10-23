@@ -163,6 +163,10 @@ section[id],header[id]{scroll-margin-top:calc(var(--navh) + 12px)}
 .dgrp a small{font-size:12.5px;font-weight:500;color:var(--muted);letter-spacing:0}
 .dgrp a:hover{color:var(--sky)}
 .dgrp a.is-here{color:var(--gold)}
+.dgrp--grid{display:grid;grid-template-columns:1fr 1fr;column-gap:16px}
+.dgrp--grid .dgrp__t{grid-column:1/-1}
+.dgrp--grid a{padding:8px 0;font-size:15px}
+.dgrp--grid a.is-here::before{top:6px;bottom:6px}
 .dgrp a.is-here::before{content:"";position:absolute;left:-22px;top:9px;bottom:9px;width:3px;border-radius:2px;background:var(--gold)}
 .drawer__who{margin-top:26px;font-size:13px;color:var(--ink-soft);line-height:1.7}
 .drawer__who b{display:block;color:#fff;font-size:16px}

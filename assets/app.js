@@ -17,15 +17,16 @@
       ["benefit.html", "구매 추가 혜택", "재구매 · 트레이드인 · 컨퀘스트"]
     ]},
     { t:"신차 · 모델", items:[
-      ["models.html", "모델 비교", "차종 2~3개 나란히"],
-      ["model.html?m=E-Class", "E-Class"],
-      ["model.html?m=S-Class", "S-Class"],
-      ["model.html?m=S-Class&t=mb580", "Maybach S-Class", "마이바흐 3트림"],
-      ["model.html?m=GLS", "GLS", "마이바흐 GLS 포함"],
-      ["model.html?m=GLC", "GLC"],
-      ["model.html?m=GLE", "GLE"],
-      ["lineup.html", "전 차종 모델정보", MODEL_CARDS.length + "개 차종"]
+      ["lineup.html", "전 차종 모델정보", MODEL_CARDS.length + "개 차종"],
+      ["models.html", "모델 비교", "차종 2~3개 나란히"]
     ]},
+    /* 차종별 트림 구성 페이지(model.html?m=…) — 2열 목록 */
+    { t:"차종별 트림 · 사양 · 색상", grid:true, items:[
+      ["A-Class", "A-Class"], ["CLA", "CLA"], ["C-Class", "C-Class"], ["E-Class", "E-Class"], ["S-Class", "S-Class"], ["CLE", "CLE"],
+      ["GLA", "GLA"], ["GLB", "GLB"], ["GLC", "GLC"], ["GLE", "GLE"], ["GLS", "GLS"], ["G-Class", "G-Class"], ["V-Class", "V-Class"],
+      ["EQA", "EQA"], ["EQB", "EQB"], ["EQE", "EQE"], ["EQS", "EQS SUV"], ["GLC electric", "전기 GLC"],
+      ["AMG GT", "AMG GT"], ["SL", "SL"], ["S-Class&t=mb580", "Maybach S"], ["GLS&t=mb600", "Maybach GLS"], ["SL&t=mb680", "Maybach SL"], ["EQS&t=mb680", "Maybach EQS SUV"]
+    ].map(function(x){ return ["model.html?m=" + x[0].replace(/ /g, "%20"), x[1]]; })},
     { t:"상담 · 계산기", items:[
       ["quote.html", "견적 요청", "문자 · 카톡으로 바로"],
       ["test-drive.html", "시승 예약", "인천전시장"],
@@ -44,8 +45,8 @@
   function isHere(href){
     var file = href.split("#")[0].split("?")[0];
     if (file !== HERE || href.indexOf("#") >= 0) return false;
-    var m = (href.split("?")[1] || "").match(/m=([^&]+)/);
-    return !m || decodeURIComponent(m[1]) === qs.get("m");
+    var q = href.split("?")[1] || "", m = q.match(/m=([^&]+)/), t = q.match(/t=([^&]+)/);
+    return !m || decodeURIComponent(m[1]) === qs.get("m") && (!t || t[1] === qs.get("t"));
   }
   var YT_SVG = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>';
   var YT = "https://www.youtube.com/@별주행벤츠";
@@ -71,7 +72,7 @@
     /* 「이 페이지 바로가기」는 메뉴를 열 때 채운다(차종 페이지처럼 나중에 그려지는 섹션도 잡히게) */
     var groups = '<div class="dgrp dgrp--toc" id="dtoc" hidden></div>' +
       MENU.map(function(g){
-        return '<div class="dgrp"><p class="dgrp__t">' + g.t + '</p>' + g.items.map(function(it){
+        return '<div class="dgrp' + (g.grid ? ' dgrp--grid' : '') + '"><p class="dgrp__t">' + g.t + '</p>' + g.items.map(function(it){
           return '<a href="' + it[0] + '"' + (isHere(it[0]) ? ' class="is-here" aria-current="page"' : '') + ' data-close>' +
             it[1] + (it[2] ? '<small>' + it[2] + '</small>' : '') + '</a>';
         }).join("") + '</div>';
@@ -783,43 +784,45 @@
   })();
 
   /* 트림 · 색상까지 고를 수 있는 차종 — 자료는 assets/cars/<이름>.js (카탈로그 · 제품정보에서 옮김) */
-  var CAR_FILES = { "S-Class": "s-class", "E-Class": "e-class", "GLC": "glc", "GLE": "gle", "CLE": "cle", "V-Class": "v-class", "GLS": "gls" };
+  var CAR_FILES = { "S-Class": "s-class", "E-Class": "e-class", "GLC": "glc", "GLE": "gle", "CLE": "cle", "V-Class": "v-class", "GLS": "gls",
+    "A-Class": "a-class", "CLA": "cla", "C-Class": "c-class", "GLA": "gla", "GLB": "glb", "G-Class": "g-class",
+    "EQA": "eqa", "EQB": "eqb", "EQE": "eqe", "EQS": "eqs", "GLC electric": "glc-ev", "AMG GT": "amg-gt", "SL": "sl" };
 
   /* ═════════════ 전 차종 모델정보 (lineup.html) ═════════════ */
   /* 차종 카드 사진 — 카탈로그 사진(images/cars/…). 없는 차종은 이름만 크게 */
   var CAR_THUMBS = {
-    "A-Class": "images/cars/lineup/a-class.jpg", "CLA": "images/cars/lineup/cla.jpg", "C-Class": "images/cars/lineup/c-class.jpg",
+    "A-Class": "images/cars/a-class/line-hatch.jpg", "CLA": "images/cars/cla/line-prog.jpg", "C-Class": "images/cars/c-class/line-amg.jpg",
     "E-Class": "images/cars/e-class/line-exclusive.jpg", "S-Class": "images/cars/s-class/line-amg.jpg", "CLE": "images/cars/cle/line-coupe.jpg",
-    "GLA": "images/cars/lineup/gla.jpg", "GLB": "images/cars/lineup/glb.jpg", "GLC": "images/cars/glc/line-amg.jpg", "GLE": "images/cars/gle/line-amg.jpg",
-    "GLS": "images/cars/gls/line-gls.jpg", "G-Class": "images/cars/lineup/g-class.jpg", "V-Class": "images/cars/v-class/line.jpg", "Mercedes-AMG": "images/cars/e-class/line-e53.jpg",
+    "GLA": "images/cars/gla/line.jpg", "GLB": "images/cars/glb/line-amg.jpg", "GLC": "images/cars/glc/line-amg.jpg", "GLE": "images/cars/gle/line-amg.jpg",
+    "GLS": "images/cars/gls/line-gls.jpg", "G-Class": "images/cars/g-class/line-g450d.jpg", "V-Class": "images/cars/v-class/line.jpg", "Mercedes-AMG": "images/cars/e-class/line-e53.jpg",
     "Mercedes-Maybach": "images/cars/s-class/line-maybach.jpg", "Electric": "images/cars/lineup/eqe-suv.jpg"
   };
   /* 대표 카드(MODEL_CARDS) 사이에 끼워 넣는 세부 차종 — 모델 창 자료가 없어 가격표(promotion.html)로 이어진다.
      match: 가격표 트림 이름 정규식(PRICE_LIST · PRICE_ROWS 공통) · after: 이 카드 뒤에 · seg: 분류(공백으로 여럿) */
   var LINEUP_EXTRA = [
-    { key:"전기 CLA", after:"CLA", seg:"ev sedan", label:"ELECTRIC SEDAN", img:"cla-ev", match:/^CLA .*electric/, link:"fam=CLA&q=electric",
+    { key:"전기 CLA", after:"CLA", seg:"ev sedan", label:"ELECTRIC SEDAN", img:"cla-ev", match:/^CLA .*electric/, link:"fam=CLA&q=electric", href:"model.html?m=CLA&t=e200es",
       desc:"27년식 새로 나온 전기 CLA. 800V 충전 시스템에 CLA 200 · 250+ 다섯 가지 트림입니다." },
-    { key:"전기 GLC", after:"GLC", seg:"ev suv", label:"ELECTRIC SUV", img:"glc-ev", match:/^GLC .*electric/, link:"fam=GLC&q=electric",
+    { key:"전기 GLC", after:"GLC", seg:"ev suv", label:"ELECTRIC SUV", img:"glc-ev", match:/^GLC .*electric/, link:"fam=GLC&q=electric", href:"model.html?m=GLC%20electric",
       desc:"27년식 전기 GLC 런치 에디션. GLC 300 4MATIC electric AMG Line · AMG Line+ 두 가지입니다." },
-    { key:"G 580 with EQ Technology", after:"G-Class", seg:"ev top", label:"ELECTRIC ICON", img:"g580", match:/^G 580/, link:"q=G 580",
+    { key:"G 580 with EQ Technology", after:"G-Class", seg:"ev top", label:"ELECTRIC ICON", img:"g580", match:/^G 580/, link:"q=G 580", href:"model.html?m=G-Class&t=g580",
       desc:"전기로 달리는 G클래스. 기본형과 MANUFAKTUR 두 가지입니다." },
-    { key:"AMG GT", after:"Mercedes-AMG", seg:"amg", label:"AMG GT", img:"amg-gt", match:/^(Mercedes-)?AMG GT/, link:"q=AMG GT",
-      desc:"2도어 AMG GT 43 · 55 와 4도어 AMG GT 63 S E Performance 까지." },
-    { key:"AMG SL", after:"AMG GT", seg:"amg", label:"ROADSTER", img:"amg-sl", match:/^(Mercedes-)?AMG SL/, link:"q=AMG SL",
+    { key:"AMG GT", after:"Mercedes-AMG", seg:"amg", label:"AMG GT", img:"amg-gt", match:/^(Mercedes-)?AMG GT/, link:"q=AMG GT", href:"model.html?m=AMG%20GT",
+      desc:"2+2 쿠페 AMG GT 43 · 55 4MATIC+ · 63 S E PERFORMANCE 와 4도어 GT 43 4MATIC+ 까지." },
+    { key:"AMG SL", after:"AMG GT", seg:"amg", label:"ROADSTER", img:"amg-sl", match:/^(Mercedes-)?AMG SL/, link:"q=AMG SL", href:"model.html?m=SL&t=sl43",
       desc:"소프트톱 2+2 로드스터. AMG SL 43 과 SL 63 4MATIC+ 입니다." },
     { key:"Maybach GLS", after:"Mercedes-Maybach", seg:"top suv", label:"MAYBACH SUV", img:"mb-gls", match:/Maybach GLS/, link:"q=Maybach GLS", href:"model.html?m=GLS&t=mb600",
       desc:"마이바흐 SUV. Maybach GLS 600 과 MANUFAKTUR 두 가지입니다." },
-    { key:"Maybach SL", after:"Maybach GLS", seg:"top", label:"MAYBACH ROADSTER", img:"mb-sl", match:/Maybach SL/, link:"q=Maybach SL",
+    { key:"Maybach SL", after:"Maybach GLS", seg:"top", label:"MAYBACH ROADSTER", img:"mb-sl", match:/Maybach SL/, link:"q=Maybach SL", href:"model.html?m=SL&t=mb680",
       desc:"마이바흐 로드스터 Maybach SL 680." },
-    { key:"Maybach EQS SUV", after:"Maybach SL", seg:"top ev", label:"MAYBACH ELECTRIC", img:"mb-eqs", match:/Maybach EQS/, link:"q=Maybach EQS",
+    { key:"Maybach EQS SUV", after:"Maybach SL", seg:"top ev", label:"MAYBACH ELECTRIC", img:"mb-eqs", match:/Maybach EQS/, link:"q=Maybach EQS", href:"model.html?m=EQS&t=mb680",
       desc:"마이바흐 전기 SUV. Maybach EQS 680 SUV." },
-    { key:"EQA", after:"Electric", seg:"ev suv", label:"ELECTRIC COMPACT SUV", img:"eqa", match:/^EQA/, link:"fam=EQA",
+    { key:"EQA", after:"Electric", seg:"ev suv", label:"ELECTRIC COMPACT SUV", img:"eqa", match:/^EQA/, link:"fam=EQA", href:"model.html?m=EQA",
       desc:"가장 작은 벤츠 전기 SUV. EQA 250 프로그레시브 · AMG Line 입니다." },
-    { key:"EQB", after:"EQA", seg:"ev suv", label:"ELECTRIC SUV", img:"eqb", match:/^EQB/, link:"fam=EQB",
+    { key:"EQB", after:"EQA", seg:"ev suv", label:"ELECTRIC SUV", img:"eqb", match:/^EQB/, link:"fam=EQB", href:"model.html?m=EQB",
       desc:"실내가 넉넉한 박스형 전기 SUV. EQB 300 4MATIC 프로그레시브 · AMG Line 입니다." },
-    { key:"EQE · EQE SUV", after:"EQB", seg:"ev", label:"ELECTRIC BUSINESS", img:"eqe", match:/^EQE/, link:"fam=EQE",
+    { key:"EQE · EQE SUV", after:"EQB", seg:"ev", label:"ELECTRIC BUSINESS", img:"eqe", match:/^EQE/, link:"fam=EQE", href:"model.html?m=EQE",
       desc:"E클래스급 전기차. 세단 EQE 350+ 와 SUV EQE 350+ · 500 4MATIC 입니다." },
-    { key:"EQS SUV", after:"EQE · EQE SUV", seg:"ev suv", label:"ELECTRIC FLAGSHIP SUV", img:"eqs-suv", match:/^EQS/, link:"fam=EQS",
+    { key:"EQS SUV", after:"EQE · EQE SUV", seg:"ev suv", label:"ELECTRIC FLAGSHIP SUV", img:"eqs-suv", match:/^EQS/, link:"fam=EQS", href:"model.html?m=EQS",
       desc:"벤츠 전기 SUV 의 기함. EQS 450 · 580 4MATIC SUV 입니다." }
   ];
   function extraFacts(x){
@@ -875,7 +878,7 @@
     var root = $("mpage");
     if (!root) return;
     var k = qs.get("m");
-    if (!k || !MODEL_INFO[k]) { location.replace("lineup.html"); return; }
+    if (!k || !(MODEL_INFO[k] || CAR_FILES[k])) { location.replace("lineup.html"); return; }
     if (CAR_FILES[k]) {
       var sc = document.createElement("script");
       sc.src = "assets/cars/" + CAR_FILES[k] + ".js?v=" + ASSET_V;
@@ -884,6 +887,7 @@
       document.head.appendChild(sc);
     } else generic();
     function generic(){
+    if (!MODEL_INFO[k]) { location.replace("lineup.html"); return; }
     var info = MODEL_INFO[k], c = cardOf(k) || {}, f = modelFacts(k), rows = sortBase(rowsOfModel(k));
     document.title = k + " 모델 정보 · 가격 · " + MON + " 할인 | 별주행 벤츠 홍창기";
     var promoLink = FAM_ORDER.indexOf(k) >= 0 ? "promotion.html?fam=" + encodeURIComponent(k)
@@ -1014,7 +1018,7 @@
         '<section class="cx-sec" id="ask" data-toc="고른 사양으로 문의"><div class="wrap">' +
           '<h2 class="sec__title">고른 사양으로 <em>견적 문의</em></h2>' +
           '<div class="sum" id="cxSum"></div>' +
-          (rowsAll.length ? '<h3 style="margin-top:44px;font-size:18px;font-weight:800">' + esc(k) + ' 26 · 27년식 ' + MON + ' 할인 · 최종가</h3>' +
+          (rowsAll.length ? '<h3 style="margin-top:44px;font-size:18px;font-weight:800">' + esc(car.name || k) + ' 26 · 27년식 ' + MON + ' 할인 · 최종가</h3>' +
             '<div class="flist" style="margin-top:14px">' + HEAD + rowsAll.map(function(r){ return rowHTML(r); }).join("") + '</div>' : '') +
           (info.note ? '<h3 style="margin-top:40px;font-size:18px;font-weight:800">홍창기 차장의 안내</h3><p class="mnote" style="margin-top:12px">' + info.note + '</p>' : '') +
           '<p class="cx-src">' + esc(car.source) + ' 기준으로 정리했습니다. 사진은 메르세데스-벤츠 공식 카탈로그 이미지로 실제 판매 차량과 다를 수 있고, 사양은 본사 정책에 따라 예고 없이 바뀔 수 있습니다. 가격은 부가세 포함 권장 소비자가입니다.</p>' +
