@@ -63,9 +63,9 @@
           return '<a class="nl--' + l[2] + (isHere(l[0]) ? ' is-active" aria-current="page"' : '"') + ' href="' + l[0] + '">' + l[1] + '</a>';
         }).join("") + '</div>' +
         '<div class="nav__right">' +
-          '<a class="yt" href="' + YT + '" target="_blank" rel="noopener" aria-label="유튜브 별주행 벤츠 구독">' + YT_SVG + '구독</a>' +
+          '<a class="yt" href="' + YT + '" target="_blank" rel="noopener" aria-label="유튜브 별주행 벤츠 구독">' + YT_SVG + '<span class="yt__s">구독</span></a>' +
           '<a class="tel-btn" href="tel:' + TEL + '" aria-label="전화 상담 ' + TEL_TXT + '">' + TEL_SVG + '<span class="tel-btn__s">전화상담</span></a>' +
-          '<a class="btn btn--kakao btn--sm" href="' + KAKAO + '" target="_blank" rel="noopener">카카오톡 상담</a>' +
+          '<a class="btn btn--kakao btn--sm" href="' + KAKAO + '" target="_blank" rel="noopener"><span><span class="kk-l">카카오톡</span><span class="kk-s">카톡</span> 상담</span></a>' +
           '<button class="burger" type="button" id="burger" aria-label="전체 메뉴 열기" aria-controls="drawer" aria-expanded="false"><span></span><span></span><span></span></button>' +
         '</div></div>';
 
