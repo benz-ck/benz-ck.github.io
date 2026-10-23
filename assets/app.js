@@ -69,6 +69,10 @@
           '<button class="burger" type="button" id="burger" aria-label="전체 메뉴 열기" aria-controls="drawer" aria-expanded="false"><span></span><span></span><span></span></button>' +
         '</div></div>';
 
+    /* 휴대폰 둘째 줄 메뉴 — 지금 페이지 항목이 화면 밖이면 보이게 밀어 둔다 */
+    var strip = nav && nav.querySelector(".nav__links"), act = strip && strip.querySelector(".is-active");
+    if (act && act.offsetLeft + act.offsetWidth > strip.clientWidth - 28) strip.scrollLeft = act.offsetLeft - 16;
+
     /* 「이 페이지 바로가기」는 메뉴를 열 때 채운다(차종 페이지처럼 나중에 그려지는 섹션도 잡히게) */
     var groups = '<div class="dgrp dgrp--toc" id="dtoc" hidden></div>' +
       MENU.map(function(g){
