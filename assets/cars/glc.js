@@ -5,7 +5,7 @@
      같은 등급 SUV(27년식)와 26년식 카탈로그 쿠페 Option list 로 채웠다 — 페이지에 그렇게 밝힌다
    - 토크 · 0→100 · 연비 · 크기, 사진 · 휠 · 시트 · 트림 · 색상: GLC & GLC Coupé 카탈로그(2026-02-27, 26년식)
      · AMG GLC & GLC Coupé 카탈로그(2026-02-20, 26년식 AMG GLC 43 — 53 사진 · 색상은 이 카탈로그 기준)
-   - 가격: 2026-10-20 공식 가격표
+   - 가격: 2026-10-27 공식 가격표
    제품정보는 딜러용 CONFIDENTIAL 이라 옵션 코드 · NST 코드 · 한정 물량은 싣지 않는다(사양 이름만).
    사진은 images/cars/glc/ — 바꿀 때는 새 파일명으로(같은 이름 덮어쓰기 금지).
    ───────────────────────────────────────────────────────── */
@@ -17,7 +17,7 @@ CARS["GLC"] = (function(){
     badge: "27년식 GLC · GLC Coupé",
     tagline: "첫 벤츠로 가장 많이 고르시는 SUV.<br>SUV 5트림과 쿠페 5트림을 한눈에.",
     asof: "MY27 GLC 제품정보 2026년 10월 · GLC Coupe 제품정보 2026년 9월",
-    source: "MY27 GLC 제품정보(2026년 10월) · MY27 GLC Coupe 제품정보(2026년 9월) · GLC & GLC Coupé 카탈로그(2026년 2월, 26년식) · AMG GLC 카탈로그(2026년 2월) · 공식 가격표(2026년 10월 20일)",
+    source: "MY27 GLC 제품정보(2026년 10월) · MY27 GLC Coupe 제품정보(2026년 9월) · GLC & GLC Coupé 카탈로그(2026년 2월, 26년식) · AMG GLC 카탈로그(2026년 2월) · 공식 가격표(2026년 10월 27일)",
     hero: [P + "hero-1.jpg", P + "hero-3.jpg", P + "hero-5.jpg", P + "hero-2.jpg", P + "hero-4.jpg"],
     bodies: { SUV: "SUV", COUPE: "쿠페" },
     diffByBody: true,

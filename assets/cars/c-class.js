@@ -2,7 +2,7 @@
    C-Class 구성 페이지 자료 (model.html?m=C-Class) — C 200 AVANTGARDE · C 200 AMG Line
    - 트림 구성 · 휠 · 시트 · 트림 · 색상: MY26 C-Class Order Guideline v1 (2025-06)
    - 사양 비교 · 제원, 사진: C-Class 카탈로그(2026-02-04, 26년식) · 어프로치 북(2026-07)
-   - 가격: 2026-10-20 공식 가격표
+   - 가격: 2026-10-27 공식 가격표
    C 200 Final Edition 은 사양 자료가 없어 트림 칩에 넣지 않고 아래 가격표(10월 조건)로만 보여 준다.
    오더 가이드라인은 딜러용 CONFIDENTIAL 이라 옵션 코드 · NST 코드 · 옵션 가격은 싣지 않는다(사양 이름만).
    사진은 images/cars/c-class/ — 바꿀 때는 새 파일명으로(같은 이름 덮어쓰기 금지).
@@ -15,7 +15,7 @@ CARS["C-Class"] = (function(){
     badge: "26년식 C-Class",
     tagline: "E클래스보다 한 급 작은 정통 세단.<br>C 200 AVANTGARDE 와 AMG Line 을 한눈에.",
     asof: "MY26 C-Class 오더 가이드라인 2025년 6월 · 카탈로그 2026년 2월",
-    source: "MY26 C-Class 오더 가이드라인(2025년 6월) · C-Class 카탈로그(2026년 2월, 26년식) · 공식 가격표(2026년 10월 20일)",
+    source: "MY26 C-Class 오더 가이드라인(2025년 6월) · C-Class 카탈로그(2026년 2월, 26년식) · 공식 가격표(2026년 10월 27일)",
     hero: [P + "hero-1.jpg", P + "hero-2.jpg", P + "hero-3.jpg", P + "hero-4.jpg"],
     bodies: { SEDAN: "세단" },
     lines: { "AVANTGARDE": P + "line-av.jpg", "AMG Line": P + "line-amg.jpg" },

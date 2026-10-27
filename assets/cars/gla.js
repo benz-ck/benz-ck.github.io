@@ -2,7 +2,7 @@
    GLA 구성 페이지 자료 (model.html?m=GLA) — GLA 250 4MATIC AMG Line 단일 트림
    - 트림 구성 · 휠 · 시트 · 트림 · 색상: MY26 GLA Order Guideline v2 (2025-12)
    - 사양 · 제원, 사진: GLA 카탈로그(2025-07-28, 26년식)
-   - 가격: 2026-10-20 공식 가격표(27년식 가격). 27년식 GLA 제품 자료는 아직 없다
+   - 가격: 2026-10-27 공식 가격표(27년식 가격). 27년식 GLA 제품 자료는 아직 없다
    오더 가이드라인은 딜러용 CONFIDENTIAL 이라 옵션 코드 · NST 코드 · 옵션 가격은 싣지 않는다(사양 이름만).
    사진은 images/cars/gla/ — 바꿀 때는 새 파일명으로(같은 이름 덮어쓰기 금지).
    ───────────────────────────────────────────────────────── */
@@ -14,7 +14,7 @@ CARS["GLA"] = (function(){
     badge: "GLA 250 4MATIC AMG Line",
     tagline: "도심에서 다루기 쉬운 가장 작은 벤츠 SUV.<br>GLA 250 4MATIC AMG Line 단일 트림.",
     asof: "MY26 GLA 오더 가이드라인 2025년 12월 · 카탈로그 2025년 7월",
-    source: "MY26 GLA 오더 가이드라인(2025년 12월) · GLA 카탈로그(2025년 7월, 26년식) · 공식 가격표(2026년 10월 20일)",
+    source: "MY26 GLA 오더 가이드라인(2025년 12월) · GLA 카탈로그(2025년 7월, 26년식) · 공식 가격표(2026년 10월 27일)",
     hero: [P + "hero-1.jpg", P + "hero-2.jpg", P + "hero-3.jpg", P + "hero-4.jpg"],
     bodies: { SUV: "컴팩트 SUV" },
     lines: { "AMG Line": P + "line.jpg" },

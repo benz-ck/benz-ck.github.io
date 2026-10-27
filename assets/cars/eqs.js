@@ -3,7 +3,7 @@
    - 트림 구성 · 휠 · 시트 · 트림 · 색상: MY26 EQS SUV 오더 가이드라인 V2(2025-12) · MY26 마이바흐 EQS 680 SUV 오더 가이드라인 V1(2025-06)
    - 사양 · 제원(출력 · 전비 · 주행거리 · 중량 · 크기) · 사진: EQS SUV 카탈로그(2026-09-07, 26년식) · 마이바흐 EQS SUV 카탈로그(2026-03-17)
    - 토크 · 0→100 · 최고속도 · 트렁크(EQS) · 마이바흐 배터리 kWh: 어프로치 북(2026-07, 26년식)
-   - 가격: 2026-10-20 공식 가격표(26년식). 마이바흐는 가격표 묶음이 Mercedes-Maybach 라 extraRows 로 붙인다.
+   - 가격: 2026-10-27 공식 가격표(26년식). 마이바흐는 가격표 묶음이 Mercedes-Maybach 라 extraRows 로 붙인다.
    오더 가이드라인은 딜러용 CONFIDENTIAL 이라 옵션 코드 · NST 코드는 싣지 않는다(사양 이름만).
    마이바흐 색상 · 휠 사진은 카탈로그 쪽을 그려 잘라 냈다(mb-*). 사진은 images/cars/eqs/ — 바꿀 때는 새 파일명으로.
    ───────────────────────────────────────────────────────── */
@@ -15,7 +15,7 @@ CARS["EQS"] = (function(){
     badge: "26년식 EQS SUV · Mercedes-Maybach EQS SUV",
     tagline: "벤츠 전기 SUV 의 기함.<br>EQS SUV 2트림과 마이바흐 EQS 680 SUV 를 한눈에.",
     asof: "MY26 EQS SUV 오더 가이드라인 2025년 12월 · 카탈로그 2026년 9월",
-    source: "MY26 EQS SUV 오더 가이드라인(2025년 12월) · MY26 마이바흐 EQS 680 SUV 오더 가이드라인(2025년 6월) · EQS SUV 카탈로그(2026년 9월, 26년식) · 마이바흐 EQS SUV 카탈로그(2026년 3월) · 공식 가격표(2026년 10월 20일)",
+    source: "MY26 EQS SUV 오더 가이드라인(2025년 12월) · MY26 마이바흐 EQS 680 SUV 오더 가이드라인(2025년 6월) · EQS SUV 카탈로그(2026년 9월, 26년식) · 마이바흐 EQS SUV 카탈로그(2026년 3월) · 공식 가격표(2026년 10월 27일)",
     hero: [P + "hero-1.jpg", P + "mb-hero-1.jpg", P + "hero-2.jpg", P + "hero-3.jpg", P + "mb-hero-3.jpg", P + "hero-4.jpg"],
     bodies: { SUV: "대형 전기 SUV", MB: "마이바흐" },
     extraRows: /^Maybach EQS/,

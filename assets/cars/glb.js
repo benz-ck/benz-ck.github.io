@@ -2,7 +2,7 @@
    GLB 구성 페이지 자료 (model.html?m=GLB) — GLB 200 d · GLB 250 4MATIC · AMG GLB 35 4MATIC
    - 트림 구성 · 휠 · 시트 · 트림 · 색상: MY26 GLB Order Guideline v3 (2026-03)
    - 사양 비교 · 제원, 사진: GLB 카탈로그(2025-09-17) · AMG GLB 카탈로그(2025-09-17)
-   - 가격: 2026-10-20 공식 가격표
+   - 가격: 2026-10-27 공식 가격표
    오더 가이드라인은 딜러용 CONFIDENTIAL 이라 옵션 코드 · NST 코드 · 옵션 가격은 싣지 않는다(사양 이름만).
    사진은 images/cars/glb/ — 바꿀 때는 새 파일명으로(같은 이름 덮어쓰기 금지).
    ───────────────────────────────────────────────────────── */
@@ -15,7 +15,7 @@ CARS["GLB"] = (function(){
     badge: "26년식 GLB · Mercedes-AMG GLB",
     tagline: "실내가 넉넉한 박스형 컴팩트 SUV.<br>디젤 GLB 200 d · 가솔린 GLB 250 4MATIC · AMG GLB 35 를 한눈에.",
     asof: "MY26 GLB 오더 가이드라인 2026년 3월 · 카탈로그 2025년 9월",
-    source: "MY26 GLB 오더 가이드라인(2026년 3월) · GLB · AMG GLB 카탈로그(2025년 9월) · 공식 가격표(2026년 10월 20일)",
+    source: "MY26 GLB 오더 가이드라인(2026년 3월) · GLB · AMG GLB 카탈로그(2025년 9월) · 공식 가격표(2026년 10월 27일)",
     hero: [P + "hero-1.jpg", P + "hero-2.jpg", P + "hero-3.jpg", P + "hero-4.jpg", P + "hero-5.jpg"],
     bodies: { SUV: "컴팩트 SUV" },
     extraRows: /^AMG GLB/,

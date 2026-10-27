@@ -4,7 +4,7 @@
    - 연비 · CO₂ · 중량 · 크기, 사진 · 휠 · 시트 · 트림 · 색상: CLE Coupé & Cabriolet 카탈로그(2026-09-21, 27년식)
      · AMG CLE Coupé / Cabriolet 카탈로그(2026-09-21)
    - 최고출력 · 토크 · 최고속도: 어프로치 북 / 0→100km/h · 트렁크: 사이트 모델 창(MODEL_INFO)과 같은 값
-   - 가격: 2026-10-20 공식 가격표
+   - 가격: 2026-10-27 공식 가격표
    제품정보는 딜러용 CONFIDENTIAL 이라 옵션 코드 · NST 코드 · 패키지 옵션가는 싣지 않는다(사양 이름만).
    사진은 images/cars/cle/ — 바꿀 때는 새 파일명으로(같은 이름 덮어쓰기 금지).
    ───────────────────────────────────────────────────────── */
@@ -16,7 +16,7 @@ CARS["CLE"] = (function(){
     badge: "27년식 CLE Coupé · CLE Cabriolet",
     tagline: "2도어 쿠페와 오픈톱 카브리올레.<br>CLE 200 · 450 · AMG CLE 53 을 차체별로 한눈에.",
     asof: "MY27 CLE 제품정보 2026년 8월 · 카탈로그 2026년 9월",
-    source: "MY27 CLE Coupe & Cabriolet 제품정보(2026년 8월) · CLE Coupé & Cabriolet 카탈로그(2026년 9월, 27년식) · AMG CLE 카탈로그(2026년 9월) · 공식 가격표(2026년 10월 20일)",
+    source: "MY27 CLE Coupe & Cabriolet 제품정보(2026년 8월) · CLE Coupé & Cabriolet 카탈로그(2026년 9월, 27년식) · AMG CLE 카탈로그(2026년 9월) · 공식 가격표(2026년 10월 27일)",
     hero: [P + "hero-1.jpg", P + "hero-2.jpg", P + "hero-3.jpg", P + "hero-4.jpg"],
     bodies: { COUPE: "쿠페", CAB: "카브리올레" },
     diffByBody: true,

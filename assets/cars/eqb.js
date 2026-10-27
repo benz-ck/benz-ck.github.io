@@ -3,7 +3,7 @@
    - 사양 · 휠 · 시트 · 트림 · 색상: EQB 카탈로그(2026-04-24, 26년식) — 트림별 기본 · 선택 표기 그대로
      EQB 는 딜러 오더 가이드라인 · 제품정보가 없어 카탈로그만으로 만들었다.
    - 제원: 카탈로그에 제원 쪽이 없어 어프로치 북(2026-07, 26년식) 값
-   - 가격: 2026-10-20 공식 가격표(26년식)
+   - 가격: 2026-10-27 공식 가격표(26년식)
    사진은 images/cars/eqb/ — 바꿀 때는 새 파일명으로(같은 이름 덮어쓰기 금지).
    ───────────────────────────────────────────────────────── */
 var CARS = window.CARS || {};
@@ -14,7 +14,7 @@ CARS["EQB"] = (function(){
     badge: "26년식 The new EQB",
     tagline: "실내가 넉넉한 박스형 전기 SUV.<br>EQB 300 4MATIC Progressive · AMG Line 두 가지.",
     asof: "EQB 카탈로그 2026년 4월(26년식)",
-    source: "EQB 카탈로그(2026년 4월, 26년식) · 공식 가격표(2026년 10월 20일)",
+    source: "EQB 카탈로그(2026년 4월, 26년식) · 공식 가격표(2026년 10월 27일)",
     hero: [P + "hero-1.jpg", P + "hero-2.jpg", P + "hero-3.jpg", P + "hero-4.jpg", P + "hero-5.jpg"],
     bodies: { SUV: "전기 SUV" },
     lines: { "Progressive": P + "line-pg.jpg", "AMG Line": P + "line-amg.jpg" },

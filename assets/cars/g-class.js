@@ -4,7 +4,7 @@
    - 사진 · 장비 설명: G-Class 카탈로그(2026-09-30, 27년식) · Mercedes-AMG G-Class · G-Class with EQ Technology 카탈로그(2026-04-24)
    - 제원: G 450 d 는 27년식 카탈로그 인증 제원 + MBK 자료(출력 · 가속 · 트렁크), G 580 은 EQ G 카탈로그(2025-01, EDITION ONE 인증) + 가이드 어프로치 북.
      AMG G 63 은 국내 카탈로그에 제원 쪽이 없어 "—"
-   - 가격: 2026-10-20 공식 가격표(27년식 기본, 26년식은 alt)
+   - 가격: 2026-10-27 공식 가격표(27년식 기본, 26년식은 alt)
    제품 정보는 딜러용 CONFIDENTIAL 이라 옵션 코드 · NST 코드는 싣지 않는다(사양 이름만).
    사진은 images/cars/g-class/ — 바꿀 때는 새 파일명으로(같은 이름 덮어쓰기 금지).
    ───────────────────────────────────────────────────────── */
@@ -16,7 +16,7 @@ CARS["G-Class"] = (function(){
     badge: "27년식 The new G-Class · Mercedes-AMG G 63",
     tagline: "1979년부터 이어 온 오프로더의 기준.<br>디젤 · 전기 · AMG 와 MANUFAKTUR 까지 6트림.",
     asof: "MY27 G-Class 제품 정보 2026년 9월 · 카탈로그 2026년 9월",
-    source: "MY27 G-Class 제품 정보(2026년 9월) · G-Class 카탈로그(2026년 9월, 27년식) · Mercedes-AMG G-Class · G-Class with EQ Technology 카탈로그(2026년 4월) · 공식 가격표(2026년 10월 20일)",
+    source: "MY27 G-Class 제품 정보(2026년 9월) · G-Class 카탈로그(2026년 9월, 27년식) · Mercedes-AMG G-Class · G-Class with EQ Technology 카탈로그(2026년 4월) · 공식 가격표(2026년 10월 27일)",
     hero: [P + "hero-1.jpg", P + "hero-2.jpg", P + "hero-3.jpg", P + "hero-4.jpg", P + "hero-5.jpg", P + "hero-6.jpg"],
     bodies: { D: "디젤", EV: "전기", AMG: "Mercedes-AMG" },
     extraRows: /^AMG G 63/,

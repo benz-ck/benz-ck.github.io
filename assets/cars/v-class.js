@@ -2,7 +2,7 @@
    V-Class 구성 페이지 자료 (model.html?m=V-Class)
    - 사양: MY27 V-Class 제품 정보 v1 (2026-10, Specification · 하이라이트 · Product Line-up)
    - 사진 · 휠 · 시트 · 트림 · 루프 라이너 · 색상: V-Class 카탈로그(2026-10-21, 27년식)
-   - 가격: 2026-10-20 공식 가격표
+   - 가격: 2026-10-27 공식 가격표
    카탈로그에 출력 · 연비 같은 제원 쪽이 없어 제원 표는 엔진 · 구동 등만 싣는다.
    제품정보는 딜러용 CONFIDENTIAL 이라 NST 코드는 싣지 않는다. 사진은 images/cars/v-class/ (새 파일명으로 교체).
    ───────────────────────────────────────────────────────── */
@@ -14,7 +14,7 @@ CARS["V-Class"] = (function(){
     badge: "27년식 The new V-Class",
     tagline: "뒷좌석이 주인공인 프리미엄 MPV.<br>V 300 d 4MATIC EXCLUSIVE 단일 트림.",
     asof: "MY27 V-Class 제품 정보 2026년 10월 · 카탈로그 2026년 10월",
-    source: "MY27 V-Class 제품 정보(2026년 10월) · V-Class 카탈로그(2026년 10월, 27년식) · 공식 가격표(2026년 10월 20일)",
+    source: "MY27 V-Class 제품 정보(2026년 10월) · V-Class 카탈로그(2026년 10월, 27년식) · 공식 가격표(2026년 10월 27일)",
     hero: [P + "hero-1.jpg", P + "hero-2.jpg", P + "hero-3.jpg", P + "hero-4.jpg"],
     bodies: { MPV: "MPV" },
     lines: { "EXCLUSIVE": P + "line.jpg" },

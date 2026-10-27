@@ -4,7 +4,7 @@
    - 휠 · 시트 · 트림 · 색상: MY26 AMG GT 오더 가이드라인 v4 (2025-06, GT 55 · GT 63 S E PERFORMANCE 공통)
    - AMG GT 43 · GT 63 S E PERFORMANCE 수치: 메르세데스-벤츠 코리아 국내 출시 발표(GT 43 2026-07). 국내 카탈로그 제원이 없는 칸은 "—"
    - 4도어 AMG GT 43 4MATIC+(X290)는 26년식 재고뿐이고 국내 자료가 없어 트림 카드는 만들지 않고 아래 가격표(extraRows)에만 나온다
-   - 가격: 2026-10-20 공식 가격표(27년식 기본, 26년식은 alt)
+   - 가격: 2026-10-27 공식 가격표(27년식 기본, 26년식은 alt)
    오더 가이드라인은 딜러용 CONFIDENTIAL 이라 옵션 코드 · NST 코드는 싣지 않는다(사양 이름만). 휠 사진 두 장(RWD · RWM)은 가이드라인 원본 그림(워터마크 없는 제품 렌더).
    사진은 images/cars/amg-gt/ — 바꿀 때는 새 파일명으로(같은 이름 덮어쓰기 금지).
    ───────────────────────────────────────────────────────── */
@@ -17,7 +17,7 @@ CARS["AMG GT"] = (function(){
     badge: "27년식 Mercedes-AMG GT 쿠페",
     tagline: "2+2 시트를 품은 AMG 의 순수 스포츠카.<br>GT 43 · GT 55 4MATIC+ · GT 63 S E PERFORMANCE.",
     asof: "AMG GT 쿠페 카탈로그 · MY26 오더 가이드라인 · 2026년 국내 출시 발표",
-    source: "AMG GT Coupé 카탈로그(2025년 5월) · MY26 AMG GT 오더 가이드라인(2025년 6월) · 메르세데스-벤츠 코리아 출시 발표 · 공식 가격표(2026년 10월 20일)",
+    source: "AMG GT Coupé 카탈로그(2025년 5월) · MY26 AMG GT 오더 가이드라인(2025년 6월) · 메르세데스-벤츠 코리아 출시 발표 · 공식 가격표(2026년 10월 27일)",
     hero: [P + "hero-1.jpg", P + "hero-2.jpg", P + "hero-3.jpg", P + "hero-4.jpg", P + "hero-5.jpg", P + "hero-6.jpg"],
     bodies: { C: "2도어 쿠페" },
     extraRows: /^AMG GT/,

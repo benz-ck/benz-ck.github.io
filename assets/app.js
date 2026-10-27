@@ -808,6 +808,8 @@
       desc:"27년식 새로 나온 전기 CLA. 800V 충전 시스템에 CLA 200 · 250+ 다섯 가지 트림입니다." },
     { key:"전기 GLC", after:"GLC", seg:"ev suv", label:"ELECTRIC SUV", img:"glc-ev", match:/^GLC .*electric/, link:"fam=GLC&q=electric", href:"model.html?m=GLC%20electric",
       desc:"27년식 전기 GLC 런치 에디션. GLC 300 4MATIC electric AMG Line · AMG Line+ 두 가지입니다." },
+    { key:"전기 GLB", after:"GLB", seg:"ev suv", label:"ELECTRIC SUV · NEW", match:/^GLB .*electric/, link:"fam=GLB&q=electric",
+      desc:"10월 27일 가격표에 새로 올라온 전기 GLB. GLB 250+ electric 한 가지이며, 국내 인증 제원 · 출시 일정은 공식 발표 뒤 안내합니다." },
     { key:"G 580 with EQ Technology", after:"G-Class", seg:"ev top", label:"ELECTRIC ICON", img:"g580", match:/^G 580/, link:"q=G 580", href:"model.html?m=G-Class&t=g580",
       desc:"전기로 달리는 G클래스. 기본형과 MANUFAKTUR 두 가지입니다." },
     { key:"AMG GT", after:"Mercedes-AMG", seg:"amg", label:"AMG GT", img:"amg-gt", match:/^(Mercedes-)?AMG GT/, link:"q=AMG GT", href:"model.html?m=AMG%20GT",
@@ -850,7 +852,7 @@
     if ($("lnCount")) $("lnCount").textContent = cards.length;
     ul.innerHTML = cards.map(function(o){
       var c = o.c, f = o.f, x = o.x;
-      var th = x ? "images/cars/lineup/" + x.img + ".jpg" : CAR_THUMBS[c.key];
+      var th = x ? (x.img ? "images/cars/lineup/" + x.img + ".jpg" : "") : CAR_THUMBS[c.key];
       var cfg = x ? !!x.href : (!!CAR_FILES[c.key] || c.key === "Mercedes-Maybach");
       var href = x ? (x.href || "promotion.html?" + x.link.replace(/ /g, "%20") + "#prices")
         : c.key === "Mercedes-Maybach" ? "model.html?m=S-Class&t=mb580" : "model.html?m=" + encodeURIComponent(c.key);

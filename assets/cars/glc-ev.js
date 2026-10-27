@@ -3,7 +3,7 @@
    - 트림 구성 · 사양 · 배터리: MY27 GLC electric 제품 정보 V3(2026-10)
    - 사진 · 휠 · 시트 · 트림 · 색상 · 충전(최대 330kW · 10→80% 약 22분): GLCEV 카탈로그(2026-07-09, 27년식)
    - 출력 · WLTP 주행거리 · 트렁크: 2026-07 사전계약 발표 값(블로그 「전기 GLC 성수 팝업」 편과 같은 값). 국내 인증 전비 · 주행거리는 아직 없다
-   - 가격: 2026-10-20 공식 가격표(27년식). 가격표 묶음이 GLC 라 extraRows 로 붙인다.
+   - 가격: 2026-10-27 공식 가격표(27년식). 가격표 묶음이 GLC 라 extraRows 로 붙인다.
    제품 정보는 딜러용 CONFIDENTIAL 이라 옵션 코드 · NST 코드는 싣지 않는다(사양 이름만).
    GLC 400 4MATIC electric 은 제품 정보에 「추후 업데이트 예정」이라 넣지 않았다.
    사진은 images/cars/glc-ev/ — 바꿀 때는 새 파일명으로.
@@ -17,7 +17,7 @@ CARS["GLC electric"] = (function(){
     badge: "27년식 The all-new electric GLC",
     tagline: "GLC 그대로, 이제 전기로.<br>GLC 300 4MATIC electric 런치 에디션 두 가지.",
     asof: "MY27 GLC electric 제품 정보 2026년 10월 · 카탈로그 2026년 7월",
-    source: "MY27 GLC electric 제품 정보(2026년 10월) · 전기 GLC 카탈로그(2026년 7월, 27년식) · 사전계약 발표(2026년 7월) · 공식 가격표(2026년 10월 20일)",
+    source: "MY27 GLC electric 제품 정보(2026년 10월) · 전기 GLC 카탈로그(2026년 7월, 27년식) · 사전계약 발표(2026년 7월) · 공식 가격표(2026년 10월 27일)",
     hero: [P + "hero-1.jpg", P + "hero-2.jpg", P + "hero-3.jpg", P + "hero-4.jpg", P + "hero-5.jpg"],
     bodies: { SUV: "전기 SUV" },
     extraRows: /^GLC .*electric/,

@@ -3,7 +3,7 @@
    - AMG SL: Mercedes-AMG SL 카탈로그(2026-07-01, 26년식) 장비 · 인증 제원 + MY26 AMG SL 오더 가이드라인 v2 (2025-10, 휠 · 시트 · 트림 · 색상)
    - 마이바흐 SL: Mercedes-Maybach SL 카탈로그(2025-11-10, 26년식, Monogram Series) + MY26 마이바흐 SL 오더 가이드라인 v6 (2026-03)
    - SL 63 출력 · 토크 · 가속은 카탈로그 엔진 설명(430kW · 800Nm · 3.6초). SL 43 출력 · SL 63 최고속도처럼 카탈로그에 없는 값은 "—"
-   - 가격: 2026-10-20 공식 가격표(27년식 기본, 26년식은 alt). 가격표 묶음이 Mercedes-AMG / Mercedes-Maybach 라 extraRows 로 모은다
+   - 가격: 2026-10-27 공식 가격표(27년식 기본, 26년식은 alt). 가격표 묶음이 Mercedes-AMG / Mercedes-Maybach 라 extraRows 로 모은다
    오더 가이드라인은 딜러용 CONFIDENTIAL 이라 옵션 코드 · NST 코드 · 한정 물량은 싣지 않는다(사양 이름만).
    사진은 images/cars/sl/ — 바꿀 때는 새 파일명으로(같은 이름 덮어쓰기 금지).
    ───────────────────────────────────────────────────────── */
@@ -15,7 +15,7 @@ CARS["SL"] = (function(){
     badge: "Mercedes-AMG SL · Mercedes-Maybach SL",
     tagline: "클래식 소프트 탑으로 돌아온 전설의 로드스터.<br>AMG SL 43 · SL 63 4MATIC+ 와 마이바흐 SL 680.",
     asof: "AMG SL 카탈로그 2026년 7월 · 마이바흐 SL 카탈로그 2025년 11월",
-    source: "Mercedes-AMG SL 카탈로그(2026년 7월, 26년식) · MY26 AMG SL 오더 가이드라인(2025년 10월) · Mercedes-Maybach SL 카탈로그(2025년 11월) · 공식 가격표(2026년 10월 20일)",
+    source: "Mercedes-AMG SL 카탈로그(2026년 7월, 26년식) · MY26 AMG SL 오더 가이드라인(2025년 10월) · Mercedes-Maybach SL 카탈로그(2025년 11월) · 공식 가격표(2026년 10월 27일)",
     hero: [P + "hero-1.jpg", P + "hero-2.jpg", P + "hero-3.jpg", P + "hero-4.jpg", P + "hero-5.jpg", P + "hero-7.jpg"],
     bodies: { R: "2+2 로드스터", M: "2인승 로드스터" },
     extraRows: /^(AMG SL|Maybach SL)/,

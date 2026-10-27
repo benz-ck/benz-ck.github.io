@@ -2,7 +2,7 @@
    CLA 구성 페이지 자료 (model.html?m=CLA) — 27년식 The all-new CLA 가솔린 2트림 + 전기 5트림
    - 트림 구성 · 사양 비교: MY27 CLA 제품정보 v3 · MY27 electric CLA 제품정보 v3 (2026-09, Specification · Product Line-up)
    - 연비 · 크기 · 중량, 사진 · 휠 · 시트 · 트림 · 색상: CLA 카탈로그(2026-10-07) · electric CLA 카탈로그(2026-09-14)
-   - 가격: 2026-10-20 공식 가격표
+   - 가격: 2026-10-27 공식 가격표
    전기 CLA 의 국내 인증 제원(출력 · 1회 충전 주행거리 · 전비)과 가솔린 CLA 의 출력은 공식 자료에 아직 없어 표에 싣지 않는다.
    26년식 이전 세대 CLA 250 4MATIC · AMG CLA 45 S 는 트림 칩 없이 아래 가격표(10월 조건)로만 보여 준다(extraRows).
    제품정보는 딜러용 CONFIDENTIAL 이라 옵션 코드 · NST 코드 · 배터리 공급사 · 재고 안내는 싣지 않는다(사양 이름만).
@@ -16,7 +16,7 @@ CARS["CLA"] = (function(){
     badge: "27년식 The all-new CLA · electric CLA",
     tagline: "완전히 새로워진 CLA, 가솔린과 전기 중에서.<br>CLA 220 두 트림과 전기 CLA 다섯 트림을 한눈에.",
     asof: "MY27 CLA · electric CLA 제품정보 2026년 9월 · 카탈로그 2026년 9~10월",
-    source: "MY27 CLA · electric CLA 제품정보(2026년 9월) · CLA 카탈로그(2026년 10월) · electric CLA 카탈로그(2026년 9월) · 공식 가격표(2026년 10월 20일)",
+    source: "MY27 CLA · electric CLA 제품정보(2026년 9월) · CLA 카탈로그(2026년 10월) · electric CLA 카탈로그(2026년 9월) · 공식 가격표(2026년 10월 27일)",
     hero: [P + "hero-1.jpg", P + "hero-2.jpg", P + "hero-3.jpg", P + "hero-4.jpg"],
     bodies: { GAS: "가솔린", EV: "전기" },
     diffByBody: true,

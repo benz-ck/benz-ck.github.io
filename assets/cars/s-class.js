@@ -3,7 +3,7 @@
    - 트림 구성 · 사양 비교: MY27 S-Class 제품 정보 v4 (2026-10, Option List · Product Line-up)
    - 사진 · 휠 · 시트 · 우드 · 외장 색상 이름: S-Class 카탈로그 (2026-05-18, 27년식) · 마이바흐 S-Class 카탈로그 (2026-08-11)
    - 마이바흐 연비 · CO2 · 중량 · 크기: 마이바흐 S-Class 카탈로그 Technical Data(인증 차량 제원)
-   - 가격: 2026-10-20 공식 가격표(부가세 포함) · 배기량: 어프로치 북
+   - 가격: 2026-10-27 공식 가격표(부가세 포함) · 배기량: 어프로치 북
    제품정보는 딜러용 CONFIDENTIAL 이라 옵션 코드 · NST 코드는 싣지 않는다(사양 이름만).
    사진은 images/cars/s-class/ — 바꿀 때는 새 파일명으로(같은 이름 덮어쓰기 금지).
    ───────────────────────────────────────────────────────── */
@@ -15,7 +15,7 @@ CARS["S-Class"] = (function(){
     badge: "27년식 The new S-Class · Mercedes-Maybach",
     tagline: "세계에서 가장 많이 팔린 럭셔리 세단의 페이스리프트.<br>S-Class 6트림과 마이바흐 3트림을 한눈에.",
     asof: "MY27 제품 정보 2026년 10월",
-    source: "MY27 S-Class 제품 정보(2026년 10월) · S-Class 카탈로그(2026년 5월, 27년식) · 마이바흐 S-Class 카탈로그(2026년 8월) · 공식 가격표(2026년 10월 20일)",
+    source: "MY27 S-Class 제품 정보(2026년 10월) · S-Class 카탈로그(2026년 5월, 27년식) · 마이바흐 S-Class 카탈로그(2026년 8월) · 공식 가격표(2026년 10월 27일)",
     hero: [P + "hero-1.jpg", P + "line-amg.jpg", P + "hero-mb-1.jpg", P + "hero-3.jpg", P + "hero-mb-2.jpg", P + "hero-4.jpg"],
     bodies: { SWB: "스탠다드 휠베이스", LWB: "롱 휠베이스", MB: "마이바흐 휠베이스" },
     extraRows: /^Maybach S /,

@@ -3,7 +3,7 @@
    - 트림 구성 · 휠 · 시트 · 트림 · 색상: MY26 A-Class Order Guideline v3 (2026-01) · A-Class Sedan Order Guideline v2 (2025-06)
    - 사양 비교 · 제원, 사진: A-Class 카탈로그(2025-08-11) · A-Class Sedan 카탈로그(2025-07-29)
      · AMG A-Class 카탈로그(2025-01-24, 25년식) · AMG A-Class Sedan 카탈로그(2025-06-05)
-   - 가격: 2026-10-20 공식 가격표
+   - 가격: 2026-10-27 공식 가격표
    오더 가이드라인은 딜러용 CONFIDENTIAL 이라 옵션 코드 · NST 코드 · 옵션 가격은 싣지 않는다(사양 이름만).
    사진은 images/cars/a-class/ — 바꿀 때는 새 파일명으로(같은 이름 덮어쓰기 금지).
    ───────────────────────────────────────────────────────── */
@@ -16,7 +16,7 @@ CARS["A-Class"] = (function(){
     badge: "26년식 A-Class 해치백 · 세단 · Mercedes-AMG",
     tagline: "벤츠를 가장 가볍게 시작하는 컴팩트.<br>A 220 해치백 · 세단과 AMG A 35 · A 45 S 를 한눈에.",
     asof: "MY26 A-Class 오더 가이드라인 2026년 1월 · 카탈로그 2025년",
-    source: "MY26 A-Class · A-Class Sedan 오더 가이드라인(2026년 1월 · 2025년 6월) · A-Class · A-Class Sedan 카탈로그(2025년 8월 · 7월) · AMG A-Class · AMG A-Class Sedan 카탈로그(2025년 1월 · 6월) · 공식 가격표(2026년 10월 20일)",
+    source: "MY26 A-Class · A-Class Sedan 오더 가이드라인(2026년 1월 · 2025년 6월) · A-Class · A-Class Sedan 카탈로그(2025년 8월 · 7월) · AMG A-Class · AMG A-Class Sedan 카탈로그(2025년 1월 · 6월) · 공식 가격표(2026년 10월 27일)",
     hero: [P + "hero-1.jpg", P + "hero-2.jpg", P + "hero-3.jpg", P + "hero-4.jpg", P + "hero-5.jpg"],
     bodies: { HATCH: "해치백", SEDAN: "세단" },
     diffByBody: true,
