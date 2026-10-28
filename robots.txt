@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://benz-ck.github.io/sitemap.xml
