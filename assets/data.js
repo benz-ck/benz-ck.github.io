@@ -200,10 +200,10 @@ var EW_LABEL = {
 };
 
 /* 구매 고객 경품 · 초청 — 11월 공문 18 · 19 · 40쪽(G 63 캠페인 · AMG 온라인 스페셜 · 마이바흐 특별 프로모션).
-   첫 화면 오른쪽 위 「구매 혜택」 카드(head · sub)와 추가 혜택 페이지 #ben-gift(나머지)에 나온다.
+   첫 화면 할인 TOP 5 아래 「구매 혜택」 카드(img · head · sub)와 추가 혜택 페이지 #ben-gift(나머지)에 나온다.
    until(마지막 날)이 지나면 저절로 빠진다. 공문의 내부 조건(STS · 리드 소스 · 시상)은 싣지 않는다 */
 var GIFTS = [
-  { id:"g63", tag:"AMG G 63", tone:"gold", until:"2026-11-30",
+  { id:"g63", img:"images/gifts/g63_2611.jpg", alt:"G-Class 수트케이스 블루 · 블랙", tag:"AMG G 63", tone:"gold", until:"2026-11-30",
     head:"G-Class 수트케이스 증정", sub:"11월 출고 고객 90명 한정",
     title:"November G 63 캠페인",
     rows:[["기간", "2026년 11월 1일 ~ 11월 30일 출고"],
@@ -211,7 +211,7 @@ var GIFTS = [
           ["혜택", "G-Class 수트케이스 — 총 90명"]],
     notes:["다른 구매 프로모션과 함께 받을 수 있습니다 (시승차 등 일부 차량 제외)", "경품은 11월 마감 뒤 12월에 한꺼번에 보내 드립니다"],
     link:["model.html?m=G-Class", "G 클래스 트림 · 가격 보기"] },
-  { id:"amg", tag:"AMG", tone:"red", until:"2026-11-30",
+  { id:"amg", img:"images/gifts/amg_2611.jpg", alt:"AMG One 모델카 · G 63 모델카 · 클래식 스타 테디베어 · 300 SL 컴팩트 우산", tag:"AMG", tone:"red", until:"2026-11-30",
     head:"AMG One · G 63 모델카 등 경품", sub:"온라인 구매 상담 고객 83명 추첨",
     title:"AMG 온라인 스페셜 캠페인",
     rows:[["기간", "2026년 11월 1일 ~ 11월 30일"],
@@ -220,7 +220,7 @@ var GIFTS = [
           ["상담 후 11월 출고", "20명 추첨 — AMG One 모델카 10명 · G 63 모델카 10명"]],
     notes:["다른 구매 프로모션과 함께 받을 수 있습니다 (시승차 등 일부 차량 제외)", "경품은 11월 마감 뒤 12월에 한꺼번에 보내 드립니다"],
     link:["promotion.html?q=AMG", "AMG 이번 달 조건 보기"] },
-  { id:"maybach", tag:"MAYBACH", tone:"silver", until:"2026-12-31",
+  { id:"maybach", img:"images/gifts/maybach_2611.jpg", alt:"뮤지컬 오페라의 유령 · 한국여자오픈 포스터", tag:"MAYBACH", tone:"silver", until:"2026-12-31",
     head:"뮤지컬 〈오페라의 유령〉 프리미엄석 2매", sub:"+ 〈한국여자오픈〉 코스 라운딩 100명 추첨",
     title:"Mercedes-Maybach 구매 고객 특별 프로모션",
     rows:[["기간", "2026년 11월 1일 ~ 12월 31일 구매"],

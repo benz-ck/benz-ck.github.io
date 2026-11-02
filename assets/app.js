@@ -251,16 +251,17 @@
     show(0, false);
   })();
 
-  /* 첫 화면 오른쪽 위 「구매 혜택」 — 경품 · 초청 캠페인(data.js GIFTS). 줄을 누르면 추가 혜택 페이지의 자세한 안내로 */
+  /* 첫 화면 할인 TOP 5 아래 「구매 혜택」 — 경품 · 초청 캠페인 상품 사진 카드(data.js GIFTS). 누르면 추가 혜택 페이지의 자세한 안내로 */
   (function renderGiftCard(){
     var box = $("giftCard"), gs = giftsNow();
     if (!box || !gs.length) return;
     box.innerHTML = '<p class="gcard__k">PURCHASE BENEFITS</p><h2 class="gcard__t">구매 혜택 <small>출고 고객 경품 · 초청</small></h2>' +
-      gs.map(function(g){
+      '<div class="gcard__list">' + gs.map(function(g){
         return '<a class="gitem gitem--' + g.tone + '" href="benefit.html#gift-' + g.id + '">' +
-          '<span class="gitem__tag">' + esc(g.tag) + '</span><b class="gitem__h">' + esc(g.head) + '</b>' +
-          '<span class="gitem__s">' + esc(g.sub) + '</span><span class="gitem__go" aria-hidden="true">→</span></a>';
-      }).join("");
+          '<span class="gitem__img"><img src="' + g.img + '" alt="' + esc(g.alt) + '" width="600" height="340"></span>' +
+          '<span class="gitem__txt"><span class="gitem__tag">' + esc(g.tag) + '</span><b class="gitem__h">' + esc(g.head) + '</b>' +
+          '<span class="gitem__s">' + esc(g.sub) + '</span></span></a>';
+      }).join("") + '</div>';
     box.hidden = false;
   })();
 
@@ -703,6 +704,7 @@
     if (!gs.length) { el.innerHTML = '<p class="lead-sm">지금 진행 중인 경품 · 초청 캠페인이 없습니다.</p>'; return; }
     el.innerHTML = gs.map(function(g){
       return '<article class="box gift gitem--' + g.tone + '" id="gift-' + g.id + '">' +
+        '<img class="gift__img" src="' + g.img + '" alt="' + esc(g.alt) + '" width="600" height="340" loading="lazy">' +
         '<span class="gitem__tag">' + esc(g.tag) + '</span><h3>' + esc(g.title) + '</h3>' +
         '<dl class="gift__rows">' + g.rows.map(function(r){
           return '<div><dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]).replace(/\n/g, '<br>') + '</dd></div>';

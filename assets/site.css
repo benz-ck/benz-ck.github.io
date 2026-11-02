@@ -287,26 +287,31 @@ section[id],header[id]{scroll-margin-top:calc(var(--navh) + 12px)}
 .ncard__k{font-size:10.5px;font-weight:700;letter-spacing:.16em;color:var(--sky)}
 .ncard__t{font-size:14.5px;font-weight:700;line-height:1.35;margin-top:2px}
 .ncard__go{color:var(--sky);font-size:18px}
-/* 첫 화면 오른쪽 위 「구매 혜택」 카드 — 경품 · 초청(data.js GIFTS) */
-.gcard{border-radius:var(--r);border:1px solid rgba(242,199,102,.35);background:rgba(16,34,44,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:15px 18px 4px;box-shadow:0 24px 48px -30px rgba(0,0,0,.8)}
+/* 첫 화면 할인 TOP 5 아래 「구매 혜택」 — 경품 · 초청 캠페인 상품 사진 카드(data.js GIFTS) */
+.gcard{margin-top:30px;max-width:880px}
 .gcard__k{font-size:10.5px;font-weight:700;letter-spacing:.16em;color:var(--gold)}
-.gcard__t{margin-top:2px;font-size:17px;font-weight:800;letter-spacing:-.02em}
-.gcard__t small{font-size:12px;font-weight:500;color:var(--ink-soft);margin-left:6px}
-.gitem{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:10px;padding:10px 0 11px;border-top:1px solid var(--line-soft);margin-top:10px}
-.gitem + .gitem{margin-top:0}
+.gcard__t{margin-top:2px;font-size:19px;font-weight:800;letter-spacing:-.02em}
+.gcard__t small{font-size:12.5px;font-weight:500;color:var(--ink-soft);margin-left:8px}
+.gcard__list{margin-top:12px;display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.gitem{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:rgba(16,34,44,.86);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:border-color .2s,transform .2s}
 .gitem--gold{--c:var(--gold);--cb:rgba(242,199,102,.14)}
 .gitem--red{--c:#FF7B72;--cb:rgba(255,123,114,.14)}
 .gitem--silver{--c:#DCE3E8;--cb:rgba(220,227,232,.12)}
-.gitem__tag{justify-self:start;font-size:10.5px;font-weight:800;letter-spacing:.06em;line-height:1;padding:4px 7px;border-radius:5px;color:var(--c);background:var(--cb)}
-.gitem__h{grid-column:1;margin-top:6px;font-size:14px;font-weight:700;line-height:1.35}
-.gitem__s{grid-column:1;margin-top:2px;font-size:12.5px;color:var(--ink-soft);line-height:1.4}
-.gitem__go{grid-column:2;grid-row:1/4;align-self:center;color:var(--c);font-size:17px;transition:transform .2s}
+.gitem:hover{border-color:var(--c);transform:translateY(-2px)}
+.gitem__img{display:flex;align-items:center;justify-content:center;background:#fff}
+.gitem__img img{display:block;width:100%;height:auto;aspect-ratio:600/340;object-fit:contain}
+.gitem__txt{display:flex;flex-direction:column;align-items:flex-start;padding:12px 14px 14px}
+.gitem__tag{font-size:10.5px;font-weight:800;letter-spacing:.06em;line-height:1;padding:4px 7px;border-radius:5px;color:var(--c);background:var(--cb)}
+.gitem__h{margin-top:7px;font-size:14px;font-weight:700;line-height:1.35}
+.gitem__s{margin-top:3px;font-size:12.5px;color:var(--ink-soft);line-height:1.4}
 .gitem:hover .gitem__h{color:var(--c)}
-.gitem:hover .gitem__go{transform:translateX(3px)}
-@media(min-width:1040px){.pcard img{aspect-ratio:4/3.4}}
+@media(max-width:640px){
+  .gcard__list{grid-template-columns:minmax(0,1fr)}
+  .gitem{display:grid;grid-template-columns:132px minmax(0,1fr)}
+  .gitem__txt{padding:11px 12px 12px}
+}
 @media(max-width:1039px){
   .hero__side{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .gcard{grid-column:1/-1}
   .pcard{grid-column:1/-1;display:grid;grid-template-columns:120px 1fr;align-items:center}
   .pcard img{aspect-ratio:1/1;height:100%}
   .pcard figcaption{position:static;background:none;padding:16px 18px}
@@ -773,6 +778,7 @@ section[id],header[id]{scroll-margin-top:calc(var(--navh) + 12px)}
 .gifts > .box + .box{margin-top:0}
 .gift{display:flex;flex-direction:column;border-top:3px solid var(--c);scroll-margin-top:calc(var(--navh) + 12px)}
 .gift .gitem__tag{align-self:flex-start}
+.gift__img{display:block;width:100%;height:auto;aspect-ratio:600/340;object-fit:contain;background:#fff;border-radius:12px;margin-bottom:14px}
 .gift h3{margin-top:10px}
 .gift__rows{margin-top:12px;display:grid;gap:9px}
 .gift__rows > div{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:10px;font-size:13.5px;line-height:1.6}
