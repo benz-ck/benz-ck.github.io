@@ -199,6 +199,42 @@ var EW_LABEL = {
   s27: "+ 보증연장 최대 2년 *"
 };
 
+/* 구매 고객 경품 · 초청 — 11월 공문 18 · 19 · 40쪽(G 63 캠페인 · AMG 온라인 스페셜 · 마이바흐 특별 프로모션).
+   첫 화면 오른쪽 위 「구매 혜택」 카드(head · sub)와 추가 혜택 페이지 #ben-gift(나머지)에 나온다.
+   until(마지막 날)이 지나면 저절로 빠진다. 공문의 내부 조건(STS · 리드 소스 · 시상)은 싣지 않는다 */
+var GIFTS = [
+  { id:"g63", tag:"AMG G 63", tone:"gold", until:"2026-11-30",
+    head:"G-Class 수트케이스 증정", sub:"11월 출고 고객 90명 한정",
+    title:"November G 63 캠페인",
+    rows:[["기간", "2026년 11월 1일 ~ 11월 30일 출고"],
+          ["대상", "26 · 27년식 메르세데스-AMG G 63 (마누팍투어 포함)"],
+          ["혜택", "G-Class 수트케이스 — 총 90명"]],
+    notes:["다른 구매 프로모션과 함께 받을 수 있습니다 (시승차 등 일부 차량 제외)", "경품은 11월 마감 뒤 12월에 한꺼번에 보내 드립니다"],
+    link:["model.html?m=G-Class", "G 클래스 트림 · 가격 보기"] },
+  { id:"amg", tag:"AMG", tone:"red", until:"2026-11-30",
+    head:"AMG One · G 63 모델카 등 경품", sub:"온라인 구매 상담 고객 83명 추첨",
+    title:"AMG 온라인 스페셜 캠페인",
+    rows:[["기간", "2026년 11월 1일 ~ 11월 30일"],
+          ["대상", "메르세데스-벤츠 공식 온라인 스토어에서 AMG 모델 「구매 상담」을 신청하신 고객"],
+          ["상담 완료", "63명 추첨 — AMG One 모델카 3명 · 클래식 스타 테디베어 10명 · 300 SL 컴팩트 우산 50명"],
+          ["상담 후 11월 출고", "20명 추첨 — AMG One 모델카 10명 · G 63 모델카 10명"]],
+    notes:["다른 구매 프로모션과 함께 받을 수 있습니다 (시승차 등 일부 차량 제외)", "경품은 11월 마감 뒤 12월에 한꺼번에 보내 드립니다"],
+    link:["promotion.html?q=AMG", "AMG 이번 달 조건 보기"] },
+  { id:"maybach", tag:"MAYBACH", tone:"silver", until:"2026-12-31",
+    head:"뮤지컬 〈오페라의 유령〉 프리미엄석 2매", sub:"+ 〈한국여자오픈〉 코스 라운딩 100명 추첨",
+    title:"Mercedes-Maybach 구매 고객 특별 프로모션",
+    rows:[["기간", "2026년 11월 1일 ~ 12월 31일 구매"],
+          ["대상", "Mercedes-Maybach 전 차종 (세단 · SUV · EQ)"],
+          ["모든 구매 고객", "뮤지컬 〈오페라의 유령〉 프리미엄석 2매\n2027년 1~2월 중 · 블루스퀘어 우리은행홀"],
+          ["100명 추첨", "〈한국여자오픈〉 스페셜 라운딩 — 프로 선수들이 경기한 코스 세팅 그대로\n2027년 6월 14일 (월) · 레이크우드 CC (경기도 양주시)"]],
+    notes:["11 · 12월 마이바흐 구매 고객께 일정을 따로 안내해 드립니다"],
+    link:["model.html?m=S-Class&t=mb580", "마이바흐 트림 · 가격 보기"] }
+];
+function giftsNow(){
+  var d = new Date(), today = d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2);
+  return GIFTS.filter(function(g){ return g.until >= today; });
+}
+
 /* 차종별 묶음 보기 — 같은 PRICE_ROWS 를 차종(model)으로 묶어 카드로. 카드 제목엔 그 차종의 최고 조건만 */
 /* 묶음 = 차종 계열. AMG 는 원래 차종으로(AMG E 53 → E-Class), GT·SL 만 따로 */
 var FAM_ORDER = ["A-Class","CLA","C-Class","E-Class","S-Class","Maybach","CLE","AMG GT · SL","GLA","GLB","GLC","GLE","GLS","G-Class","V-Class","EQA","EQB","EQE","EQS"];

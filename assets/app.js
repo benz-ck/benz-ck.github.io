@@ -251,6 +251,19 @@
     show(0, false);
   })();
 
+  /* 첫 화면 오른쪽 위 「구매 혜택」 — 경품 · 초청 캠페인(data.js GIFTS). 줄을 누르면 추가 혜택 페이지의 자세한 안내로 */
+  (function renderGiftCard(){
+    var box = $("giftCard"), gs = giftsNow();
+    if (!box || !gs.length) return;
+    box.innerHTML = '<p class="gcard__k">PURCHASE BENEFITS</p><h2 class="gcard__t">구매 혜택 <small>출고 고객 경품 · 초청</small></h2>' +
+      gs.map(function(g){
+        return '<a class="gitem gitem--' + g.tone + '" href="benefit.html#gift-' + g.id + '">' +
+          '<span class="gitem__tag">' + esc(g.tag) + '</span><b class="gitem__h">' + esc(g.head) + '</b>' +
+          '<span class="gitem__s">' + esc(g.sub) + '</span><span class="gitem__go" aria-hidden="true">→</span></a>';
+      }).join("");
+    box.hidden = false;
+  })();
+
   /* 사진이 천천히 확대되며 넘어가는 배경 — 첫 화면(인천전시장 실차)과 차종 페이지(카탈로그)가 같이 쓴다 */
   function startKb(kb, srcs){
     if (!kb || !srcs.length) return;
@@ -683,6 +696,24 @@
   })();
 
   /* ═════════════ 구매 추가 혜택 (benefit.html) ═════════════ */
+  /* 추가 혜택 페이지 — 경품 · 초청 캠페인 카드(data.js GIFTS) */
+  (function giftList(){
+    var el = $("benGiftList"), gs = giftsNow();
+    if (!el) return;
+    if (!gs.length) { el.innerHTML = '<p class="lead-sm">지금 진행 중인 경품 · 초청 캠페인이 없습니다.</p>'; return; }
+    el.innerHTML = gs.map(function(g){
+      return '<article class="box gift gitem--' + g.tone + '" id="gift-' + g.id + '">' +
+        '<span class="gitem__tag">' + esc(g.tag) + '</span><h3>' + esc(g.title) + '</h3>' +
+        '<dl class="gift__rows">' + g.rows.map(function(r){
+          return '<div><dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]).replace(/\n/g, '<br>') + '</dd></div>';
+        }).join("") + '</dl>' +
+        '<ul class="gift__notes">' + g.notes.map(function(n){ return '<li>' + esc(n) + '</li>'; }).join("") + '</ul>' +
+        '<a class="deal__all" href="' + g.link[0] + '">' + esc(g.link[1]) + ' →</a></article>';
+    }).join("");
+    var hit = location.hash && document.getElementById(location.hash.slice(1));
+    if (hit && hit.classList.contains("gift")) hit.scrollIntoView({ behavior: "instant" });
+  })();
+
   (function benefitPage(){
     var facts = $("benFacts");
     if (!facts) return;
