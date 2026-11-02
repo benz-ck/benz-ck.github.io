@@ -204,11 +204,11 @@ var EW_LABEL = {
    until(마지막 날)이 지나면 저절로 빠진다. 공문의 내부 조건(STS · 리드 소스 · 시상)은 싣지 않는다 */
 var GIFTS = [
   { id:"g63", img:"images/gifts/g63_2611.jpg", alt:"G-Class 수트케이스 블루 · 블랙", tag:"AMG G 63", tone:"gold", until:"2026-11-30",
-    head:"G-Class 수트케이스 증정", sub:"11월 출고 고객 90명 한정",
+    head:"G-Class 수트케이스 증정", sub:"11월 출고 고객 선착순 90명",
     title:"November G 63 캠페인",
     rows:[["기간", "2026년 11월 1일 ~ 11월 30일 출고"],
           ["대상", "26 · 27년식 메르세데스-AMG G 63 (마누팍투어 포함)"],
-          ["혜택", "G-Class 수트케이스 — 총 90명"]],
+          ["혜택", "G-Class 수트케이스 — 선착순 90명"]],
     notes:["다른 구매 프로모션과 함께 받을 수 있습니다 (시승차 등 일부 차량 제외)", "경품은 11월 마감 뒤 12월에 한꺼번에 보내 드립니다"],
     link:["model.html?m=G-Class", "G 클래스 트림 · 가격 보기"] },
   { id:"amg", img:"images/gifts/amg_2611.jpg", alt:"AMG One 모델카 · G 63 모델카 · 클래식 스타 테디베어 · 300 SL 컴팩트 우산", tag:"AMG", tone:"red", until:"2026-11-30",
