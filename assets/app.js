@@ -434,10 +434,10 @@
     if (r.ew) perks.push('<span class="perk perk--ew">' + esc((EW_LABEL[r.ew] || "보증연장").replace(/^\+ /, "")) + '</span>');
     /* 휴대폰 한 줄 요약 */
     var m = has
-      ? (r.fin > 0 ? '<s>' + manStr(r.msrp) + '</s>' : '<span>' + manStr(r.msrp) + (r.from ? ' 부터' : '') + '</span>') +
-        (r.fin > 0
-          ? ' <span class="arrow">→</span> <span class="best">' + manStr(bestOf(r)) + (r.from ? ' 부터' : '') + '</span> <span class="sum">' + r.fin + '%</span>' +
-            ' <span>(<span class="cash">현금 ' + r.cash + '</span>' + (r.fin > r.cash ? ' + <span class="mbm">할부 ' + (r.fin - r.cash) + '</span>' : '') + ')</span>'
+      ? (finAll(r) > 0 ? '<s>' + manStr(r.msrp) + '</s>' : '<span>' + manStr(r.msrp) + (r.from ? ' 부터' : '') + '</span>') +
+        (finAll(r) > 0
+          ? ' <span class="arrow">→</span> <span class="best">' + manStr(bestOf(r)) + (r.from ? ' 부터' : '') + '</span> <span class="sum">' + finAll(r) + '%</span>' +
+            ' <span>(<span class="cash">현금 ' + (r.cashWon ? cashTxt(r) : r.cash) + '</span>' + (r.fin > r.cash ? ' + <span class="mbm">할부 ' + (r.fin - r.cash) + '</span>' : '') + ')</span>'
           : ' <span>기본 할인 없음</span>') +
         (r.ret || r.trade ? ' <span>재구매 +' + r.ret + ' · 트레이드인 +' + r.trade + '</span>' : '')
       : '<span>가격 문의</span>' + (t ? ' <span class="sum">총 ' + t + '%</span>' : '');
@@ -445,9 +445,9 @@
       '<div class="fr__name"><b>' + esc(r.trim) + yb(r) + '</b><span class="fr__sub">' + esc(sub) + '</span>' +
         (perks.length ? '<span class="fr__perks">' + perks.join("") + '</span>' : '') + '</div>' +
       '<span class="fr__c msrp">' + (has ? won.format(man(r.msrp)) + from : '<span class="z">문의</span>') + '</span>' +
-      '<span class="fr__c cash">' + (r.cash ? r.cash + '%' : z) + '</span>' +
+      '<span class="fr__c cash">' + (r.cash || r.cashWon ? cashTxt(r) : z) + '</span>' +
       '<span class="fr__c mbm">' + (r.fin > r.cash ? '+' + (r.fin - r.cash) + '%' : z) + '</span>' +
-      '<span class="fr__c sum">' + (r.fin ? r.fin + '%' : z) + '</span>' +
+      '<span class="fr__c sum">' + (finAll(r) ? finAll(r) + '%' : z) + '</span>' +
       '<span class="fr__c best">' + (has ? won.format(man(bestOf(r))) + from : z) + '</span>' +
       '<span class="fr__c extra">' + (r.ret || r.trade ? '+' + r.ret + ' · +' + r.trade + '%' : z) + '</span>' +
       '<span class="fr__c max">' + (has ? won.format(man(maxOf(r))) + '<i class="u">만원</i>' + from : z) + '</span>' +

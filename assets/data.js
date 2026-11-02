@@ -23,12 +23,13 @@ var SHOTS_NOTE = "모든 사진은 인천전시장에서 직접 촬영했습니�
      msrp  : 판매가격(원) — 가격표에 없는 특별판은 null(가격 문의). from:true 면 최저가에 "부터"
      fin   : 현금 할인 + MBM 할부 특별 할인 합계(%) — 프로모션표 [1] + [2-1]
      cash  : 현금 할인(%) — 프로모션표 [1]
+     cashWon : 정액 현금 할인(원) — 프로모션표 [1] 이 「100만원」처럼 금액으로 나온 트림(11월 전기 CLA · GLB)
      ret   : 재구매 추가 할인(%) — 프로모션표 [4] Cash Retention
      trade : 트레이드인 추가 할인(%) — 프로모션표 [4-1] +Trade-in
      seg   : sedan / suv / amg / ev
    기준 월이 지나면 표 위에 안내 배너가 자동으로 뜹니다.
    ───────────────────────────────────────────────────────── */
-var PRICE_YEAR = 2026, PRICE_MONTH = 10;
+var PRICE_YEAR = 2026, PRICE_MONTH = 11;
 var PRICE_ASOF = PRICE_YEAR + "년 " + PRICE_MONTH + "월 기준";
 
 var PRICE_ROWS = [
@@ -41,6 +42,8 @@ var PRICE_ROWS = [
   { model:"Mercedes-AMG", year:26, trim:"AMG A 45 S 4M+", seg:"amg", msrp:81400000, fin:11, cash:7, ret:2, trade:1 },
   { model:"Mercedes-AMG", year:26, trim:"AMG CLA 45 S 4M+", seg:"amg", msrp:91800000, fin:5, cash:5, ret:2, trade:1 },
   { model:"GLA", year:27, trim:"GLA 250 4M", seg:"suv", msrp:70800000, fin:13, cash:9, ret:1, trade:1 },
+  { model:"CLA", year:27, trim:"CLA 220", seg:"sedan", msrp:59900000, fin:0, cash:0, ret:1, trade:1 },
+  { model:"CLA", year:27, trim:"CLA 220 AMG Line", seg:"sedan", msrp:62900000, fin:0, cash:0, ret:1, trade:1 },
   { model:"C-Class", year:26, trim:"C 200 AV", seg:"sedan", msrp:65100000, fin:14, cash:10, ret:1, trade:1 },
   { model:"C-Class", year:26, trim:"C 200 AMG Line", seg:"sedan", msrp:68300000, fin:14, cash:10, ret:1, trade:1 },
   { model:"C-Class", year:26, trim:"C 200 Final Edition", seg:"sedan", msrp:66300000, fin:14, cash:10, ret:1, trade:1 },
@@ -55,11 +58,13 @@ var PRICE_ROWS = [
   { model:"E-Class", year:26, trim:"E 450 4M AMG Line", seg:"sedan", msrp:116000000, fin:11, cash:11, ret:1, trade:1 },
   { model:"E-Class", year:26, trim:"E 450 4M Exclusive", seg:"sedan", msrp:129600000, fin:11, cash:11, ret:1, trade:1 },
   { model:"Mercedes-AMG", year:26, trim:"AMG E 53 4M+", seg:"amg", msrp:143000000, from:true, fin:10, cash:10, ret:2, trade:1 },
-  { model:"E-Class", year:27, trim:"E 300 4M Exclusive", seg:"sedan", msrp:94800000, fin:12, cash:8, ret:0, trade:0 },
-  { model:"E-Class", year:27, trim:"E 300 4M AMG Line", seg:"sedan", msrp:100100000, fin:12, cash:8, ret:0, trade:0 },
-  { model:"E-Class", year:27, trim:"E 450 4M Exclusive", seg:"sedan", msrp:129500000, fin:10, cash:10, ret:0, trade:0 },
-  { model:"E-Class", year:27, trim:"E 450 4M AMG Line", seg:"sedan", msrp:117200000, fin:10, cash:10, ret:0, trade:0 },
-  { model:"E-Class", year:27, trim:"E 450 4M AMG Line (컴포트 서스펜션)", seg:"sedan", msrp:112200000, fin:10, cash:10, ret:0, trade:0, memo:"10/6 가격표 신규 트림 · 컴포트 서스펜션(에어매틱 · 후륜조향 없음)" },
+  { model:"E-Class", year:27, trim:"E 200 Exclusive", seg:"sedan", msrp:77500000, fin:18, cash:14, ret:1, trade:1 },
+  { model:"E-Class", year:27, trim:"E 200 AMG Line", seg:"sedan", msrp:81000000, fin:17, cash:14, ret:1, trade:1 },
+  { model:"E-Class", year:27, trim:"E 300 4M Exclusive", seg:"sedan", msrp:94800000, fin:12, cash:8, ret:1, trade:1 },
+  { model:"E-Class", year:27, trim:"E 300 4M AMG Line", seg:"sedan", msrp:100100000, fin:12, cash:8, ret:1, trade:1 },
+  { model:"E-Class", year:27, trim:"E 450 4M Exclusive", seg:"sedan", msrp:129500000, fin:10, cash:10, ret:1, trade:1 },
+  { model:"E-Class", year:27, trim:"E 450 4M AMG Line", seg:"sedan", msrp:117200000, fin:10, cash:10, ret:1, trade:1 },
+  { model:"E-Class", year:27, trim:"E 450 4M AMG Line (컴포트 서스펜션)", seg:"sedan", msrp:112200000, fin:10, cash:10, ret:1, trade:1, memo:"컴포트 서스펜션(에어매틱 · 후륜조향 없음)" },
   { model:"S-Class", year:26, trim:"S 350 d 4M", seg:"sedan", msrp:154000000, fin:10, cash:10, ret:2, trade:1 },
   { model:"S-Class", year:26, trim:"S 450 4M (SWB)", seg:"sedan", msrp:161000000, from:true, fin:11, cash:7, ret:2, trade:1, memo:"운용리스 시 할부 대신 +6%" },
   { model:"S-Class", year:26, trim:"S 450 4M Long", seg:"sedan", msrp:193000000, from:true, fin:10, cash:10, ret:2, trade:1 },
@@ -68,15 +73,15 @@ var PRICE_ROWS = [
   { model:"Mercedes-AMG", year:26, trim:"AMG S 63 E Performance", seg:"amg", msrp:299000000, fin:10, cash:10, ret:2, trade:1 },
   { model:"Mercedes-Maybach", year:26, trim:"Maybach S 580 4M (MANUFAKTUR 포함)", seg:"sedan", msrp:317000000, fin:9, cash:9, ret:2, trade:1, ew:"t1", memo:"운용리스 시 +2%" },
   { model:"Mercedes-Maybach", year:26, trim:"Maybach S 680 4M", seg:"sedan", msrp:403000000, fin:9, cash:9, ret:9, trade:1, ew:"t1", conq:7, memo:"운용리스 시 +2%" },
-  { model:"S-Class", year:27, trim:"S 350 d 4M", seg:"sedan", msrp:154000000, fin:0, cash:0, ret:2, trade:1, ew:"s27" },
-  { model:"S-Class", year:27, trim:"S 450 4M", seg:"sedan", msrp:162400000, fin:0, cash:0, ret:2, trade:1, ew:"s27" },
-  { model:"S-Class", year:27, trim:"S 450 4M Long AMG Line", seg:"sedan", msrp:195400000, fin:0, cash:0, ret:2, trade:1, ew:"s27" },
-  { model:"S-Class", year:27, trim:"S 450 4M Long Exclusive", seg:"sedan", msrp:175400000, fin:0, cash:0, ret:2, trade:1, ew:"s27" },
-  { model:"S-Class", year:27, trim:"S 500 4M Long", seg:"sedan", msrp:220000000, fin:0, cash:0, ret:2, trade:1, ew:"s27" },
-  { model:"S-Class", year:27, trim:"S 580 4M Long", seg:"sedan", msrp:270000000, fin:0, cash:0, ret:2, trade:1, ew:"s27" },
-  { model:"Mercedes-Maybach", year:27, trim:"Maybach S 580", seg:"sedan", msrp:317000000, fin:0, cash:0, ret:2, trade:1, ew:"s27" },
-  { model:"Mercedes-Maybach", year:27, trim:"Maybach S 580 MANUFAKTUR", seg:"sedan", msrp:336000000, fin:0, cash:0, ret:2, trade:1, ew:"s27" },
-  { model:"Mercedes-Maybach", year:27, trim:"Maybach S 680", seg:"sedan", msrp:407000000, fin:0, cash:0, ret:2, trade:1, ew:"s27" },
+  { model:"S-Class", year:27, trim:"S 350 d 4M", seg:"sedan", msrp:154000000, fin:0, cash:0, ret:2, trade:1, ew:"s27", memo:"재구매+ 대상 · 타 브랜드 보유 시 보증연장 +1년" },
+  { model:"S-Class", year:27, trim:"S 450 4M", seg:"sedan", msrp:162400000, fin:0, cash:0, ret:2, trade:1, ew:"s27", memo:"재구매+ 대상 · 타 브랜드 보유 시 보증연장 +1년" },
+  { model:"S-Class", year:27, trim:"S 450 4M Long AMG Line", seg:"sedan", msrp:195400000, fin:0, cash:0, ret:2, trade:1, ew:"s27", memo:"재구매+ 대상 · 타 브랜드 보유 시 보증연장 +1년" },
+  { model:"S-Class", year:27, trim:"S 450 4M Long Exclusive", seg:"sedan", msrp:175400000, fin:0, cash:0, ret:2, trade:1, ew:"s27", memo:"재구매+ 대상 · 타 브랜드 보유 시 보증연장 +1년" },
+  { model:"S-Class", year:27, trim:"S 500 4M Long", seg:"sedan", msrp:220000000, fin:0, cash:0, ret:2, trade:1, ew:"s27", memo:"재구매+ 대상 · 타 브랜드 보유 시 보증연장 +1년" },
+  { model:"S-Class", year:27, trim:"S 580 4M Long", seg:"sedan", msrp:270000000, fin:0, cash:0, ret:2, trade:1, ew:"s27", memo:"재구매+ 대상 · 타 브랜드 보유 시 보증연장 +1년" },
+  { model:"Mercedes-Maybach", year:27, trim:"Maybach S 580", seg:"sedan", msrp:317000000, fin:0, cash:0, ret:2, trade:1, ew:"s27", memo:"재구매+ 대상 · 타 브랜드 보유 시 보증연장 +1년" },
+  { model:"Mercedes-Maybach", year:27, trim:"Maybach S 580 MANUFAKTUR", seg:"sedan", msrp:336000000, fin:0, cash:0, ret:2, trade:1, ew:"s27", memo:"재구매+ 대상 · 타 브랜드 보유 시 보증연장 +1년" },
+  { model:"Mercedes-Maybach", year:27, trim:"Maybach S 680", seg:"sedan", msrp:407000000, fin:0, cash:0, ret:2, trade:1, ew:"s27", memo:"재구매+ 대상 · 타 브랜드 보유 시 보증연장 +1년" },
   { model:"CLE", year:26, trim:"CLE 200 Coupé", seg:"sedan", msrp:76700000, fin:5, cash:5, ret:1, trade:1 },
   { model:"CLE", year:26, trim:"CLE 200 Coupé (140주년 Edition)", seg:"sedan", msrp:null, fin:5, cash:5, ret:1, trade:1 },
   { model:"CLE", year:26, trim:"CLE 200 Cabriolet", seg:"sedan", msrp:83100000, fin:4, cash:4, ret:1, trade:1 },
@@ -86,6 +91,7 @@ var PRICE_ROWS = [
   { model:"Mercedes-AMG", year:26, trim:"AMG CLE 53 4M+ Coupé", seg:"amg", msrp:109100000, fin:3, cash:3, ret:2, trade:1 },
   { model:"Mercedes-AMG", year:26, trim:"AMG CLE 53 4M+ Cabriolet", seg:"amg", msrp:115000000, fin:3, cash:3, ret:2, trade:1 },
   { model:"Mercedes-AMG", year:26, trim:"AMG SL 43", seg:"amg", msrp:160000000, fin:9, cash:9, ret:2, trade:1 },
+  { model:"Mercedes-AMG", year:26, trim:"AMG SL 63 4M+", seg:"amg", msrp:250000000, fin:9, cash:9, ret:2, trade:1 },
   { model:"Mercedes-AMG", year:26, trim:"AMG GT 43 (C192)", seg:"amg", msrp:149500000, fin:9, cash:9, ret:2, trade:1 },
   { model:"Mercedes-AMG", year:26, trim:"AMG GT 43 4M+ (X290)", seg:"amg", msrp:164000000, fin:9, cash:9, ret:2, trade:1 },
   { model:"Mercedes-AMG", year:26, trim:"AMG GT 55 4M+", seg:"amg", msrp:210000000, fin:3, cash:3, ret:2, trade:1 },
@@ -96,10 +102,10 @@ var PRICE_ROWS = [
   { model:"CLE", year:27, trim:"CLE 200 Cabriolet", seg:"sedan", msrp:84100000, fin:2, cash:2, ret:1, trade:1 },
   { model:"CLE", year:27, trim:"CLE 450 4M Cabriolet", seg:"sedan", msrp:105200000, fin:2, cash:2, ret:1, trade:1 },
   { model:"Mercedes-AMG", year:27, trim:"AMG CLE 53 4M+ Cabriolet", seg:"amg", msrp:116600000, fin:2, cash:2, ret:2, trade:1 },
-  { model:"Mercedes-AMG", year:27, trim:"AMG CLE 53 4M+ Coupé", seg:"amg", msrp:110600000, fin:2, cash:2, ret:0, trade:0 },
-  { model:"Mercedes-AMG", year:27, trim:"AMG GT 43", seg:"amg", msrp:149500000, fin:8, cash:8, ret:0, trade:0 },
-  { model:"Mercedes-AMG", year:27, trim:"AMG GT 55 4M+", seg:"amg", msrp:212600000, fin:2, cash:2, ret:0, trade:0 },
-  { model:"Mercedes-AMG", year:27, trim:"AMG SL 43", seg:"amg", msrp:161800000, fin:8, cash:8, ret:0, trade:0 },
+  { model:"Mercedes-AMG", year:27, trim:"AMG CLE 53 4M+ Coupé", seg:"amg", msrp:110600000, fin:2, cash:2, ret:2, trade:1 },
+  { model:"Mercedes-AMG", year:27, trim:"AMG GT 43", seg:"amg", msrp:149500000, fin:8, cash:8, ret:2, trade:1 },
+  { model:"Mercedes-AMG", year:27, trim:"AMG GT 55 4M+", seg:"amg", msrp:212600000, fin:2, cash:2, ret:2, trade:1 },
+  { model:"Mercedes-AMG", year:27, trim:"AMG SL 43", seg:"amg", msrp:161800000, fin:8, cash:8, ret:2, trade:1 },
   { model:"GLC", year:26, trim:"GLC 220 d 4M", seg:"suv", msrp:82200000, fin:10, cash:10, ret:1, trade:1, conq:1 },
   { model:"GLC", year:26, trim:"GLC 300 4M AV", seg:"suv", msrp:82500000, fin:11, cash:7, ret:1, trade:1, conq:1 },
   { model:"GLC", year:26, trim:"GLC 300 4M AMG Line", seg:"suv", msrp:92500000, fin:16, cash:12, ret:1, trade:1, conq:1 },
@@ -115,10 +121,10 @@ var PRICE_ROWS = [
   { model:"GLE", year:26, trim:"GLE 300 d 4M", seg:"suv", msrp:119200000, fin:8, cash:8, ret:1, trade:1, conq:1 },
   { model:"GLE", year:26, trim:"GLE 450 4M", seg:"suv", msrp:129000000, fin:16, cash:12, ret:1, trade:1, conq:1 },
   { model:"GLE", year:26, trim:"GLE 450 4M AMG Line", seg:"suv", msrp:139000000, fin:16, cash:12, ret:1, trade:1, conq:1 },
+  { model:"Mercedes-AMG", year:26, trim:"AMG GLE 53 4M+", seg:"amg", msrp:166000000, fin:8, cash:8, ret:2, trade:1, conq:1 },
   { model:"GLE", year:26, trim:"GLE 450 d 4M Coupé", seg:"suv", msrp:134000000, fin:12, cash:12, ret:1, trade:1, conq:1 },
   { model:"GLE", year:26, trim:"GLE 450 4M Coupé", seg:"suv", msrp:142500000, fin:19, cash:15, ret:1, trade:1, conq:1 },
-  { model:"GLE", year:26, trim:"GLE 450 4M AMG Line Coupé", seg:"suv", msrp:142500000, fin:16, cash:12, ret:1, trade:1, conq:1 },
-  { model:"Mercedes-AMG", year:26, trim:"AMG GLE 53 4M+", seg:"amg", msrp:166000000, fin:8, cash:8, ret:2, trade:1, conq:1 },
+  { model:"GLE", year:26, trim:"GLE 450 4M AMG Line Coupé", seg:"suv", msrp:142500000, fin:19, cash:15, ret:1, trade:1, conq:1 },
   { model:"Mercedes-AMG", year:26, trim:"AMG GLE 53 4M+ Coupé", seg:"amg", msrp:170000000, fin:5, cash:5, ret:2, trade:1, conq:1 },
   { model:"GLS", year:26, trim:"GLS 450 4M AMG Line", seg:"suv", msrp:154000000, fin:8, cash:8, ret:2, trade:1 },
   { model:"GLS", year:26, trim:"GLS 450 d 4M", seg:"suv", msrp:154000000, fin:2, cash:2, ret:2, trade:1 },
@@ -130,10 +136,19 @@ var PRICE_ROWS = [
   { model:"G-Class", year:26, trim:"G 450 d MANUFAKTUR", seg:"suv", msrp:219100000, fin:0, cash:0, ret:2, trade:1 },
   { model:"Mercedes-AMG", year:26, trim:"AMG G 63", seg:"amg", msrp:262600000, fin:0, cash:0, ret:2, trade:1 },
   { model:"Mercedes-AMG", year:26, trim:"AMG G 63 MANUFAKTUR", seg:"amg", msrp:289800000, fin:0, cash:0, ret:2, trade:1 },
-  { model:"GLC", year:27, trim:"GLC 300 4M AV", seg:"suv", msrp:82500000, fin:7, cash:7, ret:1, trade:1, conq:1 },
-  { model:"GLC", year:27, trim:"GLC 300 4M AMG Line", seg:"suv", msrp:95500000, fin:7, cash:7, ret:1, trade:1, conq:1 },
-  { model:"GLC", year:27, trim:"GLC 300 4M Coupé AV", seg:"suv", msrp:86600000, fin:5, cash:5, ret:1, trade:1, conq:1 },
-  { model:"GLC", year:27, trim:"GLC 300 4M Coupé AMG Line", seg:"suv", msrp:96900000, fin:5, cash:5, ret:1, trade:1, conq:1 },
+  { model:"GLC", year:27, trim:"GLC 300 4M", seg:"suv", msrp:77000000, fin:8, cash:7, ret:1, trade:1, conq:1 },
+  { model:"GLC", year:27, trim:"GLC 300 4M AV", seg:"suv", msrp:82500000, fin:8, cash:7, ret:1, trade:1, conq:1 },
+  { model:"GLC", year:27, trim:"GLC 300 4M AMG Line", seg:"suv", msrp:95500000, fin:8, cash:7, ret:1, trade:1, conq:1 },
+  { model:"GLC", year:27, trim:"GLC 300 4M Coupé AV", seg:"suv", msrp:86600000, fin:8, cash:7, ret:1, trade:1, conq:1 },
+  { model:"GLC", year:27, trim:"GLC 300 4M Coupé AMG Line", seg:"suv", msrp:96900000, fin:8, cash:7, ret:1, trade:1, conq:1 },
+  { model:"GLE", year:27, trim:"GLE 450 4M AMG Line", seg:"suv", msrp:null, fin:0, cash:0, ret:1, trade:1, conq:1, memo:"11월 공문 신규 27년식 · 가격은 문의" },
+  { model:"GLE", year:27, trim:"GLE 450 4M AMG Line Coupé", seg:"suv", msrp:null, fin:0, cash:0, ret:1, trade:1, conq:1, memo:"11월 공문 신규 27년식 · 가격은 문의" },
+  { model:"GLS", year:27, trim:"GLS 450 4M (6인승 포함)", seg:"suv", msrp:null, fin:0, cash:0, ret:1, trade:1, memo:"11월 공문 신규 27년식 · 가격은 문의" },
+  { model:"GLS", year:27, trim:"GLS 450 4M AMG Line (6인승 포함)", seg:"suv", msrp:null, fin:0, cash:0, ret:1, trade:1, memo:"11월 공문 신규 27년식 · 가격은 문의" },
+  { model:"G-Class", year:27, trim:"G 450 d", seg:"suv", msrp:199700000, fin:0, cash:0, ret:2, trade:1 },
+  { model:"G-Class", year:27, trim:"G 450 d MANUFAKTUR", seg:"suv", msrp:228200000, fin:0, cash:0, ret:2, trade:1 },
+  { model:"Mercedes-AMG", year:27, trim:"AMG G 63", seg:"amg", msrp:275000000, fin:0, cash:0, ret:2, trade:1 },
+  { model:"Mercedes-AMG", year:27, trim:"AMG G 63 MANUFAKTUR", seg:"amg", msrp:301000000, fin:0, cash:0, ret:2, trade:1 },
   { model:"EQA", year:26, trim:"EQA 250 Progressive", seg:"ev", msrp:70000000, fin:14, cash:10, ret:1, trade:1, ew:"t1" },
   { model:"EQA", year:26, trim:"EQA 250 AMG Line", seg:"ev", msrp:75800000, fin:14, cash:10, ret:1, trade:1, ew:"t1" },
   { model:"EQB", year:26, trim:"EQB 300 4M Progressive", seg:"ev", msrp:78800000, fin:14, cash:10, ret:1, trade:1, ew:"t1" },
@@ -148,37 +163,29 @@ var PRICE_ROWS = [
   { model:"Mercedes-Maybach", year:26, trim:"Maybach EQS 680 SUV", seg:"ev", msrp:235000000, fin:0, cash:0, ret:2, trade:1, ew:"t1" },
   { model:"EQA", year:27, trim:"EQA 250 Progressive", seg:"ev", msrp:70800000, fin:14, cash:10, ret:1, trade:1, ew:"t1" },
   { model:"EQA", year:27, trim:"EQA 250 AMG Line", seg:"ev", msrp:76700000, fin:14, cash:10, ret:1, trade:1, ew:"t1" },
-  { model:"Mercedes-AMG", year:27, trim:"AMG A 45 S 4M+", seg:"amg", msrp:82300000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-  { model:"CLA", year:27, trim:"CLA 220", seg:"sedan", msrp:59900000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-  { model:"CLA", year:27, trim:"CLA 220 AMG Line", seg:"sedan", msrp:62900000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-  { model:"CLA", year:27, trim:"CLA 200 electric Essential", seg:"ev", msrp:52900000, fin:0, cash:0, ret:0, trade:0, ew:"t1", memo:"10월 프로모션 대상 아님" },
-  { model:"CLA", year:27, trim:"CLA 200 electric Advanced", seg:"ev", msrp:55800000, fin:0, cash:0, ret:0, trade:0, ew:"t1", memo:"10월 프로모션 대상 아님" },
-  { model:"CLA", year:27, trim:"CLA 200 electric AMG Line", seg:"ev", msrp:58900000, fin:0, cash:0, ret:0, trade:0, ew:"t1", memo:"10월 프로모션 대상 아님" },
-  { model:"CLA", year:27, trim:"CLA 250+ electric", seg:"ev", msrp:63700000, fin:0, cash:0, ret:0, trade:0, ew:"t1", memo:"10월 프로모션 대상 아님" },
-  { model:"CLA", year:27, trim:"CLA 250+ electric AMG Line", seg:"ev", msrp:67700000, fin:0, cash:0, ret:0, trade:0, ew:"t1", memo:"10월 프로모션 대상 아님" },
-  { model:"GLB", year:27, trim:"GLB 250+ electric", seg:"ev", msrp:69900000, fin:0, cash:0, ret:0, trade:0, memo:"10/27 가격표 신규 차종 · 10월 프로모션 대상 아님" },
-  { model:"E-Class", year:27, trim:"E 200 Exclusive", seg:"sedan", msrp:77500000, fin:0, cash:0, ret:0, trade:0, memo:"10/27 가격표 신규 27년식 · 10월 프로모션 대상 아님" },
-  { model:"E-Class", year:27, trim:"E 200 AMG Line", seg:"sedan", msrp:81000000, fin:0, cash:0, ret:0, trade:0, memo:"10/27 가격표 신규 27년식 · 10월 프로모션 대상 아님" },
-  { model:"E-Class", year:27, trim:"E 220 d 4M AV", seg:"sedan", msrp:87500000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-  { model:"E-Class", year:27, trim:"E 350 e 4M Exclusive", seg:"sedan", msrp:101100000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-  { model:"Mercedes-AMG", year:27, trim:"AMG E 53 HYBRID 4M+", seg:"amg", msrp:149900000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-  { model:"GLC", year:27, trim:"GLC 220 d 4M", seg:"suv", msrp:82200000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-  { model:"GLC", year:27, trim:"GLC 300 4M", seg:"suv", msrp:77000000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-  { model:"GLC", year:27, trim:"GLC 300 4M Coupé", seg:"suv", msrp:80000000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-  { model:"Mercedes-AMG", year:27, trim:"AMG GLC 53 4M+", seg:"amg", msrp:105100000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-  { model:"Mercedes-AMG", year:27, trim:"AMG GLC 53 4M+ Coupé", seg:"amg", msrp:109800000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-  { model:"GLC", year:27, trim:"GLC 300 4M electric AMG Line (Launch Edition)", seg:"ev", msrp:90000000, fin:0, cash:0, ret:0, trade:0, ew:"t1", memo:"10월 프로모션 대상 아님" },
-  { model:"GLC", year:27, trim:"GLC 300 4M electric AMG Line+ (Launch Edition)", seg:"ev", msrp:94800000, fin:0, cash:0, ret:0, trade:0, ew:"t1", memo:"10월 프로모션 대상 아님" },
-  { model:"Mercedes-AMG", year:27, trim:"AMG SL 63 4M+", seg:"amg", msrp:252800000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-  { model:"Mercedes-Maybach", year:27, trim:"Maybach SL 680", seg:"amg", msrp:348000000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-  { model:"Mercedes-AMG", year:27, trim:"AMG GT 63 S E Performance", seg:"amg", msrp:283100000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-  { model:"G-Class", year:27, trim:"G 450 d", seg:"suv", msrp:199700000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-  { model:"G-Class", year:27, trim:"G 450 d MANUFAKTUR", seg:"suv", msrp:228200000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-  { model:"Mercedes-AMG", year:27, trim:"AMG G 63", seg:"amg", msrp:275000000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-  { model:"Mercedes-AMG", year:27, trim:"AMG G 63 MANUFAKTUR", seg:"amg", msrp:301000000, fin:0, cash:0, ret:0, trade:0, memo:"10월 프로모션 대상 아님" },
-  { model:"G-Class", year:27, trim:"G 580 with EQ Technology", seg:"ev", msrp:219000000, fin:0, cash:0, ret:0, trade:0, ew:"t1", memo:"10월 프로모션 대상 아님" },
-  { model:"G-Class", year:27, trim:"G 580 with EQ Technology MANUFAKTUR", seg:"ev", msrp:238500000, fin:0, cash:0, ret:0, trade:0, ew:"t1", memo:"10월 프로모션 대상 아님" },
-  { model:"V-Class", year:27, trim:"V 300 d 4M Exclusive", seg:"suv", msrp:124000000, fin:0, cash:0, ret:0, trade:0, memo:"10/20 가격표 신규 차종 · 10월 프로모션 대상 아님" }
+  { model:"EQS", year:27, trim:"EQS 400", seg:"ev", msrp:null, fin:0, cash:0, ret:2, trade:1, ew:"t1", memo:"11월 공문 신규 27년식 · 가격은 문의" },
+  { model:"G-Class", year:27, trim:"G 580 with EQ Technology", seg:"ev", msrp:219000000, fin:0, cash:0, ret:2, trade:1, ew:"t1" },
+  { model:"G-Class", year:27, trim:"G 580 with EQ Technology MANUFAKTUR", seg:"ev", msrp:238500000, fin:0, cash:0, ret:2, trade:1, ew:"t1" },
+  { model:"CLA", year:27, trim:"CLA 200 electric Essential", seg:"ev", msrp:52900000, fin:0, cash:0, cashWon:1000000, ret:1, trade:1 },
+  { model:"CLA", year:27, trim:"CLA 200 electric Advanced", seg:"ev", msrp:55800000, fin:0, cash:0, cashWon:1000000, ret:1, trade:1 },
+  { model:"CLA", year:27, trim:"CLA 200 electric AMG Line", seg:"ev", msrp:58900000, fin:0, cash:0, cashWon:1000000, ret:1, trade:1 },
+  { model:"CLA", year:27, trim:"CLA 250+ electric", seg:"ev", msrp:63700000, fin:0, cash:0, cashWon:1000000, ret:1, trade:1 },
+  { model:"CLA", year:27, trim:"CLA 250+ electric AMG Line", seg:"ev", msrp:67700000, fin:0, cash:0, cashWon:1000000, ret:1, trade:1 },
+  { model:"GLB", year:27, trim:"GLB 250+ electric", seg:"ev", msrp:69900000, fin:0, cash:0, cashWon:1000000, ret:1, trade:1 },
+  { model:"GLC", year:27, trim:"GLC 300 4M electric AMG Line (Launch Edition)", seg:"ev", msrp:90000000, fin:0, cash:0, ret:1, trade:1 },
+  { model:"GLC", year:27, trim:"GLC 300 4M electric AMG Line+ (Launch Edition)", seg:"ev", msrp:94800000, fin:0, cash:0, ret:1, trade:1 },
+  { model:"Mercedes-AMG", year:27, trim:"AMG A 45 S 4M+", seg:"amg", msrp:82300000, fin:0, cash:0, ret:0, trade:0, memo:"11월 프로모션 대상 아님" },
+  { model:"E-Class", year:27, trim:"E 220 d 4M AV", seg:"sedan", msrp:87500000, fin:0, cash:0, ret:0, trade:0, memo:"11월 프로모션 대상 아님" },
+  { model:"E-Class", year:27, trim:"E 350 e 4M Exclusive", seg:"sedan", msrp:101100000, fin:0, cash:0, ret:0, trade:0, memo:"11월 프로모션 대상 아님" },
+  { model:"Mercedes-AMG", year:27, trim:"AMG E 53 HYBRID 4M+", seg:"amg", msrp:149900000, fin:0, cash:0, ret:0, trade:0, memo:"11월 프로모션 대상 아님" },
+  { model:"GLC", year:27, trim:"GLC 220 d 4M", seg:"suv", msrp:82200000, fin:0, cash:0, ret:0, trade:0, memo:"11월 프로모션 대상 아님" },
+  { model:"GLC", year:27, trim:"GLC 300 4M Coupé", seg:"suv", msrp:80000000, fin:0, cash:0, ret:0, trade:0, memo:"11월 프로모션 대상 아님" },
+  { model:"Mercedes-AMG", year:27, trim:"AMG GLC 53 4M+", seg:"amg", msrp:105100000, fin:0, cash:0, ret:0, trade:0, memo:"11월 프로모션 대상 아님" },
+  { model:"Mercedes-AMG", year:27, trim:"AMG GLC 53 4M+ Coupé", seg:"amg", msrp:109800000, fin:0, cash:0, ret:0, trade:0, memo:"11월 프로모션 대상 아님" },
+  { model:"Mercedes-AMG", year:27, trim:"AMG SL 63 4M+", seg:"amg", msrp:252800000, fin:0, cash:0, ret:0, trade:0, memo:"11월 프로모션 대상 아님" },
+  { model:"Mercedes-Maybach", year:27, trim:"Maybach SL 680", seg:"amg", msrp:348000000, fin:0, cash:0, ret:0, trade:0, memo:"11월 프로모션 대상 아님" },
+  { model:"Mercedes-AMG", year:27, trim:"AMG GT 63 S E Performance", seg:"amg", msrp:283100000, fin:0, cash:0, ret:0, trade:0, memo:"11월 프로모션 대상 아님" },
+  { model:"V-Class", year:27, trim:"V 300 d 4M Exclusive", seg:"suv", msrp:124000000, fin:0, cash:0, ret:0, trade:0, memo:"11월 프로모션 대상 아님" }
 ];
 
 /* 첫 화면 TOP 5 손보기 — DEALS_SKIP 은 자동 순위에서 뺄 트림, DEALS_PIN 은 순위와 상관없이 넣을 트림(연식|트림) */
@@ -452,16 +459,20 @@ function man(v){ return Math.round(v / 10000); }
 /* 7,750만원 / 1억 5,400만원 */
 function manStr(v){ var m = man(v), e = Math.floor(m / 10000), r = m % 10000;
   return r ? (e ? e + "억 " : "") + won.format(r) + "만원" : e + "억원"; }
-function tot(r){ return r.fin + r.ret + r.trade; }                 /* 현금+할부+재구매+트레이드인 */
-function bestOf(r){ return Math.round(r.msrp * (1 - r.fin / 100)); } /* 할인 적용가(현금+할부) */
-function maxOf(r){ return Math.round(r.msrp * (1 - tot(r) / 100)); } /* 최대 할인가 */
+function wonPct(r){ return r.cashWon && r.msrp ? r.cashWon / r.msrp * 100 : 0; }   /* 정액 할인을 %로(표시용) */
+function r1(v){ return Math.round(v * 10) / 10; }
+function finAll(r){ return r1(r.fin + wonPct(r)); }                /* 현금(정액 포함)+할부 % */
+function tot(r){ return r1(r.fin + r.ret + r.trade + wonPct(r)); } /* 현금+할부+재구매+트레이드인 */
+function cashTxt(r){ return r.cashWon ? won.format(man(r.cashWon)) + "만원" : r.cash + "%"; }
+function bestOf(r){ return Math.round(r.msrp * (1 - r.fin / 100)) - (r.cashWon || 0); }                   /* 할인 적용가(현금+할부) */
+function maxOf(r){ return Math.round(r.msrp * (1 - (r.fin + r.ret + r.trade) / 100)) - (r.cashWon || 0); } /* 최대 할인가 */
 function cutOf(r){ return man(r.msrp) - man(maxOf(r)); }           /* 최대 할인 금액(만원) */
 function key(r){ return r.year + "|" + r.trim; }
 function yb(r){ return '<span class="yb y' + r.year + '">' + r.year + '년식</span>'; }
 function byDeal(a, b){ return (tot(b) - tot(a)) || (b.msrp * tot(b) - a.msrp * tot(a)); }
 function mixOf(r){
   var p = [];
-  if (r.cash) p.push("현금 " + r.cash + "%");
+  if (r.cash || r.cashWon) p.push("현금 " + cashTxt(r));
   if (r.fin > r.cash) p.push("할부 " + (r.fin - r.cash) + "%");
   if (r.ret) p.push("재구매 " + r.ret + "%");
   if (r.trade) p.push("트레이드인 " + r.trade + "%");
@@ -480,6 +491,6 @@ function cardOf(k){ for (var i = 0; i < MODEL_CARDS.length; i++) if (MODEL_CARDS
 
 /* 할부 계산기 빠른 설정 — 이번 달 공문의 대표 할부 조건(가격표 아래 안내문과 같은 내용) */
 var FIN_PRESETS = [
-  { name:"24개월 무이자", note:"선수금 61~63%", months:24, rate:0, down:61 },
-  { name:"60개월 연 5.20%~", note:"선수금 30%", months:60, rate:5.2, down:30 }
+  { name:"24개월 무이자", note:"선수금 모델별 상이", months:24, rate:0, down:61 },
+  { name:"60개월 연 3.84%~", note:"선수금 30%", months:60, rate:3.84, down:30 }
 ];

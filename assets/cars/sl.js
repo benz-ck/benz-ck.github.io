@@ -25,7 +25,7 @@ CARS["SL"] = (function(){
       { id:"sl43", name:"Mercedes-AMG SL 43", short:"AMG SL 43", body:"R", line:"Mercedes-AMG", price:161800000, row:"27|AMG SL 43", alt:["26|AMG SL 43"],
         engine:"m139", wheel:"rvm", upholstery:"nappa", wood:"h70", imgNote:"AMG SL 43 · 카탈로그 이미지",
         highlights:["4기통 터보 · 후륜구동 로드스터", "20인치 AMG 멀티스포크 휠", "복합연비 8.8km/ℓ"] },
-      { id:"sl63", name:"Mercedes-AMG SL 63 4MATIC+", short:"AMG SL 63 4MATIC+", body:"R", line:"Mercedes-AMG", price:252800000, row:"27|AMG SL 63 4M+",
+      { id:"sl63", name:"Mercedes-AMG SL 63 4MATIC+", short:"AMG SL 63 4MATIC+", body:"R", line:"Mercedes-AMG", price:252800000, row:"27|AMG SL 63 4M+", alt:["26|AMG SL 63 4M+"],
         engine:"m177", wheel:"rwf", upholstery:"nappa", wood:"h70", imgNote:"AMG SL 63 4MATIC+ · 카탈로그 이미지",
         highlights:["V8 585마력 · 0→100km/h 3.6초", "AMG 액티브 라이드 컨트롤", "AMG 퍼포먼스 4MATIC+"] },
       { id:"mb680", name:"Mercedes-Maybach SL 680 Monogram Series", short:"Maybach SL 680", body:"M", line:"Maybach", price:348000000, row:"27|Maybach SL 680", alt:["26|Maybach SL 680"],
