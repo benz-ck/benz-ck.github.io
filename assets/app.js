@@ -416,6 +416,7 @@
     ["y26",  "26년식",         function(r){ return r.year === 26; }],
     ["disc", "할인 있는 차",    function(r){ return tot(r) > 0; }],
     ["mbm",  "할부 추가 할인",  function(r){ return r.fin > r.cash; }],
+    ["nf",   "무이자 할부",     function(r){ return !!r.nf; }],
     ["conq", "타 브랜드 추가",  function(r){ return !!r.conq; }],
     ["ew",   "보증연장",        function(r){ return !!r.ew; }]
   ];
@@ -430,6 +431,7 @@
     if (mm !== sub) sub += " · " + mm;
     var perks = [];
     if (r.memo) perks.push('<span class="perk perk--memo">' + esc(r.memo) + '</span>');
+    if (r.nf) perks.push('<span class="perk perk--nf">' + nfTxt(r) + ' 무이자</span>');
     if (r.conq) perks.push('<span class="perk perk--conq">타 브랜드 +' + r.conq + '%</span>');
     if (r.ew) perks.push('<span class="perk perk--ew">' + esc((EW_LABEL[r.ew] || "보증연장").replace(/^\+ /, "")) + '</span>');
     /* 휴대폰 한 줄 요약 */
@@ -694,9 +696,11 @@
     var trade = range(PRICE_ROWS.map(function(r){ return r.trade; }));
     var conq = range(PRICE_ROWS.map(function(r){ return r.conq || 0; }));
     var ewN = PRICE_ROWS.filter(function(r){ return r.ew; }).length;
+    var nfN = PRICE_ROWS.filter(function(r){ return r.nf; }).length;
     facts.innerHTML = [
       ret ? ["재구매", ret] : null, trade ? ["트레이드인", trade] : null,
-      conq ? ["타 브랜드 (컨퀘스트)", conq] : null, ewN ? ["보증연장 대상", ewN + "개 트림"] : null
+      conq ? ["타 브랜드 (컨퀘스트)", conq] : null, ewN ? ["보증연장 대상", ewN + "개 트림"] : null,
+      nfN ? ["무이자 할부", nfN + "개 트림"] : null
     ].filter(Boolean).map(function(f, i){
       return '<div class="fact' + (i === 0 ? ' is-gold' : '') + '"><dt>' + f[0] + '</dt><dd>' + f[1] + '</dd></div>';
     }).join("");
@@ -715,6 +719,22 @@
             '<td class="num">' + (r1 || '—') + '</td><td class="num">' + (r2 || '—') + '</td><td class="num">' + (r3 || '—') + '</td>' +
             '<td>' + n + ' / ' + rs.length + '개</td></tr>';
         }).join("") + '</tbody></table>';
+    }
+    /* 차종별 무이자 할부 — 공문 MBM 쪽 표(무이자 개월 · 60개월 할부 금리) */
+    var nfEl = $("benNfList");
+    if (nfEl) {
+      var nfo = [], nfb = {};
+      sortBase(PRICE_ROWS.filter(function(r){ return r.nf; })).forEach(function(r){ var f = famOf(r); if (!nfb[f]) { nfb[f] = []; nfo.push(f); } nfb[f].push(r); });
+      nfEl.innerHTML = nfo.length ? '<table class="ttable ttable--nf"><thead><tr><th>차종</th><th>무이자 할부</th><th class="num">60개월 할부 금리</th><th>해당 트림</th></tr></thead><tbody>' +
+        nfo.map(function(f){
+          var rs = nfb[f], ms = [], aprs = rs.map(function(r){ return r.apr; });
+          rs.forEach(function(r){ if (ms.indexOf(nfTxt(r)) < 0) ms.push(nfTxt(r)); });
+          var lo = Math.min.apply(null, aprs), hi = Math.max.apply(null, aprs);
+          return '<tr><th><a href="promotion.html?fam=' + encodeURIComponent(f) + '">' + esc(f) + '</a></th>' +
+            '<td class="nf">' + ms.join(' / ') + '</td>' +
+            '<td class="num">연 ' + lo.toFixed(2) + '%' + (hi > lo ? '~' + hi.toFixed(2) + '%' : '') + '</td>' +
+            '<td>' + rs.map(function(r){ return '<span class="pill pill--blue">' + esc(r.trim) + ' · ' + r.year + '년식' + (ms.length > 1 ? ' · ' + nfTxt(r) : '') + '</span>'; }).join("") + '</td></tr>';
+        }).join("") + '</tbody></table>' : '<p style="padding:16px">이번 달은 무이자 할부 대상 차량이 없습니다.</p>';
     }
     /* 컨퀘스트 해당 트림 */
     var c = $("benConqList");
@@ -1053,6 +1073,7 @@
       var deal = r && r.msrp !== null && tot(r) > 0
         ? yr + MON + ' 조건 — ' + mixOf(r) + ' 적용 시 최대 할인가 <b>' + manStr(maxOf(r)) + '</b>' + (r.ew ? ' · ' + esc((EW_LABEL[r.ew] || '').replace(/^\+ /, '')) : '')
         : (t.dealNote || MON + ' 프로모션 대상이 아닌 트림입니다. 금융 · 재고 조건은 문의 주세요.');
+      if (r && r.nf) deal += ' · 벤츠 금융 <b>' + nfTxt(r) + ' 무이자</b> 할부';
       (t.alt || []).forEach(function(kk){
         var a = null; PRICE_ROWS.some(function(x){ return key(x) === kk && (a = x); });
         if (a && a.msrp !== null && tot(a) > 0) deal += '<br>' + a.year + '년식 ' + (r && r.year === a.year ? '' : '재고 ') + '(' + esc(a.trim) + ') — 총 ' + tot(a) + '% · 최대 할인가 <b>' + manStr(maxOf(a)) + '</b>';
@@ -1174,6 +1195,7 @@
         ['차량가', manStr(t.price)]
       ];
       if (r && r.msrp !== null && tot(r) > 0) lines.push([MON + ' 최대 할인가', manStr(maxOf(r)) + ' (' + mixOf(r) + ')']);
+      if (r && r.nf) lines.push(['무이자 할부', nfTxt(r) + ' (선수금은 모델별 상이)']);
       var memo = car.name + ' 구성: ' + t.name + ' / 외장 ' + (ext ? ext.name : '미정') + ' / 시트 ' + (up.name || '') + (uc.name ? ' ' + uc.name : '');
       $("cxSum").innerHTML = '<div class="sum__hd"><p class="sum__k">SELECTED</p><p class="sum__n">' + esc(t.name) + '</p></div>' +
         '<dl>' + lines.map(function(l){ return '<div><dt>' + esc(l[0]) + '</dt><dd>' + esc(l[1]) + '</dd></div>'; }).join("") + '</dl>' +
