@@ -24,7 +24,7 @@
     { t:"차종별 트림 · 사양 · 색상", grid:true, items:[
       ["A-Class", "A-Class"], ["CLA", "CLA"], ["C-Class", "C-Class"], ["E-Class", "E-Class"], ["S-Class", "S-Class"], ["CLE", "CLE"],
       ["GLA", "GLA"], ["GLB", "GLB"], ["GLC", "GLC"], ["GLE", "GLE"], ["GLS", "GLS"], ["G-Class", "G-Class"], ["V-Class", "V-Class"],
-      ["EQA", "EQA"], ["EQB", "EQB"], ["EQE", "EQE"], ["EQS", "EQS SUV"], ["GLC electric", "전기 GLC"],
+      ["EQA", "EQA"], ["EQB", "EQB"], ["EQE", "EQE"], ["EQS", "EQS SUV"], ["GLC electric", "전기 GLC"], ["GLB electric", "전기 GLB"],
       ["AMG GT", "AMG GT"], ["SL", "SL"], ["S-Class&t=mb580", "Maybach S"], ["GLS&t=mb600", "Maybach GLS"], ["SL&t=mb680", "Maybach SL"], ["EQS&t=mb680", "Maybach EQS SUV"]
     ].map(function(x){ return ["model.html?m=" + x[0].replace(/ /g, "%20"), x[1]]; })},
     { t:"상담 · 계산기", items:[
@@ -843,7 +843,7 @@
   /* 트림 · 색상까지 고를 수 있는 차종 — 자료는 assets/cars/<이름>.js (카탈로그 · 제품정보에서 옮김) */
   var CAR_FILES = { "S-Class": "s-class", "E-Class": "e-class", "GLC": "glc", "GLE": "gle", "CLE": "cle", "V-Class": "v-class", "GLS": "gls",
     "A-Class": "a-class", "CLA": "cla", "C-Class": "c-class", "GLA": "gla", "GLB": "glb", "G-Class": "g-class",
-    "EQA": "eqa", "EQB": "eqb", "EQE": "eqe", "EQS": "eqs", "GLC electric": "glc-ev", "AMG GT": "amg-gt", "SL": "sl" };
+    "EQA": "eqa", "EQB": "eqb", "EQE": "eqe", "EQS": "eqs", "GLC electric": "glc-ev", "GLB electric": "glb-ev", "AMG GT": "amg-gt", "SL": "sl" };
 
   /* ═════════════ 전 차종 모델정보 (lineup.html) ═════════════ */
   /* 차종 카드 사진 — 카탈로그 사진(images/cars/…). 없는 차종은 이름만 크게 */
@@ -861,8 +861,8 @@
       desc:"27년식 새로 나온 전기 CLA. 800V 충전 시스템에 CLA 200 · 250+ 다섯 가지 트림입니다." },
     { key:"전기 GLC", after:"GLC", seg:"ev suv", label:"ELECTRIC SUV", img:"glc-ev", match:/^GLC .*electric/, link:"fam=GLC&q=electric", href:"model.html?m=GLC%20electric",
       desc:"27년식 전기 GLC 런치 에디션. GLC 300 4MATIC electric AMG Line · AMG Line+ 두 가지입니다." },
-    { key:"전기 GLB", after:"GLB", seg:"ev suv", label:"ELECTRIC SUV · NEW", match:/^GLB .*electric/, link:"fam=GLB&q=electric",
-      desc:"10월 27일 가격표에 새로 올라온 전기 GLB. GLB 250+ electric 한 가지이며, 국내 인증 제원 · 출시 일정은 공식 발표 뒤 안내합니다." },
+    { key:"전기 GLB", after:"GLB", seg:"ev suv", label:"ELECTRIC SUV · NEW", img:"glb-ev", match:/^GLB .*electric/, link:"fam=GLB&q=electric", href:"model.html?m=GLB%20electric",
+      desc:"27년식 새 전기 GLB. GLB 250+ electric 한 가지 — 800V 급속 충전 · MBUX 슈퍼스크린 · 앞 트렁크 127ℓ, 11월 말 인도 시작." },
     { key:"G 580 with EQ Technology", after:"G-Class", seg:"ev top", label:"ELECTRIC ICON", img:"g580", match:/^G 580/, link:"q=G 580", href:"model.html?m=G-Class&t=g580",
       desc:"전기로 달리는 G클래스. 기본형과 MANUFAKTUR 두 가지입니다." },
     { key:"AMG GT", after:"Mercedes-AMG", seg:"amg", label:"AMG GT", img:"amg-gt", match:/^(Mercedes-)?AMG GT/, link:"q=AMG GT", href:"model.html?m=AMG%20GT",
