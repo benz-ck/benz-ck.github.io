@@ -2,7 +2,7 @@
    전기 GLB 구성 페이지 자료 (model.html?m=GLB%20electric) — GLB 250+ electric 1트림
    - 트림 구성 · 사양 · 배터리: MY27 GLB electric 제품 정보 V2(2026-10)
    - 사진 · 휠 · 시트 · 트림 · 색상 · 충전(최대 320kW · 10→80% 약 22분) · 앞 트렁크 127ℓ: 전기 GLB 카탈로그(2026-10-28, 27년식)
-     카탈로그 숨은 층 그림(c01_1 · c04_0 · c05_0 · c11_0 = 다른 차종)과 GLB 200 electric 그림(6 · 7쪽)은 쓰지 않았다
+     카탈로그 숨은 층 그림(c01_1 · c04_0 · c05_0 · c11_0 · c21_0 · c30_1 · c32_3 = 쪽에 안 보이는 다른 차 그림)과 GLB 200 electric 그림(6 · 7쪽)은 쓰지 않았다
    - WLTP 주행거리 · 10분 충전 · 휠베이스 · 트렁크: 2026-10-28 사전계약 발표 값. 최고출력은 국내 발표가 없어 유럽 발표 값
    - 가격: 2026-10-27 공식 가격표(27년식). 가격표 묶음이 GLB 라 extraRows 로 붙인다.
    제품 정보는 딜러용 CONFIDENTIAL 이라 옵션 코드 · NST 코드 · 생산 표기는 싣지 않는다(사양 이름만).
@@ -18,7 +18,7 @@ CARS["GLB electric"] = (function(){
     tagline: "실내가 넉넉한 GLB, 이제 전기로.<br>GLB 250+ electric 한 가지 — 800V 급속 충전 · MBUX 슈퍼스크린.",
     asof: "MY27 GLB electric 제품 정보 2026년 10월 · 카탈로그 2026년 10월",
     source: "MY27 GLB electric 제품 정보(2026년 10월) · 전기 GLB 카탈로그(2026년 10월 28일, 27년식) · 사전계약 발표(2026년 10월) · 공식 가격표(2026년 10월 27일)",
-    hero: [P + "hero-1.jpg", P + "hero-2.jpg", P + "hero-3.jpg", P + "hero-4.jpg", P + "hero-5.jpg"],
+    hero: [P + "hero-1.jpg", P + "hero-2.jpg", P + "hero-3.jpg", P + "hero-4.jpg", P + "hero-5b.jpg"],
     bodies: { SUV: "전기 SUV" },
     extraRows: /^GLB .*electric/,
     lines: { "Progressive": P + "line-prog.jpg" },
