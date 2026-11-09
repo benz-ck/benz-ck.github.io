@@ -3,7 +3,7 @@
    - 트림 구성 · 사양 비교 · 최고출력: MY27 E-Class 제품정보 v4 (2026-09, Specification · Product line-up)
    - 토크 · 0→100 · 연비 · 중량 · 크기, 사진 · 휠 · 시트 · 우드 · 색상: E-Class 카탈로그(2025-12-23, 26년식) · AMG E-Class 카탈로그(2025-12-17)
      (27년식과 엔진이 같다. 휠 · 서스펜션 구성이 인증 차량과 다른 트림은 연비 · 중량을 비워 둔다)
-   - 가격: 2026-10-27 공식 가격표. E 200 두 트림도 이 판에서 27년식 가격이 나왔다(26년식과 같은 금액)
+   - 가격: 2026-11-09 공식 가격표. E 200 두 트림은 10-27판부터 27년식 가격이 나왔다(26년식과 같은 금액)
    제품정보는 딜러용 CONFIDENTIAL 이라 옵션 코드 · NST 코드 · 한정 물량은 싣지 않는다(사양 이름만).
    사진은 images/cars/e-class/ — 바꿀 때는 새 파일명으로(같은 이름 덮어쓰기 금지).
    ───────────────────────────────────────────────────────── */
@@ -15,7 +15,7 @@ CARS["E-Class"] = (function(){
     badge: "27년식 The new E-Class",
     tagline: "가장 많이 찾으시는 비즈니스 세단.<br>E 200부터 AMG E 53 HYBRID까지 10트림을 한눈에.",
     asof: "MY27 제품정보 2026년 9월",
-    source: "MY27 E-Class 제품정보(2026년 9월) · E-Class 카탈로그(2025년 12월, 26년식) · AMG E-Class 카탈로그(2025년 12월) · 공식 가격표(2026년 10월 27일)",
+    source: "MY27 E-Class 제품정보(2026년 9월) · E-Class 카탈로그(2025년 12월, 26년식) · AMG E-Class 카탈로그(2025년 12월) · 공식 가격표(2026년 11월 9일)",
     hero: [P + "hero-1.jpg", P + "hero-2.jpg", P + "hero-3.jpg", P + "hero-4.jpg"],
     bodies: { RWD: "후륜구동", AWD: "4MATIC 사륜구동" },
     lines: { "EXCLUSIVE": P + "line-exclusive.jpg", "AMG Line": P + "line-amg.jpg", "AVANTGARDE": P + "line-avantgarde.jpg", "Mercedes-AMG": P + "line-e53.jpg" },
