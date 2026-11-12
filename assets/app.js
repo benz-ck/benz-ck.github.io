@@ -104,7 +104,7 @@
           '<a href="https://www.instagram.com/getbenzck/" target="_blank" rel="noopener">Instagram</a>' +
           '<a href="https://blog.naver.com/benz-ck" target="_blank" rel="noopener">네이버 블로그</a>' +
           '<a href="https://hoohoopro.blogspot.com" target="_blank" rel="noopener">구글 블로그</a>' +
-          '<a href="https://new.smartplace.naver.com/bizes/booking/1083906/reviews?menu=visitor" target="_blank" rel="noopener">네이버 리뷰</a>' +
+          '<a href="https://m.place.naver.com/place/11641231/review/visitor" target="_blank" rel="noopener">네이버 리뷰</a>' +
         '</div>' +
         '<p>본 페이지는 메르세데스-벤츠 공식딜러 한성자동차 인천전시장 소속 세일즈 컨설턴트 홍창기의 개인 상담 안내 페이지입니다. ' +
         '표기된 혜택과 금융 조건은 모델 · 재고 · 계약 시점에 따라 변동되며, 계산 결과는 참고용입니다. 최종 조건은 상담 시 안내드립니다.</p>' +
