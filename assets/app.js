@@ -1203,7 +1203,9 @@
       }).join("");
       drawSum();
     }
-    function colorOk(c){ var ln = T[ti].line, bd = T[ti].body; return (!c.only || c.only === ln || c.only === bd) && (!c.not || (c.not !== ln && c.not !== bd)); }
+    function colorOk(c){ var ln = T[ti].line, bd = T[ti].body;   // only · not 은 글자 하나 또는 목록(11-18 GLE 26·27년식 색상)
+      function hit(v){ return [].concat(v).some(function(x){ return x === ln || x === bd; }); }
+      return (!c.only || hit(c.only)) && (!c.not || !hit(c.not)); }
     function drawExt(){
       var t = T[ti], mb = t.line === "Maybach";
       if (sel.ext !== null && !colorOk(car.colors[sel.ext])) sel.ext = null;
