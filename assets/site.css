@@ -1065,3 +1065,22 @@ input[type=range]{width:100%;accent-color:var(--gold)}
 .lncard__f dt{font-size:12px;color:var(--muted);font-weight:600}
 .lncard__f dd{font-size:13.5px;font-weight:700;white-space:nowrap}
 .lncard .model__cta{border-top:0;padding-top:6px;color:var(--teal)}
+
+/* ── MOU 제휴사 검색 (mou.html · 11-18) ───────────────── */
+.mou-search{max-width:720px}
+.mres__cnt{margin-top:12px;font-size:13.5px;color:var(--ink-soft);min-height:1.4em}
+.mres{display:grid;gap:8px;margin-top:10px;list-style:none;padding:0}
+@media(min-width:700px){.mres{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.mres__i{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(16,34,44,.75)}
+.mres__i i{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:800;background:var(--gold);color:#1B1505}
+.mres__i b{display:block;font-size:15px;font-weight:700;letter-spacing:-.02em;word-break:keep-all}
+.mres__i small{display:block;margin-top:2px;font-size:12px;color:var(--ink-soft)}
+.mres__i em{display:inline-block;margin-top:5px;font-style:normal;font-size:11.5px;font-weight:700;color:var(--gold);border:1px solid rgba(222,186,112,.45);border-radius:999px;padding:2px 8px}
+.mres__none{grid-column:1/-1;display:grid;gap:8px;padding:18px;border-radius:14px;border:1px dashed var(--line-strong);background:rgba(255,255,255,.03)}
+.mres__none span{font-size:14px;color:var(--ink-soft);line-height:1.7}
+.mres__none .btn{justify-self:start;margin-top:4px}
+.mou-quick{margin-top:10px;margin-bottom:6px}
+.mou-quick>p{margin:14px 0 8px;font-size:14px;font-weight:700}
+.mou-quick>p span{font-weight:500;color:var(--ink-soft)}
+.mou-quick .filters{margin-bottom:6px}
+#mou-rule .mou{margin-top:18px}

@@ -14,7 +14,8 @@
   var MENU = [
     { t:"이번 달 구매 조건", items:[
       ["promotion.html", MON + " 프로모션", "차종별 할인 · 최종가"],
-      ["benefit.html", "구매 추가 혜택", "재구매 · 트레이드인 · 컨퀘스트"]
+      ["benefit.html", "구매 추가 혜택", "재구매 · 트레이드인 · 컨퀘스트"],
+      ["mou.html", "MOU 제휴사 임직원 혜택", "우리 회사 · 협회 검색"]
     ]},
     { t:"신차 · 모델", items:[
       ["lineup.html", "전 차종 모델정보", MODEL_CARDS.length + "개 차종"],
