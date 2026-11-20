@@ -1084,3 +1084,42 @@ input[type=range]{width:100%;accent-color:var(--gold)}
 .mou-quick>p span{font-weight:500;color:var(--ink-soft)}
 .mou-quick .filters{margin-bottom:6px}
 #mou-rule .mou{margin-top:18px}
+
+/* ── MOU 가족 적용 범위 그림 (mou.html #mou-family · 11-20) ── */
+.fam{display:grid;gap:clamp(18px,3vw,40px);align-items:start;grid-template-columns:minmax(0,1fr)}
+@media(min-width:900px){.fam{grid-template-columns:minmax(0,460px) minmax(0,1fr)}}
+.fam__fig{margin:0;border:1px solid var(--line);border-radius:20px;background:var(--panel);padding:clamp(12px,2.2vw,22px) clamp(8px,1.6vw,18px)}
+.fam__fig svg{display:block;width:100%;height:auto;max-width:440px;margin:0 auto}
+.fam svg text{text-anchor:middle}
+.fam svg .fh{font-size:12.5px;font-weight:700;fill:var(--sky);letter-spacing:.04em}
+.fam svg .fl{fill:none;stroke:var(--gold-soft);stroke-width:1.6;opacity:.75}
+.fam svg .fl.x{stroke:var(--muted);stroke-dasharray:4 4;opacity:1}
+.fam svg .fl.cp{stroke:var(--gold);stroke-width:2.4;opacity:1}
+.fam svg .ring{fill:var(--gold)}
+.fam svg .fn rect{fill:var(--cell-2);stroke:var(--gold-soft);stroke-width:1.4}
+.fam svg .fn .t{font-size:17px;font-weight:800;fill:var(--ink);letter-spacing:-.02em}
+.fam svg .fn .s{font-size:12.5px;fill:var(--ink-soft)}
+.fam svg .fn.me rect{fill:var(--gold);stroke:var(--gold-2);stroke-width:2}
+.fam svg .fn.me .t{fill:#0B1F2A;font-size:18px;font-weight:900}
+.fam svg .fn.me .s{fill:#4A3A12;font-weight:600}
+.fam svg .fn.out rect{fill:none;stroke:var(--muted);stroke-dasharray:5 4}
+.fam svg .fn.out .t{font-size:13.5px;font-weight:700;fill:var(--muted)}
+.fam svg .fn.out .s{font-size:11.5px;fill:var(--muted)}
+.fam svg .bd circle{fill:var(--green);stroke:var(--panel);stroke-width:3}
+.fam svg .bd path{fill:none;stroke:#0B1F2A;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.fam svg .bd.x circle{fill:var(--panel);stroke:var(--muted);stroke-width:1.4}
+.fam svg .bd.x path{stroke:var(--muted);stroke-width:1.8}
+.fam__leg{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 16px;margin-top:12px;font-size:12.5px;color:var(--ink-soft)}
+.fam__leg i{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:6px}
+.fam__leg i.in{background:var(--cell-2);border:1.5px solid var(--gold-soft)}
+.fam__leg i.out{border:1.5px dashed var(--muted)}
+.fam__leg b{color:var(--gold)}
+.fam__k{font-size:12.5px;font-weight:700;color:var(--sky);letter-spacing:.06em}
+.fam__txt h3{margin-top:8px;font-size:clamp(21px,2.6vw,28px);font-weight:800;letter-spacing:-.03em;line-height:1.3}
+.fam__txt h3 em{font-style:normal;color:var(--gold)}
+.fam__lede{margin:12px 0 6px;font-size:14.5px;line-height:1.75;color:var(--ink-soft)}
+.fam__lede b,.fam__txt .rule span b{color:var(--ink)}
+.fam__txt .rule:first-of-type{border-top:1px solid var(--line-soft)}
+.rule i.one{background:rgba(242,199,102,.16);color:var(--gold)}
+.rule span a,.phero__lede a{color:var(--sky);text-decoration:underline;text-underline-offset:3px}
+.rule span b{display:inline;font-size:inherit}
